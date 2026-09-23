@@ -1,0 +1,15 @@
+# Secrets and environment-specific config
+config/local.php
+.env
+
+# Runtime data (leads, rate limits, keys, logs)
+storage/*
+!storage/.htaccess
+!storage/README.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

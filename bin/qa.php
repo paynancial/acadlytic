@@ -1,0 +1,217 @@
+<?php
+/**
+ * Pre-deployment quality gate (plain PHP).
+ *
+ *   php bin/qa.php
+ *
+ * Renders every page and checks: one H1, title/description present and
+ * unique, canonical on indexable pages, internal links resolve, no
+ * duplicate element IDs, redirect targets exist, sitemap consistency,
+ * required assets present, thin content and paragraphs duplicated across
+ * pages (a doorway-page signal). Exits non-zero on errors.
+ */
+declare(strict_types=1);
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(404);
+    exit;
+}
+
+require dirname(__DIR__) . '/includes/bootstrap.php';
+
+$errors = [];
+$warnings = [];
+$titles = [];
+$descs = [];
+$sentences = [];
+$pages = acad_pages();
+$redirects = acad_redirects();
+
+$resolves = static function (string $href) use ($pages, $redirects): bool {
+    $path = (string) parse_url($href, PHP_URL_PATH);
+    if ($path === '') {
+        return true; // pure fragment or query
+    }
+    if (isset($pages[$path]) && empty($pages[$path]['virtual'])) {
+        return true;
+    }
+    if (isset($redirects[$path])) {
+        return true;
+    }
+    if (in_array($path, ['/login.php', '/forgot-password.php', '/request-access.php', '/login/', '/sitemap.xml', '/robots.txt'], true)) {
+        return true;
+    }
+    return is_file(ACAD_ROOT . $path);
+};
+
+$render = static function (array $page): string {
+    if (in_array($page['path'], ['/login.php', '/forgot-password.php', '/request-access.php'], true)) {
+        $ctx = [];
+        $kind = substr($page['path'], 1, -4);
+        $panel = $kind === 'login' ? acad_login_panel($ctx) : ($kind === 'forgot-password' ? acad_forgot_panel($ctx) : acad_access_panel($ctx));
+        ob_start();
+        require ACAD_ROOT . '/includes/auth-shell.php';
+        return (string) ob_get_clean();
+    }
+    return acad_render_page($page, []);
+};
+
+foreach ($pages as $path => $page) {
+    $html = $render($page);
+    $where = $path;
+
+    if (substr_count($html, '<h1') !== 1) {
+        $errors[] = "{$where}: expected exactly one <h1>, found " . substr_count($html, '<h1');
+    }
+    if (!preg_match('#<title>(.+?)</title>#s', $html, $m) || trim($m[1]) === '') {
+        $errors[] = "{$where}: missing <title>";
+    } else {
+        $t = html_entity_decode($m[1], ENT_QUOTES);
+        $titles[$t][] = $path;
+        if (mb_strlen($t) > 70) {
+            $warnings[] = "{$where}: title is " . mb_strlen($t) . ' chars (>70): ' . $t;
+        }
+    }
+    $d = $page['desc'];
+    if ($d === '') {
+        $errors[] = "{$where}: missing meta description";
+    } else {
+        $descs[$d][] = $path;
+        $len = mb_strlen($d);
+        if (empty($page['noindex']) && ($len < 70 || $len > 170)) {
+            $warnings[] = "{$where}: description length {$len} (aim 70–170)";
+        }
+    }
+    if (empty($page['noindex']) && !str_contains($html, '<link rel="canonical"')) {
+        $errors[] = "{$where}: missing canonical";
+    }
+    if (!empty($page['noindex']) && !str_contains($html, 'noindex')) {
+        $errors[] = "{$where}: noindex page without robots noindex";
+    }
+
+    preg_match_all('#\shref="([^"]+)"#', $html, $links);
+    foreach (array_unique($links[1]) as $href) {
+        $href = html_entity_decode($href, ENT_QUOTES);
+        if (preg_match('#^(https?:|mailto:|tel:|\#)#', $href)) {
+            continue;
+        }
+        if (!$resolves($href)) {
+            $errors[] = "{$where}: broken internal link {$href}";
+        }
+    }
+    preg_match_all('#\sid="([^"]+)"#', $html, $ids);
+    foreach (array_count_values($ids[1]) as $id => $n) {
+        if ($n > 1) {
+            $errors[] = "{$where}: duplicate id \"{$id}\" ({$n}x)";
+        }
+    }
+    if (preg_match('#lorem ipsum|TODO|\{\{#i', strip_tags($html))) {
+        $errors[] = "{$where}: placeholder text found";
+    }
+
+    // Content depth and cross-page duplication (article pages only).
+    if ($page['template'] === 'article' && empty($page['noindex'])) {
+        $text = acad_page_text($page);
+        $words = str_word_count(strip_tags($text));
+        $min = $page['section'] === 'glossary' ? 100 : 180;
+        if ($words < $min) {
+            $warnings[] = "{$where}: thin content ({$words} words, min {$min})";
+        }
+        foreach (preg_split('/(?<=[.!?])\s+/', $text) ?: [] as $s) {
+            $s = trim($s);
+            if (mb_strlen($s) >= 90) {
+                $sentences[$s][$path] = true;
+            }
+        }
+    }
+}
+
+foreach ($titles as $t => $paths) {
+    if (count($paths) > 1) {
+        $errors[] = 'Duplicate title "' . $t . '": ' . implode(', ', $paths);
+    }
+}
+foreach ($descs as $d => $paths) {
+    if (count($paths) > 1) {
+        $errors[] = 'Duplicate description on ' . implode(', ', $paths);
+    }
+}
+foreach ($sentences as $s => $paths) {
+    if (count($paths) > 1) {
+        $warnings[] = 'Sentence repeated on ' . implode(', ', array_keys($paths)) . ': "' . mb_substr($s, 0, 80) . '…"';
+    }
+}
+
+foreach ($redirects as $from => $to) {
+    if (!isset($pages[$to]) || !empty($pages[$to]['virtual'])) {
+        $errors[] = "Redirect {$from} -> {$to}: target is not a page";
+    }
+    if (isset($redirects[$to])) {
+        $errors[] = "Redirect chain {$from} -> {$to} -> {$redirects[$to]}";
+    }
+    if (!str_ends_with($from, '.php') && !is_file(ACAD_ROOT . rtrim($from, '/') . '/index.php')) {
+        $errors[] = "Redirect {$from}: stub missing (run php bin/build.php)";
+    }
+}
+foreach ($pages as $path => $page) {
+    if (empty($page['virtual']) && !is_file(ACAD_ROOT . ($path === '/' ? '' : rtrim($path, '/')) . '/index.php')) {
+        $errors[] = "{$path}: directory stub missing (run php bin/build.php)";
+    }
+}
+
+// Navigation targets.
+$nav = require ACAD_ROOT . '/data/nav.php';
+array_walk_recursive($nav, static function ($v) use (&$errors, $resolves) {
+    if (is_string($v) && str_starts_with($v, '/') && !$resolves($v)) {
+        $errors[] = "nav.php: unresolved link {$v}";
+    }
+});
+
+// Sitemap.
+$sitemap = (string) @file_get_contents(ACAD_ROOT . '/sitemap.xml');
+preg_match_all('#<loc>([^<]+)</loc>#', $sitemap, $locs);
+$expected = array_filter(acad_public_pages(), static fn($p) => empty($p['virtual']) && $p['template'] !== 'search');
+if (count($locs[1]) !== count($expected)) {
+    $errors[] = 'sitemap.xml has ' . count($locs[1]) . ' URLs, expected ' . count($expected) . ' (run php bin/build.php)';
+}
+foreach ($locs[1] as $loc) {
+    $p = (string) parse_url($loc, PHP_URL_PATH);
+    if (!isset($pages[$p]) || !empty($pages[$p]['noindex'])) {
+        $errors[] = "sitemap.xml lists non-indexable {$loc}";
+    }
+}
+
+// Assets required by the deployment brief.
+foreach (['/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
+    if (!is_file(ACAD_ROOT . $a)) {
+        $errors[] = "Missing asset {$a}";
+    }
+}
+if ((string) @file_get_contents(ACAD_ROOT . '/assets/img/icons.svg') !== acad_icon_sprite()) {
+    $errors[] = 'assets/img/icons.svg is out of date (run php bin/build.php)';
+}
+
+// Icon names referenced in code and data.
+$known = array_keys(acad_icon_paths());
+$scan = array_merge(glob(ACAD_ROOT . '/includes/*.php') ?: [], glob(ACAD_ROOT . '/includes/*/*.php') ?: [], glob(ACAD_ROOT . '/data/*.php') ?: [], glob(ACAD_ROOT . '/data/pages/*.php') ?: []);
+foreach ($scan as $file) {
+    $src = (string) file_get_contents($file);
+    preg_match_all("#icon\\('([a-z-]+)'#", $src, $m1);
+    preg_match_all("#'icon'\\s*=>\\s*'([a-z-]+)'#", $src, $m2);
+    foreach (array_merge($m1[1], $m2[1]) as $name) {
+        if (!in_array($name, $known, true)) {
+            $errors[] = basename($file) . ": unknown icon \"{$name}\"";
+        }
+    }
+}
+
+$indexable = count($expected);
+printf("Pages: %d (indexable in sitemap: %d) · Redirects: %d\n", count($pages), $indexable, count($redirects));
+foreach ($warnings as $w) {
+    echo "WARN  {$w}\n";
+}
+foreach (array_unique($errors) as $e) {
+    echo "ERROR {$e}\n";
+}
+printf("\n%d error(s), %d warning(s)\n", count(array_unique($errors)), count($warnings));
+exit($errors ? 1 : 0);
