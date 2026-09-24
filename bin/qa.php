@@ -38,7 +38,7 @@ $resolves = static function (string $href) use ($pages, $redirects): bool {
     if (isset($redirects[$path])) {
         return true;
     }
-    if (in_array($path, ['/login.php', '/forgot-password.php', '/request-access.php', '/login/', '/sitemap.xml', '/robots.txt'], true)) {
+    if (in_array($path, ['/login.php', '/forgot-password.php', '/request-access.php', '/login/', '/sitemap.xml', '/robots.txt', '/llms.txt'], true)) {
         return true;
     }
     return is_file(ACAD_ROOT . $path);
@@ -104,6 +104,19 @@ foreach ($pages as $path => $page) {
         if ($n > 1) {
             $errors[] = "{$where}: duplicate id \"{$id}\" ({$n}x)";
         }
+    }
+    $types = array_column($page['blocks'], 'type');
+    if (in_array('faq', $types, true) && empty($page['noindex']) && !str_contains($html, '"FAQPage"')) {
+        $errors[] = "{$where}: visible FAQ without FAQPage schema";
+    }
+    if ($page['template'] === 'article' && empty($page['noindex']) && !in_array('faq', $types, true) && !in_array($page['section'], ['utility'], true)) {
+        $warnings[] = "{$where}: article page without an FAQ (AEO)";
+    }
+    if (acad_is_editorial($page) && $page['section'] !== 'glossary' && (!str_contains($html, '"Article"') || !in_array('takeaways', $types, true))) {
+        $errors[] = "{$where}: guide/comparison missing Article schema or key takeaways";
+    }
+    if (acad_is_editorial($page) && !str_contains($html, 'class="page-meta"')) {
+        $errors[] = "{$where}: editorial page missing visible last-updated line";
     }
     if (preg_match('#lorem ipsum|TODO|\{\{#i', strip_tags($html))) {
         $errors[] = "{$where}: placeholder text found";
@@ -182,7 +195,13 @@ foreach ($locs[1] as $loc) {
 }
 
 // Assets required by the deployment brief.
-foreach (['/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
+$llms = (string) @file_get_contents(ACAD_ROOT . '/llms.txt');
+foreach ($expected as $p => $pg) {
+    if ($pg['section'] !== 'home' && $pg['section'] !== 'utility' && !str_contains($llms, '(' . acad_url($p) . ')')) {
+        $errors[] = "llms.txt missing {$p} (run php bin/build.php)";
+    }
+}
+foreach (['/llms.txt', '/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
     if (!is_file(ACAD_ROOT . $a)) {
         $errors[] = "Missing asset {$a}";
     }

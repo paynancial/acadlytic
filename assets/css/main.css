@@ -281,6 +281,12 @@ td { color: #2A3852; }
 .note { border-radius: var(--r-lg); padding: 22px 26px; background: linear-gradient(135deg, var(--soft-2), #fff); border: 1px solid #CFE2FD; border-left: 4px solid var(--blue); max-width: 880px; }
 .note strong { display: block; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
 .note p { margin: 0; color: #22304A; }
+.page-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 14px; color: var(--slate-2); }
+.page-meta .icon { color: var(--blue); }
+.takeaways { border-radius: var(--r-xl); padding: 26px 30px; background: var(--soft-2); border: 1px solid #CFE2FD; max-width: 880px; }
+.takeaways h2 { font-size: 15px !important; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin: 0 0 12px !important; }
+.takeaways ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; font-size: 17px; line-height: 1.6; color: #22304A; }
+.takeaways li::marker { color: var(--cyan); }
 .definition { border-radius: var(--r-xl); padding: 30px 32px; background: var(--grad-deep); color: #E3ECFA; position: relative; overflow: hidden; }
 .definition::after { content: ""; position: absolute; right: -60px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(20, 207, 232, .28), transparent 70%); }
 .def-label { display: inline-block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--cyan); margin-bottom: 10px; }

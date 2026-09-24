@@ -32,9 +32,18 @@ Case studies and whitepapers are **noindex placeholders**. They are not in the s
 ## 2–3. SEO and content
 
 - Unique `<title>` and meta description on every page (verified), one `<h1>`, no skipped heading levels inside `<main>`, canonical on every indexable page, OG + X card on every page.
-- JSON-LD: Organization (with the five official `sameAs` profiles) and WebSite on the homepage; WebPage and BreadcrumbList site-wide; AboutPage/ContactPage; DefinedTerm on glossary pages. **Removed in this audit:** `SoftwareApplication`, because Google expects offers/ratings that cannot be stated truthfully, which would show as Search Console errors. No FAQ, review or rating markup.
+- JSON-LD: Organization (with the five official `sameAs` profiles) and WebSite on the homepage; WebPage and BreadcrumbList site-wide; AboutPage/ContactPage; DefinedTerm on glossary pages. **Removed in this audit:** `SoftwareApplication`, because Google expects offers/ratings that cannot be stated truthfully, which would show as Search Console errors. No review or rating markup. **Added after the audit (AEO):** FAQPage on the 127 pages with FAQs (302 questions, matching the visible text) and Article on 25 guides and comparisons.
 - No sentence of 90+ characters appears on more than one page. No fabricated customers, statistics, testimonials, certifications or officer names. The homepage dashboard preview is labelled *Sample data*.
 - Remaining **topic clusters to monitor** for cannibalisation (currently differentiated by intent): automation (feature, AI workflows, strategy guide, worked example, glossary) and analytics (guide, culture article, governance article, dashboard guide).
+
+## AEO follow-up (after the audit)
+
+- FAQs on **every** article page: 96 pages gained two or three buyer questions each. Visible text and FAQPage schema match.
+- **Key takeaways** at the top of all 18 resource guides and articles and all 7 comparisons.
+- Visible **Last updated** and editorial authorship on guides, comparisons and glossary; `Article` and `WebPage.dateModified` in structured data.
+- **`/llms.txt`** generated from the registry, grouped by section.
+- Titles and H1s now use one spelling (en-IN: *enrolment*, *personalised*); URLs are unchanged.
+- QA enforces all of the above.
 
 ## 4. Performance
 

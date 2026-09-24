@@ -15,6 +15,7 @@ workers are needed in production.
 | Redirects | 61 permanent (301) redirects covering duplicate URLs from the 120+ page build, every Phase 2 handoff URL and legacy `.php` URLs |
 | Auth pages | `/login.php` (also `/login/`), `/forgot-password.php`, `/request-access.php` — noindex, not in sitemap |
 | Forms | Request a Demo, Contact, Request Access, Password help — CSRF, honeypot, timing check, rate limit, server-side validation |
+| AEO | FAQs + FAQPage schema on 127 pages, key takeaways on guides and comparisons, `llms.txt`, visible last-updated dates |
 | Assets | Self-hosted Inter + Manrope, one SVG icon sprite, optimised logo (PNG + WebP), no third-party scripts |
 
 ## How it works
@@ -48,7 +49,7 @@ includes/                    bootstrap, security, forms, templates, header, foot
 seo/meta.php                 titles, meta, Open Graph, X cards, JSON-LD
 cms/                         reserved placeholder for the future CMS (returns 404)
 database/schema.sql          enquiries + future auth tables (MySQL/MariaDB)
-bin/build.php                regenerate stubs, sitemap.xml and icon sprite
+bin/build.php                regenerate stubs, sitemap.xml, llms.txt and icon sprite
 bin/qa.php                   quality gate (run before every deploy)
 bin/dev-router.php           local dev server router
 docs/                        deployment, auth architecture, content guide, placeholders

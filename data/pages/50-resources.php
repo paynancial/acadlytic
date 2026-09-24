@@ -107,6 +107,12 @@ return [
         'lead'  => 'What an academic CRM is, what it should do, how it fits with your other systems and how to choose and implement one well.',
         'icon'  => 'users',
         'blocks' => [
+            takeaways(
+                'An academic CRM manages relationships and engagement; an SIS holds the official record',
+                'Core capabilities: multi-channel capture, one timeline per person, follow-up tasks, consent and funnel reporting',
+                'Start with enquiry capture and basic automation before advanced features',
+                'Ask vendors how the CRM connects to student records and how you export your data',
+            ),
             sec('What an academic CRM is',
                 'A customer relationship management (CRM) system records every interaction with a person and organises the work of building that relationship. An academic CRM applies the idea to education: prospective students, applicants, enrolled students, parents, alumni, schools and partners.',
                 'Its job is not to hold the official academic record (that is the role of a student information system) but to manage engagement: who we are talking to, what they need, what we have promised and what should happen next.'),
@@ -140,6 +146,10 @@ return [
                 'Can we export all our data in open formats?',
                 'What AI features exist, and how are they governed?',
             ]),
+            faq([
+                'How long does it take to implement an academic CRM?' => 'It depends on scope and data quality. Starting with enquiry capture and follow-up is usually quickest; lifecycle-wide use comes in later phases.',
+                'Do small institutions need an academic CRM?' => 'If enquiries arrive from several channels and follow-up depends on individual memory, even a small team benefits from one queue and timeline.',
+            ]),
         ],
         'related' => ['/glossary/academic-crm/', '/core/edtech-crm/', '/comparisons/academic-crm-vs-sis/', '/resources/admissions-crm-guide/'],
     ],
@@ -152,6 +162,12 @@ return [
         'lead'  => 'How admissions teams use a CRM to respond faster, follow up consistently and understand which recruitment activities actually produce students.',
         'icon'  => 'users',
         'blocks' => [
+            takeaways(
+                'An admissions CRM captures, responds to, nurtures and measures every enquiry',
+                'Track time to first response, completion and enrolments by source, not enquiry volume alone',
+                'Clean existing data before import; add automation once basic follow-up is reliable',
+                'Use AI to prepare work for counsellors, never to score applicants for selection',
+            ),
             sec('Why admissions teams adopt a CRM',
                 'Admissions work is a race against attention. A prospective student who enquires at several institutions tends to engage most with those that respond quickly and helpfully. Without a CRM, enquiries scatter across inboxes and spreadsheets, and response time depends on who happens to be at their desk.'),
             cards('The four jobs of an admissions CRM', [
@@ -176,6 +192,10 @@ return [
             ]),
             sec('Where AI fits',
                 'AI helps admissions teams most when it prepares work rather than replacing judgement: prioritising follow-ups, summarising applicant history before a call and drafting replies for review. It should not score applicants for selection. See [AI for Admissions](/ai/ai-for-admissions/).'),
+            faq([
+                'What is a good time to first response for enquiries?' => 'Set a target based on your own baseline, then shorten it. Instant acknowledgement plus personal follow-up the same working day is a common goal.',
+                'Which metric matters most in admissions?' => 'Enrolments by source, because it shows which recruitment activities actually produce students rather than enquiries alone.',
+            ]),
         ],
         'related' => ['/platform/admissions-crm/', '/resources/admissions-workflow/', '/solutions/for-admissions-teams/', '/glossary/admissions-crm/'],
     ],
@@ -188,6 +208,12 @@ return [
         'lead'  => 'A clear explanation of what student management software does, the processes it supports and what separates a good system from a frustrating one.',
         'icon'  => 'cap',
         'blocks' => [
+            takeaways(
+                'Student management software is built around one authoritative record per student',
+                'Enrolment, attendance, results, status changes and transcripts all attach to that record',
+                'Judge systems on usability, self-service, permissions, integration and data portability',
+                'Test your three most common processes end to end before choosing',
+            ),
             sec('The student record at the centre',
                 'Student management software is built around one idea: a single, authoritative record for each student. Everything else, including enrolment, timetables, attendance, results, fees and communication, attaches to that record. When the record is accurate and shared, processes run smoothly. When copies drift apart, every department spends time reconciling.'),
             table('Core processes supported', ['Process', 'What good looks like'], [
@@ -213,6 +239,10 @@ return [
                 'Check mobile usability for students and faculty',
                 'Clarify migration approach and responsibilities',
             ]),
+            faq([
+                'What is the difference between student management software and an SIS?' => 'The terms often overlap. Both centre on the official student record; “student management” is sometimes used more broadly to include daily operations and self-service.',
+                'What should we test in a demo?' => 'Your three most common processes end to end, with realistic data volumes, on both desktop and mobile.',
+            ]),
         ],
         'related' => ['/platform/student-management/', '/glossary/student-information-system/', '/resources/academic-management-checklist/', '/resources/student-lifecycle-guide/'],
     ],
@@ -225,6 +255,11 @@ return [
         'lead'  => 'How to map the student lifecycle, assign ownership of each transition and use data to catch students at the moments they are most likely to slip away.',
         'icon'  => 'compass',
         'blocks' => [
+            takeaways(
+                'Students are most at risk at hand-offs between departments',
+                'Define entry and exit criteria, owners and tasks for every lifecycle stage',
+                'Measure transition rates each term and improve the weakest first',
+            ),
             sec('Why lifecycle thinking helps',
                 'Organisational charts divide work by department. Students experience a continuous journey, and the points where responsibility passes between departments are where they most often get lost: an admitted student who never completes enrolment, a first-year who stops attending in week four, a final-year student with an unnoticed missing credit.'),
             steps('Mapping your lifecycle', [
@@ -242,6 +277,10 @@ return [
                 ['Final year → graduation', 'Missing requirements', 'Completion audits, clearance tracking'],
             ]),
             note('Acadlytic models lifecycle stages explicitly. See [Student Lifecycle](/platform/student-lifecycle/).'),
+            faq([
+                'Which lifecycle transition is most important?' => 'It varies by institution. Measure transition rates each term and focus on the weakest, which is often offer-to-enrolment or first-year progression.',
+                'Who should own each lifecycle stage?' => 'A named team per stage and per hand-off, so responsibility never sits between departments.',
+            ]),
         ],
         'related' => ['/glossary/student-lifecycle-management/', '/platform/student-lifecycle/', '/platform/completion-tracking/', '/resources/student-engagement-strategies/'],
     ],
@@ -254,6 +293,12 @@ return [
         'lead'  => 'A practical introduction to education analytics: where the data comes from, the kinds of analysis that help, and how to turn numbers into decisions people trust.',
         'icon'  => 'chart',
         'blocks' => [
+            takeaways(
+                'Analytics runs from descriptive (what happened) to prescriptive (what to do)',
+                'Reliable descriptive reporting delivers more value than early prediction',
+                'Trust in numbers comes from shared definitions, one source and visible comparisons',
+                'Start every analysis from a decision question, with an owner for each indicator',
+            ),
             table('Four levels of analytics', ['Level', 'Question', 'Example'], [
                 ['Descriptive', 'What happened?', 'Enrolments by programme this cycle'],
                 ['Diagnostic', 'Why did it happen?', 'Which sources and stages explain lower conversion'],
@@ -277,6 +322,10 @@ return [
                 'Review on a rhythm' => 'Weekly in busy seasons, monthly otherwise.',
                 'Record decisions' => 'Note what was decided and check the effect later.',
             ]),
+            faq([
+                'Should we start with predictive analytics?' => 'Usually not. Reliable descriptive reporting with agreed definitions delivers more value first and is the foundation for prediction.',
+                'How many indicators should leadership track?' => 'Few enough to discuss in a meeting, typically eight to twelve, each with an owner.',
+            ]),
         ],
         'related' => ['/glossary/education-analytics/', '/platform/reports-insights/', '/resources/institutional-dashboard-guide/', '/resources/data-driven-education/'],
     ],
@@ -289,6 +338,12 @@ return [
         'lead'  => 'How institution leaders can adopt AI in operations responsibly: where to start, how to govern it and how to bring staff along.',
         'icon'  => 'ai',
         'blocks' => [
+            takeaways(
+                'Lower-risk AI value in operations comes from drafting, summarising and classifying',
+                'Set governance and human-approval rules before scaling AI',
+                'Pilot, measure time saved and error rates, then extend carefully',
+                'Monitor fairness whenever AI prioritises or flags students',
+            ),
             sec('Start with operations, not hype',
                 'Some of the most dependable early returns from AI in higher education come from administrative and student-support work: responding to enquiries, processing documents, identifying students who need help and summarising data for decisions. These uses keep people in control and produce benefits that can be measured.'),
             steps('A phased roadmap', [
@@ -312,6 +367,10 @@ return [
                 'Provide short, practical training and examples',
                 'Share early results openly, including what did not work',
             ]),
+            faq([
+                'What is the lowest-risk way to start with AI?' => 'Pilot drafting, summarising and classification tasks where staff review every output, then measure time saved and error rates.',
+                'Who should govern AI in an institution?' => 'A small oversight group with academic, administrative, IT and data-protection representation, working to written principles.',
+            ]),
         ],
         'related' => ['/ai/ai-in-education/', '/ai/responsible-ai/', '/ai/', '/resources/digital-transformation-education/'],
     ],
@@ -324,6 +383,11 @@ return [
         'lead'  => 'What moving academic systems to the cloud really involves: the service models, who is responsible for what, and how to plan the move.',
         'icon'  => 'cloud',
         'blocks' => [
+            takeaways(
+                'SaaS moves infrastructure and application operations to the provider',
+                'Security is shared: the institution still controls access, configuration and data use',
+                'Settle data residency, availability, backups and exit terms before moving',
+            ),
             table('Cloud service models', ['Model', 'What you manage', 'Example'], [
                 ['Infrastructure (IaaS)', 'Operating systems, applications and data on rented servers', 'Running your own software on cloud virtual machines'],
                 ['Platform (PaaS)', 'Applications and data on a managed platform', 'Custom apps on a managed application platform'],
@@ -340,6 +404,10 @@ return [
                 'Connectivity' => 'Reliable internet access for campuses and users.',
             ]),
             note('For a detailed list of questions to ask providers, use our [education cloud checklist](/resources/education-cloud-checklist/).'),
+            faq([
+                'Is SaaS the same as cloud hosting?' => 'No. With SaaS the provider runs the application as well as the infrastructure; with hosting, the institution still runs its own software on rented servers.',
+                'What stays the institution’s responsibility in SaaS?' => 'User access, configuration, data use and compliance with the institution’s own policies.',
+            ]),
         ],
         'related' => ['/core/cloud-platform/', '/comparisons/cloud-vs-on-premise-education/', '/resources/education-cloud-checklist/', '/glossary/education-cloud/'],
     ],
@@ -352,6 +420,11 @@ return [
         'lead'  => 'A framework for choosing which institutional processes to automate first, and how to automate them without losing control or goodwill.',
         'icon'  => 'workflow',
         'blocks' => [
+            takeaways(
+                'Treat automation as a portfolio and deliver a few processes at a time',
+                'Prioritise high-volume, rule-based, low-risk processes',
+                'Keep admissions, disciplinary and sensitive support decisions with people',
+            ),
             sec('Automation is a portfolio decision',
                 'Every institution has dozens of processes that could be automated. Trying to automate everything at once overwhelms teams and creates brittle workflows. The better approach is to treat automation as a portfolio: identify candidates, score them and deliver a few well-chosen ones at a time.'),
             table('Scoring automation candidates', ['Criterion', 'Question'], [
@@ -376,6 +449,10 @@ return [
                 'Sensitive student-support cases',
             ]),
             note('For a worked example of designing a single workflow, see [workflow automation in education](/resources/education-workflow-automation/).'),
+            faq([
+                'What makes a process a good automation candidate?' => 'High volume, significant staff effort, clear rules and low decision risk.',
+                'How do we measure automation success?' => 'Record a baseline for turnaround time, staff touches and error rates before launch, then compare after a full cycle.',
+            ]),
         ],
         'related' => ['/platform/workflow-automation/', '/ai/ai-workflows/', '/glossary/workflow-automation/', '/resources/education-workflow-automation/'],
     ],
@@ -388,6 +465,12 @@ return [
         'lead'  => 'We take one common process, a student requesting a bonafide certificate, and design its automated workflow step by step.',
         'icon'  => 'workflow',
         'blocks' => [
+            takeaways(
+                'Map the real process, including informal steps, before automating',
+                'Automate the checks and document generation; keep one human approval',
+                'Design the exception path so students always know what is outstanding',
+                'Record a baseline so improvement is measured, not assumed',
+            ),
             sec('The process today',
                 'A student emails or visits the office to request a certificate. Staff check the student’s status, whether fees are clear and the purpose of the request, draft the certificate, obtain a signature and hand it over or post it. Each step waits for someone. Status questions add more emails.'),
             steps('Designing the workflow', [
@@ -405,6 +488,10 @@ return [
                 ['Status enquiries', 'Count emails and calls', 'Expect a reduction with portal tracking'],
             ], 'Record a baseline before launch so improvements are measured rather than assumed.'),
             note('Acadlytic’s [workflow builder](/platform/workflow-automation/) supports each of these steps, including optional [AI steps](/ai/ai-workflows/) to classify free-text requests.'),
+            faq([
+                'Why start with a certificate request workflow?' => 'It is frequent, rule-based and visible to students, so improvements are easy to measure and appreciate.',
+                'What happens when an automated check fails?' => 'The student is told what is outstanding and a task is created for staff, rather than the request silently stalling.',
+            ]),
         ],
         'related' => ['/resources/education-automation-guide/', '/platform/workflow-automation/', '/ai/ai-workflows/', '/solutions/for-registrars/'],
     ],
@@ -417,6 +504,11 @@ return [
         'lead'  => 'Most dashboards fail from too much information, not too little. This guide shows how to design one leadership will open every week.',
         'icon'  => 'dashboard',
         'blocks' => [
+            takeaways(
+                'Start from the decisions leadership makes, not the data available',
+                'Keep eight to twelve indicators, each with a definition, comparison and owner',
+                'Remove anything leaders ignore during prototype testing',
+            ),
             steps('Design process', [
                 'Start from decisions' => 'List the decisions leadership makes each month and quarter.',
                 'Choose indicators' => 'For each decision, choose one or two indicators. Aim for eight to twelve in total.',
@@ -437,6 +529,10 @@ return [
                 'Nobody can say who owns an indicator',
                 'The dashboard is rarely opened between meetings',
             ]),
+            faq([
+                'What is the most common dashboard mistake?' => 'Showing too many indicators without definitions, comparisons or owners.',
+                'How often should a dashboard be reviewed?' => 'Weekly during busy seasons such as admissions, and monthly otherwise.',
+            ]),
         ],
         'related' => ['/platform/institutional-dashboard/', '/resources/academic-analytics-guide/', '/solutions/for-leadership/', '/glossary/institutional-analytics/'],
     ],
@@ -449,6 +545,11 @@ return [
         'lead'  => 'Digital transformation is not buying software. It is changing how an institution works, with technology as the enabler. Here is how to approach it without disruption.',
         'icon'  => 'layers',
         'blocks' => [
+            takeaways(
+                'Transformation is changing how the institution works; software is the enabler',
+                'Change processes, people, data and technology together',
+                'Deliver a few visible improvements, measure them, then expand',
+            ),
             sec('Why initiatives stall',
                 'Transformation programmes often stall for predictable reasons: technology is selected before processes are understood, staff are asked to adopt tools without seeing the benefit, data is migrated without being cleaned, and too much changes at once. None of these are technology problems.'),
             cards('Four dimensions to change together', [
@@ -464,6 +565,10 @@ return [
                 'Expand' => 'Use momentum and lessons to tackle the next set.',
             ]),
             note('Transformation succeeds when students and staff notice their day-to-day experience improving. Measure that experience, not just system go-live dates.'),
+            faq([
+                'Where should digital transformation start?' => 'With the student and staff journeys that cause the most pain, not with a software catalogue.',
+                'How do we keep staff on board?' => 'Involve them early, train by role, share early wins and fix what frustrates them.',
+            ]),
         ],
         'related' => ['/solutions/for-higher-education/', '/comparisons/point-solutions-vs-platform/', '/resources/academic-data-strategy/', '/resources/ai-in-higher-education-guide/'],
     ],
@@ -476,6 +581,11 @@ return [
         'lead'  => 'Being data-driven is a habit, not a tool. It means making decisions with evidence, on a regular rhythm, using numbers people trust.',
         'icon'  => 'chart',
         'blocks' => [
+            takeaways(
+                'Being data-driven is a decision habit, not a tool purchase',
+                'Regular review rhythms, shared definitions and follow-through matter most',
+                'Use student data to support students, transparently and with limited access',
+            ),
             sec('Culture before dashboards',
                 'Many institutions have more data than they use. The gap is rarely technical: it is whether leaders ask for evidence, whether staff feel able to use and question data, and whether decisions are revisited in light of results.'),
             cards('Habits of data-driven institutions', [
@@ -492,6 +602,10 @@ return [
                 'Limit access to what each role needs',
                 'Monitor for unfair patterns in data-driven interventions',
             ]),
+            faq([
+                'What is a data-driven culture in education?' => 'A habit of making decisions with evidence on a regular rhythm, using numbers people trust, and checking the effects afterwards.',
+                'How do we improve data literacy?' => 'Short, practical training on reading and questioning charts, using the institution’s own reports as examples.',
+            ]),
         ],
         'related' => ['/resources/academic-analytics-guide/', '/resources/academic-data-strategy/', '/solutions/for-leadership/', '/ai/ai-predictive-analytics/'],
     ],
@@ -504,6 +618,11 @@ return [
         'lead'  => 'A data strategy answers four questions: what data we need, who owns it, how we keep it trustworthy and how we use it responsibly.',
         'icon'  => 'database',
         'blocks' => [
+            takeaways(
+                'A data strategy defines what data you need, who owns it and how it stays trustworthy',
+                'Name data owners and stewards for each domain',
+                'Begin with the ten most disputed definitions and the most error-prone dataset',
+            ),
             table('Governance roles', ['Role', 'Responsibility'], [
                 ['Data owner', 'Senior person accountable for a data domain, such as student records or admissions'],
                 ['Data steward', 'Day-to-day quality, definitions and access decisions for a domain'],
@@ -524,6 +643,10 @@ return [
                 'Fix the worst source' => 'Pick the most error-prone dataset and clean it with a lasting process.',
                 'Document integrations' => 'Record how data moves between systems.',
             ]),
+            faq([
+                'Who should own student data?' => 'A senior data owner per domain, supported by a data steward for daily quality and definitions.',
+                'What is the first step in a data strategy?' => 'Name owners for the main data domains and agree definitions for the terms most often disputed in reports.',
+            ]),
         ],
         'related' => ['/platform/data-management/', '/resources/data-driven-education/', '/trust/privacy/', '/integrations/data-export/'],
     ],
@@ -536,6 +659,11 @@ return [
         'lead'  => 'Engaged students are more likely to persist and succeed. These strategies focus on what institutions can control: onboarding, communication, support and belonging.',
         'icon'  => 'users',
         'blocks' => [
+            takeaways(
+                'Onboarding and early first-term check-ins have outsized impact',
+                'Send fewer, more relevant messages tailored by programme and stage',
+                'Combine engagement signals and respond with supportive conversations',
+            ),
             cards('Strategies', [
                 'Strong onboarding' => 'Make the first weeks clear and welcoming: orientation, a simple checklist and a named contact.',
                 'Early check-ins' => 'Proactive contact in the first term, especially for first-generation and part-time students.',
@@ -551,6 +679,10 @@ return [
                 ['Unanswered messages', 'Wrong channel or disengagement', 'Try a different channel'],
             ]),
             note('Engagement data should prompt supportive conversations. Combine signals rather than relying on any single metric. See [Student Engagement](/platform/student-engagement/).'),
+            faq([
+                'What is the most effective engagement strategy?' => 'Strong onboarding combined with early personal check-ins in the first term tends to matter most, especially for part-time and first-generation students.',
+                'How do we know if engagement is improving?' => 'Track a combination of signals over time, such as attendance, submissions and service use, alongside short pulse surveys.',
+            ]),
         ],
         'related' => ['/platform/student-engagement/', '/glossary/student-engagement/', '/ai/ai-for-student-success/', '/solutions/for-student-services/'],
     ],
@@ -563,6 +695,12 @@ return [
         'lead'  => 'A stage-by-stage blueprint for an admissions process that is fast for applicants, manageable for staff and measurable for leadership.',
         'icon'  => 'workflow',
         'blocks' => [
+            takeaways(
+                'Every applicant should always know their next step',
+                'Every file should always have an owner',
+                'Measure time in each stage, not just outcomes',
+                'Keep decisions with people; automate reminders and hand-offs',
+            ),
             table('Stage-by-stage blueprint', ['Stage', 'Design goals', 'Common pitfalls'], [
                 ['Enquiry', 'Instant acknowledgement, owner within hours', 'Enquiries sitting in shared inboxes'],
                 ['Nurture', 'Programme-relevant content, event invitations', 'Generic mass emails'],
@@ -580,6 +718,10 @@ return [
                 'Keep humans responsible for decisions',
             ]),
             note('For how software supports each stage, see [Admissions CRM](/platform/admissions-crm/) and [Application Management](/platform/application-management/).'),
+            faq([
+                'How many stages should an admissions workflow have?' => 'Enough to give every file a clear owner and next step, typically enquiry, nurture, application, documents, review, decision and enrolment.',
+                'Where do admissions workflows usually slow down?' => 'At document collection and review, when files wait without an owner or applicants do not know what is missing.',
+            ]),
         ],
         'related' => ['/resources/admissions-crm-guide/', '/platform/application-management/', '/comparisons/manual-vs-automated-admissions/', '/solutions/for-admissions-teams/'],
     ],
@@ -592,6 +734,11 @@ return [
         'lead'  => 'What actually changes when AI assists academic management, what stays firmly human, and how to judge whether the difference is worth it for your institution.',
         'icon'  => 'scale',
         'blocks' => [
+            takeaways(
+                'AI shifts staff time from preparation to judgement and personal contact',
+                'Decisions, pastoral care and final approvals stay human',
+                'Measure a baseline, pilot in one area and expect results within a term',
+            ),
             table('How work changes', ['Area', 'Traditional', 'AI-assisted'], [
                 ['Enquiry follow-up', 'Staff work through lists in arrival order', 'Follow-ups prioritised with reasons; replies drafted for review'],
                 ['Document checks', 'Every file opened and checked manually', 'Pre-checked for type and quality; staff verify flagged fields'],
@@ -607,6 +754,10 @@ return [
             ]),
             sec('Judging whether it is worth it',
                 'Measure the baseline first: response times, hours spent on reporting, verification turnaround and the timing of support interventions. Then pilot AI assistance in one area and compare. Benefits should be visible in these operational measures within a term; if they are not, adjust or stop.'),
+            faq([
+                'Does AI-assisted management reduce staff numbers?' => 'Its main effect is shifting time from preparation and data entry to work that needs judgement and personal contact.',
+                'How quickly should AI benefits appear?' => 'Within a term in operational measures such as response time or verification turnaround; if not, adjust or stop the pilot.',
+            ]),
         ],
         'related' => ['/comparisons/ai-reporting-vs-manual-reporting/', '/ai/ai-in-education/', '/resources/ai-in-higher-education-guide/', '/ai/'],
     ],
@@ -619,6 +770,11 @@ return [
         'lead'  => 'Questions to settle with any cloud or SaaS provider before academic and student data moves to their platform.',
         'icon'  => 'task',
         'blocks' => [
+            takeaways(
+                'Cover security, privacy, reliability, integration and exit before signing',
+                'Ask where data is stored, who can access it and whether it trains AI models',
+                'Get answers in writing and put key commitments in the contract',
+            ),
             checks('Security', [
                 'Is data encrypted in transit and at rest?',
                 'How is administrative access to production systems controlled and logged?',
@@ -646,6 +802,10 @@ return [
                 'What assistance is provided if we leave?',
             ]),
             note('Ask for answers in writing and include key commitments in your contract. See how Acadlytic approaches these in the [Security Center](/core/security/).'),
+            faq([
+                'Which cloud question matters most?' => 'Data protection and exit: where data is stored, who can access it and how you get all of it back if you leave.',
+                'Should answers be in writing?' => 'Yes. Ask for written answers and put key commitments into the contract.',
+            ]),
         ],
         'related' => ['/resources/cloud-education-guide/', '/core/cloud-platform/', '/core/security/', '/comparisons/cloud-vs-on-premise-education/'],
     ],
@@ -658,6 +818,11 @@ return [
         'lead'  => 'Use this checklist to compare platforms consistently and avoid discovering gaps after you sign.',
         'icon'  => 'task',
         'blocks' => [
+            takeaways(
+                'Compare vendors with the same scenarios, data and scoring',
+                'Check functional fit, usability, integration, security and AI governance',
+                'Do not leave migration, integration effort or exit terms until after signing',
+            ),
             checks('Functional fit', [
                 'Covers our priority processes end to end, demonstrated with our scenarios',
                 'Handles our programme structures, calendars and assessment rules',
@@ -687,6 +852,10 @@ return [
                 'Role-based training and documentation',
                 'Transparent pricing drivers and renewal terms',
                 'References or pilot opportunities we can verify',
+            ]),
+            faq([
+                'How should we compare vendors fairly?' => 'Use the same scenarios, data and scoring for each vendor, and involve the staff who will use the system.',
+                'What is most often missed in evaluation?' => 'Data migration, integration effort and exit terms, which are harder to fix after signing.',
             ]),
         ],
         'related' => ['/core/academic-management/', '/resources/student-management-guide/', '/comparisons/point-solutions-vs-platform/', '/core/pricing/'],

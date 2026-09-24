@@ -76,7 +76,8 @@ return [
 
     // Sitemap <lastmod> default. Update when content changes materially, or set
     // 'updated' => 'YYYY-MM-DD' on an individual page in data/pages.
-    'content_updated' => '2026-09-24',
+    'content_updated'   => '2026-09-24',
+    'content_published' => '2026-09-24', // Article datePublished default
 
     // Bump when assets change if file modification times are unreliable.
     'asset_version' => '2026.09.23',

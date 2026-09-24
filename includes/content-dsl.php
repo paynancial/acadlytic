@@ -48,6 +48,12 @@ function note(string $text, string $label = 'Good to know'): array
     return ['type' => 'note', 'label' => $label, 'text' => $text];
 }
 
+/** Answer-first summary shown at the top of guides and comparisons. */
+function takeaways(string ...$items): array
+{
+    return ['type' => 'takeaways', 'h' => 'Key takeaways', 'items' => $items];
+}
+
 /** Glossary definition box (rendered prominently, used for DefinedTerm schema). */
 function def(string $text): array
 {

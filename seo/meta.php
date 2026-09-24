@@ -7,6 +7,8 @@
  * logo, contact details, official profiles). No ratings, customer counts,
  * prices or certifications are emitted. SoftwareApplication is omitted
  * because Google requires offers/ratings that cannot be stated truthfully.
+ * FAQPage mirrors visible FAQs; Article (guides, comparisons) and DefinedTerm
+ * (glossary) carry dates and the organisation as author.
  */
 declare(strict_types=1);
 
@@ -137,7 +139,47 @@ function acad_schema(array $page): array
         ];
     }
 
+    $webPage['dateModified'] = acad_page_updated($page);
     $graph = [$webPage, ['@type' => 'BreadcrumbList', 'itemListElement' => $crumbs]];
+
+    // FAQPage: every visible FAQ on the page (answer engines read this even
+    // where Google no longer shows FAQ rich results).
+    $questions = [];
+    foreach ($page['blocks'] as $block) {
+        if ($block['type'] === 'faq') {
+            foreach ($block['items'] as $q => $a) {
+                $questions[] = [
+                    '@type' => 'Question',
+                    'name'  => acad_plain((string) $q),
+                    'acceptedAnswer' => ['@type' => 'Answer', 'text' => acad_plain($a)],
+                ];
+            }
+        }
+    }
+    if ($questions) {
+        $graph[] = ['@type' => 'FAQPage', '@id' => acad_url($page['path']) . '#faq', 'mainEntity' => $questions];
+    }
+
+    if (acad_is_editorial($page) && $page['section'] !== 'glossary') {
+        $graph[] = [
+            '@type'            => 'Article',
+            '@id'              => acad_url($page['path']) . '#article',
+            'headline'         => $page['h1'],
+            'description'      => $page['desc'],
+            'datePublished'    => (string) ($page['published'] ?? acad_config('content_published')),
+            'dateModified'     => acad_page_updated($page),
+            'inLanguage'       => acad_config('language'),
+            'mainEntityOfPage' => ['@id' => acad_url($page['path']) . '#webpage'],
+            'image'            => acad_url('/assets/img/og-image.png'),
+            'author'           => ['@type' => 'Organization', 'name' => acad_config('name'), 'url' => acad_url('/')],
+            'publisher'        => [
+                '@type' => 'Organization',
+                'name'  => acad_config('name'),
+                'url'   => acad_url('/'),
+                'logo'  => ['@type' => 'ImageObject', 'url' => acad_url('/assets/img/logo-square.png'), 'width' => 512, 'height' => 512],
+            ],
+        ];
+    }
 
     if (in_array($page['path'], ['/core/about/', '/core/contact/'], true)) {
         $graph[] = acad_org_schema();

@@ -18,6 +18,11 @@ return [
         'nav_label' => 'Academic CRM vs SIS',
         'lead'  => 'Both hold student data, so they are often confused. They do different jobs, and understanding the difference prevents expensive mistakes.',
         'blocks' => [
+            takeaways(
+                'A CRM manages relationships; an SIS holds the official academic record',
+                'Most institutions need both capabilities, separately integrated or unified',
+                'Choose a unified platform when duplicate student records are a daily problem',
+            ),
             table('Side by side', ['Aspect', 'Academic CRM', 'Student information system'], [
                 ['Primary purpose', 'Relationships and engagement', 'Official academic record'],
                 ['Main users', 'Admissions, marketing, student services, advisors', 'Registry, examinations, faculty'],
@@ -38,6 +43,10 @@ return [
                 'Duplicate student records are a daily problem',
                 'You want lifecycle reporting without joining systems',
             ]),
+            faq([
+                'Can one platform be both a CRM and an SIS?' => 'Yes. Unified platforms provide both on one data model, removing duplicate records between recruitment and registry.',
+                'Which should an institution buy first?' => 'Whichever closes the bigger gap. If recruitment and follow-up are weak, a CRM usually comes first.',
+            ]),
         ],
         'related' => ['/glossary/academic-crm/', '/glossary/student-information-system/', '/integrations/sis-integration/', '/comparisons/academic-crm-vs-erp/'],
     ],
@@ -49,6 +58,11 @@ return [
         'nav_label' => 'Academic CRM vs ERP',
         'lead'  => 'CRM manages relationships. ERP manages resources. Institutions need both capabilities; this comparison shows where each fits.',
         'blocks' => [
+            takeaways(
+                'CRM focuses on people and engagement; ERP on resources and transactions',
+                'Keep ledger, payroll and procurement in the ERP',
+                'Run student-facing relationships and fees in an education platform linked to the ERP',
+            ),
             table('Side by side', ['Aspect', 'Academic CRM', 'Academic ERP'], [
                 ['Focus', 'People and relationships', 'Resources and transactions'],
                 ['Typical scope', 'Enquiries, applicants, students, parents, alumni, partners', 'Finance, HR, payroll, procurement, sometimes student administration'],
@@ -64,6 +78,10 @@ return [
                 'Finance re-keying fee payments from another system',
                 'Leadership unable to see the recruitment funnel',
             ]),
+            faq([
+                'Can an ERP handle admissions?' => 'Some ERP suites include admissions modules, but they are usually weaker at multi-channel enquiry capture, nurture and conversion reporting than a CRM.',
+                'Do we need both a CRM and an ERP?' => 'Most institutions need both capabilities, either as separate integrated systems or through a platform that covers the student-facing side.',
+            ]),
         ],
         'related' => ['/glossary/academic-erp/', '/integrations/erp-integration/', '/comparisons/academic-crm-vs-sis/', '/core/edtech-crm/'],
     ],
@@ -75,6 +93,11 @@ return [
         'nav_label' => 'Cloud vs On-Premise',
         'lead'  => 'Where your academic systems run affects cost, security responsibilities, agility and staff workload. Here is a balanced comparison.',
         'blocks' => [
+            takeaways(
+                'Cloud lowers upfront cost and infrastructure work; on-premise gives full control',
+                'Security is shared in the cloud and entirely yours on-premise',
+                'On-premise still fits strict residency rules or unreliable connectivity',
+            ),
             table('Side by side', ['Aspect', 'Cloud (SaaS)', 'On-premise'], [
                 ['Upfront cost', 'Low; subscription-based', 'High; licences, servers, setup'],
                 ['Ongoing effort', 'Provider operates infrastructure', 'Institution maintains servers, patches, backups'],
@@ -110,6 +133,11 @@ return [
         'nav_label' => 'Manual vs Automated Admissions',
         'lead'  => 'Automation can transform admissions operations, but not every step should be automated. This comparison shows where automation helps and where people must stay in charge.',
         'blocks' => [
+            takeaways(
+                'Automation brings speed, consistency and live reporting to admissions',
+                'Automate acknowledgements, reminders, status updates and data transfer',
+                'Keep selection, exceptions and sensitive conversations human',
+            ),
             table('Side by side', ['Aspect', 'Manual', 'Automated'], [
                 ['Enquiry response', 'Depends on staff availability', 'Instant acknowledgement, assigned follow-up'],
                 ['Consistency', 'Varies by person and workload', 'Same rules applied every time'],
@@ -147,6 +175,11 @@ return [
         'nav_label' => 'Spreadsheets vs Platform',
         'lead'  => 'Spreadsheets are flexible and familiar, and they run a surprising amount of academic administration. Here is when they are fine and when they become a risk.',
         'blocks' => [
+            takeaways(
+                'Spreadsheets suit small, short-lived tasks with a single owner',
+                'Shared student data in spreadsheets risks errors, conflicts and exposure',
+                'Document spreadsheet rules before migrating; they become platform validations',
+            ),
             table('Side by side', ['Aspect', 'Spreadsheets', 'Academic platform'], [
                 ['Setup', 'Immediate', 'Requires configuration'],
                 ['Data integrity', 'Easy to overwrite, duplicate or break formulas', 'Validation, one record per person'],
@@ -165,6 +198,10 @@ return [
             ]),
             sec('Moving without losing what works',
                 'Spreadsheets encode real knowledge about how your institution works. Before migrating, document the columns, formulas and informal rules they contain. Those become the fields, validations and workflows in the new platform. See [data management](/platform/data-management/) for the migration approach.'),
+            faq([
+                'Are spreadsheets ever the right choice?' => 'For small, short-lived tasks with one owner, yes. For shared, ongoing student data, the risks grow quickly.',
+                'How long does moving off spreadsheets take?' => 'It depends on data quality. Cleaning and mapping spreadsheet data is usually the longest step.',
+            ]),
         ],
         'related' => ['/platform/data-management/', '/solutions/for-colleges/', '/core/edtech-crm/', '/comparisons/point-solutions-vs-platform/'],
     ],
@@ -176,6 +213,11 @@ return [
         'nav_label' => 'Point Solutions vs Platform',
         'lead'  => 'Should you buy the best tool for each job or one platform for many jobs? Both approaches can work. The trade-offs are predictable.',
         'blocks' => [
+            takeaways(
+                'Point solutions offer depth; platforms offer consistency and less integration',
+                'Hidden point-solution costs are integration upkeep and duplicate data',
+                'A hybrid (platform plus integrated specialist tools) often works best',
+            ),
             table('Side by side', ['Aspect', 'Point solutions', 'Unified platform'], [
                 ['Depth per function', 'Often deeper in a single area', 'Broad, with strong core functions'],
                 ['Integration effort', 'High; each pair of systems needs connecting', 'Low inside the platform; integrate the rest'],
@@ -196,6 +238,10 @@ return [
                 'Integration maintenance consumes IT capacity',
             ]),
             note('Many institutions choose a hybrid: a unified platform for the student lifecycle, integrated with specialist systems such as an LMS or ERP. See [Integrations](/integrations/).'),
+            faq([
+                'Is a unified platform less flexible than point solutions?' => 'It can be for specialised needs, which is why many institutions pair a platform with integrated specialist tools.',
+                'What is the hidden cost of point solutions?' => 'Integration building and maintenance, duplicate data reconciliation and multiple contracts.',
+            ]),
         ],
         'related' => ['/solutions/for-higher-education/', '/resources/digital-transformation-education/', '/core/academic-management/', '/resources/academic-management-checklist/'],
     ],
@@ -207,6 +253,11 @@ return [
         'nav_label' => 'AI vs Manual Reporting',
         'lead'  => 'AI can draft report summaries in seconds. Manual reporting brings context and judgement. The best results combine both.',
         'blocks' => [
+            takeaways(
+                'AI drafts report summaries in minutes; people add context and judgement',
+                'AI risks misreading data, so drafts must cite figures and be reviewed',
+                'Combine live data, an AI draft and human approval',
+            ),
             table('Side by side', ['Aspect', 'Manual reporting', 'AI-assisted reporting'], [
                 ['Time to produce', 'Hours to days', 'Minutes for a draft'],
                 ['Consistency', 'Varies by author', 'Consistent structure'],

@@ -19,6 +19,9 @@ element IDs; no placeholder text; content depth (≥180 words for articles,
 checked: redirect targets exist with no chains, every directory stub exists,
 all navigation links resolve, the sitemap matches the indexable pages, required
 assets exist, the icon sprite is current and every referenced icon name exists.
+AEO: every FAQ has FAQPage schema; every article page has an FAQ; guides and
+comparisons have key takeaways, Article schema and a visible last-updated line;
+`llms.txt` lists every indexable page.
 
 ## HTTP checks
 
@@ -27,6 +30,7 @@ assets exist, the icon sprite is current and every referenced icon name exists.
 | All 145 page URLs | 200 |
 | All 61 redirects | 301 to the correct target |
 | `/favicon.ico` | 200 |
+| `/llms.txt` | 200 (`text/plain`) |
 | `/`, `/login.php`, `/login/`, `/forgot-password.php`, `/request-access.php` | 200 |
 | `/assets/css/main.css`, `/assets/js/app.js`, `/assets/img/logo-acadlytic.png` | 200 |
 | `/sitemap.xml`, `/robots.txt` | 200 |

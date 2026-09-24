@@ -18,6 +18,25 @@ function acad_inline(string $text): string
     }, $html) ?? $html;
 }
 
+/** Content string without inline markup, for structured data and llms.txt. */
+function acad_plain(string $text): string
+{
+    $text = preg_replace('/\[([^\]]+)\]\(\/[^)\s]*\)/', '$1', $text) ?? $text;
+    return str_replace('**', '', $text);
+}
+
+/** Pages that show a visible “Last updated” line and carry Article schema. */
+function acad_is_editorial(array $page): bool
+{
+    return $page['template'] === 'article' && empty($page['noindex']) && $page['path'] !== '/resources/faqs/'
+        && in_array($page['section'], ['resources', 'comparisons', 'glossary'], true);
+}
+
+function acad_page_updated(array $page): string
+{
+    return (string) ($page['updated'] ?? acad_config('content_updated'));
+}
+
 function acad_render_blocks(array $page): string
 {
     $out = '';
@@ -94,6 +113,14 @@ function acad_render_blocks(array $page): string
 
             case 'note':
                 $out .= '<aside class="block note" aria-label="' . e($b['label']) . '"><strong>' . e($b['label']) . '</strong><p>' . acad_inline($b['text']) . '</p></aside>';
+                break;
+
+            case 'takeaways':
+                $items = '';
+                foreach ($b['items'] as $text) {
+                    $items .= '<li>' . acad_inline($text) . '</li>';
+                }
+                $out .= '<section class="block takeaways" id="' . $id . '" aria-labelledby="' . $id . '-h"><h2 id="' . $id . '-h">' . e($b['h']) . '</h2><ul>' . $items . '</ul></section>';
                 break;
 
             case 'definition':
