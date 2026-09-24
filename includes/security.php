@@ -36,6 +36,8 @@ function acad_send_security_headers(bool $noindex = false): void
     if (acad_is_https()) {
         $csp .= '; upgrade-insecure-requests';
     }
+    // Do not advertise the PHP version.
+    header_remove('X-Powered-By');
     header('Content-Security-Policy: ' . $csp);
     header('X-Content-Type-Options: nosniff');
     header('Referrer-Policy: strict-origin-when-cross-origin');
