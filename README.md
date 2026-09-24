@@ -104,6 +104,7 @@ See **`docs/DEPLOYMENT.md`** for the step-by-step cPanel guide.
 - `docs/LEGAL_REVIEW_CHECKLIST.md` — what counsel must review and complete before launch
 - `docs/PLACEHOLDERS.md` — items Acadlytic must confirm before or after launch
 - `docs/FINAL_PRE_MERGE_AUDIT.md` — final technical pre-merge audit (PASS/FAIL, blockers)
+- `docs/SHOULD_FIX_COMPLETION_REPORT.md` — SHOULD FIX items completed after the audit
 - `docs/QA_REPORT.md` — latest verification results
 - `docs/CMS_PHASE3_BLUEPRINT.md` — CMS phase scope
 - `docs/handoff/` — original handoff briefs this build integrates

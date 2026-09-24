@@ -63,7 +63,7 @@ return [
         'notify_email'   => 'info@acadlytic.com',
         'send_mail'      => true,             // uses PHP mail(); leads are always stored first
         'mail_from'      => 'info@acadlytic.com',       // confirmed sender mailbox; Reply-To is the enquirer
-        'rate_limit'     => ['max' => 5, 'window' => 3600], // submissions per IP per window
+        'rate_limit'     => ['max' => 10, 'window' => 3600], // submissions per IP per window (shared campus networks)
         'min_fill_secs'  => 3,                // bot heuristic: faster submissions are rejected
     ],
 

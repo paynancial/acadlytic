@@ -159,3 +159,31 @@ function acad_nav_href(string $href): string
     }
     return $href;
 }
+
+/** Responsive brand logo (WebP with PNG fallback), shared by the site and auth shells. */
+function acad_logo_html(string $class = 'brand-logo', bool $eager = true): string
+{
+    return '<picture><source type="image/webp" srcset="' . e(asset('/assets/img/logo-acadlytic-56.webp')) . ' 1x, ' . e(asset('/assets/img/logo-acadlytic.webp')) . ' 2x">'
+        . '<img class="' . e($class) . '" src="' . e(asset('/assets/img/logo-acadlytic.png')) . '" srcset="' . e(asset('/assets/img/logo-acadlytic-56.png')) . ' 1x, ' . e(asset('/assets/img/logo-acadlytic.png')) . ' 2x"'
+        . ' width="207" height="56" alt="Acadlytic, Inc." ' . ($eager ? 'fetchpriority="high"' : 'loading="lazy"') . ' decoding="async"></picture>';
+}
+
+/** Shared <head> contents for the site and auth shells (meta, icons, fonts, CSS, JS). */
+function acad_head_common(array $page): string
+{
+    return '<meta charset="utf-8">' . "\n"
+        . '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' . "\n"
+        . acad_head_meta($page)
+        . '<meta name="theme-color" content="#071A3A">' . "\n"
+        . '<meta name="format-detection" content="telephone=no">' . "\n"
+        . '<link rel="icon" href="' . e(asset('/favicon.ico')) . '" sizes="48x48">' . "\n"
+        . '<link rel="icon" type="image/png" sizes="32x32" href="' . e(asset('/assets/img/favicon-32.png')) . '">' . "\n"
+        . '<link rel="icon" type="image/png" sizes="192x192" href="' . e(asset('/assets/img/icon-192.png')) . '">' . "\n"
+        . '<link rel="apple-touch-icon" sizes="180x180" href="' . e(asset('/assets/img/apple-touch-icon.png')) . '">' . "\n"
+        . '<link rel="manifest" href="' . e(asset('/site.webmanifest')) . '">' . "\n"
+        . '<link rel="preload" href="/assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>' . "\n"
+        . '<link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>' . "\n"
+        . '<style>' . acad_critical_css() . '</style>' . "\n"
+        . '<link rel="stylesheet" href="' . e(asset('/assets/css/main.css')) . '">' . "\n"
+        . '<script src="' . e(asset('/assets/js/app.js')) . '" defer></script>' . "\n";
+}

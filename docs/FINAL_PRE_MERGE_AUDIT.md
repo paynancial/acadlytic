@@ -78,7 +78,7 @@ Merge stays blocked by the non-technical gates:
 5. **Verify on the real host** (not testable here): Apache headers and compression, HTTPS/HSTS, `www`→apex redirect, `ErrorDocument`, PHP `mail()` delivery with SPF/DKIM, and the post-upload checklist in `docs/DEPLOYMENT.md` §6.
 6. **External profile URLs not verified:** LinkedIn/X/YouTube/Instagram/Facebook company URLs and the directors' LinkedIn URLs (outbound access to these sites was blocked in the audit environment). Open each once before launch.
 7. **Real-device and screen-reader checks:** iOS Safari, Android Chrome, and a manual pass with VoiceOver/NVDA.
-8. **Rate limit 5 enquiries/hour per IP** may affect several users behind one campus network. Consider 10–20/hour if genuine users report blocks.
+8. ~~**Rate limit 5 enquiries/hour per IP**~~ Raised to 10/hour (see `SHOULD_FIX_COMPLETION_REPORT.md`).
 9. **Open Graph image** is one site-wide image. Optional: section-specific images for better social previews.
 10. **Team and News pages** stay `noindex` until real entries are added (by design).
 

@@ -15,6 +15,9 @@
     else document.addEventListener('DOMContentLoaded', fn);
   }
 
+  // Shared with enquiry-widget.js (loaded after this file).
+  window.AcadlyticForms = { enhance: enhanceForm, fieldError: showFieldError };
+
   ready(function () {
     initHeaderShadow();
     initMegaMenu();
@@ -34,6 +37,26 @@
   }
 
   /* ---------- Mega menu ---------- */
+  /* Panel markup ships inside <noscript>: without JS it renders normally (CSS
+     hover/focus menus); with JS it is inert text, so the ~600 menu elements
+     only enter the DOM when a menu is first opened. */
+  function megaSource(item) {
+    var panel = item.querySelector('[data-mega-panel]');
+    return { panel: panel, src: panel && panel.querySelector('noscript[data-mega-src]') };
+  }
+  function hydrateMega(item) {
+    var m = megaSource(item);
+    if (m.src) m.panel.innerHTML = m.src.textContent;
+  }
+  /* Panel content without inserting it: a detached copy when not yet hydrated. */
+  function megaContent(item) {
+    var m = megaSource(item);
+    if (!m.src) return m.panel;
+    var copy = document.createElement('div');
+    copy.innerHTML = m.src.textContent;
+    return copy;
+  }
+
   function initMegaMenu() {
     var header = document.querySelector('[data-header]');
     var items = Array.prototype.slice.call(document.querySelectorAll('[data-mega]'));
@@ -46,6 +69,7 @@
       return Array.prototype.slice.call(item.querySelectorAll('[data-mega-panel] a'));
     }
     function open(item) {
+      hydrateMega(item);
       items.forEach(function (other) { if (other !== item) close(other); });
       item.classList.add('is-open');
       item.querySelector('[data-mega-trigger]').setAttribute('aria-expanded', 'true');
@@ -68,6 +92,10 @@
       trigger.addEventListener('click', function () {
         if (item.classList.contains('is-open')) close(item); else open(item);
       });
+
+      // Hydrate on first intent so the panel is ready by the time it opens.
+      item.addEventListener('pointerenter', function () { hydrateMega(item); });
+      item.addEventListener('focusin', function () { hydrateMega(item); });
 
       item.addEventListener('mouseenter', function () {
         if (!desktop.matches) return;
@@ -194,6 +222,7 @@
       var target = drawer.querySelector('[data-drawer-nav]');
       if (!target || target.childElementCount) return;
       Array.prototype.forEach.call(document.querySelectorAll('.primary-nav [data-mega]'), function (item) {
+        var content = megaContent(item);
         var details = document.createElement('details');
         details.className = 'drawer-group';
         var summary = document.createElement('summary');
@@ -202,7 +231,7 @@
         if (chev) summary.appendChild(chev.cloneNode(true));
         details.appendChild(summary);
         var ul = document.createElement('ul');
-        Array.prototype.forEach.call(item.querySelectorAll('.mega-cta, .mega-link, .mega-more a'), function (a, i) {
+        Array.prototype.forEach.call(content.querySelectorAll('.mega-cta, .mega-link, .mega-more a'), function (a, i) {
           var li = document.createElement('li');
           var link = document.createElement('a');
           link.href = a.getAttribute('href');
@@ -257,7 +286,6 @@
     if (success) success.focus();
 
     Array.prototype.forEach.call(document.querySelectorAll('form[data-enhance]'), enhanceForm);
-    window.AcadlyticForms = { enhance: enhanceForm };
   }
 
   function enhanceForm(form) {

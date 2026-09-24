@@ -37,7 +37,7 @@ $trustCards = [
 <footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <a class="footer-logo" href="/" aria-label="Acadlytic, Inc. home"><?= $logo('brand-logo', false) ?></a>
+            <a class="footer-logo" href="/" aria-label="Acadlytic, Inc. home"><?= acad_logo_html('brand-logo', false) ?></a>
             <p class="footer-tagline"><?= e(acad_config('tagline')) ?></p>
             <p class="footer-pillars">AI <span>|</span> CRM <span>|</span> Cloud <span>|</span> Academic Management</p>
             <ul class="social-list" aria-label="Acadlytic on social media">

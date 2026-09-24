@@ -250,7 +250,7 @@ foreach (['/llms.txt', '/sitemap.xml', '/robots.txt'] as $pub) {
         $errors[] = "{$pub}: contains the full contact number";
     }
 }
-foreach (['/assets/css/enquiry-widget.css', '/assets/js/enquiry-widget.js', '/components/enquiry-widget.php', '/components/enquiry-modal.php', '/config/contact.php', '/llms.txt', '/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
+foreach (['/assets/css/enquiry-widget.css', '/assets/js/enquiry-widget.js', '/components/enquiry-widget.php', '/components/enquiry-modal.php', '/config/contact.php', '/llms.txt', '/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/favicon.ico', '/site.webmanifest', '/assets/img/favicon-32.png', '/assets/img/icon-192.png', '/assets/img/icon-512.png', '/assets/img/icon-maskable-512.png', '/assets/img/apple-touch-icon.png', '/assets/img/logo-square.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
     if (!is_file(ACAD_ROOT . $a)) {
         $errors[] = "Missing asset {$a}";
     }

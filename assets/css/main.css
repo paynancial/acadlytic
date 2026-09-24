@@ -148,6 +148,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
   transform: translateY(-4px);
   transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur);
 }
+.mega:not(:has(.mega-inner)) { display: none; } /* JS on, not yet hydrated */
 .no-js .nav-item:hover .mega, .no-js .nav-item:focus-within .mega,
 .nav-item.is-open .mega { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
 .mega-backdrop { position: fixed; inset: 0; background: rgba(7, 26, 58, .28); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; visibility: hidden; transition: opacity var(--dur), visibility 0s linear var(--dur); z-index: 800; pointer-events: none; }
@@ -412,8 +413,6 @@ td { color: #2A3852; }
 .ai-card p { margin: 0; font-size: 14px; color: #AFC2E2; line-height: 1.55; }
 .ai-card.wide { grid-column: span 2; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
 .ai-card.wide h3 { margin-top: 0; }
-.human-note { display: flex; gap: 10px; align-items: center; font-size: 13.5px; color: #AFC2E2; margin-top: 18px; }
-.human-note .icon { color: var(--cyan); }
 .stake-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 .stake { display: flex; flex-direction: column; border-radius: var(--r-lg); border: 1px solid var(--line); background: #fff; overflow: hidden; text-decoration: none; color: var(--ink); transition: transform var(--dur), box-shadow var(--dur); }
 .stake:hover, .stake:focus-visible { transform: translateY(-3px); box-shadow: var(--shadow-md); color: var(--ink); }

@@ -11,6 +11,8 @@ ErrorDocument 403 /404.php
 AddType font/woff2 .woff2
 AddType image/webp .webp
 AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
+AddType image/x-icon .ico
 AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
@@ -53,7 +55,7 @@ AddDefaultCharset UTF-8
     <FilesMatch "\.(css|js|png|webp|svg|woff2|ico)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
-    <FilesMatch "\.(xml|txt)$">
+    <FilesMatch "\.(xml|txt|webmanifest)$">
         Header set Cache-Control "public, max-age=3600"
     </FilesMatch>
 </IfModule>

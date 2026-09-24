@@ -156,29 +156,9 @@
 
   function fieldById(name) { return form.querySelector('[name="' + name + '"]'); }
 
+  // Same inline-error markup as every other site form (app.js).
   function setFieldError(field, msg) {
-    var id = field.id + '-error';
-    var holder = field.closest('.field');
-    var existing = document.getElementById(id);
-    var described = (field.getAttribute('aria-describedby') || '').split(' ').filter(function (x) { return x && x !== id; });
-    if (msg) {
-      if (!existing) {
-        existing = document.createElement('p');
-        existing.className = 'field-error';
-        existing.id = id;
-        holder.appendChild(existing);
-      }
-      existing.textContent = msg;
-      field.setAttribute('aria-invalid', 'true');
-      described.push(id);
-      holder.classList.add('has-error');
-    } else {
-      if (existing) existing.remove();
-      field.removeAttribute('aria-invalid');
-      holder.classList.remove('has-error');
-    }
-    if (described.length) field.setAttribute('aria-describedby', described.join(' '));
-    else field.removeAttribute('aria-describedby');
+    if (window.AcadlyticForms) window.AcadlyticForms.fieldError(field, msg);
   }
 
   function resetMessages() {

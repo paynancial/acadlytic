@@ -68,6 +68,16 @@ return [
         'icon'     => 'users',
         'noindex'  => $people['leadership'] === [],
         'empty_text' => 'Leadership profiles are being prepared and will be published here shortly. For governance matters, contact our [Data Protection Officer](/trust/data-protection-officer/) or [Grievance Redressal Officer](/trust/grievance-redressal-officer/).',
+        'blocks'   => [
+            sec('Leading Acadlytic',
+                'Acadlytic, Inc. is led by its directors, **Renuka Devi** and **Anisha Bharti**. Together they are responsible for the company’s direction as it builds an AI-powered EdTech CRM and cloud platform for academic management.',
+                'The principles the company works by, from honest product claims to people staying in control of AI, are set out in our [vision and mission](/company/vision-mission/). To learn more about the company, see [About Acadlytic](/core/about/).'),
+            faq([
+                'Who leads Acadlytic, Inc.?' => 'Acadlytic, Inc. is led by its directors, Renuka Devi and Anisha Bharti.',
+                'How can I contact the leadership team?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com) and mark your message for the attention of the directors, or use the **Enquire now** button on any page.',
+                'Where is Acadlytic based?' => 'Acadlytic’s office is in Hanuman Nagar, Patna, Bihar. See the [Patna office page](/company/offices/patna/) for the address and how to arrange a visit.',
+            ]),
+        ],
         'related'  => ['/company/team/', '/company/vision-mission/', '/core/about/'],
     ],
 
@@ -108,8 +118,31 @@ return [
         'parent'   => '/company/',
         'icon'     => 'pin',
         'blocks'   => [
-            sec('Reaching the team',
-                'Most conversations with Acadlytic start online: a [demo request](/company/request-demo/), an email to [info@acadlytic.com](mailto:info@acadlytic.com) or a message through the **Enquire now** button on any page. If you would like to meet in person, email us first so we can arrange a time.'),
+            split('Where to find us', [
+                "Acadlytic, Inc. has its office in Patna, Bihar, at {$office}.",
+                'Institutions do not need to be near an office to work with us. Demos, discovery calls and planning sessions can all take place online, and the team can meet in person by appointment.',
+            ], [
+                'Office: Hanuman Nagar, Patna, Bihar',
+                'Visits: by appointment',
+                'Email: info@acadlytic.com',
+                'Online meetings for institutions anywhere',
+            ], 'At a glance'),
+            cards('Ways to meet the team', [
+                'Online demo' => 'See the product design and roadmap in a live walkthrough. [Request a demo](/company/request-demo/) and choose a time that suits your team.',
+                'Discovery call' => 'Talk through your admissions, student records or reporting challenges before you evaluate any software. Use the **Enquire now** button or the [contact form](/core/contact/).',
+                'Office meeting' => 'Meet us at the [Patna office](/company/offices/patna/) by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) with a few suitable times.',
+                'Partnership conversation' => 'Colleges, training providers and education partners can explore working together through the [partner programme](/company/partners/).',
+            ]),
+            steps('Arranging an in-person visit', [
+                'Email us first' => 'Write to [info@acadlytic.com](mailto:info@acadlytic.com) with your name, institution, the topic you would like to discuss and two or three suitable times.',
+                'Receive a confirmation' => 'The team replies to confirm a time and who you will meet.',
+                'Visit the office' => 'Use the [map link on the Patna office page](/company/offices/patna/) for directions.',
+            ]),
+            faq([
+                'Where is Acadlytic located?' => "Acadlytic, Inc. has its office in Patna, Bihar: {$office}.",
+                'Do I need to visit the office to work with Acadlytic?' => 'No. Demos and conversations can take place online for institutions anywhere. Office visits are optional and by appointment.',
+                'How do I arrange a meeting?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com), use the **Enquire now** button on any page, or [request a demo](/company/request-demo/).',
+            ]),
         ],
         'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/'],
     ],

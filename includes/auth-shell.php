@@ -11,29 +11,16 @@
  */
 declare(strict_types=1);
 
-$logoImg = '<picture><source type="image/webp" srcset="' . e(asset('/assets/img/logo-acadlytic-56.webp')) . ' 1x, ' . e(asset('/assets/img/logo-acadlytic.webp')) . ' 2x">'
-    . '<img class="brand-logo" src="' . e(asset('/assets/img/logo-acadlytic.png')) . '" width="207" height="56" alt="Acadlytic, Inc." fetchpriority="high"></picture>';
 ?><!doctype html>
 <html lang="en-IN" class="no-js">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<?= acad_head_meta($page) ?>
-<meta name="theme-color" content="#071A3A">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" type="image/png" sizes="192x192" href="<?= e(asset('/assets/img/icon-192.png')) ?>">
-<link rel="apple-touch-icon" href="<?= e(asset('/assets/img/apple-touch-icon.png')) ?>">
-<link rel="preload" href="/assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style><?= acad_critical_css() ?></style>
-<link rel="stylesheet" href="<?= e(asset('/assets/css/main.css')) ?>">
-<script src="<?= e(asset('/assets/js/app.js')) ?>" defer></script>
+<?= acad_head_common($page) ?>
 </head>
 <body class="auth-body">
 <a class="skip-link" href="#auth-main">Skip to form</a>
 <div class="auth">
     <section class="auth-story" aria-label="About Acadlytic">
-        <a class="auth-logo" href="/" aria-label="Acadlytic, Inc. home"><?= $logoImg ?></a>
+        <a class="auth-logo" href="/" aria-label="Acadlytic, Inc. home"><?= acad_logo_html() ?></a>
         <p class="auth-tag"><?= e(acad_config('tagline')) ?></p>
         <div class="auth-story-main">
             <p class="eyebrow on-dark"><?= e($page['story_kicker'] ?? 'Secure workspace') ?></p>
