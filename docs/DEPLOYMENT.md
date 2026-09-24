@@ -47,7 +47,7 @@ Without a database, enquiries are appended to `storage/enquiries/YYYY-MM.jsonl`
 
 Each enquiry triggers a plain-text notification to `forms.notify_email`
 (`info@acadlytic.com`) using PHP `mail()`, sent from `forms.mail_from`
-(`no-reply@acadlytic.com`). In cPanel → Email Deliverability, make sure SPF and
+(`info@acadlytic.com`). In cPanel → Email Deliverability, make sure SPF and
 DKIM are valid for the domain. Leads are always stored before mail is attempted,
 so a mail failure never loses an enquiry.
 

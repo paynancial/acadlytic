@@ -7,8 +7,7 @@ real content.
 
 | Item | Where | Why |
 |---|---|---|
-| `support@acadlytic.com` mailbox exists | `config/site.php` → `support_email` (login popover, sign-in page, support links) | Supplied in the redesign brief. Otherwise support messages bounce. |
-| `no-reply@acadlytic.com` may send mail for the domain | `config/site.php` → `forms.mail_from` | Enquiry notifications. SPF/DKIM must pass. |
+| SPF/DKIM pass for `info@acadlytic.com` on the hosting server | cPanel → Email Deliverability | Enquiry notifications are sent from `info@acadlytic.com` via `mail()`. Support, account help and notifications all use this confirmed mailbox. |
 | Privacy, Terms and Grievance pages reviewed by counsel | `/trust/privacy/`, `/trust/terms/`, `/trust/grievance-redressal/` | Written as plain-language drafts with a visible “pending legal review” banner. Remove the `draft` key once approved. |
 | Grievance response timelines | `/trust/grievance-redressal/` | Not stated. Currently “timelines required by applicable law”. |
 | Security Center controls match production | `/core/security/` | Describes encryption in transit/at rest, RBAC, audit logs, backups and incident handling. Engineering should confirm each statement. |

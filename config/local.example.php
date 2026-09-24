@@ -13,5 +13,5 @@ return [
         'user'     => 'CPANEL_DB_USER',
         'password' => 'CHANGE_ME',
     ],
-    // 'forms' => ['send_mail' => true, 'mail_from' => 'no-reply@acadlytic.com'],
+    // 'forms' => ['send_mail' => true, 'mail_from' => 'info@acadlytic.com'],
 ];

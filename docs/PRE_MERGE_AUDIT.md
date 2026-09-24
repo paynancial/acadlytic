@@ -105,7 +105,7 @@ supply: verified proof, real product screenshots and confirmed capabilities.
 | A1 | Enquiries silently lost (visitor told “thank you”) when storage is unwritable and `mail()` fails | **Fixed**: 503 with phone/email fallback, logged; forced-failure test passes |
 | A2 | **Owner:** confirm every product, integration and security capability claim, or reword it as roadmap | Open, **launch blocker** (`docs/PLACEHOLDERS.md`) |
 | A3 | **Owner:** legal review of Privacy, Terms and Grievance drafts (banners are visible) | Open, **launch blocker** |
-| A4 | **Owner:** `support@` and `no-reply@` mailboxes exist and SPF/DKIM pass | Open, **launch blocker** |
+| A4 | Support and sender mailboxes | **Resolved**: Acadlytic confirmed `info@acadlytic.com` for support, account help and notifications. Verify SPF/DKIM in cPanel at deploy. |
 
 ## B. High priority: should fix
 
@@ -137,11 +137,12 @@ supply: verified proof, real product screenshots and confirmed capabilities.
 0 warnings; 206 URLs verified; browser, accessibility and forced-failure tests
 pass; CI added for PHP 8.2–8.4.
 
-**Remaining blockers (content and operations, owner action required):**
+**Remaining blockers (content, owner action required):**
 1. Confirm product, integration and security capability claims (A2).
 2. Legal sign-off on Privacy, Terms and Grievance pages (A3).
-3. Provision `support@` / `no-reply@` mail and SPF/DKIM (A4).
 
-**Recommendation:** merge once CI passes on PR #1 and the owner accepts that A2–A4
+A4 (mailboxes) is resolved: everything uses `info@acadlytic.com`.
+
+**Recommendation:** merge once CI passes on PR #1 and the owner accepts that A2–A3
 are pre-**launch** items (merging to `main` does not publish the site).
 Otherwise, hold the merge until A2–A4 are signed off.

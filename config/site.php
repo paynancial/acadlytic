@@ -21,8 +21,8 @@ return [
     'language'    => 'en-IN',
 
     'email'         => 'info@acadlytic.com',
-    // Supplied in the redesign brief; confirm the mailbox exists before launch.
-    'support_email' => 'support@acadlytic.com',
+    // Confirmed by Acadlytic: all support and account help goes to the central mailbox.
+    'support_email' => 'info@acadlytic.com',
     'phone'         => '+91 8010707171',
     'phone_href'    => 'tel:+918010707171',
 
@@ -46,7 +46,7 @@ return [
     'forms' => [
         'notify_email'   => 'info@acadlytic.com',
         'send_mail'      => true,             // uses PHP mail(); leads are always stored first
-        'mail_from'      => 'no-reply@acadlytic.com',
+        'mail_from'      => 'info@acadlytic.com',       // confirmed sender mailbox; Reply-To is the enquirer
         'rate_limit'     => ['max' => 5, 'window' => 3600], // submissions per IP per window
         'min_fill_secs'  => 3,                // bot heuristic: faster submissions are rejected
     ],
