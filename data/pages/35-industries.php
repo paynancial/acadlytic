@@ -19,6 +19,7 @@ return [
             ['title' => 'Scale and reach', 'paths' => [
                 '/industries/multi-campus/', '/industries/international-education/',
             ]],
+            ['title' => 'Regional focus', 'paths' => ['/industries/higher-education-india/']],
         ],
     ],
 
@@ -257,5 +258,38 @@ return [
             ]),
         ],
         'related' => ['/solutions/for-universities/', '/platform/post-secondary-school-database/', '/ai/ai-document-intelligence/', '/industries/online-education/'],
+    ],
+
+    // ---------- SEO Phase 2, batch 3 ----------
+    '/industries/higher-education-india/' => [
+        'title' => 'Academic Management Software for Indian Colleges',
+        'desc'  => 'Acadlytic for colleges and universities in India: admissions, CBCS and outcome-based education records, fee collection, parent communication and accreditation data.',
+        'h1'    => 'Academic management for Indian higher education',
+        'nav_label' => 'Higher Education in India',
+        'lead'  => 'Acadlytic has an office in Patna, Bihar, and is designing its platform with the realities of Indian colleges and universities in mind.',
+        'blocks' => [
+            sec('What is different about Indian higher education',
+                'Indian institutions work within an affiliating-university system, semester and credit frameworks such as the [choice-based credit system](/glossary/choice-based-credit-system/), [outcome-based education](/glossary/outcome-based-education/) requirements for many professional programs, and periodic accreditation. Admissions often involve entrance examinations, counselling rounds, reserved categories and scholarships, and parents are closely involved in fees and communication.'),
+            table('Needs and planned capabilities', ['Need', 'Planned Acadlytic capability'], [
+                ['High-volume admissions seasons', '[Admissions CRM](/platform/admissions-crm/) with enquiry capture, counsellor follow-up and source tracking'],
+                ['Credit and semester structures', '[Academic operations](/platform/academic-operations/) designed for programs, semesters, courses and credits'],
+                ['Course and program outcomes', 'Outcome mapping and attainment records to support OBE reporting'],
+                ['Fees, instalments and scholarships', '[Finance & fees](/platform/finance-fees/) with reminders and online payment'],
+                ['Parents who prefer WhatsApp and SMS', '[WhatsApp integration](/integrations/whatsapp-integration/) and SMS, with consent and templates'],
+                ['Accreditation evidence', 'Structured data and reports to help prepare accreditation submissions'],
+            ]),
+            checks('Practical considerations for Indian institutions', [
+                'Where student data will be hosted; an Indian cloud region is the recommended option for Indian institutions',
+                'Mobile-first access for students and parents',
+                'Data protection designed to support institutions’ obligations under the Digital Personal Data Protection Act, 2023',
+                'Pricing per institution, with a written proposal',
+            ]),
+            faq([
+                'Where is Acadlytic based?' => 'Acadlytic has an office in Patna, Bihar. See [our Patna office](/company/offices/patna/).',
+                'Will Acadlytic support CBCS and OBE?' => 'That is the plan. Programs, semesters, credits and course outcomes are part of the planned academic data model.',
+                'Does Acadlytic replace university examination systems?' => 'Not necessarily. Many affiliated colleges must use their university’s systems for examinations and results; Acadlytic is designed to integrate with or complement them.',
+            ]),
+        ],
+        'related' => ['/company/offices/patna/', '/glossary/outcome-based-education/', '/glossary/choice-based-credit-system/', '/resources/accreditation-data-guide/', '/integrations/whatsapp-integration/'],
     ],
 ];

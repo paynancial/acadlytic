@@ -91,14 +91,14 @@ Every new page is **indexable**, gets a title, meta description, canonical, OG/X
 
 | URL | Primary keyword / search intent | Page type | Parent | Internal-link targets | Index | Content status |
 |---|---|---|---|---|---|---|
-| `/industries/higher-education-india/` | “academic management software for Indian colleges” | Market page (genuine: Patna office) | `/industries/` | Patna office, OBE, CBCS, accreditation guide, `/integrations/whatsapp-integration/` | index | Batch 3 |
-| `/glossary/outcome-based-education/` | “what is outcome based education (OBE)” | Definition | `/glossary/` | accreditation guide, India page, `/platform/academic-operations/` | index | Batch 3 |
-| `/glossary/choice-based-credit-system/` | “what is CBCS” | Definition | `/glossary/` | India page, glossary SIS, `/platform/academic-operations/` | index | Batch 3 |
-| `/resources/accreditation-data-guide/` | “preparing data for accreditation (e.g. NAAC, NBA)” | Guide | `/resources/guides/` | OBE, data strategy, institutional dashboard guide | index | Batch 3 |
-| `/resources/student-data-privacy-guide/` | “protecting student data / student data privacy” | Guide | `/resources/guides/` | `/trust/privacy/`, `/core/security/`, RBAC, `/ai/responsible-ai/` | index | Batch 3 |
-| `/glossary/yield-rate/` | “what is admissions yield rate” | Definition | `/glossary/` | funnel guide, lead scoring, `/platform/enrollment-analytics/` | index | Batch 3 |
+| `/industries/higher-education-india/` | “academic management software for Indian colleges” | Market page (genuine: Patna office) | `/industries/` | Patna office, OBE, CBCS, accreditation guide, `/integrations/whatsapp-integration/` | index | **Published** |
+| `/glossary/outcome-based-education/` | “what is outcome based education (OBE)” | Definition | `/glossary/` | accreditation guide, India page, `/platform/academic-operations/` | index | **Published** |
+| `/glossary/choice-based-credit-system/` | “what is CBCS” | Definition | `/glossary/` | India page, glossary SIS, `/platform/academic-operations/` | index | **Published** |
+| `/resources/accreditation-data-guide/` | “preparing data for accreditation (e.g. NAAC, NBA)” | Guide | `/resources/guides/` | OBE, data strategy, institutional dashboard guide | index | **Published** |
+| `/resources/student-data-privacy-guide/` | “protecting student data / student data privacy” | Guide | `/resources/guides/` | `/trust/privacy/`, `/core/security/`, RBAC, `/ai/responsible-ai/` | index | **Published** |
+| `/glossary/yield-rate/` | “what is admissions yield rate” | Definition | `/glossary/` | funnel guide, lead scoring, `/platform/enrollment-analytics/` | index | **Published** |
 
-**Total: 24 new pages**, bringing the site to 172 indexable URLs. Each batch is validated before the next begins (QA gate, metadata audit, link graph, accessibility, overflow).
+**Total: 24 new pages, all published**, bringing the sitemap to 172 indexable URLs (from 148). Each batch is validated before the next begins (QA gate, metadata audit, link graph, accessibility, overflow).
 
 ## 5. Internal-link graph
 
@@ -116,3 +116,13 @@ Core pages → feature pages (`/platform/`, `/ai/`) → solutions and industries
 |---|---|---|
 | 1 | 5 comparisons + 5 definitions; glossary hub groups updated; contextual links added from 10 existing pages (LMS integration, ERP integration, SIS/ERP/admissions-management/student-success definitions, security, admissions CRM, EdTech CRM, academic CRM guide) | `bin/qa.php` and `--launch`: 0 errors, 0 warnings. Metadata audit: no orphans, unique titles and descriptions. axe: 0 violations on 12 pages. No horizontal overflow at 320–1440px. Each page has one H1, canonical, OG, Article or DefinedTerm + FAQPage + BreadcrumbList schema, and the contact CTA. Claims scan: no new flags. Sitemap: 158 indexable URLs. |
 | 2 | 8 guides added to `/resources/guides/`; contextual links added from 12 existing pages (academic and admissions CRM guides, finance and fees, academic operations, data management, pricing, academic management checklist, AI for student success, and the batch 1 definitions and build-vs-buy comparison) | `bin/qa.php` and `--launch`: 0 errors, 0 warnings. Metadata audit: no orphans. axe: 0 violations on 10 pages. No overflow at 320–1440px. Each guide has one H1, canonical, OG, Article + FAQPage + BreadcrumbList schema, takeaways and the contact CTA. No superlatives or statistics. Sitemap: 166 indexable URLs. |
+| 3 | India market page (planned notice), OBE, CBCS and yield-rate definitions, accreditation data and student data privacy guides; new hub groups (Industries: *Regional focus*; Glossary: *Indian higher education*); inbound links from the Patna office, security, data strategy, enrolment analytics, funnel guide, RBAC, academic operations and responsible AI pages. The approved legal pages were not edited. | `bin/qa.php` and `--launch`: 0 errors, 0 warnings. Metadata audit: no orphans. axe: 0 violations on 8 pages. No overflow at 320–1440px. Full-site browser regression on all 172 sitemap URLs at 360/390/768/1024/1440: no console errors or overflow (only the expected 404 on the test URL and 3 lazy-image requests aborted during navigation). The India page claims only what is planned, links to the Patna office and makes no headquarters, language or hosting commitments. The privacy guide carries a not-legal-advice note and makes no compliance claims. |
+
+## 7. Phase 2 summary
+
+- **24 new indexable pages**: 5 comparisons, 9 definitions, 10 guides/market pages. The sitemap grew from 148 to 172 URLs.
+- **Schema**: Article on every new guide and comparison, DefinedTerm on every new definition, FAQPage on every page with a genuine FAQ, BreadcrumbList on all pages.
+- **Internal links**: every new page is linked from its hub and from at least one existing, contextually relevant page. No orphans.
+- **Claims**: no statistics, customers, testimonials, rankings or superlatives. Product capabilities are described only as planned.
+- **Still deferred** (see section 3): NEP 2020 / ABC / APAAR pages (need a reviewed source list) and the exam management guide.
+- Footer social links now include Facebook (already in `config/site.php` and the Organization `sameAs`).

@@ -181,7 +181,7 @@ return [
                 'How do I contact Acadlytic quickly?' => 'Use the **Talk to Acadlytic** button on any page to send an enquiry, email us or message us on WhatsApp, or [request a demo](/company/request-demo/).',
             ]),
         ],
-        'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/', '/company/leadership/'],
+        'related'  => ['/core/contact/', '/company/request-demo/', '/industries/higher-education-india/', '/core/about/', '/company/leadership/'],
     ],
 
     '/company/request-demo/' => [

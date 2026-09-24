@@ -11,8 +11,9 @@ return [
         'lead'  => 'Clear, jargon-free definitions of the terms used across academic technology, CRM, analytics, cloud and AI.',
         'groups' => [
             ['title' => 'Systems', 'paths' => ['/glossary/academic-crm/', '/glossary/admissions-crm/', '/glossary/student-information-system/', '/glossary/academic-erp/', '/glossary/electronic-document-management/', '/glossary/education-cloud/', '/glossary/learning-management-system/']],
-            ['title' => 'Processes', 'paths' => ['/glossary/admissions-management/', '/glossary/student-lifecycle-management/', '/glossary/academic-operations/', '/glossary/workflow-automation/', '/glossary/student-engagement/', '/glossary/student-success/', '/glossary/enrollment-management/', '/glossary/student-retention/', '/glossary/lead-scoring/']],
+            ['title' => 'Processes', 'paths' => ['/glossary/admissions-management/', '/glossary/student-lifecycle-management/', '/glossary/academic-operations/', '/glossary/workflow-automation/', '/glossary/student-engagement/', '/glossary/student-success/', '/glossary/enrollment-management/', '/glossary/student-retention/', '/glossary/lead-scoring/', '/glossary/yield-rate/']],
             ['title' => 'Data & integration', 'paths' => ['/glossary/education-analytics/', '/glossary/learning-analytics/', '/glossary/institutional-analytics/', '/glossary/education-api/', '/glossary/single-sign-on/', '/glossary/role-based-access-control/']],
+            ['title' => 'Indian higher education', 'paths' => ['/glossary/outcome-based-education/', '/glossary/choice-based-credit-system/']],
         ],
     ],
 
@@ -521,7 +522,7 @@ return [
                 'How often should access be reviewed?' => 'Institutions commonly review privileged access at least once per term or year, and whenever staff change roles. The right frequency depends on the institution’s policies.',
             ]),
         ],
-        'related' => ['/core/security/', '/glossary/single-sign-on/', '/solutions/for-it-teams/', '/trust/'],
+        'related' => ['/core/security/', '/glossary/single-sign-on/', '/resources/student-data-privacy-guide/', '/solutions/for-it-teams/', '/trust/'],
     ],
 
     '/glossary/lead-scoring/' => [
@@ -546,5 +547,80 @@ return [
             ]),
         ],
         'related' => ['/platform/admissions-crm/', '/ai/ai-for-admissions/', '/resources/enrollment-funnel-guide/', '/resources/admissions-crm-guide/', '/glossary/admissions-crm/'],
+    ],
+
+    // ---------- SEO Phase 2, batch 3 ----------
+    '/glossary/outcome-based-education/' => [
+        'title' => 'What Is Outcome-Based Education (OBE)?',
+        'desc'  => 'Outcome-based education (OBE) definition: designing curriculum, teaching and assessment around defined outcomes, with program outcomes, course outcomes and attainment.',
+        'h1'    => 'What is outcome-based education (OBE)?',
+        'nav_label' => 'Outcome-Based Education',
+        'lead'  => 'OBE explained, with the terms Indian institutions most often use: PEOs, POs, COs, mapping and attainment.',
+        'blocks' => [
+            def('Outcome-based education (OBE) is an approach in which an institution first defines what students should know and be able to do by the end of a course or program, and then designs curriculum, teaching and assessment to achieve and measure those outcomes.'),
+            table('Key OBE terms', ['Term', 'Meaning'], [
+                ['Program educational objectives (PEOs)', 'What graduates are expected to achieve a few years after graduating'],
+                ['Program outcomes (POs)', 'What students should be able to do by the time they graduate'],
+                ['Course outcomes (COs)', 'What students should be able to do at the end of a specific course'],
+                ['CO–PO mapping', 'A matrix showing how strongly each course outcome contributes to each program outcome'],
+                ['Attainment', 'The measured extent to which outcomes were achieved, using direct and indirect evidence'],
+            ]),
+            sec('Why OBE matters in India',
+                'Outcome-based approaches are central to program accreditation in India, particularly for engineering and other technical programs accredited by the National Board of Accreditation (NBA), and outcomes also feature in institutional accreditation. Measuring attainment requires assessment marks to be linked to the course outcomes they test, which is difficult to do reliably in spreadsheets across many courses and years. See the [accreditation data guide](/resources/accreditation-data-guide/).'),
+            faq([
+                'What is the difference between direct and indirect attainment?' => 'Direct attainment is measured from assessments such as examinations and assignments. Indirect attainment uses evidence such as course exit surveys and employer or alumni feedback.',
+                'Is OBE only for engineering programs?' => 'No. It is most established in engineering and technical education, but the approach applies to any discipline.',
+            ]),
+        ],
+        'related' => ['/resources/accreditation-data-guide/', '/industries/higher-education-india/', '/platform/academic-operations/', '/glossary/choice-based-credit-system/'],
+    ],
+
+    '/glossary/choice-based-credit-system/' => [
+        'title' => 'What Is the Choice-Based Credit System (CBCS)?',
+        'desc'  => 'Choice-based credit system (CBCS) definition: the semester and credit framework used in Indian higher education, with course types, credits, SGPA and CGPA explained.',
+        'h1'    => 'What is the choice-based credit system (CBCS)?',
+        'nav_label' => 'Choice-Based Credit System',
+        'lead'  => 'A plain definition of CBCS and the academic records it requires institutions to keep.',
+        'blocks' => [
+            def('The choice-based credit system (CBCS) is a framework, promoted in India by the University Grants Commission (UGC), in which programs are organised into semesters and courses carrying credits, and students choose from core, elective and skill-oriented courses, with performance recorded through grades and grade point averages.'),
+            checks('Common features of CBCS', [
+                'A semester structure with a defined number of credits per course',
+                'Core courses, discipline-specific and generic electives, and ability or skill enhancement courses',
+                'Letter grades and grade points instead of only raw marks',
+                'Semester grade point average (SGPA) and cumulative grade point average (CGPA)',
+                'Flexibility for students to take courses across disciplines',
+            ]),
+            sec('What it means for academic records',
+                'CBCS requires institutions to track each student’s course choices, credits earned and grades every semester, and to calculate SGPA and CGPA consistently. With many elective combinations, this is where manual processes and spreadsheets tend to break down. A [student information system](/glossary/student-information-system/) or academic platform keeps these records in one place. Frameworks are revised from time to time, so always follow current UGC regulations and your university’s own ordinances.'),
+            faq([
+                'What is the difference between SGPA and CGPA?' => 'SGPA is the credit-weighted grade point average for one semester. CGPA is the credit-weighted average across all semesters completed so far.',
+                'Does CBCS apply to all Indian universities?' => 'It has been widely adopted, but implementation details vary by university. Check your university’s regulations.',
+            ]),
+        ],
+        'related' => ['/industries/higher-education-india/', '/glossary/student-information-system/', '/platform/academic-operations/', '/glossary/outcome-based-education/'],
+    ],
+
+    '/glossary/yield-rate/' => [
+        'title' => 'What Is Yield Rate in Admissions? Definition',
+        'desc'  => 'Admissions yield rate definition: the share of admitted applicants who go on to enrol, how it is calculated and how institutions try to improve it.',
+        'h1'    => 'What is yield rate in admissions?',
+        'nav_label' => 'Yield Rate',
+        'lead'  => 'Yield rate defined, with how it is calculated and why it matters for enrolment planning.',
+        'blocks' => [
+            def('Yield rate is the percentage of admitted applicants, that is, those offered a place, who go on to accept the offer and enrol at the institution. It is calculated by dividing the number of enrolled students by the number of offers made, for the same intake.'),
+            sec('Why yield matters',
+                'Yield determines how many offers an institution must make to fill its places. If yield is hard to predict, an institution risks either empty seats or over-enrolment. Tracking yield by program, source and applicant group, across several intakes, makes planning more reliable. It is one of the stages of the [enrolment funnel](/resources/enrollment-funnel-guide/).'),
+            checks('Common ways institutions try to improve yield', [
+                'Making decisions and offers promptly',
+                'Clear information on fees, scholarships and next steps after an offer',
+                'Personal contact from counsellors or faculty',
+                'Events and onboarding activities between offer and term start',
+            ]),
+            faq([
+                'Should yield be measured on acceptances or enrolments?' => 'Institutions use both. Measuring on enrolment (students who actually start) is stricter and more useful for planning. State which definition you use.',
+                'What is “melt”?' => 'Students who accept an offer but do not enrol. It is measured between acceptance and the start of term.',
+            ]),
+        ],
+        'related' => ['/resources/enrollment-funnel-guide/', '/glossary/lead-scoring/', '/platform/enrollment-analytics/', '/glossary/enrollment-management/'],
     ],
 ];

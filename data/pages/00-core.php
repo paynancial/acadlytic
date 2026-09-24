@@ -309,7 +309,7 @@ return [
                 'How do I report a security vulnerability?' => 'Email info@acadlytic.com with the subject “Security report”, including the steps to reproduce the issue. Please do not access other people’s data or disclose the issue publicly before it is fixed.',
             ]),
         ],
-        'related' => ['/trust/privacy/', '/trust/', '/core/cloud-platform/', '/integrations/sso-integration/', '/glossary/role-based-access-control/', '/resources/education-cloud-checklist/'],
+        'related' => ['/trust/privacy/', '/trust/', '/core/cloud-platform/', '/integrations/sso-integration/', '/glossary/role-based-access-control/', '/resources/student-data-privacy-guide/', '/resources/education-cloud-checklist/'],
     ],
 
     '/core/pricing/' => [

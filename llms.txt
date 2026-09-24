@@ -83,6 +83,7 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Online Education](https://acadlytic.com/industries/online-education/): (Planned) Acadlytic for online and distance programmes: digital-first admissions, remote identity and document checks, LMS integration and engagement tracking for remote learners.
 - [Multi-Campus Groups](https://acadlytic.com/industries/multi-campus/): (Planned) Manage multiple campuses and institutions on one platform: shared standards, local configuration, campus-scoped access and consolidated group reporting.
 - [International Education](https://acadlytic.com/industries/international-education/): (Planned) Acadlytic for international education: global recruitment, agent management, document verification, visa-related milestones and communication across time zones.
+- [Higher Education in India](https://acadlytic.com/industries/higher-education-india/): (Planned) Acadlytic for colleges and universities in India: admissions, CBCS and outcome-based education records, fee collection, parent communication and accreditation data.
 
 ## Integrations
 
@@ -133,6 +134,8 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Enrolment Funnel Guide](https://acadlytic.com/resources/enrollment-funnel-guide/): The student enrolment funnel explained: stages from enquiry to enrolment, the conversion metrics to track at each stage and how to find where applicants drop out.
 - [Fee Collection Guide](https://acadlytic.com/resources/fee-collection-guide/): Practical ways colleges can improve fee collection: clear fee schedules, online payments, instalments, timely reminders, reconciliation and fair handling of hardship.
 - [Attendance Management Guide](https://acadlytic.com/resources/attendance-management-guide/): A practical guide to student attendance management: capturing attendance reliably, setting policies, following up absences early and using attendance data responsibly.
+- [Accreditation Data Guide](https://acadlytic.com/resources/accreditation-data-guide/): How colleges can prepare data for accreditation such as NAAC and NBA: owners, definitions, evidence, outcome attainment and collecting data all year, not at the deadline.
+- [Student Data Privacy Guide](https://acadlytic.com/resources/student-data-privacy-guide/): A practical guide to protecting student data: principles, access control, consent, retention, vendors and incidents, with an overview of India’s DPDP Act, FERPA and GDPR.
 - [Comparisons](https://acadlytic.com/comparisons/): Side-by-side comparisons to help institutions decide: CRM vs SIS, CRM vs ERP, cloud vs on-premise, spreadsheets vs platforms, manual vs automated admissions and more.
 - [Academic CRM vs SIS](https://acadlytic.com/comparisons/academic-crm-vs-sis/): Academic CRM vs student information system: how they differ in purpose, data, users and timing, and whether your institution needs one, the other or both.
 - [Academic CRM vs ERP](https://acadlytic.com/comparisons/academic-crm-vs-erp/): Education CRM vs ERP: compare purpose, users, data and strengths, and see where each fits in an institution’s technology stack and how they work together.
@@ -195,3 +198,6 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Student Retention](https://acadlytic.com/glossary/student-retention/): Student retention definition: the share of students who continue into the next period of study, how the rate is calculated and how it differs from persistence.
 - [Role-Based Access Control](https://acadlytic.com/glossary/role-based-access-control/): Role-based access control (RBAC) definition: granting permissions through roles rather than to individuals, and why it matters for student data in education software.
 - [Lead Scoring](https://acadlytic.com/glossary/lead-scoring/): Lead scoring definition for admissions: ranking enquiries by fit and engagement so counsellors know whom to contact first, with the risks to watch.
+- [Outcome-Based Education](https://acadlytic.com/glossary/outcome-based-education/): Outcome-based education (OBE) definition: designing curriculum, teaching and assessment around defined outcomes, with program outcomes, course outcomes and attainment.
+- [Choice-Based Credit System](https://acadlytic.com/glossary/choice-based-credit-system/): Choice-based credit system (CBCS) definition: the semester and credit framework used in Indian higher education, with course types, credits, SGPA and CGPA explained.
+- [Yield Rate](https://acadlytic.com/glossary/yield-rate/): Admissions yield rate definition: the share of admitted applicants who go on to enrol, how it is calculated and how institutions try to improve it.

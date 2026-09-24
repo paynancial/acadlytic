@@ -480,6 +480,6 @@ return [
                 'How are AI errors reported?' => 'Users can flag incorrect or inappropriate outputs, which are reviewed and used to improve the feature.',
             ]),
         ],
-        'related' => ['/core/security/', '/trust/privacy/', '/ai/ai-in-education/', '/resources/ai-in-higher-education-guide/'],
+        'related' => ['/core/security/', '/trust/privacy/', '/resources/student-data-privacy-guide/', '/ai/ai-in-education/', '/resources/ai-in-higher-education-guide/'],
     ],
 ];

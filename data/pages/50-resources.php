@@ -7,7 +7,7 @@ $guides = [
     '/resources/academic-analytics-guide/', '/resources/ai-in-higher-education-guide/', '/resources/cloud-education-guide/', '/resources/education-automation-guide/',
     '/resources/institutional-dashboard-guide/', '/resources/crm-implementation-plan/', '/resources/student-data-migration/', '/resources/education-software-rfp/',
     '/resources/education-software-tco/', '/resources/student-retention-strategies/', '/resources/enrollment-funnel-guide/', '/resources/fee-collection-guide/',
-    '/resources/attendance-management-guide/',
+    '/resources/attendance-management-guide/', '/resources/accreditation-data-guide/', '/resources/student-data-privacy-guide/',
 ];
 $insights = [
     '/resources/digital-transformation-education/', '/resources/data-driven-education/', '/resources/academic-data-strategy/', '/resources/student-engagement-strategies/',
@@ -650,7 +650,7 @@ return [
                 'What is the first step in a data strategy?' => 'Name owners for the main data domains and agree definitions for the terms most often disputed in reports.',
             ]),
         ],
-        'related' => ['/platform/data-management/', '/resources/data-driven-education/', '/trust/privacy/', '/integrations/data-export/'],
+        'related' => ['/platform/data-management/', '/resources/data-driven-education/', '/resources/accreditation-data-guide/', '/trust/privacy/', '/integrations/data-export/'],
     ],
 
     '/resources/student-engagement-strategies/' => [
@@ -1096,7 +1096,7 @@ return [
                 'Which tool is needed to track the funnel?' => 'Any system that records each stage with dates can work, including a CRM. The important part is consistent definitions. See [enrolment analytics](/platform/enrollment-analytics/).',
             ]),
         ],
-        'related' => ['/resources/admissions-crm-guide/', '/glossary/lead-scoring/', '/platform/enrollment-analytics/', '/glossary/enrollment-management/'],
+        'related' => ['/resources/admissions-crm-guide/', '/glossary/lead-scoring/', '/glossary/yield-rate/', '/platform/enrollment-analytics/', '/glossary/enrollment-management/'],
     ],
 
     '/resources/fee-collection-guide/' => [
@@ -1169,5 +1169,82 @@ return [
             ]),
         ],
         'related' => ['/platform/academic-operations/', '/resources/student-retention-strategies/', '/solutions/for-faculty/', '/glossary/student-retention/'],
+    ],
+
+    // ---------- SEO Phase 2, batch 3 ----------
+    '/resources/accreditation-data-guide/' => [
+        'title' => 'Preparing Institutional Data for Accreditation',
+        'desc'  => 'How colleges can prepare data for accreditation such as NAAC and NBA: owners, definitions, evidence, outcome attainment and collecting data all year, not at the deadline.',
+        'h1'    => 'Preparing institutional data for accreditation',
+        'nav_label' => 'Accreditation Data Guide',
+        'lead'  => 'Accreditation deadlines are stressful when data has to be assembled from scattered spreadsheets. Institutions that collect and verify data throughout the year find the process far more manageable.',
+        'icon'  => 'shield',
+        'blocks' => [
+            takeaways(
+                'Assign an owner and a definition to every metric you report',
+                'Collect data and evidence as events happen, not at submission time',
+                'Link assessment marks to course outcomes if you report OBE attainment',
+                'Always work from the accrediting body’s current manual',
+            ),
+            sec('Accreditation in Indian higher education',
+                'In India, the National Assessment and Accreditation Council (NAAC) assesses higher education institutions, and the National Board of Accreditation (NBA) accredits programs, mainly in technical and professional education. Both rely on quantitative data and documentary evidence. Frameworks and metrics are revised periodically, so this guide focuses on data practices that remain useful whatever the current criteria.'),
+            steps('Building accreditation-ready data', [
+                'List the metrics' => 'From the current manual, list every quantitative metric and the evidence each requires.',
+                'Assign owners' => 'Name the office responsible for each metric, such as admissions, examinations, placements or research.',
+                'Agree definitions' => 'Write down exactly what is counted and for which period, so figures are consistent year to year.',
+                'Collect continuously' => 'Record data and store evidence, such as event reports and certificates, when activities happen.',
+                'Verify' => 'Reconcile figures against source records before they are used in any submission.',
+                'Review annually' => 'Produce an internal report each year so gaps are found long before the next cycle.',
+            ]),
+            sec('Outcome attainment data',
+                'For outcome-based accreditation, institutions need course outcomes defined, assessment items mapped to them, and marks recorded at item or question level where attainment is calculated from them. Setting this up at the start of each semester is far easier than reconstructing it later. See [outcome-based education](/glossary/outcome-based-education/).'),
+            faq([
+                'What is the most common problem in accreditation data?' => 'Figures that cannot be traced back to source records, or that were counted differently in different years.',
+                'Can software prepare the accreditation report automatically?' => 'Software can hold structured data and produce reports, but institutions remain responsible for interpretation, narrative and verification.',
+                'Is NIRF the same as accreditation?' => 'No. The National Institutional Ranking Framework (NIRF) is a ranking. Accreditation assesses quality against defined criteria. Some of the underlying data overlaps.',
+            ]),
+        ],
+        'related' => ['/glossary/outcome-based-education/', '/resources/academic-data-strategy/', '/resources/institutional-dashboard-guide/', '/industries/higher-education-india/'],
+    ],
+
+    '/resources/student-data-privacy-guide/' => [
+        'title' => 'Student Data Privacy: A Guide for Institutions',
+        'desc'  => 'A practical guide to protecting student data: principles, access control, consent, retention, vendors and incidents, with an overview of India’s DPDP Act, FERPA and GDPR.',
+        'h1'    => 'Student data privacy: a guide for institutions',
+        'nav_label' => 'Student Data Privacy Guide',
+        'lead'  => 'Institutions hold sensitive information about students and their families. This guide covers the practical measures that protect it and the main legal frameworks institutions encounter.',
+        'icon'  => 'lock',
+        'blocks' => [
+            takeaways(
+                'Collect only the student data you need, for a stated purpose',
+                'Give each member of staff access to what their role requires, and no more',
+                'Know which vendors process student data, and on what terms',
+                'Have a plan for data incidents before one happens',
+            ),
+            note('This guide is general information, not legal advice. Obligations depend on your jurisdiction, institution type and circumstances; consult qualified counsel.', 'Not legal advice'),
+            table('Frameworks institutions commonly encounter', ['Framework', 'Where', 'In brief'], [
+                ['Digital Personal Data Protection Act, 2023 (DPDP Act)', 'India', 'Governs processing of digital personal data, including consent, notices, data principal rights and additional protections for children’s data'],
+                ['Family Educational Rights and Privacy Act (FERPA)', 'United States', 'Protects the privacy of student education records at institutions receiving US federal education funding'],
+                ['General Data Protection Regulation (GDPR) and UK GDPR', 'EU and UK', 'Governs processing of personal data, including lawful bases, individual rights and international transfers'],
+            ]),
+            checks('Practical measures', [
+                'Keep an inventory of what student data you hold, where, and why',
+                'Use [role-based access control](/glossary/role-based-access-control/) and review access regularly',
+                'Require multi-factor authentication for staff with access to sensitive records',
+                'Set retention periods and delete data that is no longer needed',
+                'Record consent where it is the basis for processing, including guardian consent for minors where required',
+                'Sign data processing agreements with vendors and keep a list of sub-processors',
+                'Log access to sensitive records and exports',
+                'Train staff, including on sharing data by email and messaging apps',
+            ]),
+            sec('Choosing vendors that handle student data',
+                'Ask where data is hosted, who can access it, which sub-processors are used, how incidents are reported, and how data is returned or deleted at the end of the contract. Prefer vendors who state plainly what is in place today rather than claiming compliance. See how Acadlytic approaches [security](/core/security/) and [privacy](/trust/privacy/), and our principles for [responsible AI](/ai/responsible-ai/).'),
+            faq([
+                'Who is responsible for student data when a vendor processes it?' => 'Usually the institution decides why and how data is processed, and the vendor processes it on the institution’s instructions under a contract. The exact roles should be set out in the agreement.',
+                'Does using a cloud service make an institution non-compliant?' => 'Not in itself. What matters is how the service is secured, where data is processed, and the contractual and technical safeguards in place.',
+                'What should happen after a data breach?' => 'Contain it, assess what data and people are affected, and follow applicable notification requirements and your incident plan. Vendors should notify the institution promptly.',
+            ]),
+        ],
+        'related' => ['/trust/privacy/', '/core/security/', '/glossary/role-based-access-control/', '/ai/responsible-ai/'],
     ],
 ];

@@ -273,7 +273,7 @@ return [
         ['Cloud Infrastructure', 'Designed for scalable, resilient cloud delivery.', 'cloud', '/core/cloud-platform/'],
         ['Responsible Support', 'Named routes for help, privacy and grievances.', 'support', '/trust/grievance-redressal/'],
     ],
-    'footer_social' => ['linkedin', 'x', 'youtube', 'instagram'],
+    'footer_social' => ['linkedin', 'x', 'youtube', 'instagram', 'facebook'],
     'footer_legal' => [
         ['Privacy Policy', '/trust/privacy/'],
         ['Terms', '/trust/terms/'],
