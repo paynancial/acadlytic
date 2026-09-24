@@ -200,6 +200,19 @@ function acad_schema(array $page): array
         $graph[] = acad_org_schema();
     }
 
+    if ($page['template'] === 'people' && !empty($page['people_group'])) {
+        $org = ['@type' => 'Organization', 'name' => acad_config('name'), 'url' => acad_url('/')];
+        foreach ((require ACAD_ROOT . '/data/people.php')[$page['people_group']] ?? [] as $person) {
+            $graph[] = array_filter([
+                '@type'    => 'Person',
+                'name'     => $person['name'],
+                'jobTitle' => $person['role'],
+                'worksFor' => $org,
+                'sameAs'   => !empty($person['linkedin']) ? [$person['linkedin']] : null,
+            ]);
+        }
+    }
+
     if ($page['section'] === 'glossary' && $page['template'] === 'article') {
         foreach ($page['blocks'] as $block) {
             if ($block['type'] === 'definition') {

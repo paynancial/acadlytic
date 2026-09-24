@@ -6,6 +6,7 @@ real content.
 ## Confirmed by Acadlytic
 
 - Support, account help and form notifications: `info@acadlytic.com`.
+- Leadership: Renuka Devi (Director) and Anisha Bharti (Director), on `/company/leadership/`. Short bios, photos and LinkedIn URLs can be added in `data/people.php`.
 - Phone / WhatsApp number: stored only in `config/contact.php`, shown masked on the site.
 - Data Protection Officer: Mr. A.K Sinha, `dpo@acadlytic.com` (`/trust/data-protection-officer/`).
 - Grievance Redressal Officer: Mrs. Anjali Sharma, `gro@acadlytic.com` (`/trust/grievance-redressal-officer/`).
@@ -23,7 +24,6 @@ real content.
 |---|---|
 | `/company/case-studies/` | Placeholder; publish only verified, institution-approved case studies. |
 | `/resources/whitepapers/` | Placeholder. |
-| `/company/leadership/` | Needs names, roles, short bios and (optional) photos in `data/people.php`. Becomes indexable automatically once entries exist. |
 | `/company/team/` | Same as above (`team` group in `data/people.php`). |
 | `/company/news/` | Needs dated, factual announcements in `data/news.php`. |
 

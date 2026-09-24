@@ -141,6 +141,7 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Contact](https://acadlytic.com/core/contact/): Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or use the Enquire Now panel.
 - [Company](https://acadlytic.com/company/): About Acadlytic, Inc.: our mission, careers, partner programme, press resources, support and how to contact the team.
 - [Vision & Mission](https://acadlytic.com/company/vision-mission/): Acadlytic’s vision and mission: why we are building an AI-powered EdTech CRM and cloud platform for academic management, and the values that guide the work.
+- [Leadership](https://acadlytic.com/company/leadership/): The leadership team of Acadlytic, Inc., building an AI-powered EdTech CRM and cloud platform for academic management.
 - [Request a Demo](https://acadlytic.com/company/request-demo/): Request a personalised Acadlytic demo: a walkthrough of the platform design and roadmap, focused on the workflows that matter to your institution.
 - [Careers](https://acadlytic.com/company/careers/): Build the future of intelligent education with Acadlytic. Learn how we work, the skills we value and how to express interest in joining the team.
 - [Partners](https://acadlytic.com/company/partners/): Partner with Acadlytic as an implementation, technology, referral or education partner. Learn about partnership types and how to start a conversation.

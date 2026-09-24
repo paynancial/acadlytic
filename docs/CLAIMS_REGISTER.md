@@ -27,6 +27,7 @@ before its wording can change. Owner: Acadlytic, Inc. Last reviewed: 2026-09-24.
 | Contact details | info@acadlytic.com; phone shown masked (“+91 80••••••71”), reachable via Call and WhatsApp buttons (`/go/call/`, `/go/whatsapp/`); the full number lives only in `config/contact.php` | LIVE | Supplied by owner | Do not label the number “toll-free” unless the provider confirms; never print it in full in the UI |
 | Data Protection Officer | Mr. A.K Sinha, dpo@acadlytic.com | LIVE | Supplied by owner; mailbox must exist | Unchanged |
 | Grievance Redressal Officer | Mrs. Anjali Sharma, gro@acadlytic.com | LIVE | Supplied by owner; mailbox must exist | Unchanged |
+| Leadership | Renuka Devi, Director; Anisha Bharti, Director (`/company/leadership/`, Person schema) | LIVE | Supplied by owner | Unchanged; add bios only with each person’s approval |
 | Official social profiles | LinkedIn, X, YouTube, Instagram, Facebook links | LIVE | Supplied by owner | Unchanged |
 | Website privacy facts | “one security session cookie on form and sign-in pages; no analytics or advertising trackers” | LIVE | Verified in code (`includes/security.php`, no third-party scripts) | Unchanged; re-verify if analytics are ever added |
 | Content integrity | “No invented statistics, customers or testimonials, and planned features labelled as planned” | LIVE | This register plus the QA gate | Unchanged |

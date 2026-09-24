@@ -11,7 +11,7 @@ workers are needed in production.
 
 | | |
 |---|---|
-| Public pages | 140 indexable URLs (in `sitemap.xml`), plus search, 404 and noindex placeholders |
+| Public pages | 141 indexable URLs (in `sitemap.xml`), plus search, 404 and noindex placeholders |
 | Redirects | 69 permanent (301) redirects covering duplicate URLs from the 120+ page build, every Phase 2 handoff URL, legacy `.php` URLs and common aliases (`/about-us/`, `/contact-us/`, `/blog/`, `/news/`, `/team/`, `/leadership/`) |
 | Auth pages | `/login.php` (also `/login/`), `/forgot-password.php`, `/request-access.php` — noindex, not in sitemap |
 | Forms | Request a Demo, Contact, Enquiry (floating widget), Request Access, Password help — CSRF, honeypot, timing check, rate limit, server-side validation |
