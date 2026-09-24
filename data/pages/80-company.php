@@ -199,16 +199,80 @@ return [
         'lead'  => 'How Acadlytic protects data, respects privacy, handles grievances and makes its services accessible, with the people to contact for each.',
         'groups' => [
             ['title' => 'Security & privacy', 'paths' => ['/core/security/', '/trust/privacy/', '/ai/responsible-ai/']],
-            ['title' => 'Governance', 'paths' => ['/trust/grievance-redressal/', '/trust/accessibility/', '/trust/terms/']],
+            ['title' => 'Governance officers', 'paths' => ['/trust/data-protection-officer/', '/trust/grievance-redressal-officer/']],
+            ['title' => 'Policies & processes', 'paths' => ['/trust/grievance-redressal/', '/trust/accessibility/', '/trust/terms/']],
         ],
         'blocks' => [
-            table('Governance contacts', ['Role', 'How to reach'], [
-                ['Data Protection Officer', 'info@acadlytic.com, subject “Data Protection Officer request”'],
-                ['Grievance Redressal Officer', 'info@acadlytic.com, subject “Grievance Redressal request”'],
-                ['Security reports', 'info@acadlytic.com, subject “Security report”'],
-                ['Accessibility feedback', 'info@acadlytic.com, subject “Accessibility”'],
-            ], 'Dedicated mailboxes and officer details will be published here once formally designated. Until then, requests to the central mailbox with these subject lines are routed to the responsible person.'),
+            table('Governance contacts', ['Role', 'Officer', 'How to reach'], [
+                ['[Data Protection Officer](/trust/data-protection-officer/)', 'Mr. A.K Sinha', '[dpo@acadlytic.com](mailto:dpo@acadlytic.com)'],
+                ['[Grievance Redressal Officer](/trust/grievance-redressal-officer/)', 'Mrs. Anjali Sharma', '[gro@acadlytic.com](mailto:gro@acadlytic.com)'],
+                ['Security reports', 'Security team', 'info@acadlytic.com, subject “Security report”'],
+                ['Accessibility feedback', 'Accessibility team', 'info@acadlytic.com, subject “Accessibility”'],
+            ]),
         ],
+    ],
+
+    '/trust/data-protection-officer/' => [
+        'title' => 'Data Protection Officer (DPO)',
+        'desc'  => 'Contact Acadlytic’s Data Protection Officer, Mr. A.K Sinha, at dpo@acadlytic.com for personal data requests, consent withdrawal and privacy questions.',
+        'h1'    => 'Data Protection Officer',
+        'nav_label' => 'Data Protection Officer',
+        'lead'  => 'Acadlytic, Inc. has designated **Mr. A.K Sinha** as its Data Protection Officer. Contact him at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) about how your personal data is handled.',
+        'icon'  => 'lock',
+        'hide_cta' => true,
+        'blocks' => [
+            table('Contact details', ['Role', 'Name', 'Email'], [
+                ['Data Protection Officer', 'Mr. A.K Sinha', '[dpo@acadlytic.com](mailto:dpo@acadlytic.com)'],
+            ], 'Please write from an email address we can reply to, and use a subject line that describes your request.'),
+            cards('What the Data Protection Officer handles', [
+                'Your data rights' => 'Requests to access, correct or erase personal data Acadlytic holds about you, and to withdraw consent.',
+                'Privacy questions' => 'Questions about what we collect through acadlytic.com, why, and how long we keep it.',
+                'Consent and communication' => 'Stopping marketing messages or changing how we may contact you.',
+                'Institutional data' => 'Coordinating with the relevant institution when your request concerns data an institution holds in the Acadlytic platform.',
+            ]),
+            checks('Include in your request', [
+                'Your full name and the email or phone number we may know you by',
+                'Whether you are a website visitor, applicant, student, parent, staff member or partner',
+                'The institution involved, if your request relates to an institution’s use of Acadlytic',
+                'What you would like us to do, as specifically as possible',
+            ], 'We may ask you to verify your identity before acting on a request, to protect your information from being disclosed to someone else.'),
+            note('If your request concerns records held by your school, college or university (for example, results or fees), that institution decides how the data is used. Contact the institution as well; the DPO will support it in responding.', 'Institution data'),
+            faq([
+                'Who is Acadlytic’s Data Protection Officer?' => 'Mr. A.K Sinha, reachable at [dpo@acadlytic.com](mailto:dpo@acadlytic.com).',
+                'Is the DPO the right contact for a complaint?' => 'For a complaint about our service or how a request was handled, contact our [Grievance Redressal Officer](/trust/grievance-redressal-officer/). The DPO handles data rights and privacy questions.',
+                'Can I contact the DPO about data my college holds?' => 'Yes. The DPO will coordinate with the institution, which decides how its student data is used.',
+            ]),
+        ],
+        'related' => ['/trust/privacy/', '/trust/grievance-redressal-officer/', '/core/security/', '/trust/'],
+    ],
+
+    '/trust/grievance-redressal-officer/' => [
+        'title' => 'Grievance Redressal Officer',
+        'desc'  => 'Contact Acadlytic’s Grievance Redressal Officer, Mrs. Anjali Sharma, at gro@acadlytic.com to raise a complaint about our services or data handling.',
+        'h1'    => 'Grievance Redressal Officer',
+        'nav_label' => 'Grievance Redressal Officer',
+        'lead'  => 'Acadlytic, Inc. has designated **Mrs. Anjali Sharma** as its Grievance Redressal Officer. Contact her at [gro@acadlytic.com](mailto:gro@acadlytic.com) if you are unhappy with our service or how your data was handled.',
+        'icon'  => 'scale',
+        'hide_cta' => true,
+        'blocks' => [
+            table('Contact details', ['Role', 'Name', 'Email'], [
+                ['Grievance Redressal Officer', 'Mrs. Anjali Sharma', '[gro@acadlytic.com](mailto:gro@acadlytic.com)'],
+            ], 'You can also use the [contact form](/core/contact/?topic=grievance) and choose “Grievance redressal”; it reaches the same officer.'),
+            cards('Grievances the officer handles', [
+                'Service complaints' => 'Problems with the Acadlytic website, support or services that have not been resolved through normal channels.',
+                'Data handling' => 'Complaints about how your personal data was collected, used or shared, or how a data request was handled.',
+                'Accessibility' => 'Barriers that prevented you from using our website or services.',
+                'Conduct' => 'Concerns about how Acadlytic staff or partners dealt with you.',
+            ]),
+            sec('What happens next',
+                'Your grievance is acknowledged with a reference, reviewed with the teams involved and answered with our findings and any action taken. The full sequence, and how to escalate if you are not satisfied, is set out in our [grievance redressal process](/trust/grievance-redressal/).'),
+            faq([
+                'Who is Acadlytic’s Grievance Redressal Officer?' => 'Mrs. Anjali Sharma, reachable at [gro@acadlytic.com](mailto:gro@acadlytic.com).',
+                'Should I contact the Grievance Redressal Officer or the DPO?' => 'Use the Grievance Redressal Officer for complaints. For requests to access, correct or erase your personal data, contact the [Data Protection Officer](/trust/data-protection-officer/).',
+                'Can the officer change an institution’s decision?' => 'No. Admission outcomes, results and fees are decided by the institution. Raise those with the institution; we will support it where our platform is involved.',
+            ]),
+        ],
+        'related' => ['/trust/grievance-redressal/', '/trust/data-protection-officer/', '/company/support/', '/trust/'],
     ],
 
     '/trust/privacy/' => [
@@ -248,10 +312,10 @@ return [
                 'Raise a grievance and, if unresolved, escalate to the relevant authority',
             ], 'Rights vary by applicable law, including India’s Digital Personal Data Protection Act, 2023 where it applies.'),
             sec('Data Protection Officer',
-                'To exercise your rights or ask about our data practices, email info@acadlytic.com with the subject “Data Protection Officer request”. Until a dedicated mailbox and officer details are published, requests to this address with that subject are routed to the person responsible for data protection. For complaints, see our [grievance redressal process](/trust/grievance-redressal/).'),
+                'Our Data Protection Officer is **Mr. A.K Sinha**. To exercise your rights or ask about our data practices, email [dpo@acadlytic.com](mailto:dpo@acadlytic.com). See the [Data Protection Officer page](/trust/data-protection-officer/) for what to include. For complaints, contact our [Grievance Redressal Officer](/trust/grievance-redressal-officer/).'),
             faq([
                 'Does acadlytic.com use tracking cookies?' => 'No. The site sets a session cookie only on pages with forms or sign-in, for security.',
-                'How do I ask what data Acadlytic holds about me?' => 'Email info@acadlytic.com with the subject “Data Protection Officer request” and describe what you need.',
+                'How do I ask what data Acadlytic holds about me?' => 'Email our Data Protection Officer at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) and describe the information you are asking about.',
             ]),
         ],
         'related' => ['/trust/grievance-redressal/', '/core/security/', '/ai/responsible-ai/', '/trust/terms/'],
@@ -321,13 +385,13 @@ return [
         'title' => 'Grievance Redressal',
         'desc'  => 'How to raise a grievance with Acadlytic, how it is acknowledged, investigated and resolved, and how to escalate if you are not satisfied.',
         'h1'    => 'Grievance redressal',
-        'nav_label' => 'Grievance Redressal',
         'lead'  => 'If you are unhappy with our service or with how your personal data has been handled, tell us. This page explains how your grievance will be handled.',
         'draft' => 'Process description pending legal review. Response timelines will be published here once confirmed; we follow the timelines required by applicable law in the meantime.',
+        'nav_label' => 'Grievance Redressal Process',
         'hide_cta' => true,
         'blocks' => [
             sec('Grievance Redressal Officer',
-                'Grievances are handled by our Grievance Redressal Officer. Until a dedicated mailbox and officer details are published, send your grievance to info@acadlytic.com with the subject “Grievance Redressal request”, or use the [contact form](/core/contact/?topic=grievance) and choose “Grievance redressal”.'),
+                'Grievances are handled by our Grievance Redressal Officer, **Mrs. Anjali Sharma**. Send your grievance to [gro@acadlytic.com](mailto:gro@acadlytic.com), or use the [contact form](/core/contact/?topic=grievance) and choose “Grievance redressal”. Details are on the [Grievance Redressal Officer page](/trust/grievance-redressal-officer/).'),
             checks('Please include', [
                 'Your name and contact details',
                 'Your institution, if the grievance relates to an institution’s use of Acadlytic',
@@ -343,7 +407,7 @@ return [
             ]),
             note('Grievances about an institution’s decisions, such as admissions outcomes, results or fees, should be raised with that institution. Acadlytic will support institutions in responding where our platform is involved.'),
             faq([
-                'How do I raise a grievance?' => 'Email info@acadlytic.com with the subject “Grievance Redressal request”, or choose “Grievance redressal” on the contact form.',
+                'How do I raise a grievance?' => 'Email [gro@acadlytic.com](mailto:gro@acadlytic.com), or choose “Grievance redressal” on the contact form.',
                 'Should grievances about admission decisions come to Acadlytic?' => 'No. Decisions made by an institution should be raised with that institution first.',
             ]),
         ],

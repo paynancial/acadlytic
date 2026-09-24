@@ -144,10 +144,12 @@ Acadlytic connects admissions and CRM, student records, academic operations, fin
 - [Press & Media](https://acadlytic.com/company/press/): Press and media information for Acadlytic, Inc.: approved company description, brand guidance, official social profiles and media contact.
 - [Support](https://acadlytic.com/company/support/): Get help with Acadlytic: support channels, what to include in a request, account access help and how support requests are prioritised.
 - [Trust Center](https://acadlytic.com/trust/): Acadlytic Trust Center: security, privacy and data protection, the Data Protection Officer, grievance redressal, accessibility and terms of use.
+- [Data Protection Officer](https://acadlytic.com/trust/data-protection-officer/): Contact Acadlytic’s Data Protection Officer, Mr. A.K Sinha, at dpo@acadlytic.com for personal data requests, consent withdrawal and privacy questions.
+- [Grievance Redressal Officer](https://acadlytic.com/trust/grievance-redressal-officer/): Contact Acadlytic’s Grievance Redressal Officer, Mrs. Anjali Sharma, at gro@acadlytic.com to raise a complaint about our services or data handling.
 - [Privacy & Data Protection](https://acadlytic.com/trust/privacy/): How Acadlytic handles personal data on this website and platform: what we collect, why, how long we keep it, your rights and how to reach our Data Protection Officer.
 - [Terms](https://acadlytic.com/trust/terms/): Terms of use for acadlytic.com: acceptable use, intellectual property, accuracy of information, links, limitation of liability and how to contact us.
 - [Accessibility](https://acadlytic.com/trust/accessibility/): Acadlytic’s accessibility statement: our WCAG 2.2 AA target, measures taken on this website and platform, known limitations and how to request help.
-- [Grievance Redressal](https://acadlytic.com/trust/grievance-redressal/): How to raise a grievance with Acadlytic, how it is acknowledged, investigated and resolved, and how to escalate if you are not satisfied.
+- [Grievance Redressal Process](https://acadlytic.com/trust/grievance-redressal/): How to raise a grievance with Acadlytic, how it is acknowledged, investigated and resolved, and how to escalate if you are not satisfied.
 
 ## Optional
 

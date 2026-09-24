@@ -3,6 +3,13 @@
 The site avoids invented facts. These items need an owner's confirmation or
 real content.
 
+## Confirmed by Acadlytic
+
+- Support, account help and form notifications: `info@acadlytic.com`.
+- Data Protection Officer: Mr. A.K Sinha, `dpo@acadlytic.com` (`/trust/data-protection-officer/`).
+- Grievance Redressal Officer: Mrs. Anjali Sharma, `gro@acadlytic.com` (`/trust/grievance-redressal-officer/`).
+  Contact-form enquiries on the Privacy and Grievance topics are also emailed to these officers. Make sure both mailboxes exist and receive mail.
+
 ## Must confirm before launch
 
 | Item | Where | Why |
@@ -24,7 +31,6 @@ real content.
 
 ## Optional, when available
 
-- Dedicated DPO and Grievance Officer mailboxes and names → update `config/site.php` → `governance` and `/trust/` table.
 - Independent security attestations or accessibility audit results → add to `/core/security/` and `/trust/accessibility/` with dates.
 - Real customer proof (logos, metrics, testimonials) → only with written approval from each institution.
 - Enable OAuth buttons (`auth.oauth.*`) once implemented. See `AUTH_ARCHITECTURE.md`.

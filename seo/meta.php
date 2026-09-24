@@ -81,13 +81,29 @@ function acad_org_schema(): array
         'description' => $c['descriptor'],
         'email'       => $c['email'],
         'telephone'   => $c['phone'],
-        'contactPoint' => [[
-            '@type'       => 'ContactPoint',
-            'contactType' => 'sales',
-            'email'       => $c['email'],
-            'telephone'   => $c['phone'],
-            'availableLanguage' => ['English'],
-        ]],
+        'contactPoint' => [
+            [
+                '@type'       => 'ContactPoint',
+                'contactType' => 'sales',
+                'email'       => $c['email'],
+                'telephone'   => $c['phone'],
+                'availableLanguage' => ['English'],
+            ],
+            [
+                '@type'       => 'ContactPoint',
+                'contactType' => 'data protection officer',
+                'name'        => $c['governance']['dpo']['name'],
+                'email'       => $c['governance']['dpo']['email'],
+                'url'         => acad_url($c['governance']['dpo']['page']),
+            ],
+            [
+                '@type'       => 'ContactPoint',
+                'contactType' => 'grievance redressal officer',
+                'name'        => $c['governance']['grievance']['name'],
+                'email'       => $c['governance']['grievance']['email'],
+                'url'         => acad_url($c['governance']['grievance']['page']),
+            ],
+        ],
         'sameAs'      => array_values(array_map(static fn(array $s) => $s['url'], $c['social'])),
     ];
 }

@@ -3,10 +3,8 @@
  * Shared footer: trust bar, five-column navigation, trust & governance row,
  * direct contact and legal bar.
  *
- * Governance roles (DPO, Grievance Redressal Officer) route to the central
- * mailbox with a labelled subject until dedicated mailboxes and named
- * officers are formally confirmed. Do not add names or addresses here that
- * Acadlytic has not confirmed.
+ * Governance officers (DPO, Grievance Redressal Officer) come from
+ * config/site.php → governance, as designated by Acadlytic, Inc.
  *
  * @var array $page
  * @var array $nav
@@ -68,7 +66,8 @@ $trustCards = [
                 <li><a href="<?= e(acad_nav_href($href)) ?>"><?= e($label) ?></a></li>
                 <?php endforeach; ?>
             </ul>
-            <p class="gov-note">Data Protection Officer and Grievance Redressal requests are received at <?= e(acad_config('email')) ?> with a labelled subject line and routed to the responsible officer. See the <a href="/trust/grievance-redressal/">grievance redressal process</a>.</p>
+            <?php $dpo = acad_config('governance.dpo'); $gro = acad_config('governance.grievance'); ?>
+            <p class="gov-note">Data Protection Officer: <?= e($dpo['name']) ?>, <a href="<?= e(acad_mailto($dpo['email'], $dpo['subject'])) ?>"><?= e($dpo['email']) ?></a> · Grievance Redressal Officer: <?= e($gro['name']) ?>, <a href="<?= e(acad_mailto($gro['email'], $gro['subject'])) ?>"><?= e($gro['email']) ?></a> · <a href="/trust/grievance-redressal/">Grievance redressal process</a></p>
         </div>
         <div class="contact-block">
             <h2 class="footer-heading">Contact</h2>

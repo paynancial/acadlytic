@@ -6,14 +6,15 @@
 declare(strict_types=1);
 
 /**
- * Inline formatting for content strings: **bold** and [label](/path).
+ * Inline formatting for content strings: **bold**, [label](/path) and
+ * [label](mailto:address).
  * Applied after escaping, so only these two patterns become markup.
  */
 function acad_inline(string $text): string
 {
     $html = e($text);
     $html = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $html) ?? $html;
-    return preg_replace_callback('/\[([^\]]+)\]\((\/[^)\s]*)\)/', static function (array $m): string {
+    return preg_replace_callback('/\[([^\]]+)\]\((\/[^)\s]*|mailto:[^)\s]+)\)/', static function (array $m): string {
         return '<a href="' . $m[2] . '">' . $m[1] . '</a>';
     }, $html) ?? $html;
 }
@@ -21,7 +22,7 @@ function acad_inline(string $text): string
 /** Content string without inline markup, for structured data and llms.txt. */
 function acad_plain(string $text): string
 {
-    $text = preg_replace('/\[([^\]]+)\]\(\/[^)\s]*\)/', '$1', $text) ?? $text;
+    $text = preg_replace('/\[([^\]]+)\]\((?:\/[^)\s]*|mailto:[^)\s]+)\)/', '$1', $text) ?? $text;
     return str_replace('**', '', $text);
 }
 

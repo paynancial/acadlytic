@@ -26,11 +26,10 @@ return [
     'phone'         => '+91 8010707171',
     'phone_href'    => 'tel:+918010707171',
 
-    // Governance contacts route through the central mailbox until dedicated
-    // mailboxes and named officers are formally confirmed. Do not invent names.
+    // Governance officers, as designated and confirmed by Acadlytic, Inc.
     'governance' => [
-        'dpo'       => ['label' => 'Data Protection Officer', 'email' => 'info@acadlytic.com', 'subject' => 'Data Protection Officer request'],
-        'grievance' => ['label' => 'Grievance Redressal Officer', 'email' => 'info@acadlytic.com', 'subject' => 'Grievance Redressal request'],
+        'dpo'       => ['label' => 'Data Protection Officer', 'name' => 'Mr. A.K Sinha', 'email' => 'dpo@acadlytic.com', 'subject' => 'Data Protection Officer request', 'page' => '/trust/data-protection-officer/'],
+        'grievance' => ['label' => 'Grievance Redressal Officer', 'name' => 'Mrs. Anjali Sharma', 'email' => 'gro@acadlytic.com', 'subject' => 'Grievance Redressal request', 'page' => '/trust/grievance-redressal-officer/'],
     ],
 
     'social' => [

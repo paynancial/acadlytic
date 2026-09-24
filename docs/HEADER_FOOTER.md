@@ -53,7 +53,7 @@ Without JS the menu button links to `/sitemap/`.
 
 1. **Trust bar**: SECURE • SCALABLE • AI-POWERED • CLOUD-READY • ACCESSIBLE, with cards for Data Protection, Enterprise Security, Role-Based Access, Cloud Infrastructure and Responsible Support.
 2. **Five columns**: brand (logo, tagline, AI | CRM | CLOUD | ACADEMIC MANAGEMENT, social icons), Platform, Solutions, Resources, Company.
-3. **Trust & Governance**: Security Center, Privacy & Data Protection, Data Protection Officer, Grievance Redressal Officer, Accessibility, Terms, Sitemap. DPO and Grievance links open an email to `info@acadlytic.com` with a labelled subject. No officer names or dedicated addresses are invented.
+3. **Trust & Governance**: Security Center, Privacy & Data Protection, Data Protection Officer, Grievance Redressal Officer, Accessibility, Terms, Sitemap. The DPO and Grievance links open their officer pages, and the note underneath names **Mr. A.K Sinha** (`dpo@acadlytic.com`) and **Mrs. Anjali Sharma** (`gro@acadlytic.com`). Both come from `config/site.php` → `governance`.
 4. **Contact**: `info@acadlytic.com` and **Phone** +91 8010707171 (labelled Phone, not toll-free).
 5. Legal bar: copyright plus Privacy, Terms, Security, Accessibility, Sitemap.
 

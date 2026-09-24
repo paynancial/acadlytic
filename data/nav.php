@@ -250,8 +250,8 @@ return [
     'trust' => [
         ['Security Center', '/core/security/'],
         ['Privacy & Data Protection', '/trust/privacy/'],
-        ['Data Protection Officer', 'governance:dpo'],
-        ['Grievance Redressal Officer', 'governance:grievance'],
+        ['Data Protection Officer', '/trust/data-protection-officer/'],
+        ['Grievance Redressal Officer', '/trust/grievance-redressal-officer/'],
         ['Accessibility', '/trust/accessibility/'],
         ['Terms', '/trust/terms/'],
         ['Sitemap', '/sitemap/'],

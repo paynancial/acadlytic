@@ -239,7 +239,13 @@ function acad_notify_enquiry(string $form, array $data): bool
         $headers[] = 'Reply-To: ' . $clean($data['email']);
     }
     $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-    $sent = @mail((string) acad_config('forms.notify_email'), $encodedSubject, $body, implode("\r\n", $headers));
+    // Privacy and grievance enquiries also reach the designated officer directly.
+    $to = [(string) acad_config('forms.notify_email')];
+    $officer = ['privacy' => 'dpo', 'grievance' => 'grievance'][$data['topic'] ?? ''] ?? null;
+    if ($officer !== null && filter_var((string) acad_config("governance.{$officer}.email"), FILTER_VALIDATE_EMAIL)) {
+        $to[] = (string) acad_config("governance.{$officer}.email");
+    }
+    $sent = @mail(implode(', ', array_unique($to)), $encodedSubject, $body, implode("\r\n", $headers));
     if (!$sent) {
         error_log('Acadlytic enquiry notification mail() failed for form ' . $form);
     }

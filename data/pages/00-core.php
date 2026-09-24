@@ -367,13 +367,13 @@ return [
         'aside_points'  => [
             'Sales and product questions: choose “Product & sales”.',
             'Existing customers: choose “Customer support”.',
-            'Privacy requests reach our Data Protection Officer via the “Privacy” topic.',
-            'Complaints are handled under our grievance redressal process.',
+            'Data Protection Officer: Mr. A.K Sinha, dpo@acadlytic.com.',
+            'Grievance Redressal Officer: Mrs. Anjali Sharma, gro@acadlytic.com.',
         ],
         'blocks' => [
             cards('Specialised contact routes', [
-                'Data Protection Officer' => 'Requests about personal data (access, correction, deletion or consent withdrawal) go to our DPO. Choose the “Privacy / Data Protection Officer” topic or email info@acadlytic.com with the subject “Data Protection Officer request”.',
-                'Grievance Redressal Officer' => 'If you have a complaint about our service or how your data is handled, choose “Grievance redressal”. See the [grievance redressal process](/trust/grievance-redressal/) for timelines.',
+                'Data Protection Officer' => 'Requests about personal data (access, correction, deletion or consent withdrawal) go to our DPO, **Mr. A.K Sinha**, at [dpo@acadlytic.com](mailto:dpo@acadlytic.com). Choosing the “Privacy / Data Protection Officer” topic below also reaches him.',
+                'Grievance Redressal Officer' => 'Complaints about our service or how your data is handled go to **Mrs. Anjali Sharma** at [gro@acadlytic.com](mailto:gro@acadlytic.com), or choose “Grievance redressal” below. See the [grievance redressal process](/trust/grievance-redressal/).',
                 'Accessibility' => 'If any part of this site or the platform is hard to use with assistive technology, tell us via the “Accessibility” topic. See our [accessibility statement](/trust/accessibility/).',
             ]),
         ],
