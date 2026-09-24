@@ -6,18 +6,22 @@
 declare(strict_types=1);
 
 /**
- * Inline formatting for content strings: **bold**, [label](/path) and
- * [label](mailto:address).
- * Applied after escaping, so only these two patterns become markup.
+ * Inline formatting for content strings: **bold**, [label](/path),
+ * [label](mailto:address) and [label](https://external-source).
+ * Applied after escaping, so only these patterns become markup.
  */
 function acad_inline(string $text): string
 {
     $html = e($text);
     $html = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $html) ?? $html;
     return preg_replace_callback('/\[([^\]]+)\]\((\/[^)\s]*|mailto:[^)\s]+|https:\/\/[^)\s]+)\)/', static function (array $m): string {
-        // External links (https://) are marked as such and never pass referrer data.
-        $external = str_starts_with($m[2], 'https://') ? ' rel="noopener noreferrer external"' : '';
-        return '<a href="' . $m[2] . '"' . $external . '>' . $m[1] . '</a>';
+        // External links (https://), such as official sources, open in a new tab,
+        // never pass referrer data and announce the new tab to screen readers.
+        if (str_starts_with($m[2], 'https://')) {
+            return '<a href="' . $m[2] . '" target="_blank" rel="noopener noreferrer external">' . $m[1]
+                . '<span class="sr-only"> (opens in a new tab)</span></a>';
+        }
+        return '<a href="' . $m[2] . '">' . $m[1] . '</a>';
     }, $html) ?? $html;
 }
 
