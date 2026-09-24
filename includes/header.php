@@ -28,15 +28,17 @@ $activeTop = match ($page['section']) {
     default => '',
 };
 ?><!doctype html>
-<html lang="en" class="no-js">
+<html lang="en-IN" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <?= acad_head_meta($page) ?>
 <meta name="theme-color" content="#071A3A">
 <meta name="format-detection" content="telephone=no">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="192x192" href="<?= e(asset('/assets/img/icon-192.png')) ?>">
 <link rel="apple-touch-icon" href="<?= e(asset('/assets/img/apple-touch-icon.png')) ?>">
+<link rel="preload" href="/assets/fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style><?= acad_critical_css() ?></style>
 <link rel="stylesheet" href="<?= e(asset('/assets/css/main.css')) ?>">

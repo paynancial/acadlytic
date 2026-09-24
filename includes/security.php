@@ -43,7 +43,8 @@ function acad_send_security_headers(bool $noindex = false): void
     header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()');
     header('Cross-Origin-Opener-Policy: same-origin');
     if (acad_is_https()) {
-        header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
+        // includeSubDomains deliberately omitted until every acadlytic.com subdomain is HTTPS-only.
+        header('Strict-Transport-Security: max-age=31536000');
     }
     if ($noindex) {
         header('X-Robots-Tag: noindex, nofollow');

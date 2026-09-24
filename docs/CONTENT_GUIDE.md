@@ -27,7 +27,7 @@ Pages are defined in `data/pages/*.php`, keyed by URL path:
 ],
 ```
 
-Optional keys: `parent` (breadcrumb parent), `template` (`article`, `hub`,
+Optional keys: `updated` (sitemap lastmod, `YYYY-MM-DD`), `parent` (breadcrumb parent), `template` (`article`, `hub`,
 `form`, `home`, `search`, `sitemap`), `noindex`, `draft` (visible review
 banner), `hide_cta`, `groups` (hub listings), `form` (`demo`, `contact`).
 
@@ -46,8 +46,8 @@ Then run `php bin/build.php && php bin/qa.php`.
 
 ## Structured data
 
-Emitted automatically by `seo/meta.php`: Organization, WebSite and
-SoftwareApplication on the homepage; WebPage and BreadcrumbList on every
+Emitted automatically by `seo/meta.php`: Organization and WebSite
+on the homepage; WebPage and BreadcrumbList on every
 indexable page; AboutPage or ContactPage plus Organization on About and Contact;
 DefinedTerm on glossary pages. No ratings, prices, FAQ rich-result markup or
 review markup is emitted.

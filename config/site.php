@@ -18,7 +18,7 @@ return [
     // Canonical origin used for canonical tags, sitemap and structured data.
     'url'         => 'https://acadlytic.com',
     'locale'      => 'en_IN',
-    'language'    => 'en',
+    'language'    => 'en-IN',
 
     'email'         => 'info@acadlytic.com',
     // Supplied in the redesign brief; confirm the mailbox exists before launch.
@@ -73,6 +73,10 @@ return [
         'user'     => '',
         'password' => '',
     ],
+
+    // Sitemap <lastmod> default. Update when content changes materially, or set
+    // 'updated' => 'YYYY-MM-DD' on an individual page in data/pages.
+    'content_updated' => '2026-09-24',
 
     // Bump when assets change if file modification times are unreliable.
     'asset_version' => '2026.09.23',

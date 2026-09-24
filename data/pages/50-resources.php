@@ -377,7 +377,7 @@ return [
             ]),
             note('For a worked example of designing a single workflow, see [workflow automation in education](/resources/education-workflow-automation/).'),
         ],
-        'related' => ['/platform/workflow-automation/', '/ai/ai-automation/', '/glossary/workflow-automation/', '/resources/education-workflow-automation/'],
+        'related' => ['/platform/workflow-automation/', '/ai/ai-workflows/', '/glossary/workflow-automation/', '/resources/education-workflow-automation/'],
     ],
 
     '/resources/education-workflow-automation/' => [

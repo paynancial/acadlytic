@@ -5,7 +5,8 @@
  *
  * Structured data is limited to facts supplied by Acadlytic (name, URL,
  * logo, contact details, official profiles). No ratings, customer counts,
- * prices or certifications are emitted.
+ * prices or certifications are emitted. SoftwareApplication is omitted
+ * because Google requires offers/ratings that cannot be stated truthfully.
  */
 declare(strict_types=1);
 
@@ -108,15 +109,6 @@ function acad_schema(array $page): array
         $graphs[] = ['@context' => 'https://schema.org', '@graph' => [
             acad_org_schema(),
             $website,
-            [
-                '@type'               => 'SoftwareApplication',
-                'name'                => 'Acadlytic',
-                'applicationCategory' => 'BusinessApplication',
-                'applicationSubCategory' => 'Education management CRM',
-                'operatingSystem'     => 'Web browser',
-                'description'         => acad_config('descriptor'),
-                'publisher'           => ['@id' => acad_url('/#organization')],
-            ],
         ]];
         return $graphs;
     }

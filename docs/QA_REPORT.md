@@ -2,12 +2,14 @@
 
 Environment: PHP 8.4 CLI + built-in server via `bin/dev-router.php` (mirrors
 the `.htaccess` rules), Chromium (Playwright), axe-core. Re-run with
-`php bin/qa.php` plus the checks below before each deployment.
+`php bin/qa.php` plus the checks below before each deployment. GitHub Actions
+(`.github/workflows/qa.yml`) runs lint, a generated-files check and the QA
+gate on PHP 8.2, 8.3 and 8.4 for every push.
 
 ## Automated gate: `php bin/qa.php`
 
-**Result: 0 errors, 0 warnings.** 150 registry pages (143 indexable + search,
-404, 3 auth pages, 2 noindex placeholders) and 60 redirects.
+**Result: 0 errors, 0 warnings.** 149 registry pages (142 indexable + search,
+404, 3 auth pages, 2 noindex placeholders) and 61 redirects.
 
 Checked on every page: exactly one `<h1>`; `<title>` present and unique;
 meta description present, unique, 70–170 chars; canonical on indexable pages;
@@ -22,8 +24,9 @@ assets exist, the icon sprite is current and every referenced icon name exists.
 
 | Check | Result |
 |---|---|
-| All 146 page URLs | 200 |
-| All 60 redirects | 301 to the correct target |
+| All 145 page URLs | 200 |
+| All 61 redirects | 301 to the correct target |
+| `/favicon.ico` | 200 |
 | `/`, `/login.php`, `/login/`, `/forgot-password.php`, `/request-access.php` | 200 |
 | `/assets/css/main.css`, `/assets/js/app.js`, `/assets/img/logo-acadlytic.png` | 200 |
 | `/sitemap.xml`, `/robots.txt` | 200 |
@@ -34,6 +37,8 @@ assets exist, the icon sprite is current and every referenced icon name exists.
 | Content pages | No cookies set (`Cache-Control: public, max-age=300`) |
 | Form and auth pages | Session cookie `HttpOnly; SameSite=Lax` (+`Secure`, `__Host-` prefix on HTTPS), `no-store` |
 | PHP warnings or notices in server log | none |
+| Storage and mail both failing on submit | 503 with phone/email fallback; failure logged (no silent lead loss) |
+| Uncaught exception | branded 500 page, `noindex`, no internals leaked, logged |
 
 ## Forms
 

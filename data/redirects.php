@@ -23,6 +23,7 @@ return [
     '/resources/crm-vs-erp/'        => '/comparisons/academic-crm-vs-erp/',
     '/industries/universities/'     => '/solutions/for-universities/',
     '/industries/colleges/'         => '/solutions/for-colleges/',
+    '/ai/ai-automation/'            => '/ai/ai-workflows/',
 
     // Phase 2 handoff: features
     '/features/'                              => '/platform/',

@@ -109,7 +109,8 @@ foreach (acad_public_pages() as $path => $page) {
     if (!empty($page['virtual']) || $page['template'] === 'search') {
         continue;
     }
-    $lastmod = date('Y-m-d', (int) filemtime(ACAD_ROOT . '/data/pages/' . $page['source']));
+    // Deterministic (not file mtimes) so CI can verify the committed sitemap.
+    $lastmod = (string) ($page['updated'] ?? acad_config('content_updated'));
     $xml .= '  <url><loc>' . htmlspecialchars(acad_url($path), ENT_XML1) . '</loc><lastmod>' . $lastmod . "</lastmod></url>\n";
     $count++;
 }

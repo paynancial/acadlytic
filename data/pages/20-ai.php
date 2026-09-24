@@ -17,7 +17,7 @@ return [
                 '/ai/ai-predictive-analytics/', '/ai/ai-for-student-success/', '/ai/ai-recommendations/', '/ai/ai-personalization/',
             ]],
             ['title' => 'Automate', 'text' => 'Take routine steps off people’s plates, with oversight.', 'paths' => [
-                '/ai/ai-automation/', '/ai/ai-workflows/', '/ai/ai-document-intelligence/',
+                '/ai/ai-workflows/', '/ai/ai-document-intelligence/',
             ]],
             ['title' => 'By team & principle', 'text' => 'How AI helps specific teams, and the rules we hold it to.', 'paths' => [
                 '/ai/ai-for-admissions/', '/ai/ai-for-advising/', '/ai/ai-in-education/', '/ai/responsible-ai/',
@@ -222,16 +222,16 @@ return [
         'related' => ['/platform/reports-insights/', '/comparisons/ai-reporting-vs-manual-reporting/', '/ai/ai-insights/', '/core/ai-assistant/'],
     ],
 
-    '/ai/ai-automation/' => [
-        'title' => 'AI Automation for Administrative Tasks',
-        'desc'  => 'Which administrative tasks AI can automate in education (classification, extraction, routing and drafting) and where human review stays essential.',
-        'h1'    => 'AI automation for administrative work',
-        'nav_label' => 'AI Automation',
-        'lead'  => 'Rule-based automation handles predictable steps. AI automation handles the fuzzier ones (reading, sorting and drafting), so staff review rather than retype.',
+    '/ai/ai-workflows/' => [
+        'title' => 'AI Workflows & Automation with Human Approval',
+        'desc'  => 'Automate administrative work with AI steps inside approval-based workflows: classify, extract, draft and summarise, with confidence thresholds and a full audit log.',
+        'h1'    => 'AI workflows with people in the loop',
+        'nav_label' => 'AI Workflows',
+        'lead'  => 'Add AI steps (classify, extract, draft, summarise) to Acadlytic workflows, set confidence thresholds and decide exactly where a person must approve.',
         'icon'  => 'workflow',
         'blocks' => [
-            sec('Rules versus AI',
-                'Traditional automation follows explicit rules: if a fee is overdue by seven days, send a reminder. Many administrative tasks do not fit clean rules. A student email might be a transcript request, a complaint or a question about fees. A scanned document might be a mark sheet or an identity proof. AI can classify and extract from this unstructured input so that rule-based workflows can take over.'),
+            sec('Where AI fits in automation',
+                'Rule-based automation handles predictable steps: if a fee is overdue by seven days, send a reminder. Many administrative tasks do not fit clean rules. A student email might be a transcript request, a complaint or a fee question; a scanned file might be a mark sheet or an identity proof. AI steps classify and extract from this unstructured input so that rule-based workflows can take over, with people reviewing anything uncertain.'),
             table('Task types and the right level of automation', ['Task', 'AI contribution', 'Human checkpoint'], [
                 ['Sorting incoming requests', 'Classifies emails and portal requests by type and urgency', 'Staff can re-route; low-confidence items go to a person'],
                 ['Extracting document data', 'Reads names, dates and marks from uploaded documents', 'Staff verify extracted values before they update records'],
@@ -239,19 +239,6 @@ return [
                 ['Summarising long threads', 'Condenses case history for hand-over', 'Receiving staff member reviews'],
                 ['Tagging feedback', 'Groups survey comments by theme', 'Analysts check themes before reporting'],
             ]),
-            note('To see how these AI steps are placed inside approval-based processes, read [AI Workflows](/ai/ai-workflows/).'),
-        ],
-        'related' => ['/ai/ai-workflows/', '/ai/ai-document-intelligence/', '/platform/workflow-automation/', '/resources/education-automation-guide/'],
-    ],
-
-    '/ai/ai-workflows/' => [
-        'title' => 'AI Workflows with Human Approval',
-        'desc'  => 'Design workflows that combine rules, AI steps and human approvals: triggers, AI classification or drafting, confidence thresholds, approvals and a complete audit log.',
-        'h1'    => 'AI workflows with people in the loop',
-        'nav_label' => 'AI Workflows',
-        'lead'  => 'Add AI steps (classify, extract, draft, summarise) to Acadlytic workflows, set confidence thresholds and decide exactly where a person must approve.',
-        'icon'  => 'workflow',
-        'blocks' => [
             steps('Building blocks', [
                 'Trigger' => 'An event or schedule starts the workflow, such as a new request arriving in the student portal.',
                 'AI step' => 'Classify the request, extract details or draft a response.',
@@ -270,7 +257,7 @@ return [
                 'Switch AI steps off instantly without breaking the workflow',
             ]),
         ],
-        'related' => ['/platform/workflow-automation/', '/ai/ai-automation/', '/ai/responsible-ai/', '/resources/education-workflow-automation/'],
+        'related' => ['/platform/workflow-automation/', '/ai/ai-document-intelligence/', '/ai/responsible-ai/', '/resources/education-workflow-automation/'],
     ],
 
     '/ai/ai-search/' => [
@@ -322,7 +309,7 @@ return [
             ]),
             note('Document intelligence assists verification. It does not determine authenticity on its own; formal authenticity checks follow your institution’s procedures.'),
         ],
-        'related' => ['/platform/electronic-document-sharing/', '/platform/application-management/', '/ai/ai-automation/', '/glossary/electronic-document-management/'],
+        'related' => ['/platform/electronic-document-sharing/', '/platform/application-management/', '/ai/ai-workflows/', '/glossary/electronic-document-management/'],
     ],
 
     '/ai/ai-predictive-analytics/' => [

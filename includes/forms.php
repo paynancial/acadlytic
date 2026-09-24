@@ -160,8 +160,12 @@ function acad_handle_form(string $form, string $returnPath): array
         return ['status' => 422, 'errors' => $errors, 'old' => $old];
     }
 
-    acad_store_enquiry($form, $old);
-    acad_notify_enquiry($form, $old);
+    $stored = acad_store_enquiry($form, $old);
+    $mailed = acad_notify_enquiry($form, $old);
+    if (!$stored && !$mailed) {
+        error_log('Acadlytic enquiry LOST: storage and mail both failed for form ' . $form);
+        return ['status' => 503, 'form_error' => 'We could not send your request right now. Please try again shortly, or email ' . acad_config('email') . ' or call ' . acad_config('phone') . '.', 'old' => $old];
+    }
     acad_flash_set('sent_' . $form, true);
     acad_redirect($returnPath . '?sent=1#form');
 }
@@ -175,7 +179,8 @@ function acad_form_old(array $spec): array
     return $old;
 }
 
-function acad_store_enquiry(string $form, array $data): void
+/** Returns true when the enquiry was durably stored (database or file). */
+function acad_store_enquiry(string $form, array $data): bool
 {
     $record = [
         'type'       => $form,
@@ -197,23 +202,27 @@ function acad_store_enquiry(string $form, array $data): void
                 ':ip'      => $record['ip_hash'],
                 ':ua'      => $record['user_agent'],
             ]);
-            return;
+            return true;
         } catch (PDOException $ex) {
             error_log('Acadlytic enquiry insert failed, falling back to file: ' . $ex->getMessage());
         }
     }
     $file = acad_storage_path('enquiries') . '/' . date('Y-m') . '.jsonl';
     $new = !is_file($file);
-    file_put_contents($file, json_encode($record, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
-    if ($new) {
+    $ok = @file_put_contents($file, json_encode($record, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX) !== false;
+    if (!$ok) {
+        error_log('Acadlytic enquiry could not be written to ' . $file . ' (check storage_path permissions)');
+    } elseif ($new) {
         @chmod($file, 0600);
     }
+    return $ok;
 }
 
-function acad_notify_enquiry(string $form, array $data): void
+/** Returns true when a notification email was handed to the mail system. */
+function acad_notify_enquiry(string $form, array $data): bool
 {
     if (!acad_config('forms.send_mail') || !function_exists('mail')) {
-        return;
+        return false;
     }
     $labels = ['demo' => 'Demo request', 'contact' => 'Contact enquiry', 'access' => 'Access request', 'reset' => 'Password help request'];
     $clean = static fn(string $v): string => str_replace(["\r", "\n"], ' ', $v);
@@ -230,9 +239,11 @@ function acad_notify_enquiry(string $form, array $data): void
         $headers[] = 'Reply-To: ' . $clean($data['email']);
     }
     $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-    if (!@mail((string) acad_config('forms.notify_email'), $encodedSubject, $body, implode("\r\n", $headers))) {
+    $sent = @mail((string) acad_config('forms.notify_email'), $encodedSubject, $body, implode("\r\n", $headers));
+    if (!$sent) {
         error_log('Acadlytic enquiry notification mail() failed for form ' . $form);
     }
+    return $sent;
 }
 
 function acad_flash_set(string $key, mixed $value): void
