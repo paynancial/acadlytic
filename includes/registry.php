@@ -6,6 +6,9 @@
  */
 declare(strict_types=1);
 
+/** /core/ pages that describe planned product capabilities. */
+const ACAD_PLANNED_CORE = ['/core/academic-management/', '/core/edtech-crm/', '/core/cloud-platform/', '/core/ai-assistant/', '/core/security/'];
+
 function acad_sections(): array
 {
     static $sections = null;
@@ -43,6 +46,8 @@ function acad_normalize_page(string $path, array $page): array
     $meta = $sections[$section] ?? ['label' => 'Acadlytic', 'hub' => '/', 'eyebrow' => 'Acadlytic'];
 
     $isHub = $path === ($meta['hub'] ?? null);
+    // Product sections describe capabilities that are in development.
+    $planned = !empty($meta['planned']) || in_array($path, ACAD_PLANNED_CORE, true);
     $defaults = [
         'path'      => $path,
         'section'   => $section,
@@ -56,8 +61,15 @@ function acad_normalize_page(string $path, array $page): array
         'lead'      => $page['desc'] ?? '',
         'priority'  => $isHub ? 0.8 : 0.6,
         'icon'      => $meta['icon'] ?? 'spark',
+        'status'    => $planned ? 'planned' : null,
+        'legal_draft' => false,
     ];
-    return array_replace($defaults, $page);
+    $page = array_replace($defaults, $page);
+    // Legal drafts stay out of search results until counsel approves them.
+    if (!empty($page['legal_draft'])) {
+        $page['noindex'] = true;
+    }
+    return $page;
 }
 
 function acad_page(string $path): ?array

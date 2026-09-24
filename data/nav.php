@@ -12,7 +12,8 @@ return [
             'hub'   => '/platform/',
             'intro' => [
                 'title' => 'One connected academic platform',
-                'text'  => 'Admissions, students, academics, finance and communication on one cloud foundation, with AI built into the everyday work.',
+                'text'  => 'Acadlytic is building admissions, students, academics, finance and communication on one cloud foundation, with AI built into the everyday work.',
+                'status' => 'In development',
                 'cta'   => ['Explore the platform', '/platform/'],
             ],
             'groups' => [
@@ -35,8 +36,8 @@ return [
             ],
             'card' => [
                 'kind'  => 'dashboard',
-                'title' => 'See Acadlytic in action',
-                'text'  => 'A guided walkthrough built around your own admissions and academic workflows.',
+                'title' => 'Explore the platform design',
+                'text'  => 'A guided walkthrough of Acadlytic’s planned modules, mapped to your admissions and academic workflows.',
                 'cta'   => ['Request a demo', '/company/request-demo/'],
             ],
         ],
@@ -45,7 +46,8 @@ return [
             'hub'   => '/ai/',
             'intro' => [
                 'title' => 'Acadlytic AI',
-                'text'  => 'Practical AI that drafts, summarises, flags and recommends inside your workflows, with people approving every consequential decision.',
+                'text'  => 'Practical AI designed to draft, summarise, flag and recommend inside your workflows, with people approving every consequential decision.',
+                'status' => 'In development',
                 'cta'   => ['Explore Acadlytic AI', '/ai/'],
             ],
             'groups' => [
@@ -77,7 +79,8 @@ return [
             'hub'   => '/solutions/',
             'intro' => [
                 'title' => 'Built for every team on campus',
-                'text'  => 'Role-based workspaces for the people who run, teach, support and lead institutions.',
+                'text'  => 'Role-based workspaces designed for the people who run, teach, support and lead institutions.',
+                'status' => 'In development',
                 'cta'   => ['Browse all solutions', '/solutions/'],
             ],
             'groups' => [
@@ -114,7 +117,8 @@ return [
             'hub'   => '/integrations/',
             'intro' => [
                 'title' => 'Fits into your existing stack',
-                'text'  => 'Connect student, learning, finance and identity systems through documented APIs, events and exports.',
+                'text'  => 'Designed to connect student, learning, finance and identity systems through documented APIs, events and exports.',
+                'status' => 'Planned',
                 'cta'   => ['View all integrations', '/integrations/'],
             ],
             'groups' => [
@@ -177,7 +181,7 @@ return [
             'hub'   => '/company/',
             'intro' => [
                 'title' => 'Acadlytic, Inc.',
-                'text'  => 'We build AI-powered CRM and cloud software for academic management. Where Education Meets Intelligence.',
+                'text'  => 'We are building AI-powered CRM and cloud software for academic management. Where Education Meets Intelligence.',
                 'cta'   => ['About Acadlytic', '/core/about/'],
             ],
             'groups' => [

@@ -363,7 +363,7 @@ return [
         'blocks' => [
             def('An education API (application programming interface) is a documented, secure way for one education system to request or send data to another, such as student records, course enrolments, results or payments, without manual exports or re-entry.'),
             sec('Why APIs matter',
-                'Institutions run many systems. APIs let them share data automatically and consistently, which reduces errors and duplicate work. Good APIs use scoped credentials, versioning and logging. See the [Acadlytic API](/integrations/api/).'),
+                'Institutions run many systems. APIs let them share data automatically and consistently, which reduces errors and duplicate work. Good APIs use scoped credentials, versioning and logging. See Acadlytic’s [planned API](/integrations/api/).'),
             faq([
                 'Do institutions need developers to use an API?' => 'Usually yes, or an integration partner, although many common integrations are available as configured connectors.',
                 'What is the difference between an API and a webhook?' => 'An API is called to request or send data; a webhook notifies another system automatically when an event happens.',

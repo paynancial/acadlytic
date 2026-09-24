@@ -2,15 +2,13 @@
 /** Company pages, demo request and trust & governance pages. */
 declare(strict_types=1);
 
-$legalDraft = 'Draft pending legal review. This text describes our current practices in plain language and will be replaced by the reviewed version before it is relied on as a formal policy.';
-
 return [
     '/company/' => [
         'title' => 'Company',
         'desc'  => 'About Acadlytic, Inc.: our mission, careers, partner programme, press resources, support and how to contact the team.',
         'h1'    => 'Acadlytic, Inc.',
         'nav_label' => 'Company',
-        'lead'  => 'We build AI-powered CRM and cloud software for academic management. Where Education Meets Intelligence.',
+        'lead'  => 'We are building AI-powered CRM and cloud software for academic management. Where Education Meets Intelligence.',
         'groups' => [
             ['title' => 'About us', 'paths' => ['/core/about/', '/company/careers/', '/company/press/']],
             ['title' => 'Work with us', 'paths' => ['/company/partners/', '/company/request-demo/', '/core/contact/', '/company/support/']],
@@ -20,10 +18,10 @@ return [
 
     '/company/request-demo/' => [
         'title'    => 'Request a Demo',
-        'desc'     => 'Request a personalised Acadlytic demo. Tell us about your institution and priorities and we will show the workflows that matter to you.',
+        'desc'     => 'Request a personalised Acadlytic demo: a walkthrough of the platform design and roadmap, focused on the workflows that matter to your institution.',
         'h1'       => 'See Acadlytic in action',
         'nav_label' => 'Request a Demo',
-        'lead'     => 'Tell us about your institution and priorities. We will prepare a focused walkthrough of the workflows that matter to you, not a generic slideshow.',
+        'lead'     => 'Tell us about your institution and priorities. We will walk you through Acadlytic’s platform design and roadmap for the workflows that matter to you, not a generic slideshow.',
         'template' => 'form',
         'form'     => 'demo',
         'form_title' => 'Request your demo',
@@ -33,7 +31,7 @@ return [
         'aside_title'   => 'What to expect',
         'aside_points'  => [
             'A short discovery call to understand your priorities and systems.',
-            'A tailored demo of the modules you care about.',
+            'A tailored walkthrough of the planned modules you care about.',
             'Honest answers on integrations, data migration and timelines.',
             'A written proposal if Acadlytic is a good fit.',
         ],
@@ -89,14 +87,14 @@ return [
         'icon'  => 'handshake',
         'blocks' => [
             cards('Partnership types', [
-                'Implementation partners' => 'Consultancies that configure, migrate and train institutions on Acadlytic.',
-                'Technology partners' => 'Providers of complementary systems (LMS, payments, messaging, identity) integrating with our platform.',
+                'Implementation partners' => 'Consultancies that will configure, migrate and train institutions on Acadlytic.',
+                'Technology partners' => 'Providers of complementary systems (LMS, payments, messaging, identity) that will integrate with our platform.',
                 'Referral partners' => 'Advisors and networks that introduce institutions to Acadlytic.',
                 'Education partners' => 'Counselling organisations and agents working with students and institutions.',
             ]),
             steps('How partnerships start', [
                 'Introduce yourself' => 'Tell us about your organisation, customers and the partnership you have in mind.',
-                'Explore fit' => 'We discuss shared customers, capabilities and responsibilities.',
+                'Explore fit' => 'We discuss shared customer needs, capabilities and responsibilities.',
                 'Agree terms' => 'Scope, data responsibilities and commercial terms are agreed in writing.',
                 'Enable' => 'Training, documentation and sandbox access for technical partners.',
             ]),
@@ -118,7 +116,7 @@ return [
         'icon'  => 'doc',
         'blocks' => [
             sec('Company boilerplate',
-                'Acadlytic, Inc. provides an AI-powered EdTech CRM and cloud platform for academic management. The platform connects admissions, student records, academic operations, finance, communication, documents and analytics for educational institutions, with AI features designed for human oversight. Tagline: Where Education Meets Intelligence.'),
+                'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management. The platform is designed to connect admissions, student records, academic operations, finance, communication, documents and analytics for educational institutions, with AI features designed for human oversight. Tagline: Where Education Meets Intelligence.'),
             table('Official channels', ['Channel', 'Address'], [
                 ['Website', 'acadlytic.com'],
                 ['LinkedIn', 'linkedin.com/company/acadlytic'],
@@ -147,11 +145,11 @@ return [
         'desc'  => 'Get help with Acadlytic: support channels, what to include in a request, account access help and how support requests are prioritised.',
         'h1'    => 'Support and help center',
         'nav_label' => 'Support',
-        'lead'  => 'Help for institutions using Acadlytic, and for students, parents and staff who need assistance with their accounts.',
+        'lead'  => 'Help with Acadlytic accounts, access requests and questions, for institutions, students, parents, staff and partners.',
         'icon'  => 'support',
         'blocks' => [
             cards('How to get help', [
-                'Institution staff' => 'Contact your institution’s Acadlytic administrator first. Administrators can raise requests with our support team directly.',
+                'Institution staff' => 'Once your institution’s workspace is set up, contact its Acadlytic administrator first. Administrators will be able to raise requests with our support team directly.',
                 'Students & parents' => 'For questions about your records, fees or results, contact your institution. For sign-in problems, use the options below.',
                 'Account access' => 'Use [Forgot password](/forgot-password.php) or email the support address with the subject “Account access”.',
                 'Everyone else' => 'For product or sales questions, use the [contact page](/core/contact/).',
@@ -219,6 +217,7 @@ return [
         'nav_label' => 'Data Protection Officer',
         'lead'  => 'Acadlytic, Inc. has designated **Mr. A.K Sinha** as its Data Protection Officer. Contact him at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) about how your personal data is handled.',
         'icon'  => 'lock',
+        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             table('Contact details', ['Role', 'Name', 'Email'], [
@@ -253,6 +252,7 @@ return [
         'nav_label' => 'Grievance Redressal Officer',
         'lead'  => 'Acadlytic, Inc. has designated **Mrs. Anjali Sharma** as its Grievance Redressal Officer. Contact her at [gro@acadlytic.com](mailto:gro@acadlytic.com) if you are unhappy with our service or how your data was handled.',
         'icon'  => 'scale',
+        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             table('Contact details', ['Role', 'Name', 'Email'], [
@@ -281,7 +281,7 @@ return [
         'h1'    => 'Privacy and data protection',
         'nav_label' => 'Privacy & Data Protection',
         'lead'  => 'This page explains how Acadlytic, Inc. handles personal data collected through acadlytic.com, and how data is handled in the Acadlytic platform on behalf of institutions.',
-        'draft' => $legalDraft,
+        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             sec('Who we are',
@@ -301,7 +301,7 @@ return [
                 'Security' => 'We protect data with technical and organisational measures. See the [Security Center](/core/security/).',
                 'Retention' => 'We keep data only as long as necessary and then delete or anonymise it.',
                 'No sale of data' => 'We do not sell personal data.',
-                'AI' => 'Institutional data is not used to train public AI models.',
+                'AI' => 'Our design principle is that institutional data will not be used to train public AI models.',
             ]),
             checks('Your rights', [
                 'Access the personal data we hold about you',
@@ -310,13 +310,23 @@ return [
                 'Withdraw consent where processing is based on consent',
                 'Nominate another person to exercise your rights where applicable law allows',
                 'Raise a grievance and, if unresolved, escalate to the relevant authority',
-            ], 'Rights vary by applicable law, including India’s Digital Personal Data Protection Act, 2023 where it applies.'),
+            ], 'Which of these rights apply depends on the law that applies to you. This section is subject to legal review.'),
             sec('Data Protection Officer',
                 'Our Data Protection Officer is **Mr. A.K Sinha**. To exercise your rights or ask about our data practices, email [dpo@acadlytic.com](mailto:dpo@acadlytic.com). See the [Data Protection Officer page](/trust/data-protection-officer/) for what to include. For complaints, contact our [Grievance Redressal Officer](/trust/grievance-redressal-officer/).'),
             faq([
                 'Does acadlytic.com use tracking cookies?' => 'No. The site sets a session cookie only on pages with forms or sign-in, for security.',
                 'How do I ask what data Acadlytic holds about me?' => 'Email our Data Protection Officer at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) and describe the information you are asking about.',
             ]),
+        ],
+        'counsel_items' => [
+            'Legal entity name, registered office and company registration details',
+            'Applicable data protection law(s) and the legal bases relied on for each purpose',
+            'Retention periods for enquiries, server logs and account data',
+            'Third-party service providers (sub-processors), including hosting and email delivery',
+            'Hosting location, data residency and any international transfers',
+            'Handling of personal data of children and minors',
+            'Cookie and tracking disclosure (currently: one security session cookie on form and sign-in pages; no analytics or advertising trackers)',
+            'Platform data processing terms for institutions (controller/processor roles)',
         ],
         'related' => ['/trust/grievance-redressal/', '/core/security/', '/ai/responsible-ai/', '/trust/terms/'],
     ],
@@ -327,7 +337,7 @@ return [
         'h1'    => 'Website terms of use',
         'nav_label' => 'Terms',
         'lead'  => 'These terms govern your use of acadlytic.com. Use of the Acadlytic platform by institutions is governed by separate agreements.',
-        'draft' => $legalDraft,
+        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             sec('Using this website',
@@ -346,6 +356,14 @@ return [
                 'Do these terms cover the Acadlytic platform?' => 'No. They cover this website. Platform use is governed by each institution’s written agreement.',
                 'Can I quote content from this website?' => 'Yes, short extracts with attribution and a link to the original page.',
             ]),
+        ],
+        'counsel_items' => [
+            'Legal entity name, registered office and company registration details',
+            'Governing law and jurisdiction',
+            'Limitation of liability and disclaimer wording',
+            'Intellectual property and acceptable-use wording',
+            'Changes-to-terms and notice provisions',
+            'Relationship between these website terms and institution platform agreements',
         ],
         'related' => ['/trust/privacy/', '/trust/accessibility/', '/trust/'],
     ],
@@ -386,7 +404,7 @@ return [
         'desc'  => 'How to raise a grievance with Acadlytic, how it is acknowledged, investigated and resolved, and how to escalate if you are not satisfied.',
         'h1'    => 'Grievance redressal',
         'lead'  => 'If you are unhappy with our service or with how your personal data has been handled, tell us. This page explains how your grievance will be handled.',
-        'draft' => 'Process description pending legal review. Response timelines will be published here once confirmed; we follow the timelines required by applicable law in the meantime.',
+        'legal_draft' => true,
         'nav_label' => 'Grievance Redressal Process',
         'hide_cta' => true,
         'blocks' => [
@@ -410,6 +428,12 @@ return [
                 'How do I raise a grievance?' => 'Email [gro@acadlytic.com](mailto:gro@acadlytic.com), or choose “Grievance redressal” on the contact form.',
                 'Should grievances about admission decisions come to Acadlytic?' => 'No. Decisions made by an institution should be raised with that institution first.',
             ]),
+        ],
+        'counsel_items' => [
+            'Acknowledgement and resolution timelines',
+            'Escalation route and the external authority (if any) complainants may approach',
+            'Applicable law under which the grievance mechanism operates',
+            'Record-keeping and retention of grievance records',
         ],
         'related' => ['/trust/privacy/', '/core/contact/', '/company/support/'],
     ],

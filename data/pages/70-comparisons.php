@@ -271,7 +271,7 @@ return [
                 'Human review' => 'The report owner checks figures, adds context and removes overstatement.',
                 'Publish' => 'The approved summary is shared with the underlying charts.',
             ]),
-            note('Acadlytic’s [AI Reporting](/ai/ai-reporting/) follows this approach: drafts are grounded in report data and require approval before sharing.'),
+            note('Acadlytic’s planned [AI Reporting](/ai/ai-reporting/) is designed around this approach: drafts grounded in report data that require approval before sharing.'),
             faq([
                 'Can AI reports be wrong?' => 'Yes. AI can misread data or overstate conclusions, which is why drafts cite their figures and require human review before sharing.',
                 'Does AI replace analysts?' => 'No. It removes the mechanical drafting so analysts can spend time on interpretation, context and follow-up analysis.',

@@ -36,6 +36,13 @@ Everything else is escaped.
 
 Then run `php bin/build.php && php bin/qa.php`.
 
+## Claims policy (read first)
+
+- The platform is **in development**. Product, AI, solution and integration pages are `status: planned` automatically (sections flagged `planned` in `data/sections.php`, plus `ACAD_PLANNED_CORE` in `includes/registry.php`). They render a *Planned · In development* notice and a “Planned” tag on cards.
+- On planned pages write “Acadlytic is designed to…”, “is building…”, “planned…” or “will…”. Never “Acadlytic gives/keeps/provides…”, and never begin an FAQ answer with a bare “Yes.”. QA fails on both.
+- Never publish customer counts, logos, testimonials, uptime or outcome statistics, certifications, or compliance claims without evidence recorded in `docs/CLAIMS_REGISTER.md`.
+- Legal pages use `'legal_draft' => true` until counsel signs off (`docs/LEGAL_REVIEW_CHECKLIST.md`).
+
 ## Content rules
 
 - One clear search intent per page. If a new page would overlap an existing one, improve the existing page or add a 301 in `data/redirects.php` instead.

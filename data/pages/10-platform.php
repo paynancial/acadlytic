@@ -8,7 +8,7 @@ return [
         'desc'  => 'Explore the Acadlytic platform: admissions and CRM, student management, academic operations, finance, communication, analytics and documents on one cloud data model.',
         'h1'    => 'One platform for the whole institution',
         'nav_label' => 'Platform',
-        'lead'  => 'Acadlytic connects every stage of the student journey and every administrative process on one cloud data model, with AI built into the daily work rather than bolted on.',
+        'lead'  => 'Acadlytic is designed to connect every stage of the student journey and every administrative process on one cloud data model, with AI built into the daily work rather than bolted on.',
         'groups' => [
             ['title' => 'Core modules', 'text' => 'The eight modules most institutions start with. Each works on its own and shares data with the others.', 'paths' => [
                 '/platform/admissions-crm/', '/platform/student-management/', '/platform/academic-operations/', '/platform/finance-fees/',
@@ -24,7 +24,7 @@ return [
             ]],
         ],
         'blocks' => [
-            split('Built on one data model', [
+            split('Designed on one data model', [
                 'Every module reads and writes the same records. When an applicant accepts an offer, their record becomes a student record, with documents, communications and fee plans carried across automatically. Leadership dashboards read the same data that staff work with every day, so there is no month-end reconciliation to trust.',
             ], [
                 'No duplicate student records between departments',
@@ -45,8 +45,8 @@ return [
         'blocks' => [
             sec('The admissions problem it solves',
                 'Admissions teams juggle enquiries from websites, fairs, social campaigns, walk-ins and agents. When those arrive in inboxes and spreadsheets, response times slip, duplicates multiply and nobody can say with confidence which campaigns produced enrolled students.',
-                'Acadlytic gives every enquiry a single record and a timeline. Counsellors see the history before they call, managers see workload and conversion by stage, and marketing sees which sources actually lead to enrolment.'),
-            cards('Key capabilities', [
+                'Acadlytic is designed to give every enquiry a single record and a timeline. Counsellors see the history before they call, managers see workload and conversion by stage, and marketing sees which sources actually lead to enrolment.'),
+            cards('Planned capabilities', [
                 'Omnichannel capture' => 'Web forms, landing pages, events, phone, email, WhatsApp and partner referrals flow into one queue with source tracking.',
                 'Duplicate detection' => 'Matching on email, phone and name keeps one record per person, even when they enquire twice.',
                 'Assignment rules' => 'Route enquiries by programme, region, language or workload so every lead has an owner within minutes.',
@@ -54,7 +54,7 @@ return [
                 'Pipeline views' => 'See applicants by stage, programme and counsellor, and spot where momentum is lost.',
                 'Source attribution' => 'Connect campaigns and channels to applications and enrolments, not just clicks.',
             ]),
-            steps('A typical admissions flow in Acadlytic', [
+            steps('The planned admissions flow', [
                 'Enquiry captured' => 'A prospective student submits a form; a record is created and matched against existing contacts.',
                 'Assigned and acknowledged' => 'Rules assign a counsellor and an immediate, relevant acknowledgement is sent.',
                 'Nurtured' => 'Programme information, event invitations and reminders go out on a schedule the team controls.',
@@ -64,7 +64,7 @@ return [
             note('Acadlytic AI can prioritise the day’s follow-ups and draft replies for counsellors to review. See [AI for Admissions](/ai/ai-for-admissions/).', 'With AI'),
             faq([
                 'What is an admissions CRM?' => 'Software that captures enquiries from every channel, organises follow-up, tracks applications and measures which recruitment activities lead to enrolment. See the [admissions CRM guide](/resources/admissions-crm-guide/).',
-                'Can Acadlytic capture enquiries from our website and WhatsApp?' => 'Yes. Website forms, landing pages, events, email, phone, WhatsApp and partner referrals can all feed one enquiry queue with the source recorded.',
+                'Can Acadlytic capture enquiries from our website and WhatsApp?' => 'Yes, that is the plan. Website forms, landing pages, events, email, phone, WhatsApp and partner referrals can all feed one enquiry queue with the source recorded.',
                 'How does the admissions CRM prevent duplicate records?' => 'New enquiries are matched on email, phone and name, so a person who enquires twice keeps one record and one timeline.',
             ]),
         ],
@@ -73,7 +73,7 @@ return [
 
     '/platform/student-management/' => [
         'title' => 'Student Management System',
-        'desc'  => 'Student management software that keeps one accurate record per student: profile, programme, documents, attendance, results, fees and communication history in one place.',
+        'desc'  => 'Acadlytic’s planned student management: one accurate record per student covering profile, programme, documents, attendance, results, fees and communication.',
         'h1'    => 'Student management with one trusted record',
         'nav_label' => 'Student Management',
         'lead'  => 'Every department sees the same, current student record (profile, programme, academic progress, documents and fees) within the permissions of their role.',
@@ -81,8 +81,8 @@ return [
         'blocks' => [
             sec('Why the student record matters',
                 'When a student changes programme, updates a phone number or submits a medical certificate, that change should be visible to academics, finance and student services at once. In many institutions it is typed into three systems, by three people, days apart.',
-                'Acadlytic keeps one record per student. Changes are made once, validated and reflected everywhere, and every change is recorded in the history.'),
-            table('What the student record holds', ['Area', 'Examples'], [
+                'Acadlytic is designed to keep one record per student. Changes are made once, validated and reflected everywhere, and every change is recorded in the history.'),
+            table('What the student record is designed to hold', ['Area', 'Examples'], [
                 ['Identity & contacts', 'Legal name, preferred name, identifiers, contact details, guardians and emergency contacts'],
                 ['Programme & enrolment', 'Programme, batch or cohort, year, section, status changes and transfers'],
                 ['Academic progress', 'Attendance, assessments, results and credits from [academic operations](/platform/academic-operations/)'],
@@ -90,7 +90,7 @@ return [
                 ['Finance', 'Fee plan, invoices, payments and concessions from [Finance & Fees](/platform/finance-fees/)'],
                 ['Support & communication', 'Notes, cases, messages sent and consent preferences'],
             ]),
-            cards('Built for daily administration', [
+            cards('Designed for daily administration', [
                 'Bulk actions' => 'Promote a cohort, assign sections or update statuses for many students at once, with a preview before applying.',
                 'Status workflows' => 'Deferrals, withdrawals and re-admissions follow defined approval steps.',
                 'Self-service' => 'Students update permitted details and download documents from their own portal.',
@@ -98,7 +98,7 @@ return [
             ]),
             faq([
                 'What is student management software?' => 'Software that keeps one authoritative record per student and runs the processes attached to it, such as enrolment, attendance, results, documents and status changes.',
-                'Can students update their own details?' => 'Yes, for the fields your institution allows. Changes made in the student portal are validated and recorded in the record’s history.',
+                'Can students update their own details?' => 'That is the plan, for the fields your institution allows. Changes made in the student portal are designed to be validated and recorded in the record’s history.',
                 'How is sensitive student information protected?' => 'Field-level permissions restrict sensitive details such as health or financial-aid notes to authorised roles, and access is logged.',
             ]),
         ],
@@ -115,8 +115,8 @@ return [
         'blocks' => [
             sec('From departments to a journey',
                 'Institutions are organised by function (admissions, academics, finance, student services) but students experience one continuous journey. The riskiest moments are the hand-offs: from admitted to enrolled, from first year to second, from final year to graduate.',
-                'Acadlytic models the lifecycle explicitly. Each stage has entry criteria, required tasks and an owner, and the platform shows who is stuck at each transition.'),
-            steps('Lifecycle stages we model', [
+                'Acadlytic is designed to model the lifecycle explicitly. Each stage has entry criteria, required tasks and an owner, and the platform shows who is stuck at each transition.'),
+            steps('Lifecycle stages in the design', [
                 'Prospect' => 'Enquiry, interest and engagement before application.',
                 'Applicant' => 'Application, documents, assessment and offer.',
                 'Admitted' => 'Acceptance, deposit, onboarding tasks and orientation.',
@@ -125,7 +125,7 @@ return [
                 'Completing' => 'Final requirements, clearances, certificates and graduation.',
                 'Alumni' => 'Ongoing relationship, further study and mentoring.',
             ]),
-            checks('What stage management gives your teams', [
+            checks('What stage management is designed to give your teams', [
                 'Clear entry and exit criteria for every stage',
                 'Automatic tasks when a student moves stage',
                 'Counts and lists of students waiting at each hand-off',
@@ -134,7 +134,7 @@ return [
                 'Early alerts when a student stalls longer than expected',
             ]),
             faq([
-                'What are the stages of the student lifecycle?' => 'Typically prospect, applicant, admitted, enrolled, progressing, completing and alumni. Acadlytic lets institutions rename or add stages to match their programmes.',
+                'What are the stages of the student lifecycle?' => 'Typically prospect, applicant, admitted, enrolled, progressing, completing and alumni. Acadlytic is designed to let institutions rename or add stages to match their programmes.',
                 'Why manage hand-offs between stages?' => 'Students are most likely to drop out at transitions, such as from offer to enrolment or from first to second year. Defined owners and tasks at each hand-off stop students falling between departments.',
             ]),
         ],
@@ -150,8 +150,8 @@ return [
         'icon'  => 'task',
         'blocks' => [
             sec('Where applications get stuck',
-                'Most delays are not decisions; they are missing items. A transcript that never arrived, a payment that failed or a reviewer who did not know a file was ready. Acadlytic makes those gaps visible to everyone involved, including the applicant.'),
-            cards('Capabilities', [
+                'Most delays are not decisions; they are missing items. A transcript that never arrived, a payment that failed or a reviewer who did not know a file was ready. Acadlytic is designed to make those gaps visible to everyone involved, including the applicant.'),
+            cards('Planned capabilities', [
                 'Configurable forms' => 'Programme-specific application forms with conditional questions, saved progress and mobile-friendly layouts.',
                 'Document checklists' => 'Required items per programme with upload, verification status and automated reminders for anything missing.',
                 'Review workflows' => 'Assign reviewers, capture scores and comments, and route to committees with clear deadlines.',
@@ -159,16 +159,16 @@ return [
                 'Offers & conditions' => 'Generate offer letters from templates, track conditions and record acceptance or decline.',
                 'Applicant portal' => 'Applicants see their own checklist, messages and decision status.',
             ]),
-            table('Status visibility', ['Stage', 'Applicant sees', 'Staff see'], [
+            table('Planned status visibility', ['Stage', 'Applicant sees', 'Staff see'], [
                 ['In progress', 'Remaining sections and items', 'Started but unsubmitted applications to nudge'],
                 ['Submitted', 'Confirmation and checklist', 'Queue for verification'],
                 ['Under review', 'Expected timeline', 'Reviewer assignments and scores'],
                 ['Decision', 'Offer, waitlist or outcome', 'Offer conditions and acceptance deadlines'],
             ]),
             faq([
-                'Can applicants save an application and finish later?' => 'Yes. Applications save progress automatically, and applicants see which sections and documents are still outstanding.',
-                'Can reviewers score applications inside Acadlytic?' => 'Yes. Reviewers are assigned, record scores and comments against your criteria, and applications can be routed to committees with deadlines.',
-                'Can we collect application fees online?' => 'Yes, through a connected payment gateway, with payments matched to the application automatically.',
+                'Can applicants save an application and finish later?' => 'Yes, that is the plan. Applications save progress automatically, and applicants see which sections and documents are still outstanding.',
+                'Can reviewers score applications inside Acadlytic?' => 'Yes, that is the plan. Reviewers are assigned, record scores and comments against your criteria, and applications can be routed to committees with deadlines.',
+                'Can we collect application fees online?' => 'That is the plan: through a connected payment gateway, with payments matched to the application automatically.',
             ]),
         ],
         'related' => ['/platform/admissions-crm/', '/ai/ai-document-intelligence/', '/resources/admissions-workflow/', '/platform/electronic-document-sharing/'],
@@ -184,8 +184,8 @@ return [
         'blocks' => [
             sec('Better shortlists, not just longer lists',
                 'Students choosing further study face thousands of options and uneven information. Counsellors have limited time per student. Recommendations work when they are transparent: a student should see why a programme appears on their list and what would change it.',
-                'Acadlytic matches a student’s profile against programme data from the [post-secondary school database](/platform/post-secondary-school-database/) and explains each match in plain language.'),
-            cards('Matching criteria', [
+                'Acadlytic is designed to match a student’s profile against programme data from the [post-secondary school database](/platform/post-secondary-school-database/) and explain each match in plain language.'),
+            cards('Planned matching criteria', [
                 'Academic fit' => 'Subjects, grades and entrance requirements compared against programme expectations.',
                 'Interests & goals' => 'Career interests and preferred fields of study.',
                 'Practical constraints' => 'Location, budget, duration and study mode.',
@@ -201,7 +201,7 @@ return [
             faq([
                 'Who uses college recommendations?' => 'Schools, counselling teams and education partners who guide students toward further study, and the students themselves.',
                 'How are recommendations generated?' => 'By matching a student’s academic profile, interests and practical constraints against structured programme data. Every suggestion shows the criteria that produced it.',
-                'Can institutions pay to appear in recommendations?' => 'No. Recommendations are not sponsored, and counsellors can review them before students see them.',
+                'Can institutions pay to appear in recommendations?' => 'No. Sponsored placement is not part of the design, and counsellors will be able to review recommendations before students see them.',
             ]),
         ],
         'related' => ['/platform/post-secondary-school-database/', '/ai/ai-personalization/', '/solutions/for-students/', '/solutions/for-advisors/'],
@@ -217,8 +217,8 @@ return [
         'blocks' => [
             sec('Why structure matters',
                 'Information about colleges is scattered across prospectuses, websites and word of mouth, in inconsistent formats. Comparing two programmes fairly means finding the same facts for both: entry requirements, duration, fees, location and study mode.',
-                'Acadlytic stores this information in a consistent structure, so programmes can be filtered, compared side by side and matched to student profiles.'),
-            table('Typical fields per programme', ['Field', 'Used for'], [
+                'Acadlytic is designed to store this information in a consistent structure, so programmes can be filtered, compared side by side and matched to student profiles.'),
+            table('Planned fields per programme', ['Field', 'Used for'], [
                 ['Institution & campus', 'Location filters and travel considerations'],
                 ['Programme & level', 'Matching to student interests and qualifications'],
                 ['Entry requirements', 'Academic fit in [recommendations](/platform/college-recommendations/)'],
@@ -244,7 +244,7 @@ return [
         'lead'  => 'Calendars, timetables, attendance, assessments and results, managed in one place and connected to student records, so faculty spend less time on administration.',
         'icon'  => 'calendar',
         'blocks' => [
-            cards('What academic operations covers', [
+            cards('What academic operations is designed to cover', [
                 'Academic calendar' => 'Terms, teaching weeks, holidays, exam windows and key dates, shared across the institution.',
                 'Courses & sections' => 'Course catalogue, sections, faculty assignment and capacity.',
                 'Timetabling' => 'Build timetables with room and faculty constraints; publish changes to affected students instantly.',
@@ -254,7 +254,7 @@ return [
             ]),
             split('Designed with faculty time in mind', [
                 'Faculty should not be data-entry clerks. Attendance should take seconds, marks entry should validate as you type, and results should flow to student records without re-keying.',
-                'Acadlytic keeps the faculty experience focused: my classes today, attendance to mark, assessments due and students who may need attention.',
+                'Acadlytic is designed to keep the faculty experience focused: my classes today, attendance to mark, assessments due and students who may need attention.',
             ], [
                 'Mobile attendance in a few taps',
                 'Marks validation and moderation steps',
@@ -265,8 +265,8 @@ return [
                 'Because academic data lives on the same platform as student records and communication, a low-attendance alert can create a task for an advisor and notify a parent, subject to your policies. Results feed [completion tracking](/platform/completion-tracking/) and leadership dashboards without exports.'),
             faq([
                 'What does academic operations software manage?' => 'The academic calendar, courses and sections, timetables, attendance, assessments, results and progression rules.',
-                'Can faculty mark attendance on a phone?' => 'Yes. Attendance can be marked class by class on mobile or desktop, and absences update student records immediately.',
-                'Does Acadlytic replace our LMS?' => 'No. The LMS delivers course content. Acadlytic runs academic administration and integrates with the LMS for enrolments and, where configured, grades.',
+                'Can faculty mark attendance on a phone?' => 'Yes, that is the plan. Attendance can be marked class by class on mobile or desktop, and absences update student records immediately.',
+                'Does Acadlytic replace our LMS?' => 'No. The LMS delivers course content. Acadlytic is designed to run academic administration and integrate with the LMS for enrolments and, where configured, grades.',
             ]),
         ],
         'related' => ['/solutions/for-faculty/', '/glossary/academic-operations/', '/platform/task-management/', '/integrations/lms-integration/', '/integrations/calendar-integration/'],
@@ -282,8 +282,8 @@ return [
         'blocks' => [
             sec('Why fees belong on the academic platform',
                 'Fee questions are among the most common reasons students and parents contact an institution. When fee data sits in a separate accounting tool, staff cannot answer quickly, reminders go to the wrong people and holds on registration or results are applied inconsistently.',
-                'Acadlytic manages the student-facing side of finance (fee plans, invoices, payments, concessions and reminders) and integrates with your accounting or [ERP](/integrations/erp-integration/) for the general ledger.'),
-            cards('Capabilities', [
+                'Acadlytic is designed to manage the student-facing side of finance (fee plans, invoices, payments, concessions and reminders) and integrates with your accounting or [ERP](/integrations/erp-integration/) for the general ledger.'),
+            cards('Planned capabilities', [
                 'Fee structures' => 'Programme, year and category-based fees, with optional components and effective dates.',
                 'Instalments' => 'Payment plans with due dates and automated, courteous reminders.',
                 'Concessions & scholarships' => 'Approval workflows for discounts, waivers and scholarships, with audit history.',
@@ -291,16 +291,16 @@ return [
                 'Receipts & statements' => 'Instant receipts and on-demand statements in the student and parent portals.',
                 'Reconciliation' => 'Daily matching of gateway settlements to invoices, with exceptions flagged.',
             ]),
-            table('Who uses it and how', ['Role', 'Typical tasks'], [
+            table('Who it is designed for', ['Role', 'Typical tasks'], [
                 ['Finance team', 'Configure fees, approve concessions, reconcile settlements, export to accounting'],
                 ['Student services', 'Answer fee queries with full context, arrange payment plans'],
                 ['Students & parents', 'View dues, pay online, download receipts'],
                 ['Leadership', 'Monitor collections, dues ageing and concessions by programme'],
             ]),
             faq([
-                'Can Acadlytic handle instalment plans?' => 'Yes. Fee plans can be split into instalments with due dates and automatic reminders to students and linked parents.',
+                'Can Acadlytic handle instalment plans?' => 'Yes, that is the plan. Fee plans can be split into instalments with due dates and automatic reminders to students and linked parents.',
                 'How are scholarships and concessions approved?' => 'Through approval workflows with limits by role, and every concession is recorded against the student’s fee plan with its approver.',
-                'Does Acadlytic replace our accounting system?' => 'No. It manages student-facing billing and collections and posts summarised entries to your ERP or accounting system.',
+                'Does Acadlytic replace our accounting system?' => 'No. It is designed to manage student-facing billing and collections and to post summarised entries to your ERP or accounting system.',
             ]),
         ],
         'related' => ['/solutions/for-finance-teams/', '/integrations/payment-integration/', '/integrations/erp-integration/', '/solutions/for-parents/'],
@@ -317,7 +317,7 @@ return [
             sec('Communication with context',
                 'Institutions communicate constantly: enquiry follow-ups, deadline reminders, attendance alerts, fee notices, event invitations and emergencies. Sent from separate tools, these messages overlap, contradict each other or reach people who opted out.',
                 'The Communication Hub sends from the same data the rest of the platform uses. Audiences are built from live criteria (“first-year students with attendance below threshold”) rather than exported lists, and every message is logged on the recipient’s record.'),
-            cards('Capabilities', [
+            cards('Planned capabilities', [
                 'Multichannel' => 'Email, SMS and [WhatsApp](/integrations/whatsapp-integration/) through connected providers, with channel preferences per person.',
                 'Templates & personalisation' => 'Approved templates with merge fields and multilingual variants.',
                 'Dynamic audiences' => 'Target by programme, stage, status, attendance, fees or any field, updated at send time.',
@@ -325,7 +325,7 @@ return [
                 'Two-way conversations' => 'Replies are threaded back to the right staff member and record.',
                 'Delivery insight' => 'Delivery, open and response tracking where the channel supports it.',
             ]),
-            checks('Governance built in', [
+            checks('Governance in the design', [
                 'Approval steps for broadcast messages',
                 'Role-based permission to send to each audience',
                 'Full history for audits and complaints',
@@ -334,7 +334,7 @@ return [
             faq([
                 'Which channels does the Communication Hub support?' => 'Email, SMS and WhatsApp through connected providers, plus in-portal notifications, with each person’s channel preferences respected.',
                 'How are opt-outs handled?' => 'Consent and opt-out status are stored per contact and checked automatically at send time, with separate rules for emergency messages.',
-                'Can replies come back into Acadlytic?' => 'Yes. Replies are threaded to the right staff member and logged on the recipient’s timeline.',
+                'Can replies come back into Acadlytic?' => 'Yes, that is the plan. Replies are threaded to the right staff member and logged on the recipient’s timeline.',
             ]),
         ],
         'related' => ['/ai/ai-communications/', '/integrations/email-integration/', '/integrations/messaging-integration/', '/solutions/for-parents/', '/platform/student-engagement/'],
@@ -350,14 +350,14 @@ return [
         'blocks' => [
             sec('The paper trail, digitised properly',
                 'Academic documents carry weight: transcripts, certificates, identity proofs and recommendation letters. They need to be collected reliably, checked by the right person, stored safely and shared only with authorised recipients.',
-                'Acadlytic replaces email attachments and shared drives with a structured document workflow linked to each applicant or student record.'),
-            steps('Document workflow', [
+                'Acadlytic is designed to replace email attachments and shared drives with a structured document workflow linked to each applicant or student record.'),
+            steps('Planned document workflow', [
                 'Request' => 'Required documents are listed per programme or process, and applicants or students upload them from their portal.',
                 'Verify' => 'Staff review each document against a checklist; status and reviewer are recorded. [Document intelligence](/ai/ai-document-intelligence/) can pre-check type and legibility.',
                 'Store' => 'Documents are stored with access by role, retention rules and version history.',
                 'Share' => 'Issue certificates and transcripts electronically, with expiring links and access logs.',
             ]),
-            cards('Controls', [
+            cards('Planned controls', [
                 'File validation' => 'Allowed formats and size limits are enforced on upload, and files are checked before storage.',
                 'Access by role' => 'Only authorised staff can open sensitive documents.',
                 'Expiring links' => 'Shared documents use time-limited links rather than attachments.',
@@ -381,15 +381,15 @@ return [
         'blocks' => [
             sec('Completion is built over years',
                 'A student rarely fails to complete because of one event. More often, small gaps accumulate: a failed module not retaken, an elective in the wrong category or an outstanding clearance. Tracking completion continuously turns those gaps into manageable tasks.'),
-            cards('What is tracked', [
+            cards('What is designed to be tracked', [
                 'Credit progress' => 'Credits earned against programme requirements, by category.',
                 'Mandatory components' => 'Core modules, projects, internships and practical hours.',
                 'Milestones' => 'Programme checkpoints such as progression reviews or thesis approvals.',
                 'Clearances' => 'Library, finance and department clearances before graduation.',
             ]),
-            steps('How alerts turn into action', [
+            steps('How alerts are designed to turn into action', [
                 'Rule' => 'The institution defines what “off track” means for each programme.',
-                'Signal' => 'Acadlytic evaluates progress as results and records change.',
+                'Signal' => 'Acadlytic is designed to evaluate progress as results and records change.',
                 'Task' => 'An advisor receives a task with the specific gap explained.',
                 'Resolution' => 'The outcome is recorded, and the student sees their updated plan.',
             ]),
@@ -412,14 +412,14 @@ return [
         'blocks' => [
             sec('Why tasks belong next to records',
                 'Generic to-do tools do not know which student a task is about. Staff end up copying names and IDs between systems, and managers cannot see workload across a team.',
-                'In Acadlytic, tasks are attached to applicants, students, documents or cases. Opening a task opens the context needed to complete it.'),
-            cards('How tasks are created', [
+                'In Acadlytic’s design, tasks are attached to applicants, students, documents or cases. Opening a task will open the context needed to complete it.'),
+            cards('How tasks will be created', [
                 'By workflows' => '[Workflow automation](/platform/workflow-automation/) creates tasks when conditions are met, such as a document to verify.',
                 'By AI suggestions' => '[Recommendations](/ai/ai-recommendations/) propose next actions that staff can accept as tasks.',
                 'By people' => 'Staff create tasks for themselves or colleagues from any record.',
                 'By students' => 'Requests submitted through portals become tasks for the right team.',
             ]),
-            checks('Team features', [
+            checks('Planned team features', [
                 'Queues by team with shared ownership',
                 'Due dates, priorities and escalation rules',
                 'Workload view for managers',
@@ -429,7 +429,7 @@ return [
             ]),
             faq([
                 'How is task management different from a to-do app?' => 'Each task is attached to the applicant, student, document or case it concerns, so opening the task opens the context needed to complete it.',
-                'Can managers see team workload?' => 'Yes. Queues show open tasks by owner, due date and priority, with escalation when deadlines are at risk.',
+                'Can managers see team workload?' => 'Yes, that is the plan. Queues show open tasks by owner, due date and priority, with escalation when deadlines are at risk.',
             ]),
         ],
         'related' => ['/platform/workflow-automation/', '/solutions/for-operations/', '/solutions/for-administrators/'],
@@ -445,8 +445,8 @@ return [
         'blocks' => [
             sec('From monthly spreadsheets to live answers',
                 'Many institutions still build their key reports by exporting data from several systems and combining it in spreadsheets. The result is slow, fragile and often disputed, because each export uses slightly different definitions.',
-                'Acadlytic reports read directly from the platform’s shared data model, with consistent definitions for terms like “applicant”, “enrolled” and “active”. Numbers match across reports because they come from the same place.'),
-            cards('Reporting capabilities', [
+                'Acadlytic reports are designed to read directly from the platform’s shared data model, with consistent definitions for terms like “applicant”, “enrolled” and “active”. Numbers will match across reports because they come from the same place.'),
+            cards('Planned reporting capabilities', [
                 'Standard reports' => 'Ready-made reports for admissions funnels, enrolment, attendance, results, collections and communication.',
                 'Custom reports' => 'Build reports with filters, groupings and calculated fields, without writing code.',
                 'Dashboards' => 'Role-based dashboards for leadership, departments and teams.',
@@ -456,9 +456,9 @@ return [
             ]),
             note('AI summaries describe what changed and highlight notable movements, and they state what the data cannot tell you. See [AI Reporting](/ai/ai-reporting/).', 'With AI'),
             faq([
-                'Can we build our own reports without IT?' => 'Yes. Custom reports use filters, groupings and calculated fields without code, and can be saved, shared and scheduled.',
+                'Can we build our own reports without IT?' => 'Yes, that is the plan. Custom reports use filters, groupings and calculated fields without code, and can be saved, shared and scheduled.',
                 'Why do numbers match across Acadlytic reports?' => 'All reports read from the same data model with shared definitions for terms such as applicant, enrolled and active.',
-                'Can reports feed our data warehouse?' => 'Yes, through scheduled extracts or the API. See [data export](/integrations/data-export/).',
+                'Can reports feed our data warehouse?' => 'That is the plan, through scheduled extracts or the API. See [data export](/integrations/data-export/).',
             ]),
         ],
         'related' => ['/ai/ai-reporting/', '/platform/institutional-dashboard/', '/platform/enrollment-analytics/', '/resources/academic-analytics-guide/', '/comparisons/ai-reporting-vs-manual-reporting/'],
@@ -469,16 +469,16 @@ return [
         'desc'  => 'Keep institutional data accurate and governed: validation rules, duplicate management, data dictionaries, imports, retention and access controls on one platform.',
         'h1'    => 'Academic data management and governance',
         'nav_label' => 'Data Management',
-        'lead'  => 'Good decisions need good data. Acadlytic helps institutions keep records accurate, consistent and governed, from the first import onward.',
+        'lead'  => 'Good decisions need good data. Acadlytic is designed to help institutions keep records accurate, consistent and governed, from the first import onward.',
         'icon'  => 'database',
         'blocks' => [
-            cards('Data quality tools', [
+            cards('Planned data quality tools', [
                 'Validation rules' => 'Required fields, formats and allowed values enforced at entry, not discovered at report time.',
                 'Duplicate management' => 'Detect and merge duplicate people records with a reviewable merge history.',
                 'Guided imports' => 'Map, validate and preview spreadsheet imports before committing, with error reports.',
                 'Data dictionary' => 'Documented definitions for fields and reporting terms.',
             ]),
-            table('Governance controls', ['Control', 'Purpose'], [
+            table('Planned governance controls', ['Control', 'Purpose'], [
                 ['Role-based access', 'Limit who can view or edit each area and sensitive field'],
                 ['Change history', 'Know who changed what, when and from which value'],
                 ['Retention rules', 'Apply retention and deletion policies by record type'],
@@ -486,11 +486,11 @@ return [
                 ['Export controls', 'Restrict and log bulk exports'],
             ]),
             sec('Migration without the drama',
-                'Moving from spreadsheets or legacy systems is often the scariest part of a platform change. We run migrations in stages: profile the source data, agree mapping and cleansing rules, load into a test environment, reconcile counts with your team, then load to production. Historical data you do not need day to day can be archived rather than migrated.'),
+                'Moving from spreadsheets or legacy systems is often the scariest part of a platform change. We plan to run migrations in stages: profile the source data, agree mapping and cleansing rules, load into a test environment, reconcile counts with your team, then load to production. Historical data you do not need day to day can be archived rather than migrated.'),
             faq([
                 'How does Acadlytic keep data clean?' => 'Validation rules at entry, duplicate detection and merging, guided imports with previews and a shared data dictionary.',
-                'Can we migrate from spreadsheets?' => 'Yes. Imports are mapped, validated and previewed in a test environment and reconciled with your team before going live.',
-                'Can we apply retention rules?' => 'Yes. Retention and deletion policies can be applied by record type, and changes are logged.',
+                'Can we migrate from spreadsheets?' => 'Yes, that is the plan. Imports are mapped, validated and previewed in a test environment and reconciled with your team before going live.',
+                'Can we apply retention rules?' => 'Yes, that is the plan. Retention and deletion policies can be applied by record type, and changes are logged.',
             ]),
         ],
         'related' => ['/resources/academic-data-strategy/', '/integrations/data-export/', '/trust/privacy/', '/solutions/for-it-teams/'],
@@ -506,7 +506,7 @@ return [
         'blocks' => [
             sec('What should be automated',
                 'Good candidates for automation are frequent, rule-based and easy to get wrong manually: sending a reminder when a document is missing, routing a concession request to the right approver or notifying an advisor when attendance drops. Decisions that need judgement should stay with people, and the workflow should route the decision to them with context.'),
-            steps('Anatomy of a workflow', [
+            steps('Anatomy of a planned workflow', [
                 'Trigger' => 'An event (an application submitted, a fee overdue, a result published) or a schedule starts the workflow.',
                 'Conditions' => 'Rules check programme, status, amounts or any field to decide the path.',
                 'Actions' => 'Create tasks, update fields, send messages or call an integration.',
@@ -521,9 +521,9 @@ return [
             ]),
             note('Want AI steps, such as classifying a request or drafting a reply, inside a workflow? See [AI Workflows](/ai/ai-workflows/).'),
             faq([
-                'Do we need developers to build workflows?' => 'No. Workflows are configured from triggers, conditions, actions and approvals without code, and can be tested before they go live.',
+                'Do we need developers to build workflows?' => 'No. Workflows are designed to be configured from triggers, conditions, actions and approvals without code, and tested before they go live.',
                 'Which processes do institutions automate first?' => 'Usually document reminders, enquiry routing, fee reminders and approval chains for concessions or certificates.',
-                'Can a person approve steps inside a workflow?' => 'Yes. Approval steps route to named roles with deadlines and escalation, and every decision is recorded.',
+                'Can a person approve steps inside a workflow?' => 'Yes, that is the plan. Approval steps route to named roles with deadlines and escalation, and every decision is recorded.',
             ]),
         ],
         'related' => ['/ai/ai-workflows/', '/glossary/workflow-automation/', '/resources/education-workflow-automation/', '/platform/task-management/'],
@@ -538,8 +538,8 @@ return [
         'icon'  => 'dashboard',
         'blocks' => [
             sec('Designed for decisions, not decoration',
-                'Leadership dashboards often fail by showing too much. Acadlytic’s institutional dashboard starts from a small set of indicators agreed with your leadership team, each with a clear definition, a comparison period and an owner.'),
-            cards('Typical indicator groups', [
+                'Leadership dashboards often fail by showing too much. Acadlytic’s institutional dashboard is designed to start from a small set of indicators agreed with your leadership team, each with a clear definition, a comparison period and an owner.'),
+            cards('Planned indicator groups', [
                 'Admissions' => 'Enquiries, applications and conversion by programme and source against the same point last cycle.',
                 'Enrolment' => 'Confirmed enrolments, deferrals and withdrawals.',
                 'Academic health' => 'Attendance, assessment completion and progression.',
@@ -547,7 +547,7 @@ return [
                 'Finance' => 'Collections, dues ageing and concessions.',
                 'Communication' => 'Response times to enquiries and queries.',
             ]),
-            checks('Built-in good practice', [
+            checks('Good practice in the design', [
                 'Every indicator shows its definition on hover',
                 'Comparisons to the previous period or cycle',
                 'Drill-down to records within your permissions',
@@ -556,7 +556,7 @@ return [
             ]),
             faq([
                 'Which indicators should an institutional dashboard show?' => 'A small set agreed with leadership, usually eight to twelve, covering admissions, enrolment, academic health, student support, finance and responsiveness.',
-                'Can the dashboard compare campuses?' => 'Yes. Campus and programme filters use the same definitions everywhere, so comparisons are like for like.',
+                'Can the dashboard compare campuses?' => 'Yes, that is the plan. Campus and programme filters use the same definitions everywhere, so comparisons are like for like.',
             ]),
         ],
         'related' => ['/resources/institutional-dashboard-guide/', '/solutions/for-leadership/', '/platform/reports-insights/', '/glossary/institutional-analytics/'],
@@ -572,7 +572,7 @@ return [
         'blocks' => [
             sec('Engagement is a pattern, not a single metric',
                 'No single number captures engagement. Attendance matters, but so do assignment submissions, portal activity, participation in events and responses to outreach. Looking at these together, over time, gives a more reliable picture than any one of them alone.'),
-            table('Signals Acadlytic can combine', ['Signal', 'Source'], [
+            table('Signals Acadlytic is designed to combine', ['Signal', 'Source'], [
                 ['Attendance trend', '[Academic operations](/platform/academic-operations/)'],
                 ['Submission timeliness', 'Assessments or connected [LMS](/integrations/lms-integration/)'],
                 ['Portal and message activity', 'Student portal and [Communication Hub](/platform/communication-hub/)'],
@@ -585,7 +585,7 @@ return [
                 'Advisor tasks' => 'Create personal follow-up tasks where a conversation is needed.',
                 'Feedback loops' => 'Short pulse surveys to hear directly from students.',
             ]),
-            note('Engagement data is used to offer support, not to penalise students. Institutions configure which signals are used and who can see them.'),
+            note('Engagement data is intended to prompt support, not to penalise students. Institutions will configure which signals are used and who can see them.'),
             faq([
                 'How does Acadlytic measure student engagement?' => 'By combining signals your institution chooses, such as attendance trend, submission timeliness, portal activity, service interactions and participation.',
                 'Who can see engagement data?' => 'Only the roles your institution authorises, typically advisors and student-support staff.',
@@ -604,8 +604,8 @@ return [
         'icon'  => 'trend',
         'blocks' => [
             sec('Questions enrolment analytics should answer',
-                'Which programmes are ahead or behind last year at this point? Which sources produce applicants who actually enrol? Where in the process do we lose the most people, and does that differ by region or programme? Acadlytic answers these directly from admissions data, without a separate analytics project.'),
-            cards('Analyses included', [
+                'Which programmes are ahead or behind last year at this point? Which sources produce applicants who actually enrol? Where in the process do we lose the most people, and does that differ by region or programme? Acadlytic is designed to answer these directly from admissions data, without a separate analytics project.'),
+            cards('Planned analyses', [
                 'Funnel conversion' => 'Enquiry to application to offer to enrolment, by programme, source and counsellor.',
                 'Cycle comparison' => 'Same-day comparisons with previous cycles to judge progress fairly.',
                 'Source quality' => 'Which campaigns and channels lead to enrolments, not just enquiries.',
@@ -613,7 +613,7 @@ return [
                 'Geography' => 'Demand by region and feeder school.',
                 'Forecasting' => 'Projected enrolment ranges using [predictive analytics](/ai/ai-predictive-analytics/).',
             ]),
-            checks('Good practice we build in', [
+            checks('Good practice we are building in', [
                 'Consistent stage definitions across programmes',
                 'Forecasts shown as ranges with assumptions stated',
                 'Drill-down to applicant lists for action',

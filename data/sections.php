@@ -7,11 +7,11 @@
 declare(strict_types=1);
 
 return [
-    'platform'     => ['label' => 'Platform',      'hub' => '/platform/',     'eyebrow' => 'Platform',        'icon' => 'layers'],
-    'ai'           => ['label' => 'Acadlytic AI',  'hub' => '/ai/',           'eyebrow' => 'Acadlytic AI',    'icon' => 'ai'],
-    'solutions'    => ['label' => 'Solutions',     'hub' => '/solutions/',    'eyebrow' => 'Solutions',       'icon' => 'users'],
-    'industries'   => ['label' => 'Institutions',  'hub' => '/industries/',   'eyebrow' => 'Institutions',    'icon' => 'building'],
-    'integrations' => ['label' => 'Integrations',  'hub' => '/integrations/', 'eyebrow' => 'Integrations',    'icon' => 'plug'],
+    'platform'     => ['label' => 'Platform',      'hub' => '/platform/',     'eyebrow' => 'Platform',        'icon' => 'layers', 'planned' => true],
+    'ai'           => ['label' => 'Acadlytic AI',  'hub' => '/ai/',           'eyebrow' => 'Acadlytic AI',    'icon' => 'ai', 'planned' => true],
+    'solutions'    => ['label' => 'Solutions',     'hub' => '/solutions/',    'eyebrow' => 'Solutions',       'icon' => 'users', 'planned' => true],
+    'industries'   => ['label' => 'Institutions',  'hub' => '/industries/',   'eyebrow' => 'Institutions',    'icon' => 'building', 'planned' => true],
+    'integrations' => ['label' => 'Integrations',  'hub' => '/integrations/', 'eyebrow' => 'Integrations',    'icon' => 'plug', 'planned' => true],
     'resources'    => ['label' => 'Resources',     'hub' => '/resources/',    'eyebrow' => 'Resources',       'icon' => 'book'],
     'glossary'     => ['label' => 'Glossary',      'hub' => '/glossary/',     'eyebrow' => 'Glossary',        'icon' => 'book'],
     'comparisons'  => ['label' => 'Comparisons',   'hub' => '/comparisons/',  'eyebrow' => 'Comparison',      'icon' => 'scale'],

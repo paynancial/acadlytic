@@ -19,6 +19,10 @@ element IDs; no placeholder text; content depth (≥180 words for articles,
 checked: redirect targets exist with no chains, every directory stub exists,
 all navigation links resolve, the sitemap matches the indexable pages, required
 assets exist, the icon sprite is current and every referenced icon name exists.
+Claims policy: no unsupported statistics or superlatives on any page; all 78
+product pages show the *Planned · In development* notice and contain no
+present-tense availability claims; legal drafts carry the review marker and are
+noindex (`--launch` fails while any remain).
 AEO: every FAQ has FAQPage schema; every article page has an FAQ; guides and
 comparisons have key takeaways, Article schema and a visible last-updated line;
 `llms.txt` lists every indexable page.

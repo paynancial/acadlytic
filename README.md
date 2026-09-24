@@ -70,7 +70,7 @@ php -S localhost:8080 bin/dev-router.php
 
 1. Edit or add a page in `data/pages/*.php` (see `docs/CONTENT_GUIDE.md`).
 2. `php bin/build.php` — writes stubs for new pages, removes orphans, rebuilds `sitemap.xml`.
-3. `php bin/qa.php` — must finish with `0 error(s)`.
+3. `php bin/qa.php` — must finish with `0 error(s)`. Before launch run `php bin/qa.php --launch`, which also fails on unapproved legal drafts.
 4. Commit and deploy.
 
 ## Deployment
@@ -81,6 +81,8 @@ See **`docs/DEPLOYMENT.md`** for the step-by-step cPanel guide.
 
 - `docs/AUTH_ARCHITECTURE.md` — login UX, what is implemented, how to enable the future auth/CMS
 - `docs/HEADER_FOOTER.md` — utility bar, mega menu, footer and governance design
+- `docs/CLAIMS_REGISTER.md` — every public claim: LIVE / PLANNED / REMOVE, with evidence needed
+- `docs/LEGAL_REVIEW_CHECKLIST.md` — what counsel must review and complete before launch
 - `docs/PLACEHOLDERS.md` — items Acadlytic must confirm before or after launch
 - `docs/QA_REPORT.md` — latest verification results
 - `docs/CMS_PHASE3_BLUEPRINT.md` — CMS phase scope

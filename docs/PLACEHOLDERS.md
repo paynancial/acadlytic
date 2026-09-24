@@ -12,15 +12,9 @@ real content.
 
 ## Must confirm before launch
 
-| Item | Where | Why |
-|---|---|---|
-| SPF/DKIM pass for `info@acadlytic.com` on the hosting server | cPanel → Email Deliverability | Enquiry notifications are sent from `info@acadlytic.com` via `mail()`. Support, account help and notifications all use this confirmed mailbox. |
-| Privacy, Terms and Grievance pages reviewed by counsel | `/trust/privacy/`, `/trust/terms/`, `/trust/grievance-redressal/` | Written as plain-language drafts with a visible “pending legal review” banner. Remove the `draft` key once approved. |
-| Grievance response timelines | `/trust/grievance-redressal/` | Not stated. Currently “timelines required by applicable law”. |
-| Security Center controls match production | `/core/security/` | Describes encryption in transit/at rest, RBAC, audit logs, backups and incident handling. Engineering should confirm each statement. |
-| Product capability statements | All `/platform/`, `/ai/`, `/integrations/` pages | Describe the modules named in the handoff briefs. Product owners should confirm each capability, and mark any roadmap items as such. |
-| SSO protocols (SAML 2.0 / OIDC), sandbox environments, API and webhooks | Integrations pages, IT solutions page | Confirm availability, or reword as planned. |
-| “Toll-free” status of +91 8010707171 | Utility bar, footer, contact routes | Shown as **Phone**. Indian toll-free numbers use the 1800/1860 series; this is a standard 10-digit number. Only relabel if the provider confirms toll-free status. |
+- **Product claims:** every product capability is currently **PLANNED** and labelled on the site. See `docs/CLAIMS_REGISTER.md` for the evidence needed to promote each one to LIVE.
+- **Legal pages:** Privacy, Terms, Grievance process and both officer pages are drafts marked **LEGAL REVIEW REQUIRED — NOT FINAL** and noindex. See `docs/LEGAL_REVIEW_CHECKLIST.md`. `php bin/qa.php --launch` fails until they are signed off.
+- **Mailboxes:** info@, dpo@ and gro@acadlytic.com exist and are monitored; SPF/DKIM pass on the hosting server.
 
 ## Placeholders (noindex until real content exists)
 

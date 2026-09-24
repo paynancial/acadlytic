@@ -27,6 +27,8 @@ $related = acad_related($page);
             <p class="eyebrow"><?= e($page['eyebrow']) ?></p>
             <h1><?= e($page['h1']) ?></h1>
             <p class="lead"><?= acad_inline($page['lead']) ?></p>
+            <?= acad_status_notice($page) ?>
+            <?= acad_legal_marker($page) ?>
             <?php if (acad_is_editorial($page)): $upd = acad_page_updated($page); ?>
             <p class="page-meta"><?= icon('calendar', 'icon icon-sm') ?>Last updated <time datetime="<?= e($upd) ?>"><?= e(date('j F Y', (int) strtotime($upd))) ?></time><span aria-hidden="true">·</span>By the Acadlytic editorial team</p>
             <?php endif; ?>

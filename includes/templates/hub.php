@@ -18,6 +18,8 @@ $groups = $page['groups'] ?? [['title' => null, 'text' => null, 'paths' => array
             <p class="eyebrow"><?= e($page['eyebrow']) ?></p>
             <h1><?= e($page['h1']) ?></h1>
             <p class="lead"><?= acad_inline($page['lead']) ?></p>
+            <?= acad_status_notice($page) ?>
+            <?= acad_legal_marker($page) ?>
             <div class="hero-actions">
                 <a class="btn btn-primary btn-lg" href="/company/request-demo/">Request a Demo <?= icon('arrow') ?></a>
                 <a class="btn btn-outline btn-lg" href="/core/contact/">Talk to Our Team</a>

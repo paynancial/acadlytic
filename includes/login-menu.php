@@ -16,6 +16,7 @@ declare(strict_types=1);
         <div class="login-pop-head">
             <p class="login-pop-kicker">Access your Acadlytic account</p>
             <p class="login-pop-title">Choose your workspace</p>
+            <p class="login-pop-note">Workspace access is opening in phases.</p>
         </div>
         <ul class="workspace-list">
             <?php foreach ($nav['workspaces'] as $key => [$label, $text, $ic]): ?>
@@ -31,7 +32,7 @@ declare(strict_types=1);
         <div class="login-pop-foot">
             <p class="login-help">Need help? <a href="<?= e(acad_mailto((string) acad_config('support_email'), 'Account access help')) ?>"><?= e(acad_config('support_email')) ?></a></p>
             <a class="btn btn-primary btn-block" href="/login.php">Continue to Login <?= icon('arrow') ?></a>
-            <p class="login-assure"><?= icon('shield', 'icon icon-xs') ?> Secure access · Encrypted sessions · Role-based access</p>
+            <p class="login-assure"><?= icon('shield', 'icon icon-xs') ?> Secure sign-in · Encrypted connection</p>
         </div>
     </div>
 </div>

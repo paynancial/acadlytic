@@ -99,11 +99,35 @@ function acad_breadcrumb_html(array $page): string
     return '<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>' . $items . '</ol></nav>';
 }
 
+/** Planned-capability notice for product pages (claims policy: docs/CLAIMS_REGISTER.md). */
+function acad_status_notice(array $page): string
+{
+    if (($page['status'] ?? null) !== 'planned') {
+        return '';
+    }
+    $text = $page['status_note'] ?? ($page['template'] === 'hub'
+        ? 'The capabilities in this section are in development and not yet generally available. Pages describe what Acadlytic is designed to do; scope and timing are confirmed with each institution.'
+        : 'This page describes what Acadlytic is designed to do. These capabilities are in development and not yet generally available; scope and timing are confirmed with each institution.');
+    return '<div class="status-notice" role="note"><span class="status-pill">' . icon('flag', 'icon icon-xs') . 'Planned · In development</span><p>' . e($text) . '</p></div>';
+}
+
+/** Visible and machine-readable marker on legal pages awaiting counsel sign-off. */
+function acad_legal_marker(array $page): string
+{
+    if (empty($page['legal_draft'])) {
+        return '';
+    }
+    return "<!-- LEGAL REVIEW REQUIRED — NOT FINAL -->\n"
+        . '<div class="legal-marker" role="note"><strong>LEGAL REVIEW REQUIRED — NOT FINAL</strong><span>This draft has not been approved by legal counsel and must not be relied on as Acadlytic’s final policy.</span>'
+        . (!empty($page['counsel_items']) ? '<details><summary>For legal counsel to complete</summary><ul><li>' . implode('</li><li>', array_map('e', $page['counsel_items'])) . '</li></ul></details>' : '')
+        . '</div>';
+}
+
 /** Card linking to another page (hubs, related content, search results). */
 function acad_link_card(array $target, string $class = 'link-card'): string
 {
     return '<a class="' . e($class) . '" href="' . e($target['path']) . '"><span class="link-card-icon">' . icon($target['icon']) . '</span>'
-        . '<span class="link-card-body"><strong>' . e($target['nav_label'] ?: $target['h1']) . '</strong><span>' . e($target['desc']) . '</span></span>'
+        . '<span class="link-card-body"><strong>' . e($target['nav_label'] ?: $target['h1']) . (($target['status'] ?? null) === 'planned' ? ' <em class="mini-pill">Planned</em>' : '') . '</strong><span>' . e($target['desc']) . '</span></span>'
         . '<span class="link-card-arrow">' . icon('arrow') . '</span></a>';
 }
 

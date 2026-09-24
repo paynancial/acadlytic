@@ -120,7 +120,8 @@ file_put_contents(ACAD_ROOT . '/sitemap.xml', $xml);
 // llms.txt (https://llmstxt.org): a curated map of the site for AI answer engines.
 $c = acad_config();
 $llms = "# {$c['name']}\n\n> {$c['descriptor']}. {$c['tagline']}\n\n"
-    . "Acadlytic connects admissions and CRM, student records, academic operations, finance and fees, communication, documents and analytics on one cloud platform, with AI features that keep people in control of consequential decisions.\n\n"
+    . "Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management, designed to connect admissions and CRM, student records, academic operations, finance and fees, communication, documents and analytics, with AI features that keep people in control of consequential decisions.\n\n"
+    . "Status: the platform is in development. Product, AI, solution and integration pages describe planned capabilities that are not yet generally available. Acadlytic publishes no customer counts, testimonials or certifications.\n\n"
     . "- Website: " . acad_url('/') . "\n- Contact: {$c['email']} · {$c['phone']}\n- Request a demo: " . acad_url('/company/request-demo/') . "\n"
     . "- Official profiles: " . implode(', ', array_map(static fn($s) => $s['url'], $c['social'])) . "\n";
 $groups = [
@@ -134,7 +135,7 @@ foreach ($groups as $title => $secs) {
         // /core/ pages are grouped under their breadcrumb parent's section.
         $sec = $page['section'] === 'core' ? (acad_page($page['parent'])['section'] ?? 'core') : $page['section'];
         if (in_array($sec, $secs, true) && empty($page['virtual'])) {
-            $llms .= '- [' . ($page['nav_label'] ?: $page['h1']) . '](' . acad_url($path) . '): ' . $page['desc'] . "\n";
+            $llms .= '- [' . ($page['nav_label'] ?: $page['h1']) . '](' . acad_url($path) . '): ' . (($page['status'] ?? null) === 'planned' ? '(Planned) ' : '') . $page['desc'] . "\n";
         }
     }
 }

@@ -73,23 +73,23 @@ return [
         'parent' => '/resources/',
         'blocks' => [
             faq([
-                'What is Acadlytic?' => 'Acadlytic, Inc. provides an AI-powered EdTech CRM and cloud platform for academic management. It connects admissions, student records, academic operations, finance, communication, documents and analytics on one data model.',
+                'What is Acadlytic?' => 'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management, designed to connect admissions, student records, academic operations, finance, communication, documents and analytics on one data model. The platform is in development.',
                 'Who is it for?' => 'Universities, colleges, multi-campus groups, professional, continuing and online education providers, and the partners who work with them.',
-                'Do we have to replace all our systems?' => 'No. Many institutions start with one area, such as admissions and CRM, and integrate with existing systems. See [Integrations](/integrations/).',
+                'Do we have to replace all our systems?' => 'No. Acadlytic is designed so institutions can start with one area, such as admissions and CRM, and integrate with existing systems. See [Integrations](/integrations/).',
             ], 'About Acadlytic'),
             faq([
                 'How long does implementation take?' => 'It depends on scope, data condition and integrations. A focused admissions rollout is much faster than a multi-module, multi-campus programme. We give a written timeline in our proposal.',
-                'Can you migrate our existing data?' => 'Yes. We profile your data, agree mapping and cleansing rules, test in a sandbox and reconcile with your team before going live. See [Data Management](/platform/data-management/).',
-                'Do you provide training?' => 'Yes. Training is role-based and scoped in the proposal, with materials your team can reuse for new staff.',
+                'Can you migrate our existing data?' => 'That is the plan. Migration is designed to profile your data, agree mapping and cleansing rules, test in a sandbox and reconcile with your team before going live. See [Data Management](/platform/data-management/).',
+                'Do you provide training?' => 'Yes. Training will be role-based and scoped in each proposal, with materials your team can reuse for new staff.',
             ], 'Implementation'),
             faq([
-                'Who owns our data?' => 'Your institution does. You can export it at any time. See [Data Export](/integrations/data-export/).',
-                'How is data protected?' => 'Through encryption in transit, role-based access, audit trails and secure development practices. See the [Security Center](/core/security/) and [Privacy](/trust/privacy/).',
-                'Is our data used to train AI models?' => 'Institutional data is not used to train public AI models. See [Responsible AI](/ai/responsible-ai/).',
+                'Who owns our data?' => 'Your institution does. Full data export in open formats is part of the planned design. See [Data Export](/integrations/data-export/).',
+                'How is data protected?' => 'Through a security design that includes encryption in transit, role-based access, audit trails and secure development practices. See the [Security Center](/core/security/) and [Privacy](/trust/privacy/).',
+                'Is our data used to train AI models?' => 'Acadlytic’s design principle is that institutional data will not be used to train public AI models. See [Responsible AI](/ai/responsible-ai/).',
             ], 'Data & security'),
             faq([
-                'Does the AI make decisions about students?' => 'No. AI features suggest, summarise and draft. Consequential decisions such as admissions, sanctions or grades stay with people.',
-                'Can we turn AI features off?' => 'Yes. Each AI feature can be enabled or disabled by the institution, by role or department.',
+                'Does the AI make decisions about students?' => 'No. AI features are designed to suggest, summarise and draft. Consequential decisions such as admissions, sanctions or grades stay with people.',
+                'Can we turn AI features off?' => 'That is the plan. Each AI feature is designed to be enabled or disabled by the institution, by role or department.',
             ], 'AI'),
             faq([
                 'How much does Acadlytic cost?' => 'Pricing depends on modules, scale and integrations. See [how pricing works](/core/pricing/) and request a proposal.',
@@ -276,7 +276,7 @@ return [
                 ['Year 1 → year 2', 'Failure or loss of motivation', 'Advising, academic support, progression planning'],
                 ['Final year → graduation', 'Missing requirements', 'Completion audits, clearance tracking'],
             ]),
-            note('Acadlytic models lifecycle stages explicitly. See [Student Lifecycle](/platform/student-lifecycle/).'),
+            note('Acadlytic is designed to model lifecycle stages explicitly. See [Student Lifecycle](/platform/student-lifecycle/).'),
             faq([
                 'Which lifecycle transition is most important?' => 'It varies by institution. Measure transition rates each term and focus on the weakest, which is often offer-to-enrolment or first-year progression.',
                 'Who should own each lifecycle stage?' => 'A named team per stage and per hand-off, so responsibility never sits between departments.',
@@ -391,7 +391,7 @@ return [
             table('Cloud service models', ['Model', 'What you manage', 'Example'], [
                 ['Infrastructure (IaaS)', 'Operating systems, applications and data on rented servers', 'Running your own software on cloud virtual machines'],
                 ['Platform (PaaS)', 'Applications and data on a managed platform', 'Custom apps on a managed application platform'],
-                ['Software (SaaS)', 'Configuration, users and data', 'Acadlytic and other subscription applications'],
+                ['Software (SaaS)', 'Configuration, users and data', 'Subscription applications, such as the planned Acadlytic platform'],
             ]),
             sec('The shared responsibility model',
                 'In any cloud arrangement, responsibilities are shared. With SaaS, the provider secures and operates the application and infrastructure; the institution is responsible for who gets access, how users are managed, how data is used and how the service is configured. Clarity on this split prevents gaps.'),
@@ -487,7 +487,7 @@ return [
                 ['Staff touches per request', 'Count current steps', 'Target: one approval'],
                 ['Status enquiries', 'Count emails and calls', 'Expect a reduction with portal tracking'],
             ], 'Record a baseline before launch so improvements are measured rather than assumed.'),
-            note('Acadlytic’s [workflow builder](/platform/workflow-automation/) supports each of these steps, including optional [AI steps](/ai/ai-workflows/) to classify free-text requests.'),
+            note('Acadlytic’s planned [workflow builder](/platform/workflow-automation/) is designed to support each of these steps, including optional [AI steps](/ai/ai-workflows/) to classify free-text requests.'),
             faq([
                 'Why start with a certificate request workflow?' => 'It is frequent, rule-based and visible to students, so improvements are easy to measure and appreciate.',
                 'What happens when an automated check fails?' => 'The student is told what is outstanding and a task is created for staff, rather than the request silently stalling.',

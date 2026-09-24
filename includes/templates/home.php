@@ -2,7 +2,8 @@
 /**
  * Homepage. Follows the approved reference layout but deliberately omits
  * unverified proof (customer logos, counts, percentages, testimonials).
- * The product preview is labelled as sample data.
+ * The platform is in development: product copy uses planned/designed wording
+ * (docs/CLAIMS_REGISTER.md) and the preview is labelled a concept with sample data.
  *
  * @var array $page
  */
@@ -36,7 +37,7 @@ $measures = [
     <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="container hero-inner">
         <div>
-            <p class="eyebrow">AI-powered academic management platform</p>
+            <p class="eyebrow">AI-powered academic management platform · In development</p>
             <h1><span class="nowrap">Smarter Education.</span><br><span class="gradient-text nowrap">Intelligent Operations.</span></h1>
             <p class="lead"><?= e($page['lead']) ?></p>
             <div class="hero-actions">
@@ -52,8 +53,8 @@ $measures = [
         </div>
 
         <div class="product-stage">
-            <figure class="app-window" aria-label="Illustrative preview of the Acadlytic dashboard using sample data">
-                <div class="app-top" aria-hidden="true"><i></i><i></i><i></i><span>Acadlytic · Institution dashboard</span><span class="sample-tag">SAMPLE DATA</span></div>
+            <figure class="app-window" aria-label="Concept preview of the planned Acadlytic dashboard using sample data">
+                <div class="app-top" aria-hidden="true"><i></i><i></i><i></i><span>Acadlytic · Dashboard concept</span><span class="sample-tag">CONCEPT · SAMPLE DATA</span></div>
                 <div class="app-body" aria-hidden="true">
                     <div class="app-side">
                         <span class="on"><?= icon('dashboard') ?>Dashboard</span>
@@ -97,8 +98,8 @@ $measures = [
                     </div>
                 </div>
             </figure>
-            <div class="ai-float" aria-label="Acadlytic AI Assistant example prompts">
-                <div class="ai-float-head"><span class="ai-orb"><?= icon('ai') ?></span><span><strong>Acadlytic AI</strong><small>Assistant</small></span><span class="ai-live" aria-hidden="true"></span></div>
+            <div class="ai-float" aria-label="Planned Acadlytic AI Assistant example prompts">
+                <div class="ai-float-head"><span class="ai-orb"><?= icon('ai') ?></span><span><strong>Acadlytic AI</strong><small>Assistant · planned</small></span><span class="ai-live" aria-hidden="true"></span></div>
                 <p class="ai-q">How can I help today?</p>
                 <ul class="ai-chips">
                     <li><?= icon('trend') ?>Show admissions trends</li>
@@ -131,13 +132,13 @@ $measures = [
         <div class="section-head">
             <p class="eyebrow">One intelligent academic ecosystem</p>
             <h2 id="eco-h">Everything your institution runs on.<br><span class="gradient-text">Connected by AI.</span></h2>
-            <p>Eight connected modules on one data model, so admissions, academics, finance and communication stop living in separate spreadsheets.</p>
+            <p>Acadlytic is building eight connected modules on one data model, so admissions, academics, finance and communication stop living in separate spreadsheets.</p>
         </div>
         <div class="module-grid">
             <?php foreach ($modules as [$title, $text, $ic, $href]): ?>
             <a class="module" href="<?= e($href) ?>">
                 <span class="info-icon"><?= icon($ic) ?></span>
-                <h3><?= e($title) ?></h3>
+                <h3><?= e($title) ?> <em class="mini-pill">Planned</em></h3>
                 <p><?= e($text) ?></p>
                 <span class="text-link">Explore <?= icon('arrow', 'icon icon-sm') ?></span>
             </a>
@@ -151,7 +152,8 @@ $measures = [
         <div>
             <p class="eyebrow on-dark">Acadlytic AI</p>
             <h2 id="ai-h">AI that works for education, <span class="gradient-text">not around it.</span></h2>
-            <p>Acadlytic AI lives inside the workflows your teams already use. It reads context, drafts, summarises and flags, and it leaves consequential decisions with people.</p>
+            <p>Acadlytic AI is being designed to live inside the workflows your teams already use: reading context, drafting, summarising and flagging, while leaving consequential decisions with people.</p>
+            <p class="muted-on-dark">Planned capabilities:</p>
             <ul class="ai-list">
                 <li><?= icon('check', 'icon check-icon') ?><span>Forecast enquiry and enrolment trends from your own history</span></li>
                 <li><?= icon('check', 'icon check-icon') ?><span>Surface students who may need support, with the reasons shown</span></li>
@@ -169,7 +171,7 @@ $measures = [
             <div class="ai-card"><span class="info-icon"><?= icon('flag') ?></span><h3>Student success signals</h3><p>Early indicators from attendance, submissions and engagement.</p></div>
             <div class="ai-card"><span class="info-icon"><?= icon('chart') ?></span><h3>Narrative reporting</h3><p>Summaries that explain what changed and why it matters.</p></div>
             <div class="ai-card"><span class="info-icon"><?= icon('doc') ?></span><h3>Document intelligence</h3><p>Classify submitted documents and pre-fill checks for staff.</p></div>
-            <div class="ai-card wide"><span class="info-icon"><?= icon('shield') ?></span><div><h3>People stay in control</h3><p>Every AI suggestion is explainable, reviewable and logged. Nothing is sent or decided automatically unless your institution chooses to allow it.</p></div></div>
+            <div class="ai-card wide"><span class="info-icon"><?= icon('shield') ?></span><div><h3>People stay in control</h3><p>The design makes every AI suggestion explainable, reviewable and logged. Nothing will be sent or decided automatically unless your institution chooses to allow it.</p></div></div>
         </div>
     </div>
 </section>
@@ -179,7 +181,7 @@ $measures = [
         <div class="section-head">
             <p class="eyebrow">Designed for every stakeholder</p>
             <h2 id="stake-h">One platform. <span class="gradient-text">Everyone connected.</span></h2>
-            <p>Role-based workspaces give each person the information and actions they need, and nothing they should not see.</p>
+            <p>Role-based workspaces are designed to give each person the information and actions they need, and nothing they should not see.</p>
         </div>
         <div class="stake-grid">
             <?php foreach ($stakeholders as [$title, $text, $ic, $href]): ?>
@@ -197,7 +199,7 @@ $measures = [
         <div class="section-head">
             <p class="eyebrow">Measurable impact</p>
             <h2 id="measure-h">Measure what matters, <span class="gradient-text">from day one.</span></h2>
-            <p>We agree the baseline with you during onboarding, then track the operational measures your leadership cares about.</p>
+            <p>Acadlytic is being built to track the operational measures leadership cares about, starting from a baseline agreed with each institution.</p>
         </div>
         <div class="measure-grid">
             <?php foreach ($measures as [$title, $text, $ic]): ?>
@@ -213,17 +215,17 @@ $measures = [
         <div>
             <p class="eyebrow">Secure. Scalable. Connected.</p>
             <h2 id="sec-h">Built for a <span class="gradient-text">connected world.</span></h2>
-            <p class="lead">A cloud architecture designed around privacy, role-based access and integration with the systems you already run.</p>
+            <p class="lead">A cloud architecture being designed around privacy, role-based access and integration with the systems you already run.</p>
             <div class="hero-actions">
                 <a class="btn btn-outline btn-lg" href="/core/security/">Visit the Security Center</a>
                 <a class="btn btn-ghost btn-lg" href="/integrations/">See integrations <?= icon('arrow') ?></a>
             </div>
         </div>
         <div class="sec-cards">
-            <div class="sec-card"><span class="info-icon"><?= icon('cloud') ?></span><div><h3>Cloud infrastructure</h3><p>Scalable, resilient and available wherever your teams work.</p></div></div>
-            <div class="sec-card"><span class="info-icon"><?= icon('shield') ?></span><div><h3>Data security</h3><p>Encryption in transit, least-privilege access and audit trails.</p></div></div>
-            <div class="sec-card"><span class="info-icon"><?= icon('key') ?></span><div><h3>Role-based access</h3><p>Permissions by role, department and campus.</p></div></div>
-            <div class="sec-card"><span class="info-icon"><?= icon('plug') ?></span><div><h3>Integrations</h3><p>SIS, LMS, ERP, payments, SSO and messaging.</p></div></div>
+            <div class="sec-card"><span class="info-icon"><?= icon('cloud') ?></span><div><h3>Cloud infrastructure</h3><p>Designed to be scalable, resilient and available wherever your teams work.</p></div></div>
+            <div class="sec-card"><span class="info-icon"><?= icon('shield') ?></span><div><h3>Data security</h3><p>Designed for encryption in transit, least-privilege access and audit trails.</p></div></div>
+            <div class="sec-card"><span class="info-icon"><?= icon('key') ?></span><div><h3>Role-based access</h3><p>Planned permissions by role, department and campus.</p></div></div>
+            <div class="sec-card"><span class="info-icon"><?= icon('plug') ?></span><div><h3>Integrations</h3><p>Planned SIS, LMS, ERP, payments, SSO and messaging.</p></div></div>
         </div>
     </div>
 </section>
@@ -235,9 +237,9 @@ $measures = [
                 <p class="eyebrow">Education without borders</p>
                 <h2 id="global-h">Our commitments to every institution we work with</h2>
                 <ul class="principles">
-                    <li><?= icon('check', 'icon check-icon') ?><span><strong>Your data stays yours.</strong> Export it any time, in open formats.</span></li>
-                    <li><?= icon('check', 'icon check-icon') ?><span><strong>Honest AI.</strong> Suggestions are explained, and people make the decisions.</span></li>
-                    <li><?= icon('check', 'icon check-icon') ?><span><strong>Real proof only.</strong> No invented statistics or testimonials.</span></li>
+                    <li><?= icon('check', 'icon check-icon') ?><span><strong>Your data stays yours.</strong> Full export in open formats is part of the design.</span></li>
+                    <li><?= icon('check', 'icon check-icon') ?><span><strong>Honest AI.</strong> Suggestions explained, with people making the decisions.</span></li>
+                    <li><?= icon('check', 'icon check-icon') ?><span><strong>Real proof only.</strong> No invented statistics, customers or testimonials, and planned features labelled as planned.</span></li>
                     <li><?= icon('check', 'icon check-icon') ?><span><strong>Reachable people.</strong> Named routes for support, privacy and grievances.</span></li>
                 </ul>
             </div>

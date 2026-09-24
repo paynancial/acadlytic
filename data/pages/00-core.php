@@ -9,7 +9,7 @@ declare(strict_types=1);
 return [
     '/' => [
         'title'    => 'Acadlytic, Inc. | AI-Powered EdTech CRM & Academic Cloud',
-        'desc'     => 'Acadlytic is an AI-powered EdTech CRM and cloud platform connecting admissions, students, academics, finance and communication for modern institutions.',
+        'desc'     => 'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform to connect admissions, students, academics, finance and communication for institutions.',
         'h1'       => 'Smarter Education. Intelligent Operations.',
         'lead'     => 'One AI-powered platform to connect institutions, people, data and decisions.',
         'template' => 'home',
@@ -54,7 +54,7 @@ return [
         'title'   => 'Sign in',
         'desc'    => 'Sign in to your Acadlytic workspace.',
         'h1'      => 'Welcome back to Acadlytic.',
-        'lead'    => 'Sign in to your secure workspace and continue managing a smarter, more connected academic ecosystem.',
+        'lead'    => 'Sign in to your secure workspace. Acadlytic workspaces are opening in phases; if your institution has not been given access yet, request it below.',
         'section' => 'utility',
         'noindex' => true,
         'virtual' => true,
@@ -74,7 +74,7 @@ return [
         'title'   => 'Request access',
         'desc'    => 'Request access to an Acadlytic workspace for your institution, team or partner organisation.',
         'h1'      => 'Join your Acadlytic workspace.',
-        'lead'    => 'Tell us about your institution and role. Our team reviews every request and sets up access with the right permissions.',
+        'lead'    => 'Tell us about your institution and role. Workspaces are opening in phases, and our team reviews every request.',
         'section' => 'utility',
         'noindex' => true,
         'virtual' => true,
@@ -83,10 +83,10 @@ return [
 
     '/core/about/' => [
         'title'   => 'About Acadlytic, Inc.',
-        'desc'    => 'Acadlytic, Inc. builds AI-powered CRM and cloud software for academic management. Learn our mission, what we build and how we work with institutions.',
+        'desc'    => 'Acadlytic, Inc. is building AI-powered CRM and cloud software for academic management. Learn our mission, what we are building and how we work with institutions.',
         'h1'      => 'About Acadlytic',
         'nav_label' => 'About',
-        'lead'    => 'Acadlytic, Inc. builds AI-powered CRM and cloud software that helps educational institutions run admissions, academics and student relationships as one connected system. Where Education Meets Intelligence.',
+        'lead'    => 'Acadlytic, Inc. is building AI-powered CRM and cloud software designed to help educational institutions run admissions, academics and student relationships as one connected system. Where Education Meets Intelligence.',
         'parent'  => '/company/',
         'section' => 'core',
         'eyebrow' => 'Company',
@@ -95,7 +95,7 @@ return [
             sec('Why Acadlytic exists',
                 'Most institutions run on a patchwork: an admissions spreadsheet, a separate student information system, a finance package, several messaging tools and a folder of reports that someone rebuilds every month. Each piece works on its own. Together they create duplicate data entry, slow responses to students and families, and leadership decisions made on numbers that are already out of date.',
                 'Acadlytic was founded to replace that patchwork with one connected platform: a CRM that understands the student journey, an academic management layer that runs daily operations, and an AI layer that turns the data those systems produce into timely, explainable guidance.'),
-            cards('What we build', [
+            cards('What we are building', [
                 'An education-native CRM' => 'Enquiries, applicants, students, parents and alumni as relationships with a full history, not rows in disconnected lists.',
                 'A cloud academic platform' => 'Admissions, student records, academic operations, finance and documents on a single data model that every department shares.',
                 'Practical, governed AI' => 'Assistants, recommendations and summaries that work inside real workflows, with human approval for anything consequential.',
@@ -110,7 +110,7 @@ return [
             sec('Who we serve',
                 'Acadlytic is designed for universities, colleges, multi-campus groups, professional and continuing education providers, online programmes and the partners who work alongside them. Inside each institution we design for the people who do the work: leadership, administrators, admissions teams, faculty, advisors, finance and IT, as well as students and parents.'),
             faq([
-                'What does Acadlytic, Inc. do?' => 'Acadlytic builds an AI-powered EdTech CRM and cloud platform for academic management. It connects admissions, student records, academic operations, finance, communication and analytics so institutions work from one set of data.',
+                'What does Acadlytic, Inc. do?' => 'Acadlytic is building an AI-powered EdTech CRM and cloud platform for academic management, designed to connect admissions, student records, academic operations, finance, communication and analytics so institutions work from one set of data.',
                 'Who is Acadlytic built for?' => 'Universities, colleges, multi-campus groups, professional, continuing and online education providers, and the partners who support them, with role-based workspaces for leaders, staff, faculty, students and parents.',
                 'How is Acadlytic different from a generic CRM?' => 'It is designed around education’s own objects and stages: enquiries, applicants, students, parents and alumni. Relationship data sits on the same model as academic and fee data, so no separate integration project is needed to connect them.',
             ]),
@@ -123,7 +123,7 @@ return [
         'desc'    => 'Cloud academic management software that unifies admissions, student records, academic operations, finance and reporting for colleges and universities.',
         'h1'      => 'Academic management software, rebuilt around connected data',
         'nav_label' => 'Academic Management',
-        'lead'    => 'Acadlytic brings the core processes of an institution (admissions, student records, timetables, assessments, fees and reporting) onto one cloud platform, so every department works from the same, current information.',
+        'lead'    => 'Acadlytic is designed to bring the core processes of an institution (admissions, student records, timetables, assessments, fees and reporting) onto one cloud platform, so every department works from the same, current information.',
         'parent'  => '/platform/',
         'section' => 'core',
         'eyebrow' => 'Platform',
@@ -131,8 +131,8 @@ return [
         'blocks'  => [
             sec('What academic management software should do',
                 'Academic management software is the operational backbone of an institution. At minimum it has to keep an accurate record of every student, run the academic calendar, capture attendance and assessment results, manage fees and produce the reports that leadership, regulators and accreditors expect.',
-                'The harder requirement is that these processes share data. When admissions, academics and finance each keep their own copy of a student, staff spend their time reconciling rather than serving students. Acadlytic is built on a single data model so that an update made once is visible everywhere it is relevant, within each user’s permissions.'),
-            table('What Acadlytic covers', ['Area', 'What it includes'], [
+                'The harder requirement is that these processes share data. When admissions, academics and finance each keep their own copy of a student, staff spend their time reconciling rather than serving students. Acadlytic is being built on a single data model so that an update made once will be visible everywhere it is relevant, within each user’s permissions.'),
+            table('What Acadlytic is designed to cover', ['Area', 'What it includes'], [
                 ['Admissions & CRM', 'Enquiry capture, applicant tracking, counsellor workflows, offers and conversion to enrolment. See [Admissions CRM](/platform/admissions-crm/).'],
                 ['Student records', 'Profiles, programme enrolment, documents, status changes and history. See [Student Management](/platform/student-management/).'],
                 ['Academic operations', 'Timetables, attendance, assessments, results and academic calendars. See [Academic Operations](/platform/academic-operations/).'],
@@ -151,8 +151,8 @@ return [
             ]),
             faq([
                 'Is Acadlytic an ERP or a CRM?' => 'It combines both roles for education: CRM capabilities for relationships across the student lifecycle and academic management capabilities for daily operations. Our [CRM vs ERP comparison](/comparisons/academic-crm-vs-erp/) explains the difference.',
-                'Can we start with one module?' => 'Yes. Many institutions start with admissions and CRM, then add student management, academics and finance. The data model is shared from the start, so later modules connect without migration projects.',
-                'Does it replace our student information system?' => 'It can, or it can integrate with an existing SIS. See [SIS integration](/integrations/sis-integration/) for the patterns we support.',
+                'Can we start with one module?' => 'Yes, that is the plan. Many institutions start with admissions and CRM, then add student management, academics and finance. The data model is shared from the start, so later modules connect without migration projects.',
+                'Does it replace our student information system?' => 'It is designed to do either: replace an SIS or integrate with an existing one. See [SIS integration](/integrations/sis-integration/) for the planned patterns.',
             ]),
         ],
         'related' => ['/platform/', '/core/edtech-crm/', '/core/cloud-platform/', '/resources/academic-management-checklist/', '/comparisons/point-solutions-vs-platform/'],
@@ -163,7 +163,7 @@ return [
         'desc'    => 'An EdTech CRM designed for education: manage enquiries, applicants, students, parents, alumni and partners as lifelong relationships on one cloud platform.',
         'h1'      => 'An EdTech CRM designed for the whole student relationship',
         'nav_label' => 'EdTech CRM',
-        'lead'    => 'Generic sales CRMs think in leads and deals. Acadlytic’s CRM thinks in enquiries, applicants, students, parents, alumni and partners, and keeps their full history as they move through the institution.',
+        'lead'    => 'Generic sales CRMs think in leads and deals. Acadlytic’s CRM is designed to think in enquiries, applicants, students, parents, alumni and partners, and to keep their full history as they move through the institution.',
         'parent'  => '/platform/',
         'section' => 'core',
         'eyebrow' => 'Platform',
@@ -172,7 +172,7 @@ return [
             sec('Why education needs its own CRM',
                 'An institution’s relationships are long, multi-party and regulated. A single applicant may involve a parent, a school counsellor, an agent and several internal teams. After enrolment the relationship continues through academic progress, fees, support services and, eventually, alumni engagement.',
                 'Sales CRMs can be customised to approximate this, but the customisation becomes a project of its own and rarely connects to academic data. An EdTech CRM starts with education’s objects and stages built in.'),
-            cards('Relationships Acadlytic manages', [
+            cards('Relationships Acadlytic is designed to manage', [
                 'Enquiries & applicants' => 'Source, programme interest, counsellor, communication history and application status in one timeline.',
                 'Students' => 'The CRM record continues after enrolment, linked to academic, attendance and fee data.',
                 'Parents & guardians' => 'Linked contacts with their own communication preferences and consent.',
@@ -180,7 +180,7 @@ return [
                 'Agents & partners' => 'Track referrals and partner performance with appropriate data boundaries.',
                 'Schools & feeder institutions' => 'Record visits, events and relationships that drive future enquiries.',
             ]),
-            steps('How the CRM supports the lifecycle', [
+            steps('How the CRM is designed to support the lifecycle', [
                 'Attract' => 'Capture enquiries from web forms, events, campaigns and partners, with source attribution.',
                 'Engage' => 'Automated but personal follow-ups, counsellor tasks and reminders that keep momentum.',
                 'Convert' => 'Application tracking, document collection, offers and acceptance in one flow.',
@@ -190,7 +190,7 @@ return [
             note('The CRM shares one data model with student records, academics and finance, so relationship context is never a separate silo. See [Admissions CRM](/platform/admissions-crm/) for the admissions-specific workflows.'),
             faq([
                 'What is an EdTech CRM?' => 'An EdTech CRM is relationship software built for education. It manages enquiries, applicants, students, parents, alumni and partners across the student lifecycle, rather than the leads and deals of a sales CRM.',
-                'Can the CRM be used after students enrol?' => 'Yes. The same record continues after enrolment, so student services, advisors and parent communication all build on the history captured during admissions.',
+                'Can the CRM be used after students enrol?' => 'Yes, that is the plan. The same record continues after enrolment, so student services, advisors and parent communication all build on the history captured during admissions.',
                 'Does the EdTech CRM include marketing automation?' => 'It includes education-focused nurture sequences, event management and source attribution. Institutions that already run a separate marketing platform can connect it through [CRM integration](/integrations/crm-integration/).',
             ]),
         ],
@@ -199,10 +199,10 @@ return [
 
     '/core/cloud-platform/' => [
         'title'   => 'Cloud Platform for Education',
-        'desc'    => 'Acadlytic runs as a cloud platform for academic management: browser-based access, managed updates, scalable infrastructure and security built into operations.',
+        'desc'    => 'Acadlytic is being built as a cloud platform for academic management: browser-based access, managed updates, scalable infrastructure and security by design.',
         'h1'      => 'A cloud platform built for academic workloads',
         'nav_label' => 'Cloud Platform',
-        'lead'    => 'Acadlytic is delivered as a managed cloud service. Staff, students and parents use it in a browser or on mobile, while infrastructure, updates and backups are handled for the institution.',
+        'lead'    => 'Acadlytic is being built as a managed cloud service. Staff, students and parents will use it in a browser or on mobile, while infrastructure, updates and backups are handled for the institution.',
         'parent'  => '/platform/',
         'section' => 'core',
         'eyebrow' => 'Platform',
@@ -211,8 +211,8 @@ return [
             sec('What “cloud” means in practice',
                 'For an institution, moving academic systems to the cloud is less about technology and more about responsibility. Instead of maintaining servers, applying patches and planning capacity for admission season, the institution relies on a provider to run the service reliably and securely, and focuses its own IT team on integration, data quality and user support.',
                 'Academic workloads are seasonal. Admissions deadlines, results publication and fee due dates create short, intense peaks. A cloud platform is designed to absorb those peaks without the institution buying hardware for the busiest week of the year.'),
-            cards('Platform characteristics', [
-                'Browser-first access' => 'No desktop installs. Staff and students sign in from supported browsers on desktop or mobile.',
+            cards('Planned platform characteristics', [
+                'Browser-first access' => 'No desktop installs are planned. Staff and students will sign in from supported browsers on desktop or mobile.',
                 'Managed updates' => 'Improvements and security fixes are rolled out centrally, with release notes shared ahead of significant changes.',
                 'Designed for peaks' => 'Architecture that scales with admission and results seasons.',
                 'Backups and recovery' => 'Regular backups and documented recovery procedures, agreed as part of onboarding.',
@@ -227,7 +227,7 @@ return [
                 'How data is exported if you ever leave',
             ], 'Every institution has different regulatory and contractual requirements, so we cover these specifics in writing during evaluation rather than in marketing claims.'),
             faq([
-                'Do we need to install anything to use Acadlytic?' => 'No. Acadlytic runs as a managed cloud service used through supported web browsers on desktop and mobile. There are no servers or desktop applications for the institution to maintain.',
+                'Do we need to install anything to use Acadlytic?' => 'No. Acadlytic is designed to run as a managed cloud service used through supported web browsers on desktop and mobile. There are no servers or desktop applications for the institution to maintain.',
                 'How does a cloud platform handle admission-season peaks?' => 'Capacity is managed by the provider and designed to absorb seasonal spikes such as application deadlines and results publication, so institutions do not buy hardware for their busiest week.',
                 'Where is institutional data hosted?' => 'Hosting location and data-residency arrangements are confirmed in writing during evaluation, because requirements differ by country and institution.',
             ]),
@@ -237,7 +237,7 @@ return [
 
     '/core/ai-assistant/' => [
         'title'   => 'Acadlytic AI Assistant',
-        'desc'    => 'The Acadlytic AI Assistant answers questions about admissions, students and operations in plain language, drafts messages and explains reports, within user permissions.',
+        'desc'    => 'The planned Acadlytic AI Assistant is designed to answer questions about admissions, students and operations in plain language, draft messages and explain reports.',
         'h1'      => 'The Acadlytic AI Assistant',
         'nav_label' => 'AI Assistant',
         'lead'    => 'Ask a question in plain language (“How many applications are waiting for documents?”) and get an answer grounded in your institution’s data, with links to the underlying records.',
@@ -247,16 +247,16 @@ return [
         'icon'    => 'ai',
         'blocks'  => [
             sec('An assistant that knows where it is',
-                'The AI Assistant is available across the platform. It understands the screen you are on and the records you can access, so a counsellor asking “who should I call first today?” gets a different, appropriate answer from a finance officer asking about overdue instalments.',
+                'The AI Assistant is planned to be available across the platform. It is designed to understand the screen you are on and the records you can access, so a counsellor asking “who should I call first today?” gets a different, appropriate answer from a finance officer asking about overdue instalments.',
                 'Answers are grounded in institutional data rather than general knowledge. When the assistant cites a number, it links to the report or list that produced it, so staff can verify before acting.'),
-            table('What you can ask', ['Request', 'What the assistant does'], [
+            table('What you will be able to ask', ['Request', 'What the assistant does'], [
                 ['“Show admissions trends for this intake.”', 'Summarises enquiries and applications by programme and source compared with the previous period, with a link to the full report.'],
                 ['“Find students who may need support.”', 'Lists students with early-warning signals from attendance, submissions or engagement, showing the reasons for each.'],
                 ['“Generate the weekly report for the dean.”', 'Prepares a draft narrative summary from the agreed dashboard, ready for review and editing.'],
                 ['“Draft a reminder to applicants missing transcripts.”', 'Writes a personalised message template for staff to review before it is sent.'],
                 ['“Explain this chart.”', 'Describes what changed, the likely drivers visible in the data and what it cannot conclude.'],
             ]),
-            checks('Guardrails built in', [
+            checks('Guardrails in the design', [
                 'Respects role-based permissions: the assistant cannot reveal records a user cannot open.',
                 'Drafts, never sends: outbound communication requires a person to approve it unless your institution configures otherwise.',
                 'Shows sources for figures and flags when data is incomplete.',
@@ -266,7 +266,7 @@ return [
             note('Read our [responsible AI principles](/ai/responsible-ai/) for how we evaluate, govern and explain AI features.'),
             faq([
                 'What can I ask the Acadlytic AI Assistant?' => 'Questions about your institution’s data in plain language, such as admissions trends, students who may need support, report summaries or a draft message, answered within the permissions of your role.',
-                'Does the AI Assistant send messages or change records on its own?' => 'No. It drafts and suggests. Sending a message or changing a record requires a person to confirm, unless your institution deliberately configures otherwise.',
+                'Does the AI Assistant send messages or change records on its own?' => 'No. It is designed to draft and suggest. Sending a message or changing a record will require a person to confirm, unless your institution deliberately configures otherwise.',
                 'How do I know an AI answer is correct?' => 'Figures link back to the report or list they came from, and the assistant flags incomplete data, so staff can check the source before acting.',
             ]),
         ],
@@ -277,16 +277,17 @@ return [
         'title'   => 'Security Center',
         'desc'    => 'How Acadlytic approaches security: encryption, role-based access, audit trails, secure development and responsible disclosure for institutional and student data.',
         'h1'      => 'Security Center',
-        'lead'    => 'Institutions trust Acadlytic with student, family and financial information. This page explains the security principles and controls we build into the platform and our operations.',
+        'lead'    => 'Institutions will entrust Acadlytic with student, family and financial information. This page explains the security principles and controls we are building into the platform and our operations.',
         'parent'  => '/trust/',
         'section' => 'core',
         'eyebrow' => 'Trust & Governance',
         'icon'    => 'shield',
+        'status_note' => 'The Acadlytic platform is in development. The controls below describe the security design we are building to; they will be confirmed in writing before any institution’s data is processed.',
         'blocks'  => [
             sec('Our approach',
                 'Security is designed into the platform rather than added at the end. We apply least-privilege access, defence in depth and secure defaults, and we treat every feature that touches personal data as a security-relevant change.',
                 'We do not list certifications or audit reports on this page unless they have been formally completed. If your procurement process requires specific attestations, contact us and we will share what is available and what is in progress, in writing.'),
-            cards('Controls by layer', [
+            cards('Planned controls by layer', [
                 'Encryption' => 'Traffic is encrypted in transit with TLS. Sensitive data is protected at rest using platform encryption.',
                 'Identity & access' => 'Role-based permissions by department, campus and function, with optional single sign-on through your identity provider.',
                 'Sessions' => 'Secure, HTTP-only cookies, session rotation on sign-in, idle timeouts and CSRF protection on every form.',
@@ -294,10 +295,10 @@ return [
                 'Application security' => 'Parameterised database queries, output escaping, input validation and rate limiting against automated abuse.',
                 'Operations' => 'Monitored infrastructure, backups and documented incident response procedures.',
             ]),
-            steps('How we handle a security incident', [
+            steps('How we will handle a security incident', [
                 'Detect and contain' => 'Monitoring and reports are triaged; affected components are isolated.',
                 'Assess' => 'We determine what data, institutions and people are affected.',
-                'Notify' => 'Affected institutions are informed without undue delay, and we support any regulatory notifications they must make.',
+                'Notify' => 'Affected institutions will be informed without undue delay, and we will support any regulatory notifications they must make.',
                 'Remediate and learn' => 'Root causes are fixed and preventive measures documented.',
             ]),
             sec('Report a vulnerability',
@@ -316,7 +317,7 @@ return [
         'desc'    => 'How Acadlytic pricing works: what shapes a quote for your institution, which modules are included and how to get a proposal tailored to your size and scope.',
         'h1'      => 'Pricing built around your institution',
         'nav_label' => 'Pricing',
-        'lead'    => 'Acadlytic is priced per institution based on scope and scale. Instead of a generic price list, we prepare a written proposal after understanding your modules, users and integrations.',
+        'lead'    => 'Acadlytic will be priced per institution based on scope and scale. Instead of a generic price list, we will prepare a written proposal after understanding your modules, users and integrations.',
         'parent'  => '/platform/',
         'section' => 'core',
         'eyebrow' => 'Pricing',
@@ -335,11 +336,11 @@ return [
             ]),
             steps('How to get a proposal', [
                 'Discovery call' => 'A focused conversation about your priorities, current systems and timelines.',
-                'Tailored demo' => 'We show the workflows that matter to you, using realistic examples.',
+                'Tailored demo' => 'We walk through the planned workflows that matter to you, using realistic examples.',
                 'Written proposal' => 'Scope, timeline, responsibilities and pricing in one document.',
             ]),
             faq([
-                'Is there a free trial?' => 'We usually offer a guided pilot or sandbox environment instead of an unguided trial, so your team evaluates the platform with realistic configuration. Ask us about options during your demo.',
+                'Is there a free trial?' => 'We plan to offer guided pilots rather than unguided trials, so your team can evaluate the platform with realistic configuration. Ask us about availability during your demo.',
                 'Are there setup fees?' => 'Onboarding, migration and integration work are scoped explicitly in the proposal, so there are no surprises later.',
                 'Can we pay annually?' => 'Commercial terms, including billing frequency, are agreed in the proposal.',
             ]),

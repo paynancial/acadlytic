@@ -12,10 +12,10 @@
 declare(strict_types=1);
 
 $trustCards = [
-    ['Data Protection', 'Privacy-first handling of institutional and student data.', 'lock', '/trust/privacy/'],
-    ['Enterprise Security', 'Security built into architecture, access and operations.', 'shield', '/core/security/'],
-    ['Role-Based Access', 'People see only what their role requires.', 'key', '/core/security/'],
-    ['Cloud Infrastructure', 'Scalable, resilient and available anywhere.', 'cloud', '/core/cloud-platform/'],
+    ['Data Protection', 'A privacy-first approach to institutional and student data.', 'lock', '/trust/data-protection-officer/'],
+    ['Enterprise Security', 'Security designed into architecture, access and operations.', 'shield', '/core/security/'],
+    ['Role-Based Access', 'Designed so people see only what their role requires.', 'key', '/core/security/'],
+    ['Cloud Infrastructure', 'Designed for scalable, resilient cloud delivery.', 'cloud', '/core/cloud-platform/'],
     ['Responsible Support', 'Named routes for help, privacy and grievances.', 'support', '/trust/grievance-redressal/'],
 ];
 ?>

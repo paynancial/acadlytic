@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     '/solutions/' => [
         'title' => 'Solutions by Role and Institution',
-        'desc'  => 'See how Acadlytic supports leadership, administrators, admissions, faculty, advisors, registrars, finance, IT, students and parents at universities and colleges.',
+        'desc'  => 'How Acadlytic is designed to support leadership, administrators, admissions, faculty, advisors, registrars, finance, IT, students and parents.',
         'h1'    => 'Solutions for every team on campus',
         'nav_label' => 'Solutions',
         'lead'  => 'The same platform, shaped around each person’s work. Find the role or institution closest to yours.',
@@ -30,12 +30,12 @@ return [
         'desc'  => 'Acadlytic for universities: CRM and academic management for multi-faculty operations, large admission cycles, international recruitment and complex progression rules.',
         'h1'    => 'Acadlytic for universities',
         'nav_label' => 'Universities',
-        'lead'  => 'Universities combine the scale of a large organisation with the autonomy of many faculties. Acadlytic gives central teams consistency and faculties the flexibility they need.',
+        'lead'  => 'Universities combine the scale of a large organisation with the autonomy of many faculties. Acadlytic is designed to give central teams consistency and faculties the flexibility they need.',
         'icon'  => 'building',
         'blocks' => [
             sec('What makes universities different',
                 'A university may run hundreds of programmes across several faculties, with separate admission rules, assessment regulations and calendars. Central functions (admissions, registry, finance and IT) need one view of the institution, while faculties need to run their own processes without waiting on central teams.'),
-            table('University challenges and how Acadlytic helps', ['Challenge', 'How Acadlytic helps'], [
+            table('University challenges and how Acadlytic is designed to help', ['Challenge', 'How Acadlytic is designed to help'], [
                 ['Large, multi-programme admission cycles', '[Admissions CRM](/platform/admissions-crm/) with programme-specific forms, routing and reviewer workflows'],
                 ['Faculty autonomy vs central oversight', 'Faculty-level configuration within institution-wide standards and permissions'],
                 ['International recruitment', 'Agent management, time-zone aware communication and document verification'],
@@ -55,8 +55,8 @@ return [
                 'Analytics & AI' => 'Leadership dashboards and AI features once data flows are established.',
             ]),
             faq([
-                'Can each faculty configure its own admission process?' => 'Yes. Faculties can have programme-specific forms, criteria and reviewer workflows within institution-wide standards and permissions.',
-                'Can a university keep its existing SIS?' => 'Yes. Acadlytic can run CRM, communication and analytics alongside an existing SIS through [SIS integration](/integrations/sis-integration/), or replace it in phases.',
+                'Can each faculty configure its own admission process?' => 'Yes, that is the plan. Faculties can have programme-specific forms, criteria and reviewer workflows within institution-wide standards and permissions.',
+                'Can a university keep its existing SIS?' => 'Yes, that is the plan. Acadlytic can run CRM, communication and analytics alongside an existing SIS through [SIS integration](/integrations/sis-integration/), or replace it in phases.',
                 'Where do universities usually start?' => 'With admissions and CRM, because it has the fastest visible impact, then student records, academics, finance and analytics.',
             ]),
         ],
@@ -65,10 +65,10 @@ return [
 
     '/solutions/for-colleges/' => [
         'title' => 'CRM & Academic Management for Colleges',
-        'desc'  => 'Acadlytic for colleges: an affordable, fast-to-deploy CRM and academic management platform that lets small teams run admissions, academics, fees and communication.',
+        'desc'  => 'Acadlytic for colleges: a CRM and academic management platform designed to let small teams run admissions, academics, fees and communication in one place.',
         'h1'    => 'Acadlytic for colleges',
         'nav_label' => 'Colleges',
-        'lead'  => 'Colleges often run on small teams wearing many hats. Acadlytic replaces spreadsheets and disconnected tools with one platform that is quick to set up and easy to run.',
+        'lead'  => 'Colleges often run on small teams wearing many hats. Acadlytic is designed to replace spreadsheets and disconnected tools with one platform that is quick to set up and easy to run.',
         'icon'  => 'building',
         'blocks' => [
             sec('Lean teams, high expectations',
@@ -87,9 +87,9 @@ return [
                 'Grow into analytics and AI features when ready',
             ]),
             sec('The college CRM',
-                'For colleges, the CRM is where growth starts: knowing which enquiries came from which school visit or campaign, following up every one, and seeing how many became students. Acadlytic’s [admissions CRM](/platform/admissions-crm/) gives even a two-person admissions office that visibility.'),
+                'For colleges, the CRM is where growth starts: knowing which enquiries came from which school visit or campaign, following up every one, and seeing how many became students. Acadlytic’s planned [admissions CRM](/platform/admissions-crm/) is designed to give even a two-person admissions office that visibility.'),
             faq([
-                'Is Acadlytic suitable for a small college?' => 'Yes. Colleges can start with enquiries, admissions, student records, fees and messaging, with pricing scoped to their size.',
+                'Is Acadlytic suitable for a small college?' => 'Yes, that is the plan. Colleges can start with enquiries, admissions, student records, fees and messaging, with pricing scoped to their size.',
                 'Can we move from spreadsheets quickly?' => 'Guided imports map and validate existing spreadsheets, and common college processes come pre-configured as templates.',
             ]),
         ],
@@ -101,12 +101,12 @@ return [
         'desc'  => 'How a connected higher education platform brings together CRM, student records, academic operations, finance and analytics, and where Acadlytic fits your stack.',
         'h1'    => 'A connected technology platform for higher education',
         'nav_label' => 'Higher Education',
-        'lead'  => 'Higher education technology has grown one system at a time. Acadlytic helps institutions connect the pieces, or replace several of them, around a single view of each student.',
+        'lead'  => 'Higher education technology has grown one system at a time. Acadlytic is designed to help institutions connect the pieces, or replace several of them, around a single view of each student.',
         'icon'  => 'cap',
         'blocks' => [
             sec('The typical higher education stack',
                 'Most institutions run some combination of a student information system, a learning management system, a finance or ERP package, a website and enquiry forms, messaging tools and spreadsheets for everything else. Each system has an owner and a purpose. The gaps between them are where students wait and staff re-key data.'),
-            table('Where Acadlytic sits', ['Layer', 'Examples', 'Acadlytic’s role'], [
+            table('Where Acadlytic is designed to sit', ['Layer', 'Examples', 'Acadlytic’s role'], [
                 ['Relationship & CRM', 'Enquiries, applicants, alumni', 'Core capability'],
                 ['Student records', 'Profiles, enrolment, status', 'Core capability or [SIS integration](/integrations/sis-integration/)'],
                 ['Academic operations', 'Timetables, attendance, results', 'Core capability'],
@@ -140,7 +140,7 @@ return [
         'blocks' => [
             sec('What leadership needs from a platform',
                 'Leaders need a small number of reliable indicators, early warning when something moves, and confidence that the numbers mean the same thing in every department. They also need to know that operational teams have the tools to act on what the numbers show.'),
-            cards('How Acadlytic supports leaders', [
+            cards('How Acadlytic is designed to support leaders', [
                 'Institutional dashboard' => 'Admissions, enrolment, academic health, finance and support indicators in one [dashboard](/platform/institutional-dashboard/).',
                 'Weekly AI summary' => 'A plain-language digest of notable changes, drafted by [AI reporting](/ai/ai-reporting/).',
                 'Forecasts as ranges' => '[Predictive analytics](/ai/ai-predictive-analytics/) for enrolment planning.',
@@ -154,8 +154,8 @@ return [
                 'What is our collections position and dues ageing?',
             ]),
             faq([
-                'What does leadership see in Acadlytic?' => 'An institutional dashboard of agreed indicators across admissions, enrolment, academic health, support and finance, plus a weekly AI summary of notable changes.',
-                'Can leaders drill into the numbers?' => 'Yes. Any indicator opens the underlying records, within the viewer’s permissions.',
+                'What will leadership see in Acadlytic?' => 'An institutional dashboard of agreed indicators across admissions, enrolment, academic health, support and finance, plus a weekly AI summary of notable changes.',
+                'Can leaders drill into the numbers?' => 'Yes, that is the plan. Any indicator opens the underlying records, within the viewer’s permissions.',
             ]),
         ],
         'related' => ['/platform/institutional-dashboard/', '/resources/institutional-dashboard-guide/', '/resources/data-driven-education/', '/ai/ai-predictive-analytics/'],
@@ -163,10 +163,10 @@ return [
 
     '/solutions/for-administrators/' => [
         'title' => 'Solutions for Academic Administrators',
-        'desc'  => 'Acadlytic helps academic administrators cut manual work: automated workflows, shared records, task queues and reports that do not need rebuilding every month.',
+        'desc'  => 'Acadlytic is designed to help academic administrators cut manual work with automated workflows, shared records, task queues and scheduled reports.',
         'h1'    => 'For academic administrators',
         'nav_label' => 'Administrators',
-        'lead'  => 'Fewer spreadsheets, fewer hand-offs and fewer “can you send me that list?” emails. Acadlytic gives administrators one place to run processes and see what is pending.',
+        'lead'  => 'Fewer spreadsheets, fewer hand-offs and fewer “can you send me that list?” emails. Acadlytic is designed to give administrators one place to run processes and see what is pending.',
         'icon'  => 'dashboard',
         'blocks' => [
             sec('Where administrative time goes',
@@ -178,7 +178,7 @@ return [
                 ['Approvals', 'Email chains', 'Routed approvals with deadlines and history'],
                 ['“Where is my request?” queries', 'Phone and email back-and-forth', 'Self-service status in student portals'],
             ]),
-            cards('Tools administrators use most', [
+            cards('Planned tools for administrators', [
                 'Workflow automation' => 'Standardise recurring processes with [workflows](/platform/workflow-automation/).',
                 'Task queues' => 'Shared team queues with owners and due dates.',
                 'Bulk actions' => 'Update many records at once, safely, with previews.',
@@ -186,7 +186,7 @@ return [
             ]),
             faq([
                 'Which administrative tasks does Acadlytic reduce?' => 'Re-keying data between systems, chasing documents, compiling monthly reports, routing approvals by email and answering status queries.',
-                'Can administrators change workflows themselves?' => 'Yes. Authorised administrators configure workflows, templates and reports without developers.',
+                'Can administrators change workflows themselves?' => 'Yes, that is the plan. Authorised administrators configure workflows, templates and reports without developers.',
             ]),
         ],
         'related' => ['/platform/workflow-automation/', '/platform/task-management/', '/solutions/for-operations/', '/resources/education-automation-guide/'],
@@ -197,28 +197,28 @@ return [
         'desc'  => 'For institutional operations teams: coordinate facilities, events, logistics and service requests with shared workflows, task queues and live operational dashboards.',
         'h1'    => 'For operations teams',
         'nav_label' => 'Operations Teams',
-        'lead'  => 'Operations keeps an institution running: rooms, events, logistics, service requests and the countless details behind each term. Acadlytic connects that work to the academic calendar and student data it depends on.',
+        'lead'  => 'Operations keeps an institution running: rooms, events, logistics, service requests and the countless details behind each term. Acadlytic is designed to connect that work to the academic calendar and student data it depends on.',
         'icon'  => 'workflow',
         'blocks' => [
             sec('Operations depends on academic data',
                 'Room bookings depend on timetables. Event logistics depend on registrations. Hostel allocation depends on confirmed enrolments. When operations teams work from exported lists, changes upstream arrive late. A shared platform means operational plans update when academic data does.'),
-            cards('Operational use cases', [
+            cards('Planned operational use cases', [
                 'Service requests' => 'Students and staff submit requests that become tracked tasks with service levels.',
                 'Events' => 'Registrations, reminders and attendance for orientations, open days and ceremonies.',
                 'Room & resource use' => 'Timetable-linked room information and change notifications.',
                 'Term readiness' => 'Checklists for term start, exams and results periods, with owners and deadlines.',
             ]),
             sec('Term-start readiness, as an example',
-                'Before a new term, operations teams confirm rooms, publish timetables, prepare ID cards, brief front-desk staff and plan orientation. In Acadlytic this becomes a reusable checklist whose tasks are assigned automatically each term, with progress visible to everyone involved.'),
-            checks('What operations leads can monitor', [
+                'Before a new term, operations teams confirm rooms, publish timetables, prepare ID cards, brief front-desk staff and plan orientation. In Acadlytic this is designed to become a reusable checklist whose tasks are assigned automatically each term, with progress visible to everyone involved.'),
+            checks('What operations leads will be able to monitor', [
                 'Open requests by category and age',
                 'Upcoming events and registration numbers',
                 'Tasks at risk of missing deadlines',
                 'Term-readiness checklist completion',
             ]),
             faq([
-                'Can students raise service requests online?' => 'Yes. Requests submitted through the portal become tracked tasks with categories, owners and service-level targets.',
-                'Does operations planning update when timetables change?' => 'Yes. Operations works from the same timetable and enrolment data, so changes flow through without exported lists.',
+                'Can students raise service requests online?' => 'Yes, that is the plan. Requests submitted through the portal become tracked tasks with categories, owners and service-level targets.',
+                'Does operations planning update when timetables change?' => 'Yes, that is the plan. Operations works from the same timetable and enrolment data, so changes flow through without exported lists.',
             ]),
         ],
         'related' => ['/platform/task-management/', '/platform/workflow-automation/', '/solutions/for-administrators/', '/integrations/calendar-integration/'],
@@ -229,10 +229,10 @@ return [
         'desc'  => 'For registrars and examination offices: authoritative student records, enrolment and status workflows, results processing, transcripts and secure document issuance.',
         'h1'    => 'For registrars and examination offices',
         'nav_label' => 'Registrars',
-        'lead'  => 'The registrar’s office is the custodian of the official record. Acadlytic helps you keep it accurate, apply regulations consistently and issue documents securely.',
+        'lead'  => 'The registrar’s office is the custodian of the official record. Acadlytic is designed to help you keep it accurate, apply regulations consistently and issue documents securely.',
         'icon'  => 'doc',
         'blocks' => [
-            cards('Responsibilities Acadlytic supports', [
+            cards('Responsibilities Acadlytic is designed to support', [
                 'Official records' => 'Authoritative student records with change history and field-level permissions.',
                 'Enrolment & status' => 'Registration, deferrals, withdrawals and transfers through approval workflows.',
                 'Results processing' => 'Marks consolidation, moderation, progression rules and publication.',
@@ -240,7 +240,7 @@ return [
                 'Regulatory reporting' => 'Consistent data for statutory and accreditation returns.',
                 'Verification requests' => 'Handle third-party verification requests with consent and logging.',
             ]),
-            steps('Secure document issuance', [
+            steps('Planned secure document issuance', [
                 'Request' => 'A student or authorised third party requests a document.',
                 'Checks' => 'Clearances and eligibility are verified automatically where possible.',
                 'Generate' => 'The document is produced from the official record using approved templates.',
@@ -250,7 +250,7 @@ return [
             note('Every change to an official record is attributed and time-stamped, supporting audits and appeals.'),
             faq([
                 'How are changes to official records controlled?' => 'Through role-based permissions, approval workflows and a full history recording who changed what, when and from which value.',
-                'Can third parties verify a student’s credentials?' => 'Verification requests can be handled with the student’s consent, and every response is logged.',
+                'Can third parties verify a student’s credentials?' => 'Verification requests are designed to be handled with the student’s consent, with every response logged.',
             ]),
         ],
         'related' => ['/platform/student-management/', '/platform/electronic-document-sharing/', '/platform/data-management/', '/platform/completion-tracking/'],
@@ -266,7 +266,7 @@ return [
         'blocks' => [
             sec('Student finance is a service',
                 'For students and parents, fees are one of the most anxiety-inducing parts of institutional life. Clear invoices, flexible payment options and quick, accurate answers make a real difference to trust. For finance teams, the challenge is doing that while keeping the books reconciled.'),
-            cards('Finance capabilities', [
+            cards('Planned finance capabilities', [
                 'Fee configuration' => 'Structures by programme, year and category with effective dates.',
                 'Collection' => 'Online payments through [payment gateways](/integrations/payment-integration/), with instalment plans.',
                 'Concessions' => 'Scholarship and waiver workflows with approval limits.',
@@ -282,7 +282,7 @@ return [
             ]),
             faq([
                 'How does Acadlytic reconcile online payments?' => 'Gateway settlements are matched to payments and invoices automatically each day, and exceptions are flagged for finance.',
-                'Does Acadlytic support segregation of duties?' => 'Yes. Configuration, approval and posting can be assigned to different roles, and every financial change is audited.',
+                'Does Acadlytic support segregation of duties?' => 'Yes, that is the plan. Configuration, approval and posting can be assigned to different roles, and every financial change is audited.',
             ]),
         ],
         'related' => ['/platform/finance-fees/', '/integrations/payment-integration/', '/integrations/erp-integration/', '/solutions/for-parents/'],
@@ -298,7 +298,7 @@ return [
         'blocks' => [
             sec('What IT teams usually ask first',
                 'How does it authenticate users? How do we get data in and out? Who can see what? How are changes rolled out? What happens if we leave? We answer each of these in writing during evaluation. This page summarises the approach.'),
-            table('Technical overview', ['Area', 'Approach'], [
+            table('Planned technical overview', ['Area', 'Approach'], [
                 ['Hosting', 'Managed cloud service; see [Cloud Platform](/core/cloud-platform/)'],
                 ['Identity', 'Single sign-on via SAML 2.0 or OpenID Connect; see [SSO integration](/integrations/sso-integration/)'],
                 ['Integration', 'REST [API](/integrations/api/), [webhooks](/integrations/webhooks/) and scheduled [exports](/integrations/data-export/)'],
@@ -314,7 +314,7 @@ return [
                 'Security documentation on request',
             ]),
             faq([
-                'How do users sign in?' => 'Through single sign-on with your identity provider, or Acadlytic credentials where SSO is not used.',
+                'How will users sign in?' => 'Through single sign-on with your identity provider, or Acadlytic credentials where SSO is not used.',
                 'How are platform changes communicated?' => 'Changes that affect integrations are announced in advance, and sandbox environments are available for testing.',
             ]),
         ],
@@ -330,8 +330,8 @@ return [
         'icon'  => 'users',
         'blocks' => [
             sec('A day in admissions, simplified',
-                'Morning: open Acadlytic to see a prioritised list of follow-ups, each with a one-line summary of the last interaction. During the day: calls and messages are logged automatically on the applicant’s timeline. Evening: the dashboard shows how many enquiries were handled and which are overdue, with no spreadsheet to update.'),
-            cards('What admissions teams get', [
+                'In the planned design, a counsellor’s morning starts with a prioritised list of follow-ups, each with a one-line summary of the last interaction. During the day, calls and messages will be logged automatically on the applicant’s timeline. In the evening, the dashboard will show how many enquiries were handled and which are overdue, with no spreadsheet to update.'),
+            cards('What admissions teams will get', [
                 'One enquiry queue' => 'Every channel in one place, deduplicated and assigned.',
                 'Personal follow-ups at scale' => 'Sequences that feel individual and stop when the applicant responds.',
                 'Application visibility' => 'Checklists and status for every applicant; see [application management](/platform/application-management/).',
@@ -339,7 +339,7 @@ return [
                 'Conversion reporting' => 'Funnel by source, programme and counsellor in [enrolment analytics](/platform/enrollment-analytics/).',
                 'AI assistance' => 'Prioritisation, summaries and draft replies from [AI for Admissions](/ai/ai-for-admissions/).',
             ]),
-            checks('Admissions metrics you can track from day one', [
+            checks('Admissions metrics the platform is designed to track', [
                 'Time to first response',
                 'Enquiry-to-application conversion',
                 'Application completion rate',
@@ -348,7 +348,7 @@ return [
             ]),
             faq([
                 'How quickly can every enquiry get a response?' => 'An automatic acknowledgement goes out immediately, and assignment rules give each enquiry an owner for personal follow-up.',
-                'Can we see which campaigns produce enrolments?' => 'Yes. Source attribution follows each enquiry through application to enrolment.',
+                'Can we see which campaigns produce enrolments?' => 'Yes, that is the plan. Source attribution follows each enquiry through application to enrolment.',
             ]),
         ],
         'related' => ['/platform/admissions-crm/', '/ai/ai-for-admissions/', '/resources/admissions-workflow/', '/resources/admissions-crm-guide/'],
@@ -362,7 +362,7 @@ return [
         'lead'  => 'See each student’s full picture before you meet, know which students to reach out to, and keep notes and referrals in one place.',
         'icon'  => 'compass',
         'blocks' => [
-            cards('Advisor workspace', [
+            cards('Planned advisor workspace', [
                 'Caseload view' => 'All assigned students with progress, flags and last contact date.',
                 'Student 360' => 'Programme progress, attendance, results, cases and communication in one view.',
                 'Early-warning list' => 'Students who may need support, with reasons, from [AI for Student Success](/ai/ai-for-student-success/).',
@@ -372,10 +372,10 @@ return [
             ]),
             sec('Also for college and career counsellors',
                 'Counsellors guiding students toward further study can use [college recommendations](/platform/college-recommendations/) and the [post-secondary school database](/platform/post-secondary-school-database/) to build balanced shortlists, track applications and record outcomes.'),
-            note('Sensitive notes, such as wellbeing or personal circumstances, can be restricted to specific roles so students’ trust is protected.'),
+            note('Sensitive notes, such as wellbeing or personal circumstances, are designed to be restricted to specific roles so students’ trust is protected.'),
             faq([
-                'What does an advisor’s caseload view show?' => 'Each assigned student’s progress, early-warning flags and the date of last contact, so outreach can be planned.',
-                'Can wellbeing notes be kept private?' => 'Yes. Sensitive note types can be restricted to specific roles.',
+                'What will an advisor’s caseload view show?' => 'Each assigned student’s progress, early-warning flags and the date of last contact, so outreach can be planned.',
+                'Can wellbeing notes be kept private?' => 'Yes, that is the plan. Sensitive note types can be restricted to specific roles.',
             ]),
         ],
         'related' => ['/ai/ai-for-advising/', '/ai/ai-for-student-success/', '/solutions/for-student-services/', '/platform/completion-tracking/'],
@@ -386,17 +386,17 @@ return [
         'desc'  => 'For student services teams: case management, service requests, referrals, wellbeing support and communication, with full context and privacy controls.',
         'h1'    => 'For student services teams',
         'nav_label' => 'Student Services',
-        'lead'  => 'From hostel queries to wellbeing referrals, student services handle a wide range of needs. Acadlytic helps teams respond consistently, hand over cleanly and protect sensitive information.',
+        'lead'  => 'From hostel queries to wellbeing referrals, student services handle a wide range of needs. Acadlytic is designed to help teams respond consistently, hand over cleanly and protect sensitive information.',
         'icon'  => 'support',
         'blocks' => [
-            steps('Case management flow', [
+            steps('Planned case management flow', [
                 'Intake' => 'Requests arrive from the portal, email, walk-ins or referrals and become cases.',
                 'Triage' => 'Cases are categorised and routed by type and urgency.',
                 'Support' => 'Staff record actions and communication; related teams can be involved with appropriate visibility.',
                 'Resolution' => 'Outcomes are recorded and the student is informed.',
                 'Learning' => 'Case trends inform service improvements and staffing.',
             ]),
-            cards('Services commonly managed', [
+            cards('Services the platform is designed to manage', [
                 'General enquiries' => 'Certificates, ID cards, schedules and policies.',
                 'Accommodation' => 'Hostel applications, allocation queries and maintenance requests.',
                 'Wellbeing' => 'Confidential referrals with restricted visibility.',
@@ -412,7 +412,7 @@ return [
                 'Access to sensitive cases logged',
             ]),
             faq([
-                'Can cases be handed over between teams?' => 'Yes. Cases keep their full history, so the next team member continues without asking the student to repeat themselves.',
+                'Can cases be handed over between teams?' => 'Yes, that is the plan. Cases keep their full history, so the next team member continues without asking the student to repeat themselves.',
                 'How are confidential cases protected?' => 'Restricted case types limit who can open them, and access to sensitive cases is logged.',
             ]),
         ],
@@ -424,10 +424,10 @@ return [
         'desc'  => 'For faculty: quick attendance, simple marks entry, class lists with context and alerts about students who may need support, so teaching comes first.',
         'h1'    => 'For faculty',
         'nav_label' => 'Faculty',
-        'lead'  => 'Less time on administration, more time teaching. Acadlytic keeps faculty tasks quick and puts useful student context one tap away.',
+        'lead'  => 'Less time on administration, more time teaching. Acadlytic is designed to keep faculty tasks quick and put useful student context one tap away.',
         'icon'  => 'book',
         'blocks' => [
-            cards('Faculty essentials', [
+            cards('Planned faculty essentials', [
                 'Today view' => 'Classes, rooms and tasks for the day, including timetable changes.',
                 'Attendance in seconds' => 'Mark attendance on mobile or desktop; absences update student records instantly.',
                 'Marks entry' => 'Validated entry, bulk upload and moderation steps where required.',
@@ -436,8 +436,8 @@ return [
                 'Messaging' => 'Message a class or individual students with history kept.',
             ]),
             sec('Working with your LMS',
-                'Faculty already use a learning management system for content and online activities. Acadlytic does not replace it; it connects to it. Enrolments flow to the LMS and, where configured, grades and activity data flow back. See [LMS integration](/integrations/lms-integration/).'),
-            checks('What faculty tell us matters', [
+                'Faculty already use a learning management system for content and online activities. Acadlytic is not designed to replace it; it is designed to connect to it. Enrolments will flow to the LMS and, where configured, grades and activity data will flow back. See [LMS integration](/integrations/lms-integration/).'),
+            checks('What matters to faculty', [
                 'Few clicks for routine tasks',
                 'Works well on a phone in a classroom',
                 'No duplicate entry between systems',
@@ -461,7 +461,7 @@ return [
         'blocks' => [
             sec('What students want from institutional systems',
                 'Students want clarity: what is due, when, and what happens next. They want to request a document without visiting an office, pay a fee without queueing and see results as soon as they are published. They also want to know their information is handled carefully.'),
-            cards('In the student portal', [
+            cards('Planned student portal features', [
                 'Applicant view' => 'Application checklist, document uploads and decision status.',
                 'My timetable' => 'Classes and changes, with calendar sync.',
                 'Attendance & results' => 'Personal attendance record and published results.',
@@ -477,7 +477,7 @@ return [
             ]),
             faq([
                 'What can students do in the portal?' => 'Track applications, upload documents, view timetables, attendance and results, pay fees, request certificates and read messages.',
-                'Does the student portal work on phones?' => 'Yes. It is designed for small screens and slower connections.',
+                'Does the student portal work on phones?' => 'Yes, that is the plan. It is designed for small screens and slower connections.',
             ]),
         ],
         'related' => ['/solutions/for-parents/', '/platform/college-recommendations/', '/trust/accessibility/', '/platform/student-engagement/'],
@@ -492,15 +492,15 @@ return [
         'icon'  => 'message',
         'blocks' => [
             sec('Keeping families informed, appropriately',
-                'Parents want to support their children’s studies and need practical information about fees, events and important changes. Institutions must balance that with students’ own privacy, especially for adult learners. Acadlytic lets institutions define what is shared with guardians, by programme and age, and keeps a record of consent.'),
-            cards('What parents can receive', [
+                'Parents want to support their children’s studies and need practical information about fees, events and important changes. Institutions must balance that with students’ own privacy, especially for adult learners. Acadlytic is designed to let institutions define what is shared with guardians, by programme and age, and keeps a record of consent.'),
+            cards('What parents are planned to receive', [
                 'Attendance alerts' => 'Notifications when attendance falls below a threshold, where policy allows.',
                 'Results' => 'Published results or progress summaries.',
                 'Fee information' => 'Dues, reminders, payment links and receipts.',
                 'Events & notices' => 'Orientation, parent meetings and holiday notices.',
                 'Emergency messages' => 'Urgent updates through the fastest available channel.',
             ]),
-            table('Channels', ['Channel', 'Best for'], [
+            table('Planned channels', ['Channel', 'Best for'], [
                 ['WhatsApp', 'Quick updates and reminders where families have opted in'],
                 ['SMS', 'Short alerts, especially where data connectivity is limited'],
                 ['Email', 'Detailed notices, statements and documents'],
@@ -508,7 +508,7 @@ return [
             ]),
             faq([
                 'What information can parents see?' => 'What the institution chooses to share with guardians, such as attendance alerts, results, fees and events, subject to consent and the student’s privacy settings.',
-                'Can parents pay fees online?' => 'Yes. Payment links can be sent to linked parents, and receipts go to both the payer and the student record.',
+                'Can parents pay fees online?' => 'Yes, that is the plan. Payment links can be sent to linked parents, and receipts go to both the payer and the student record.',
             ]),
         ],
         'related' => ['/platform/communication-hub/', '/integrations/whatsapp-integration/', '/ai/ai-communications/', '/platform/finance-fees/'],

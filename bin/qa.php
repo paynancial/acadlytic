@@ -8,7 +8,13 @@
  * unique, canonical on indexable pages, internal links resolve, no
  * duplicate element IDs, redirect targets exist, sitemap consistency,
  * required assets present, thin content and paragraphs duplicated across
- * pages (a doorway-page signal). Exits non-zero on errors.
+ * pages (a doorway-page signal). Also enforces the claims policy
+ * (docs/CLAIMS_REGISTER.md): no unsupported statistics or superlatives,
+ * planned notices on product pages, no present-tense availability claims,
+ * and legal-draft markers. Exits non-zero on errors.
+ *
+ *   php bin/qa.php --launch   additionally fails while any legal page is
+ *                             still a draft awaiting counsel sign-off.
  */
 declare(strict_types=1);
 
@@ -19,7 +25,10 @@ if (PHP_SAPI !== 'cli') {
 
 require dirname(__DIR__) . '/includes/bootstrap.php';
 
+$launch = in_array('--launch', $argv, true);
 $errors = [];
+$launchBlockers = [];
+$claimVerbs = 'gives|keeps|models|makes|matches|stores|manages|replaces|evaluates|helps|answers|reads|suggests|presents|lets|runs|brings|connects|tracks|shows|sends|supports|uses|provides|combines|applies|offers|handles|captures|integrates|posts|records|prioritises|flags|drafts|summarises|forecasts|classifies|extracts';
 $warnings = [];
 $titles = [];
 $descs = [];
@@ -117,6 +126,32 @@ foreach ($pages as $path => $page) {
     }
     if (acad_is_editorial($page) && !str_contains($html, 'class="page-meta"')) {
         $errors[] = "{$where}: editorial page missing visible last-updated line";
+    }
+    // Claims policy.
+    $visible = strip_tags(preg_replace('#<(script|style)\b.*?</\1>#s', '', $html) ?? '');
+    if (preg_match('/\b\d[\d,.]*\s?[KkMm]?\+?\s*(institutions|students|countries|universities|colleges|customers|users)\b|\b\d{2}\.\d+%|\buptime\b|trusted by (leading|top|\d)|#1\b|number one|world-class|market-leading|best-in-class|industry-leading|fast-to-deploy/i', $visible, $cm)) {
+        $errors[] = "{$where}: unsupported claim \"{$cm[0]}\" (see docs/CLAIMS_REGISTER.md)";
+    }
+    if (($page['status'] ?? null) === 'planned') {
+        if (!str_contains($html, 'class="status-notice"')) {
+            $errors[] = "{$where}: planned page without the Planned / In development notice";
+        }
+        $strings = [$page['lead']];
+        array_walk_recursive($page['blocks'], static function ($v, $k) use (&$strings) { if (is_string($v) && $k !== 'type') { $strings[] = $v; } });
+        foreach ($strings as $str) {
+            if (preg_match("/\bAcadlytic(?: AI)?(?:’s [a-z ]{2,30}?)? ({$claimVerbs})\b/", $str, $vm) || preg_match('/^Yes\.\s/', $str)) {
+                $errors[] = "{$where}: present-tense availability claim \"" . mb_substr($str, 0, 70) . "…\"";
+            }
+        }
+    }
+    if (!empty($page['legal_draft'])) {
+        if (!str_contains($html, 'LEGAL REVIEW REQUIRED — NOT FINAL') || empty($page['noindex'])) {
+            $errors[] = "{$where}: legal draft missing marker or not noindex";
+        }
+        $launchBlockers[] = "{$where}: legal page awaiting counsel sign-off (legal_draft)";
+    }
+    if (!empty($page['draft'])) {
+        $launchBlockers[] = "{$where}: page marked draft";
     }
     if (preg_match('#lorem ipsum|TODO|\{\{#i', strip_tags($html))) {
         $errors[] = "{$where}: placeholder text found";
@@ -224,6 +259,12 @@ foreach ($scan as $file) {
     }
 }
 
+if ($launch) {
+    foreach ($launchBlockers as $b) {
+        $errors[] = 'LAUNCH BLOCKER ' . $b;
+    }
+}
+
 $indexable = count($expected);
 printf("Pages: %d (indexable in sitemap: %d) · Redirects: %d\n", count($pages), $indexable, count($redirects));
 foreach ($warnings as $w) {
@@ -231,6 +272,9 @@ foreach ($warnings as $w) {
 }
 foreach (array_unique($errors) as $e) {
     echo "ERROR {$e}\n";
+}
+if (!$launch && $launchBlockers) {
+    printf("Launch blockers (enforced with --launch): %d\n", count($launchBlockers));
 }
 printf("\n%d error(s), %d warning(s)\n", count(array_unique($errors)), count($warnings));
 exit($errors ? 1 : 0);

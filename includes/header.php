@@ -62,6 +62,7 @@ $activeTop = match ($page['section']) {
                         <div class="container mega-inner">
                             <div class="mega-intro">
                                 <p class="mega-kicker"><?= e($menu['label']) ?></p>
+                                <?php if (!empty($menu['intro']['status'])): ?><p class="mega-status"><?= e($menu['intro']['status']) ?></p><?php endif; ?>
                                 <p class="mega-title"><?= e($menu['intro']['title']) ?></p>
                                 <p class="mega-text"><?= e($menu['intro']['text']) ?></p>
                                 <a class="mega-cta" href="<?= e($menu['intro']['cta'][1]) ?>"><?= e($menu['intro']['cta'][0]) ?> <?= icon('arrow', 'icon icon-sm') ?></a>

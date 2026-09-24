@@ -140,6 +140,13 @@ supply: verified proof, real product screenshots and confirmed capabilities.
 
 ---
 
+## Claims and legal pass (after the audit)
+
+- All product capabilities are reclassified as **PLANNED** per Acadlytic’s instruction: 78 pages carry a visible *Planned · In development* notice; headings, sentences and FAQ answers are rewritten to “designed to / building / planned / will”; menus show *In development*; the homepage preview is labelled *Concept · Sample data*.
+- Implied-customer wording removed. No unsupported statistics were present on the site (they existed only in the handoff reference image).
+- Legal pages are marked **LEGAL REVIEW REQUIRED — NOT FINAL**, noindex, with “for counsel to complete” lists; the DPDP Act reference was removed from the Privacy draft.
+- `docs/CLAIMS_REGISTER.md` and `docs/LEGAL_REVIEW_CHECKLIST.md` added; QA enforces the policy.
+
 ## PHASE 2 PRE-MERGE APPROVAL REPORT
 
 **Code:** all code-level must-fix items are resolved. QA gate: 0 errors,
