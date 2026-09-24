@@ -14,7 +14,7 @@ declare(strict_types=1);
 return [
     'leadership' => [
         // ['name' => 'Full Name', 'role' => 'Chief Executive Officer', 'bio' => 'One or two factual sentences.', 'linkedin' => 'https://www.linkedin.com/in/...'],
-        ['name' => 'Renuka Devi', 'role' => 'Director'],
+        ['name' => 'Renuka Devi', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolrenukadevi'],
         ['name' => 'Anisha Bharti', 'role' => 'Director'],
     ],
     'team' => [
