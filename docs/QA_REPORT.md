@@ -8,7 +8,7 @@ gate on PHP 8.2, 8.3 and 8.4 for every push.
 
 ## Automated gate: `php bin/qa.php`
 
-**Result: 0 errors, 0 warnings.** 155 registry pages (140 indexable in the
+**Result: 0 errors, 0 warnings.** 157 registry pages (143 indexable in the
 sitemap; the rest are search, 404, 3 auth pages, noindex placeholders, legal
 drafts, and Team/News until real entries exist) and 69 redirects.
 

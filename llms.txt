@@ -142,6 +142,8 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Company](https://acadlytic.com/company/): About Acadlytic, Inc.: our mission, careers, partner programme, press resources, support and how to contact the team.
 - [Vision & Mission](https://acadlytic.com/company/vision-mission/): Acadlytic’s vision and mission: why we are building an AI-powered EdTech CRM and cloud platform for academic management, and the values that guide the work.
 - [Leadership](https://acadlytic.com/company/leadership/): The leadership team of Acadlytic, Inc., building an AI-powered EdTech CRM and cloud platform for academic management.
+- [Offices](https://acadlytic.com/company/offices/): Where to find Acadlytic, Inc.: office address, directions and the fastest ways to reach the team for demos, support or partnerships.
+- [Patna office](https://acadlytic.com/company/offices/patna/): Acadlytic, Inc. office in Patna, Bihar: Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna 800020. Address, map and how to reach the team.
 - [Request a Demo](https://acadlytic.com/company/request-demo/): Request a personalised Acadlytic demo: a walkthrough of the platform design and roadmap, focused on the workflows that matter to your institution.
 - [Careers](https://acadlytic.com/company/careers/): Build the future of intelligent education with Acadlytic. Learn how we work, the skills we value and how to express interest in joining the team.
 - [Partners](https://acadlytic.com/company/partners/): Partner with Acadlytic as an implementation, technology, referral or education partner. Learn about partnership types and how to start a conversation.

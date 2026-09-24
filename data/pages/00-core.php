@@ -370,11 +370,13 @@ return [
             'Existing customers: choose “Customer support”.',
             'Data Protection Officer: Mr. A.K Sinha, dpo@acadlytic.com.',
             'Grievance Redressal Officer: Mrs. Anjali Sharma, gro@acadlytic.com.',
+            'Office: #203, Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020 (visits by appointment).',
         ],
         'blocks' => [
             cards('Specialised contact routes', [
                 'Data Protection Officer' => 'Requests about personal data (access, correction, deletion or consent withdrawal) go to our DPO, **Mr. A.K Sinha**, at [dpo@acadlytic.com](mailto:dpo@acadlytic.com). Choosing the “Privacy / Data Protection Officer” topic below also reaches him.',
                 'Grievance Redressal Officer' => 'Complaints about our service or how your data is handled go to **Mrs. Anjali Sharma** at [gro@acadlytic.com](mailto:gro@acadlytic.com), or choose “Grievance redressal” below. See the [grievance redressal process](/trust/grievance-redressal/).',
+                'Our office' => 'Acadlytic’s office is in **Hanuman Nagar, Patna, Bihar**. See the [Patna office page](/company/offices/patna/) for the full address, map link and how to arrange a visit.',
                 'Accessibility' => 'If any part of this site or the platform is hard to use with assistive technology, tell us via the “Accessibility” topic. See our [accessibility statement](/trust/accessibility/).',
             ]),
         ],

@@ -81,6 +81,7 @@ function acad_org_schema(): array
         'slogan'      => $c['tagline'],
         'description' => $c['descriptor'],
         'email'       => $c['email'],
+        'address'     => acad_office_postal_address(),
         'contactPoint' => [
             [
                 '@type'       => 'ContactPoint',
@@ -198,6 +199,20 @@ function acad_schema(array $page): array
 
     if (in_array($page['path'], ['/core/about/', '/core/contact/'], true)) {
         $graph[] = acad_org_schema();
+    }
+
+    if ($page['path'] === acad_config('office.page')) {
+        $graph[] = [
+            '@type'   => 'LocalBusiness',
+            '@id'     => acad_url($page['path']) . '#office',
+            'name'    => acad_config('name') . ' – ' . acad_config('office.label'),
+            'url'     => acad_url($page['path']),
+            'image'   => acad_url('/assets/img/logo-square.png'),
+            'email'   => acad_config('email'),
+            'address' => acad_office_postal_address(),
+            'hasMap'  => acad_office_map_url(),
+            'parentOrganization' => ['@id' => acad_url('/#organization')],
+        ];
     }
 
     if ($page['template'] === 'people' && !empty($page['people_group'])) {

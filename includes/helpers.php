@@ -86,3 +86,30 @@ function acad_word_count(string $html): int
 {
     return str_word_count(strip_tags($html));
 }
+
+/** Office address as one line (from config/site.php → office). */
+function acad_office_line(): string
+{
+    $o = acad_config('office');
+    return sprintf('%s, %s, %s %s, %s', $o['street'], $o['locality'], $o['region'], $o['postal'], $o['country_name']);
+}
+
+/** Plain Google Maps search link for the office (no embed, no third-party script). */
+function acad_office_map_url(): string
+{
+    return 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode(acad_office_line());
+}
+
+/** schema.org PostalAddress for the office. */
+function acad_office_postal_address(): array
+{
+    $o = acad_config('office');
+    return [
+        '@type'           => 'PostalAddress',
+        'streetAddress'   => $o['street'],
+        'addressLocality' => $o['locality'],
+        'addressRegion'   => $o['region'],
+        'postalCode'      => $o['postal'],
+        'addressCountry'  => $o['country'],
+    ];
+}

@@ -200,6 +200,7 @@ return [
                 ['Blog', '/resources/blog/'],
                 ['Press & Media', '/company/press/'],
                 ['Support', '/company/support/'],
+                ['Our Office', '/company/offices/patna/'],
                 ['Trust Center', '/trust/'],
             ],
             'card' => [
@@ -256,6 +257,7 @@ return [
             ['Careers', '/company/careers/'],
             ['Partners', '/company/partners/'],
             ['Contact Us', '/core/contact/'],
+            ['Our Office', '/company/offices/patna/'],
             ['Request Demo', '/company/request-demo/'],
         ],
     ],

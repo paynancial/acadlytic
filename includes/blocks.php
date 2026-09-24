@@ -14,15 +14,17 @@ function acad_inline(string $text): string
 {
     $html = e($text);
     $html = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $html) ?? $html;
-    return preg_replace_callback('/\[([^\]]+)\]\((\/[^)\s]*|mailto:[^)\s]+)\)/', static function (array $m): string {
-        return '<a href="' . $m[2] . '">' . $m[1] . '</a>';
+    return preg_replace_callback('/\[([^\]]+)\]\((\/[^)\s]*|mailto:[^)\s]+|https:\/\/[^)\s]+)\)/', static function (array $m): string {
+        // External links (https://) are marked as such and never pass referrer data.
+        $external = str_starts_with($m[2], 'https://') ? ' rel="noopener noreferrer external"' : '';
+        return '<a href="' . $m[2] . '"' . $external . '>' . $m[1] . '</a>';
     }, $html) ?? $html;
 }
 
 /** Content string without inline markup, for structured data and llms.txt. */
 function acad_plain(string $text): string
 {
-    $text = preg_replace('/\[([^\]]+)\]\((?:\/[^)\s]*|mailto:[^)\s]+)\)/', '$1', $text) ?? $text;
+    $text = preg_replace('/\[([^\]]+)\]\((?:\/[^)\s]*|mailto:[^)\s]+|https:\/\/[^)\s]+)\)/', '$1', $text) ?? $text;
     return str_replace('**', '', $text);
 }
 

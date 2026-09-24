@@ -55,7 +55,7 @@ Without JS the menu button links to `/sitemap/`.
 1. **Trust bar**: SECURE • SCALABLE • AI-POWERED • CLOUD-READY • ACCESSIBLE, with cards for Data Protection, Enterprise Security, Role-Based Access, Cloud Infrastructure and Responsible Support.
 2. **Five columns**: brand (logo, tagline, AI | CRM | CLOUD | ACADEMIC MANAGEMENT, social icons), Platform, Solutions, Resources, Company.
 3. **Trust & Governance**: Security Center, Privacy & Data Protection, Data Protection Officer, Grievance Redressal Officer, Accessibility, Terms, Sitemap. The DPO and Grievance links open their officer pages, and the note underneath names **Mr. A.K Sinha** (`dpo@acadlytic.com`) and **Mrs. Anjali Sharma** (`gro@acadlytic.com`). Both come from `config/site.php` → `governance`.
-4. **Contact**: `info@acadlytic.com` and **Phone** shown masked (`CONTACT_PHONE_DISPLAY`, labelled Phone, not toll-free); the link goes to `/go/call/`. The full number exists only in `config/contact.php`.
+4. **Contact**: `info@acadlytic.com` and **Phone** shown masked (`CONTACT_PHONE_DISPLAY`, labelled Phone, not toll-free); the link goes to `/go/call/`. The full number exists only in `config/contact.php`. An **Office** pill (Patna, Bihar) links to `/company/offices/patna/`.
 5. Legal bar: copyright plus Privacy, Terms, Security, Accessibility, Sitemap.
 
 Social profiles (LinkedIn, X, YouTube, Instagram, Facebook) come from

@@ -30,6 +30,19 @@ return [
     'phone'         => $contact['CONTACT_PHONE_DISPLAY'],
     'phone_href'    => $contact['CALL_URL'],
 
+    // Office address supplied by Acadlytic. It is an office address only; do
+    // not describe it as the registered office unless counsel confirms.
+    'office' => [
+        'label'    => 'Patna office',
+        'street'   => '#203, Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar',
+        'locality' => 'Patna',
+        'region'   => 'Bihar',
+        'postal'   => '800020',
+        'country'  => 'IN',
+        'country_name' => 'India',
+        'page'     => '/company/offices/patna/',
+    ],
+
     // Governance officers, as designated and confirmed by Acadlytic, Inc.
     'governance' => [
         'dpo'       => ['label' => 'Data Protection Officer', 'name' => 'Mr. A.K Sinha', 'email' => 'dpo@acadlytic.com', 'subject' => 'Data Protection Officer request', 'page' => '/trust/data-protection-officer/'],

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 $people = require dirname(__DIR__) . '/people.php';
 $news = require dirname(__DIR__) . '/news.php';
+$office = acad_office_line();
+$officeMap = acad_office_map_url();
 
 return [
     '/company/' => [
@@ -15,7 +17,7 @@ return [
         'groups' => [
             ['title' => 'About us', 'paths' => ['/core/about/', '/company/vision-mission/', '/company/leadership/', '/company/team/', '/company/news/', '/resources/blog/']],
             ['title' => 'Join & follow', 'paths' => ['/company/careers/', '/company/press/']],
-            ['title' => 'Work with us', 'paths' => ['/company/partners/', '/company/request-demo/', '/core/contact/', '/company/support/']],
+            ['title' => 'Work with us', 'paths' => ['/company/partners/', '/company/request-demo/', '/core/contact/', '/company/offices/', '/company/support/']],
             ['title' => 'Trust', 'paths' => ['/trust/', '/core/security/', '/trust/privacy/']],
         ],
     ],
@@ -94,6 +96,59 @@ return [
         'noindex'  => $news === [],
         'empty_text' => 'Announcements will be published here as they happen. Follow Acadlytic on LinkedIn, X, YouTube, Instagram or Facebook (links in the footer) for updates.',
         'related'  => ['/resources/blog/', '/company/press/', '/core/about/'],
+    ],
+
+    '/company/offices/' => [
+        'title'    => 'Our Offices',
+        'desc'     => 'Where to find Acadlytic, Inc.: office address, directions and the fastest ways to reach the team for demos, support or partnerships.',
+        'h1'       => 'Our offices',
+        'nav_label' => 'Offices',
+        'lead'     => 'Acadlytic, Inc. works with institutions remotely and in person. Our office is in Patna, Bihar.',
+        'template' => 'hub',
+        'parent'   => '/company/',
+        'icon'     => 'pin',
+        'blocks'   => [
+            sec('Reaching the team',
+                'Most conversations with Acadlytic start online: a [demo request](/company/request-demo/), an email to [info@acadlytic.com](mailto:info@acadlytic.com) or a message through the **Enquire now** button on any page. If you would like to meet in person, email us first so we can arrange a time.'),
+        ],
+        'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/'],
+    ],
+
+    '/company/offices/patna/' => [
+        'title'    => 'Acadlytic Office in Patna, Bihar',
+        'desc'     => 'Acadlytic, Inc. office in Patna, Bihar: Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna 800020. Address, map and how to reach the team.',
+        'h1'       => 'Acadlytic in Patna, Bihar',
+        'nav_label' => 'Patna office',
+        'lead'     => 'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management. Our office is in Hanuman Nagar, Patna.',
+        'parent'   => '/company/offices/',
+        'eyebrow'  => 'Office',
+        'icon'     => 'pin',
+        'blocks'   => [
+            split('Office address', [
+                "**Acadlytic, Inc.**, {$office}.",
+                "[Open in Google Maps]({$officeMap}) for directions. The map opens on Google’s website; this page does not load any map script.",
+            ], [
+                'Area: Kailashpuri, Hanuman Nagar',
+                'City: Patna, Bihar',
+                'PIN code: 800020',
+                'Email: info@acadlytic.com',
+            ], 'At a glance'),
+            sec('Visiting the office',
+                'Meetings at the office are by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) with your name, institution and a few suitable times, and the team will confirm a slot. For a first conversation, a [demo request](/company/request-demo/) or a call is usually the quickest route.'),
+            cards('How we can help institutions in Bihar and beyond', [
+                'Admissions and enquiries' => 'Acadlytic is designed to give every enquiry one record and a clear follow-up path. See [Admissions & CRM](/platform/admissions-crm/).',
+                'Student and academic records' => 'One record per student across admissions, academics, fees and communication. See [Student Management](/platform/student-management/).',
+                'Partnerships' => 'Colleges, training institutes and education partners can explore working with us through the [partner programme](/company/partners/).',
+                'Careers' => 'Interested in building education software? See [Careers](/company/careers/).',
+            ], 'The platform is in development; product pages describe planned capabilities.'),
+            faq([
+                'Where is Acadlytic’s office?' => "Our office is at {$office}.",
+                'Can I visit the Acadlytic office in Patna?' => 'Yes, by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) to arrange a time before you visit.',
+                'Does Acadlytic work only with institutions in Bihar?' => 'No. Acadlytic is being built for universities, colleges and other education providers wherever they are. Demos and conversations can take place online.',
+                'How do I contact Acadlytic quickly?' => 'Use the **Enquire now** button on any page to send an enquiry, email us or message us on WhatsApp, or [request a demo](/company/request-demo/).',
+            ]),
+        ],
+        'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/', '/company/leadership/'],
     ],
 
     '/company/request-demo/' => [

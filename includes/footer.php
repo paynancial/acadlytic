@@ -73,6 +73,7 @@ $trustCards = [
             <h2 class="footer-heading">Contact</h2>
             <a class="contact-pill" href="<?= e(acad_mailto((string) acad_config('email'))) ?>"><?= icon('mail', 'icon icon-sm') ?><span><small>Email</small><?= e(acad_config('email')) ?></span></a>
             <a class="contact-pill" href="<?= e(acad_config('phone_href')) ?>"><?= icon('phone', 'icon icon-sm') ?><span><small>Phone</small><?= e(acad_config('phone')) ?></span></a>
+            <a class="contact-pill" href="<?= e(acad_config('office.page')) ?>"><?= icon('pin', 'icon icon-sm') ?><span><small>Office</small><?= e(acad_config('office.locality') . ', ' . acad_config('office.region')) ?></span></a>
         </div>
     </div>
 
