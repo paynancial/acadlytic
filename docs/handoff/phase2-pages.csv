@@ -1,0 +1,55 @@
+section,slug,title,h1,description,primary_intent
+features,ai-admissions,AI Admissions Software for Education,AI Admissions Software for Smarter Enrollment,AI-powered admissions workflows for institutions to organize inquiries applications and follow-ups.,commercial
+features,student-engagement,Student Engagement Platform | Acadlytic,Student Engagement That Scales,Connect students with timely communication personalized experiences and actionable insights.,commercial
+features,student-risk-prediction,Student Risk Prediction with AI,Identify At-Risk Students Earlier,Use data-driven signals and AI workflows to help institutions identify students who may need timely support.,commercial
+features,personalized-recommendations,Personalized Education Recommendations,Personalized Recommendations Powered by AI,Create more relevant academic and institutional recommendations using connected data and intelligent workflows.,commercial
+features,automated-workflows,Education Workflow Automation,Automate Repetitive Academic Workflows,Design repeatable workflows for admissions communication reporting document tasks and institutional operations.,commercial
+features,real-time-reporting,Real-Time Education Reporting,Real-Time Reports and Institutional Insights,Bring operational data into timely reports that support faster academic and administrative decisions.,commercial
+features,enrollment-analytics,Enrollment Analytics Software,Turn Enrollment Data Into Action,Analyze enrollment trends funnels and operational signals through an integrated analytics experience.,commercial
+features,application-tracking,Application Tracking Software for Education,Track Applications From Inquiry to Decision,Give teams a connected view of application progress tasks documents and status changes.,commercial
+features,document-management,Education Document Management,Secure Academic Document Management,Organize electronic documents with structured workflows permissions and easy retrieval.,commercial
+features,communication-hub,Education Communication Hub,One Connected Communication Hub,Coordinate relevant communication across students parents faculty and administrators.,commercial
+features,academic-reporting,Academic Reporting Software,Make Academic Reporting Easier,Create structured academic and operational reports from connected institutional data.,commercial
+features,parent-communication,Parent Communication Platform,Keep Parents Informed and Connected,Support consistent parent communication with centralized information and workflows.,commercial
+use-cases,crm-for-universities,CRM for Universities,Modern CRM for Universities,Connect admissions engagement and institutional relationships in one cloud-based CRM experience.,commercial
+use-cases,crm-for-colleges,CRM for Colleges,Modern CRM for Colleges,Support college admissions student relationships and institutional workflows with a connected CRM.,commercial
+use-cases,ai-for-higher-education,AI for Higher Education,Practical AI for Higher Education,Explore responsible AI use cases for admissions engagement analytics and academic operations.,informational
+use-cases,academic-management-for-universities,Academic Management Software for Universities,Academic Management Built for Universities,Coordinate academic workflows data and communication through a unified platform.,commercial
+use-cases,academic-management-for-colleges,Academic Management Software for Colleges,Academic Management Built for Colleges,Help college teams manage academic processes student information and institutional operations.,commercial
+use-cases,student-management-for-higher-education,Student Management for Higher Education,Connected Student Management,Support the student lifecycle with centralized information workflows and insights.,commercial
+use-cases,admissions-management-for-higher-education,Admissions Management for Higher Education,Modernize Higher Education Admissions,Streamline inquiry application document and follow-up processes with connected admissions workflows.,commercial
+use-cases,education-analytics-platform,Education Analytics Platform,Analytics for Better Institutional Decisions,Bring operational and student data together to support informed institutional decision-making.,commercial
+use-cases,cloud-academic-management,Cloud Academic Management Software,Academic Management in the Cloud,Use a scalable cloud platform for connected academic and administrative workflows.,commercial
+integrations,sis-integration,SIS Integration for Education,Connect Acadlytic With Your SIS,Plan structured SIS integration patterns to reduce duplicate data entry and improve information flow.,commercial
+integrations,lms-integration,LMS Integration for Education,Connect Learning Systems With Acadlytic,Explore integration approaches between learning systems and institutional workflows.,commercial
+integrations,erp-integration,ERP Integration for Education,Connect ERP Data With Academic Workflows,Coordinate finance and institutional data with academic operations through integration-ready architecture.,commercial
+integrations,payment-integration,Payment Integration for Education,Connect Payments With Finance Workflows,Design secure payment integration flows for fees and institutional finance operations.,commercial
+integrations,email-integration,Email Integration for Education,Connect Email With Institutional Workflows,Bring email communication into structured academic and administrative processes.,commercial
+integrations,whatsapp-integration,WhatsApp Integration for Education,Connect WhatsApp With Student Communication,Explore structured messaging workflows for timely student and parent communication.,commercial
+integrations,api-integration,Education API Integration,Build Connected Education Workflows With APIs,Use APIs to connect Acadlytic with approved institutional systems and services.,commercial
+integrations,sso-integration,SSO Integration for Education,Secure Sign-In With SSO,Support centralized authentication patterns for institutions with compatible identity providers.,commercial
+resources,academic-crm-guide,Academic CRM Guide,What Is an Academic CRM?,Understand academic CRM concepts use cases workflows and evaluation criteria for institutions.,informational
+resources,student-management-guide,Student Management Software Guide,How Student Management Software Works,Learn the core capabilities institutions should evaluate in modern student management software.,informational
+resources,education-analytics-guide,Education Analytics Guide,How Education Analytics Supports Decisions,Explore data collection reporting analytics and practical institutional use cases.,informational
+resources,ai-in-higher-education,AI in Higher Education,How AI Is Changing Higher Education Operations,Explore practical AI applications across admissions engagement analytics and academic administration.,informational
+resources,academic-automation-guide,Academic Automation Guide,How to Automate Academic Operations,Learn where automation can reduce repetitive work while keeping human oversight in institutional processes.,informational
+resources,education-crm-vs-erp,Education CRM vs ERP,Education CRM vs ERP: What Is the Difference?,Compare CRM and ERP roles in education and understand where each fits in an institutional technology stack.,informational
+resources,academic-management-checklist,Academic Management Software Checklist,Academic Management Software Evaluation Checklist,Use a practical checklist when comparing academic management platforms for institutional needs.,informational
+glossary,academic-crm,Academic CRM Definition | Acadlytic,What Is Academic CRM?,A concise explanation of academic CRM and how it supports institutional relationships and workflows.,informational
+glossary,student-information-system,Student Information System Definition,What Is a Student Information System?,Understand the purpose and common capabilities of a student information system.,informational
+glossary,education-analytics,Education Analytics Definition,What Is Education Analytics?,Learn what education analytics means and how institutions use data to inform decisions.,informational
+glossary,student-lifecycle-management,Student Lifecycle Management Definition,What Is Student Lifecycle Management?,Understand the student lifecycle from inquiry and admission through engagement and completion.,informational
+glossary,academic-erp,Academic ERP Definition,What Is an Academic ERP?,Understand how ERP concepts apply to education and institutional operations.,informational
+glossary,student-engagement,Student Engagement Definition,What Is Student Engagement?,Explore student engagement and the role of communication data and support services.,informational
+glossary,admissions-crm,Admissions CRM Definition,What Is an Admissions CRM?,Learn how an admissions CRM helps teams manage inquiries applications and follow-up.,informational
+glossary,academic-automation,Academic Automation Definition,What Is Academic Automation?,Understand how workflow automation can support repetitive academic and administrative processes.,informational
+comparisons,academic-crm-vs-spreadsheet,Academic CRM vs Spreadsheets,Academic CRM vs Spreadsheets,Compare structured academic CRM workflows with spreadsheet-based processes.,informational
+comparisons,cloud-vs-on-premise-academic-software,Cloud vs On-Premise Academic Software,Cloud vs On-Premise Academic Software,Compare deployment approaches for institutional academic software.,informational
+comparisons,ai-reporting-vs-manual-reporting,AI Reporting vs Manual Reporting,AI Reporting vs Manual Reporting,Compare automated insight workflows with traditional manual reporting processes.,informational
+company,partners,Acadlytic Partner Program,Partner With Acadlytic,Explore partnership opportunities for education technology providers and institutional ecosystem partners.,commercial
+company,careers,Acadlytic Careers,Build the Future of Intelligent Education,Discover opportunities to work on AI-powered education technology and cloud software.,commercial
+company,press,Acadlytic Press & Media,Acadlytic in the Media,Find company announcements media resources and approved brand information.,navigational
+company,contact,Contact Acadlytic,Talk to the Acadlytic Team,Contact Acadlytic for product questions demos partnerships and support inquiries.,commercial
+trust,security,Acadlytic Security,Security by Design for Education,Learn about the security principles and controls that should underpin Acadlytic platform operations.,commercial
+trust,privacy,Acadlytic Privacy,Privacy and Data Protection,Review Acadlytic privacy principles and information practices.,informational
+trust,accessibility,Acadlytic Accessibility,Accessible Education Technology,Learn about accessibility principles for an inclusive digital education experience.,informational

@@ -1,0 +1,17 @@
+# Acadlytic, Inc. — https://acadlytic.com
+User-agent: *
+Allow: /
+
+# Future authenticated areas and internal search results
+Disallow: /admin/
+Disallow: /cms/
+Disallow: /partner/
+Disallow: /student/
+Disallow: /faculty/
+Disallow: /search/
+Disallow: /go/
+Disallow: /enquiry/
+
+# Sign-in pages stay crawlable so search engines can read their noindex tag.
+
+Sitemap: https://acadlytic.com/sitemap.xml

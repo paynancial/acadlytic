@@ -1,0 +1,75 @@
+# Acadlytic, Inc. — Apache / cPanel configuration
+# Every public page is a real directory with an index.php, so clean URLs work
+# even where mod_rewrite is unavailable. The rules below add HTTPS, a single
+# canonical host, protection for internal folders, compression and caching.
+
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+
+AddType font/woff2 .woff2
+AddType image/webp .webp
+AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
+AddType image/x-icon .ico
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS (also behind proxies/CDNs that set X-Forwarded-Proto).
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Canonical host: www.acadlytic.com -> acadlytic.com
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+    # Internal application folders are never served directly.
+    RewriteRule ^(includes|components|config|data|seo|storage|bin|database|docs)(/|$) - [F,L]
+
+    # /index.php -> /
+    RewriteCond %{THE_REQUEST} \s/+index\.php[\s?]
+    RewriteRule ^index\.php$ / [R=301,L]
+</IfModule>
+
+# Block dotfiles, backups, logs, data and documentation files everywhere.
+<FilesMatch "(^\.|\.(env|ini|log|sql|bak|old|orig|swp|md|sh|lock|json|jsonl|dist|key)$)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Versioned static assets (?v=...) can be cached for a year.
+    <FilesMatch "\.(css|js|png|webp|svg|woff2|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(xml|txt|webmanifest)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

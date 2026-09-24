@@ -1,0 +1,86 @@
+<?php
+/**
+ * Shared footer: trust strip, "Talk to Acadlytic" contact strip, brand
+ * column, five navigation columns (data/nav.php → footer) and the legal bar.
+ * Columns become accordions on phones (app.js); without JS they stay open.
+ * The phone number is shown masked and dialled via /go/call/.
+ *
+ * @var array $page
+ * @var array $nav
+ */
+declare(strict_types=1);
+
+$social = acad_config('social');
+$slug = static fn(string $s): string => trim((string) preg_replace('/[^a-z0-9]+/', '-', strtolower($s)), '-');
+?>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <section class="footer-trust" aria-labelledby="footer-trust-h">
+            <h2 class="footer-trust-title" id="footer-trust-h">Secure&nbsp;<span aria-hidden="true">•</span> Scalable&nbsp;<span aria-hidden="true">•</span> AI&#8209;Powered&nbsp;<span aria-hidden="true">•</span> Cloud&#8209;Ready&nbsp;<span aria-hidden="true">•</span> Accessible</h2>
+            <ul class="footer-trust-list">
+                <?php foreach ($nav['footer_trust'] as [$title, $text, $ic, $href]): ?>
+                <li><a class="footer-trust-item" href="<?= e($href) ?>"><span class="footer-trust-icon"><?= icon($ic) ?></span><span><strong><?= e($title) ?></strong><small><?= e($text) ?></small></span></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+
+        <section class="footer-cta" aria-labelledby="footer-cta-h">
+            <div class="footer-cta-intro">
+                <p class="footer-cta-kicker">Talk to Acadlytic</p>
+                <h2 class="footer-cta-title" id="footer-cta-h">Let’s build a smarter academic future together.</h2>
+                <p class="footer-cta-text">Talk to the Acadlytic team about our AI-powered EdTech CRM and academic management platform.</p>
+            </div>
+            <div class="footer-cta-actions">
+                <a class="btn footer-cta-btn" href="/company/request-demo/">Request a Demo <?= icon('arrow', 'icon icon-sm') ?></a>
+                <a class="btn footer-cta-btn-alt" href="/core/contact/" data-acw-open>Talk to Acadlytic <?= icon('arrow', 'icon icon-sm') ?></a>
+            </div>
+            <ul class="footer-cta-contacts">
+                <li><a href="<?= e(acad_mailto((string) acad_config('email'))) ?>"><span class="footer-cta-icon"><?= icon('mail', 'icon icon-sm') ?></span><span><small>Email</small><?= e(acad_config('email')) ?></span></a></li>
+                <li><a href="<?= e(acad_config('phone_href')) ?>"><span class="footer-cta-icon"><?= icon('phone', 'icon icon-sm') ?></span><span><small>Phone</small><?= e(acad_config('phone')) ?></span></a></li>
+                <li><a href="<?= e(acad_config('office.page')) ?>"><span class="footer-cta-icon"><?= icon('pin', 'icon icon-sm') ?></span><span><small>Office</small><?= e(acad_config('office.locality') . ', ' . acad_config('office.region') . ', ' . acad_config('office.country_name')) ?></span></a></li>
+            </ul>
+        </section>
+
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a class="footer-logo" href="/" aria-label="Acadlytic, Inc. home"><?= acad_logo_light_html() ?></a>
+                <p class="footer-tagline"><?= e(acad_config('tagline')) ?></p>
+                <p class="footer-pillars">AI <span aria-hidden="true">|</span> CRM <span aria-hidden="true">|</span> Cloud <span aria-hidden="true">|</span> Academic Management</p>
+                <p class="footer-about">Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform that connects admissions, students, academics and operations for modern institutions.</p>
+                <ul class="social-list" aria-label="Acadlytic on social media">
+                    <?php foreach ($nav['footer_social'] as $key): if (empty($social[$key])) { continue; } ?>
+                    <li><a class="social-link" href="<?= e($social[$key]['url']) ?>" rel="noopener me" target="_blank"><?= icon($key) ?><span class="sr-only">Acadlytic on <?= e($social[$key]['label']) ?> (opens in a new tab)</span></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php foreach ($nav['footer'] as $heading => $links): $id = 'fcol-' . $slug($heading); ?>
+            <nav class="footer-col" aria-labelledby="<?= e($id) ?>-h" data-fcol>
+                <h2 class="footer-heading" id="<?= e($id) ?>-h"><?= e($heading) ?></h2>
+                <ul class="footer-links" id="<?= e($id) ?>">
+                    <?php foreach ($links as [$label, $href]): ?>
+                    <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <p>© <?= date('Y') ?> Acadlytic, Inc. All rights reserved.</p>
+            <nav aria-label="Legal">
+                <ul>
+                    <?php foreach ($nav['footer_legal'] as [$label, $href]): ?>
+                    <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+<?php require ACAD_ROOT . '/components/contact-widget.php'; ?>
+</body>
+</html>

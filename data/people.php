@@ -1,0 +1,28 @@
+<?php
+/**
+ * Leadership and team profiles for /company/leadership/ and /company/team/.
+ *
+ * Add only real, consenting people. Each page stays noindex (and shows an
+ * "in preparation" note) until at least one profile is listed here, then it
+ * becomes indexable automatically on the next `php bin/build.php`.
+ *
+ * Profile keys: name (required), role (required), bio, linkedin (URL),
+ * photo (root-relative path to a square WebP/PNG under /assets/img/people/),
+ * bio_status ('pending' until the person supplies an approved biography).
+ *
+ * Director biographies are PENDING FINAL CONTENT. Do not write, infer or
+ * paraphrase a bio from other sources; add the text only when it is supplied
+ * and approved, then remove 'bio_status'. An empty bio renders nothing.
+ */
+declare(strict_types=1);
+
+return [
+    'leadership' => [
+        // ['name' => 'Full Name', 'role' => 'Chief Executive Officer', 'bio' => 'One or two factual sentences.', 'linkedin' => 'https://www.linkedin.com/in/...'],
+        ['name' => 'Renuka Devi', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolrenukadevi', 'photo' => '/assets/img/people/renuka-devi.webp', 'bio_status' => 'pending'],
+        ['name' => 'Anisha Bharti', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolanishabharti', 'photo' => '/assets/img/people/anisha-bharti.webp', 'bio_status' => 'pending'],
+    ],
+    'team' => [
+        // ['name' => 'Full Name', 'role' => 'Product Designer', 'bio' => '...'],
+    ],
+];

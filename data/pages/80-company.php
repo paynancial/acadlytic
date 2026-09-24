@@ -1,0 +1,579 @@
+<?php
+/** Company pages, demo request and trust & governance pages. */
+declare(strict_types=1);
+
+$people = require dirname(__DIR__) . '/people.php';
+$news = require dirname(__DIR__) . '/news.php';
+$office = acad_office_line();
+$officeMap = acad_office_map_url();
+
+return [
+    '/company/' => [
+        'title' => 'Company',
+        'desc'  => 'About Acadlytic, Inc.: our mission, careers, partner programme, press resources, support and how to contact the team.',
+        'h1'    => 'Acadlytic, Inc.',
+        'nav_label' => 'Company',
+        'lead'  => 'We are building AI-powered CRM and cloud software for academic management. Where Education Meets Intelligence.',
+        'groups' => [
+            ['title' => 'About us', 'paths' => ['/core/about/', '/company/vision-mission/', '/company/leadership/', '/company/team/', '/company/news/', '/resources/blog/']],
+            ['title' => 'Join & follow', 'paths' => ['/company/careers/', '/company/press/']],
+            ['title' => 'Work with us', 'paths' => ['/company/partners/', '/company/request-demo/', '/core/contact/', '/company/offices/', '/company/support/']],
+            ['title' => 'Trust', 'paths' => ['/trust/', '/core/security/', '/trust/privacy/']],
+        ],
+    ],
+
+    '/company/vision-mission/' => [
+        'title' => 'Vision and Mission',
+        'desc'  => 'Acadlytic’s vision and mission: why we are building an AI-powered EdTech CRM and cloud platform for academic management, and the values that guide the work.',
+        'h1'    => 'Our vision and mission',
+        'nav_label' => 'Vision & Mission',
+        'lead'  => 'Where Education Meets Intelligence. This is the future Acadlytic, Inc. is working toward, and the principles we hold ourselves to while building it.',
+        'icon'  => 'compass',
+        'blocks' => [
+            split('Vision', [
+                'We see a future in which every educational institution, large or small, can run on connected information and act on it in time: answering every enquiry promptly, noticing every student who needs support, and making decisions with evidence rather than guesswork.',
+                'In that future, technology takes on the repetitive administrative load, so that admissions teams, faculty, advisors and leaders spend their time on people rather than paperwork.',
+            ], [
+                'Every institution able to act on connected information',
+                'Every learner noticed and supported in time',
+                'Staff time spent on people, not paperwork',
+            ], 'The future we see'),
+            sec('Mission',
+                'Acadlytic’s mission is to build an AI-powered EdTech CRM and cloud platform that brings admissions, student records, academic operations, finance and communication together on one data model, with AI that assists people and leaves consequential decisions to them.',
+                'We are building it for universities, colleges, multi-campus groups and lifelong-learning providers, starting from the workflows their teams actually run and the constraints they actually face.'),
+            cards('The values that guide us', [
+                'Education first' => 'Every feature has to make life better for learners, educators or the people who support them. If it does not, we do not build it.',
+                'Honest by default' => 'We describe what exists as available and what is planned as planned. We publish proof only when institutions have verified it.',
+                'People in control of AI' => 'AI should explain itself, be easy to question and never make high-stakes decisions about a student on its own.',
+                'Privacy by design' => 'Student and institutional data is protected, used only for its purpose and treated as belonging to the institution.',
+                'Accessible to all' => 'Education technology must work for people with different abilities, devices and connections.',
+                'Built with institutions' => 'We design alongside the teams who will use Acadlytic, and change course when they show us something better.',
+            ]),
+            faq([
+                'What does “Where Education Meets Intelligence” mean?' => 'It is our tagline: education institutions combining their own knowledge with connected data and practical AI to serve learners better.',
+                'Is the Acadlytic platform available today?' => 'The platform is in development. Product pages describe planned capabilities; [request a demo](/company/request-demo/) to see the design and roadmap.',
+            ]),
+        ],
+        'related' => ['/core/about/', '/company/leadership/', '/ai/responsible-ai/', '/company/careers/'],
+    ],
+
+    '/company/leadership/' => [
+        'title'    => 'Leadership',
+        'desc'     => 'The leadership team of Acadlytic, Inc., building an AI-powered EdTech CRM and cloud platform for academic management.',
+        'h1'       => 'Leadership',
+        'nav_label' => 'Leadership',
+        'lead'     => 'The people leading Acadlytic, Inc. and accountable for its direction, product and governance.',
+        'template' => 'people',
+        'people_group' => 'leadership',
+        'icon'     => 'users',
+        'noindex'  => $people['leadership'] === [],
+        'empty_text' => 'Leadership profiles are being prepared and will be published here shortly. For governance matters, contact our [Data Protection Officer](/trust/data-protection-officer/) or [Grievance Redressal Officer](/trust/grievance-redressal-officer/).',
+        'blocks'   => [
+            sec('Leading Acadlytic',
+                'Acadlytic, Inc. is led by its directors, **Renuka Devi** and **Anisha Bharti**. Together they are responsible for the company’s direction as it builds an AI-powered EdTech CRM and cloud platform for academic management.',
+                'The principles the company works by, from honest product claims to people staying in control of AI, are set out in our [vision and mission](/company/vision-mission/). To learn more about the company, see [About Acadlytic](/core/about/).'),
+            faq([
+                'Who leads Acadlytic, Inc.?' => 'Acadlytic, Inc. is led by its directors, Renuka Devi and Anisha Bharti.',
+                'How can I contact the leadership team?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com) and mark your message for the attention of the directors, or use the **Talk to Acadlytic** button on any page.',
+                'Where is Acadlytic based?' => 'Acadlytic’s office is in Hanuman Nagar, Patna, Bihar. See the [Patna office page](/company/offices/patna/) for the address and how to arrange a visit.',
+            ]),
+        ],
+        'related'  => ['/company/team/', '/company/vision-mission/', '/core/about/'],
+    ],
+
+    '/company/team/' => [
+        'title'    => 'Our Team',
+        'desc'     => 'Meet the team at Acadlytic, Inc.: the people designing and building AI-powered CRM and cloud software for academic management.',
+        'h1'       => 'Our team',
+        'nav_label' => 'Team',
+        'lead'     => 'The people designing and building Acadlytic.',
+        'template' => 'people',
+        'people_group' => 'team',
+        'icon'     => 'users',
+        'noindex'  => $people['team'] === [],
+        'empty_text' => 'Team profiles are being prepared. Interested in joining us? See [Careers](/company/careers/).',
+        'related'  => ['/company/leadership/', '/company/careers/', '/core/about/'],
+    ],
+
+    '/company/news/' => [
+        'title'    => 'News & Announcements',
+        'desc'     => 'News and announcements from Acadlytic, Inc.: company updates, product milestones and events.',
+        'h1'       => 'News and announcements',
+        'nav_label' => 'News',
+        'lead'     => 'Company updates, product milestones and events from Acadlytic, Inc. For articles and guides, visit our [blog](/resources/blog/).',
+        'template' => 'news',
+        'icon'     => 'bell',
+        'noindex'  => $news === [],
+        'empty_text' => 'Announcements will be published here as they happen. Follow Acadlytic on LinkedIn, X, YouTube, Instagram or Facebook (links in the footer) for updates.',
+        'related'  => ['/resources/blog/', '/company/press/', '/core/about/'],
+    ],
+
+    '/company/offices/' => [
+        'title'    => 'Our Offices',
+        'desc'     => 'Where to find Acadlytic, Inc.: office address, directions and the fastest ways to reach the team for demos, support or partnerships.',
+        'h1'       => 'Our offices',
+        'nav_label' => 'Offices',
+        'lead'     => 'Acadlytic, Inc. works with institutions remotely and in person. Our office is in Patna, Bihar.',
+        'template' => 'hub',
+        'parent'   => '/company/',
+        'icon'     => 'pin',
+        'blocks'   => [
+            split('Where to find us', [
+                "Acadlytic, Inc. has its office in Patna, Bihar, at {$office}.",
+                'Institutions do not need to be near an office to work with us. Demos, discovery calls and planning sessions can all take place online, and the team can meet in person by appointment.',
+            ], [
+                'Office: Hanuman Nagar, Patna, Bihar',
+                'Visits: by appointment',
+                'Email: info@acadlytic.com',
+                'Online meetings for institutions anywhere',
+            ], 'At a glance'),
+            cards('Ways to meet the team', [
+                'Online demo' => 'See the product design and roadmap in a live walkthrough. [Request a demo](/company/request-demo/) and choose a time that suits your team.',
+                'Discovery call' => 'Talk through your admissions, student records or reporting challenges before you evaluate any software. Use the **Talk to Acadlytic** button or the [contact form](/core/contact/).',
+                'Office meeting' => 'Meet us at the [Patna office](/company/offices/patna/) by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) with a few suitable times.',
+                'Partnership conversation' => 'Colleges, training providers and education partners can explore working together through the [partner programme](/company/partners/).',
+            ]),
+            steps('Arranging an in-person visit', [
+                'Email us first' => 'Write to [info@acadlytic.com](mailto:info@acadlytic.com) with your name, institution, the topic you would like to discuss and two or three suitable times.',
+                'Receive a confirmation' => 'The team replies to confirm a time and who you will meet.',
+                'Visit the office' => 'Use the [map link on the Patna office page](/company/offices/patna/) for directions.',
+            ]),
+            faq([
+                'Where is Acadlytic located?' => "Acadlytic, Inc. has its office in Patna, Bihar: {$office}.",
+                'Do I need to visit the office to work with Acadlytic?' => 'No. Demos and conversations can take place online for institutions anywhere. Office visits are optional and by appointment.',
+                'How do I arrange a meeting?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com), use the **Talk to Acadlytic** button on any page, or [request a demo](/company/request-demo/).',
+            ]),
+        ],
+        'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/'],
+    ],
+
+    '/company/offices/patna/' => [
+        'title'    => 'Acadlytic Office in Patna, Bihar',
+        'desc'     => 'Acadlytic, Inc. office in Patna, Bihar: Sharda Mansion, Kailashpuri, Hanuman Nagar, Patna 800020. Address, map and how to reach the team.',
+        'h1'       => 'Acadlytic in Patna, Bihar',
+        'nav_label' => 'Patna office',
+        'lead'     => 'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management. Our office is in Hanuman Nagar, Patna.',
+        'parent'   => '/company/offices/',
+        'eyebrow'  => 'Office',
+        'icon'     => 'pin',
+        'blocks'   => [
+            split('Office address', [
+                "**Acadlytic, Inc.**, {$office}.",
+                "[Open in Google Maps]({$officeMap}) for directions. The map opens on Google’s website; this page does not load any map script.",
+            ], [
+                'Area: Kailashpuri, Hanuman Nagar',
+                'City: Patna, Bihar',
+                'PIN code: 800020',
+                'Email: info@acadlytic.com',
+            ], 'At a glance'),
+            sec('Visiting the office',
+                'Meetings at the office are by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) with your name, institution and a few suitable times, and the team will confirm a slot. For a first conversation, a [demo request](/company/request-demo/) or a call is usually the quickest route.'),
+            cards('How we can help institutions in Bihar and beyond', [
+                'Admissions and enquiries' => 'Acadlytic is designed to give every enquiry one record and a clear follow-up path. See [Admissions & CRM](/platform/admissions-crm/).',
+                'Student and academic records' => 'One record per student across admissions, academics, fees and communication. See [Student Management](/platform/student-management/).',
+                'Partnerships' => 'Colleges, training institutes and education partners can explore working with us through the [partner programme](/company/partners/).',
+                'Careers' => 'Interested in building education software? See [Careers](/company/careers/).',
+            ], 'The platform is in development; product pages describe planned capabilities.'),
+            faq([
+                'Where is Acadlytic’s office?' => "Our office is at {$office}.",
+                'Can I visit the Acadlytic office in Patna?' => 'Yes, by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) to arrange a time before you visit.',
+                'Does Acadlytic work only with institutions in Bihar?' => 'No. Acadlytic is being built for universities, colleges and other education providers wherever they are. Demos and conversations can take place online.',
+                'How do I contact Acadlytic quickly?' => 'Use the **Talk to Acadlytic** button on any page to send an enquiry, email us or message us on WhatsApp, or [request a demo](/company/request-demo/).',
+            ]),
+        ],
+        'related'  => ['/core/contact/', '/company/request-demo/', '/industries/higher-education-india/', '/core/about/', '/company/leadership/'],
+    ],
+
+    '/company/request-demo/' => [
+        'title'    => 'Request a Demo',
+        'desc'     => 'Request a personalised Acadlytic demo: a walkthrough of the platform design and roadmap, focused on the workflows that matter to your institution.',
+        'h1'       => 'See Acadlytic in action',
+        'nav_label' => 'Request a Demo',
+        'lead'     => 'Tell us about your institution and priorities. We will walk you through Acadlytic’s platform design and roadmap for the workflows that matter to you, not a generic slideshow.',
+        'template' => 'form',
+        'form'     => 'demo',
+        'form_title' => 'Request your demo',
+        'submit'   => 'Request a Demo',
+        'success_title' => 'Thank you. Your request is in.',
+        'success_text'  => 'Our team will review your details and contact you to schedule a demo tailored to your institution.',
+        'aside_title'   => 'What to expect',
+        'aside_points'  => [
+            'A short discovery call to understand your priorities and systems.',
+            'A tailored walkthrough of the planned modules you care about.',
+            'Honest answers on integrations, data migration and timelines.',
+            'A written proposal if Acadlytic is a good fit.',
+        ],
+        'priority' => 0.9,
+        'blocks' => [
+            faq([
+                'How long is a demo?' => 'Usually 45–60 minutes, including time for your questions. We can run shorter sessions focused on a single module.',
+                'Who should attend?' => 'Whoever owns the processes you want to improve, for example admissions, registry, finance or IT, plus a decision-maker if possible.',
+                'Can we see our own processes?' => 'Yes. Tell us your priority workflows in the form and we will prepare examples around them.',
+                'Is there any obligation?' => 'None. A demo is a conversation to see whether Acadlytic fits your needs.',
+            ]),
+        ],
+    ],
+
+    '/company/careers/' => [
+        'title' => 'Careers at Acadlytic',
+        'desc'  => 'Build the future of intelligent education with Acadlytic. Learn how we work, the skills we value and how to express interest in joining the team.',
+        'h1'    => 'Build the future of intelligent education',
+        'nav_label' => 'Careers',
+        'lead'  => 'We are building software that helps institutions serve students better. If that matters to you, we would like to hear from you.',
+        'icon'  => 'briefcase',
+        'blocks' => [
+            cards('How we work', [
+                'Education first' => 'We judge our work by whether it helps institutions serve students and staff better.',
+                'Honest by default' => 'We describe our product accurately and admit what we do not know.',
+                'Craft & care' => 'We sweat the details of usability, accessibility and reliability.',
+                'Responsible AI' => 'We build AI that people can understand, question and control.',
+            ]),
+            checks('Skills we value', [
+                'Product engineering (PHP, web, APIs, data)',
+                'Product design with an eye for accessibility',
+                'Data engineering and applied machine learning',
+                'Implementation and customer success in education',
+                'Sales and partnerships with institutions',
+                'Security and cloud operations',
+            ]),
+            sec('Open roles',
+                'Current openings are announced on our official LinkedIn page and other social channels, linked at the foot of every page. If you do not see a role that fits, send a short introduction and your CV to info@acadlytic.com with the subject “Careers”. We read every message.'),
+            faq([
+                'Does Acadlytic hire remotely?' => 'Working arrangements are described in each role announcement.',
+                'How do I apply if no role fits?' => 'Email a short introduction and CV to info@acadlytic.com with the subject “Careers”.',
+            ]),
+        ],
+        'related' => ['/core/about/', '/company/partners/', '/ai/responsible-ai/'],
+    ],
+
+    '/company/partners/' => [
+        'title' => 'Partner with Acadlytic',
+        'desc'  => 'Partner with Acadlytic as an implementation, technology, referral or education partner. Learn about partnership types and how to start a conversation.',
+        'h1'    => 'Partner with Acadlytic',
+        'nav_label' => 'Partners',
+        'lead'  => 'We work with organisations that help institutions succeed: implementers, technology providers, consultants and education networks.',
+        'icon'  => 'handshake',
+        'blocks' => [
+            cards('Partnership types', [
+                'Implementation partners' => 'Consultancies that will configure, migrate and train institutions on Acadlytic.',
+                'Technology partners' => 'Providers of complementary systems (LMS, payments, messaging, identity) that will integrate with our platform.',
+                'Referral partners' => 'Advisors and networks that introduce institutions to Acadlytic.',
+                'Education partners' => 'Counselling organisations and agents working with students and institutions.',
+            ]),
+            steps('How partnerships start', [
+                'Introduce yourself' => 'Tell us about your organisation, customers and the partnership you have in mind.',
+                'Explore fit' => 'We discuss shared customer needs, capabilities and responsibilities.',
+                'Agree terms' => 'Scope, data responsibilities and commercial terms are agreed in writing.',
+                'Enable' => 'Training, documentation and sandbox access for technical partners.',
+            ]),
+            note('We do not list partner organisations on this site until partnerships are formally agreed and both parties approve the listing. To start a conversation, [contact us](/core/contact/?topic=partnership).'),
+            faq([
+                'Do partners get access to institutional data?' => 'Only where an institution authorises it for a specific purpose, under a written agreement that defines scope and responsibilities.',
+                'Can technology partners test against the platform?' => 'Approved technology partners receive sandbox access and API documentation to build and test integrations.',
+            ]),
+        ],
+        'related' => ['/integrations/api/', '/core/contact/', '/company/request-demo/'],
+    ],
+
+    '/company/press/' => [
+        'title' => 'Press & Media',
+        'desc'  => 'Press and media information for Acadlytic, Inc.: approved company description, brand guidance, official social profiles and media contact.',
+        'h1'    => 'Press and media',
+        'nav_label' => 'Press & Media',
+        'lead'  => 'Approved company information, brand guidance and contacts for journalists, analysts and event organisers.',
+        'icon'  => 'doc',
+        'blocks' => [
+            sec('Company boilerplate',
+                'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management. The platform is designed to connect admissions, student records, academic operations, finance, communication, documents and analytics for educational institutions, with AI features designed for human oversight. Tagline: Where Education Meets Intelligence.'),
+            table('Official channels', ['Channel', 'Address'], [
+                ['Website', 'acadlytic.com'],
+                ['LinkedIn', 'linkedin.com/company/acadlytic'],
+                ['X', 'x.com/acadlytic'],
+                ['YouTube', 'youtube.com/@acadlytic'],
+                ['Instagram', 'instagram.com/acadlytic'],
+                ['Facebook', 'facebook.com/acadlytic'],
+            ]),
+            checks('Brand guidance', [
+                'Write the company name as “Acadlytic, Inc.” on first reference and “Acadlytic” thereafter',
+                'Use the official logo without altering colours, proportions or the tagline',
+                'Do not attribute customer counts, rankings or certifications to Acadlytic unless confirmed by us in writing',
+            ]),
+            sec('Media contact',
+                'For interviews, logo files and fact-checking, email info@acadlytic.com with the subject “Press”, or use the call and WhatsApp options in the Talk to Acadlytic panel.'),
+            faq([
+                'Can I use the Acadlytic logo in an article?' => 'Yes, for editorial coverage of Acadlytic, using the official logo files we provide on request, unaltered.',
+                'Can you confirm customer names or figures?' => 'We only confirm customer names, figures or outcomes that have been verified and approved for publication by the institutions involved.',
+            ]),
+        ],
+        'related' => ['/core/about/', '/core/contact/', '/company/careers/'],
+    ],
+
+    '/company/support/' => [
+        'title' => 'Customer Support & Help Center',
+        'desc'  => 'Get help with Acadlytic: support channels, what to include in a request, account access help and how support requests are prioritised.',
+        'h1'    => 'Support and help center',
+        'nav_label' => 'Support',
+        'lead'  => 'Help with Acadlytic accounts, access requests and questions, for institutions, students, parents, staff and partners.',
+        'icon'  => 'support',
+        'blocks' => [
+            cards('How to get help', [
+                'Institution staff' => 'Once your institution’s workspace is set up, contact its Acadlytic administrator first. Administrators will be able to raise requests with our support team directly.',
+                'Students & parents' => 'For questions about your records, fees or results, contact your institution. For sign-in problems, use the options below.',
+                'Account access' => 'Use [Forgot password](/forgot-password.php) or email the support address with the subject “Account access”.',
+                'Everyone else' => 'For product or sales questions, use the [contact page](/core/contact/).',
+            ]),
+            checks('Include in your support request', [
+                'Your name, institution and role',
+                'What you were trying to do and what happened',
+                'The page or screen and approximate time',
+                'Screenshots, with any personal data of others removed',
+                'How many people are affected',
+            ]),
+            table('How requests are prioritised', ['Priority', 'Examples'], [
+                ['Urgent', 'Platform unavailable, security concern, payment processing failure'],
+                ['High', 'A key process blocked for a team, such as marks entry during results week'],
+                ['Normal', 'A single user issue or a configuration question'],
+                ['Low', 'Feature requests and suggestions'],
+            ]),
+            faq([
+                'Where do I sign in?' => 'Use the [Login](/login.php) page and choose your workspace.',
+                'I did not receive a reset email.' => 'Check spam folders, confirm you used the email registered with your institution, then contact support.',
+                'How do I report a security issue?' => 'See the [Security Center](/core/security/) for responsible disclosure.',
+            ], 'Quick answers'),
+        ],
+        'related' => ['/resources/faqs/', '/core/contact/', '/trust/grievance-redressal/'],
+    ],
+
+    '/company/case-studies/' => [
+        'title' => 'Case Studies',
+        'desc'  => 'Acadlytic case studies will be published once outcomes are verified with the institutions involved.',
+        'h1'    => 'Case studies',
+        'lead'  => 'We publish case studies only when results are verified and approved by the institutions involved. The first ones are in preparation.',
+        'noindex' => true,
+        'hide_cta' => true,
+        'blocks' => [
+            note('This page is a placeholder and is excluded from search engines. Case studies will include the institution’s context, what changed, how it was measured and who verified the results.', 'In preparation'),
+        ],
+        'related' => ['/company/request-demo/', '/resources/guides/', '/core/about/'],
+    ],
+
+    '/trust/' => [
+        'title' => 'Trust Center: Security, Privacy & Governance',
+        'desc'  => 'Acadlytic Trust Center: security, privacy and data protection, the Data Protection Officer, grievance redressal, accessibility and terms of use.',
+        'h1'    => 'Trust Center',
+        'nav_label' => 'Trust Center',
+        'lead'  => 'How Acadlytic protects data, respects privacy, handles grievances and makes its services accessible, with the people to contact for each.',
+        'groups' => [
+            ['title' => 'Security & privacy', 'paths' => ['/core/security/', '/trust/privacy/', '/ai/responsible-ai/']],
+            ['title' => 'Governance officers', 'paths' => ['/trust/data-protection-officer/', '/trust/grievance-redressal-officer/']],
+            ['title' => 'Policies & processes', 'paths' => ['/trust/grievance-redressal/', '/trust/accessibility/', '/trust/terms/']],
+        ],
+        'blocks' => [
+            table('Governance contacts', ['Role', 'Officer', 'How to reach'], [
+                ['[Data Protection Officer](/trust/data-protection-officer/)', 'Mr. A.K Sinha', '[dpo@acadlytic.com](mailto:dpo@acadlytic.com)'],
+                ['[Grievance Redressal Officer](/trust/grievance-redressal-officer/)', 'Mrs. Anjali Sharma', '[gro@acadlytic.com](mailto:gro@acadlytic.com)'],
+                ['Security reports', 'Security team', 'info@acadlytic.com, subject “Security report”'],
+                ['Accessibility feedback', 'Accessibility team', 'info@acadlytic.com, subject “Accessibility”'],
+            ]),
+        ],
+    ],
+
+    '/trust/data-protection-officer/' => [
+        'title' => 'Data Protection Officer (DPO)',
+        'desc'  => 'Contact Acadlytic’s Data Protection Officer, Mr. A.K Sinha, at dpo@acadlytic.com for personal data requests, consent withdrawal and privacy questions.',
+        'h1'    => 'Data Protection Officer',
+        'nav_label' => 'Data Protection Officer',
+        'lead'  => 'Acadlytic, Inc. has designated **Mr. A.K Sinha** as its Data Protection Officer. Contact him at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) about how your personal data is handled.',
+        'icon'  => 'lock',
+        'hide_cta' => true,
+        'blocks' => [
+            table('Contact details', ['Role', 'Name', 'Email'], [
+                ['Data Protection Officer', 'Mr. A.K Sinha', '[dpo@acadlytic.com](mailto:dpo@acadlytic.com)'],
+            ], 'Please write from an email address we can reply to, and use a subject line that describes your request.'),
+            cards('What the Data Protection Officer handles', [
+                'Your data rights' => 'Requests to access, correct or erase personal data Acadlytic holds about you, and to withdraw consent.',
+                'Privacy questions' => 'Questions about what we collect through acadlytic.com, why, and how long we keep it.',
+                'Consent and communication' => 'Stopping marketing messages or changing how we may contact you.',
+                'Institutional data' => 'Coordinating with the relevant institution when your request concerns data an institution holds in the Acadlytic platform.',
+            ]),
+            checks('Include in your request', [
+                'Your full name and the email or phone number we may know you by',
+                'Whether you are a website visitor, applicant, student, parent, staff member or partner',
+                'The institution involved, if your request relates to an institution’s use of Acadlytic',
+                'What you would like us to do, as specifically as possible',
+            ], 'We may ask you to verify your identity before acting on a request, to protect your information from being disclosed to someone else.'),
+            note('If your request concerns records held by your school, college or university (for example, results or fees), that institution decides how the data is used. Contact the institution as well; the DPO will support it in responding.', 'Institution data'),
+            faq([
+                'Who is Acadlytic’s Data Protection Officer?' => 'Mr. A.K Sinha, reachable at [dpo@acadlytic.com](mailto:dpo@acadlytic.com).',
+                'Is the DPO the right contact for a complaint?' => 'For a complaint about our service or how a request was handled, contact our [Grievance Redressal Officer](/trust/grievance-redressal-officer/). The DPO handles data rights and privacy questions.',
+                'Can I contact the DPO about data my college holds?' => 'Yes. The DPO will coordinate with the institution, which decides how its student data is used.',
+            ]),
+        ],
+        'related' => ['/trust/privacy/', '/trust/grievance-redressal-officer/', '/core/security/', '/trust/'],
+    ],
+
+    '/trust/grievance-redressal-officer/' => [
+        'title' => 'Grievance Redressal Officer',
+        'desc'  => 'Contact Acadlytic’s Grievance Redressal Officer, Mrs. Anjali Sharma, at gro@acadlytic.com to raise a complaint about our services or data handling.',
+        'h1'    => 'Grievance Redressal Officer',
+        'nav_label' => 'Grievance Redressal Officer',
+        'lead'  => 'Acadlytic, Inc. has designated **Mrs. Anjali Sharma** as its Grievance Redressal Officer. Contact her at [gro@acadlytic.com](mailto:gro@acadlytic.com) if you are unhappy with our service or how your data was handled.',
+        'icon'  => 'scale',
+        'hide_cta' => true,
+        'blocks' => [
+            table('Contact details', ['Role', 'Name', 'Email'], [
+                ['Grievance Redressal Officer', 'Mrs. Anjali Sharma', '[gro@acadlytic.com](mailto:gro@acadlytic.com)'],
+            ], 'You can also use the [contact form](/core/contact/?topic=grievance) and choose “Grievance redressal”; it reaches the same officer.'),
+            cards('Grievances the officer handles', [
+                'Service complaints' => 'Problems with the Acadlytic website, support or services that have not been resolved through normal channels.',
+                'Data handling' => 'Complaints about how your personal data was collected, used or shared, or how a data request was handled.',
+                'Accessibility' => 'Barriers that prevented you from using our website or services.',
+                'Conduct' => 'Concerns about how Acadlytic staff or partners dealt with you.',
+            ]),
+            sec('What happens next',
+                'Your grievance is acknowledged with a reference, reviewed with the teams involved and answered with our findings and any action taken. The full sequence, and how to escalate if you are not satisfied, is set out in our [grievance redressal process](/trust/grievance-redressal/).'),
+            faq([
+                'Who is Acadlytic’s Grievance Redressal Officer?' => 'Mrs. Anjali Sharma, reachable at [gro@acadlytic.com](mailto:gro@acadlytic.com).',
+                'Should I contact the Grievance Redressal Officer or the DPO?' => 'Use the Grievance Redressal Officer for complaints. For requests to access, correct or erase your personal data, contact the [Data Protection Officer](/trust/data-protection-officer/).',
+                'Can the officer change an institution’s decision?' => 'No. Admission outcomes, results and fees are decided by the institution. Raise those with the institution; we will support it where our platform is involved.',
+            ]),
+        ],
+        'related' => ['/trust/grievance-redressal/', '/trust/data-protection-officer/', '/company/support/', '/trust/'],
+    ],
+
+    '/trust/privacy/' => [
+        'title' => 'Privacy & Data Protection',
+        'desc'  => 'How Acadlytic handles personal data on this website and platform: what we collect, why, how long we keep it, your rights and how to reach our Data Protection Officer.',
+        'h1'    => 'Privacy and data protection',
+        'nav_label' => 'Privacy & Data Protection',
+        'lead'  => 'This page explains how Acadlytic, Inc. handles personal data collected through acadlytic.com, and how data is handled in the Acadlytic platform on behalf of institutions.',
+        'hide_cta' => true,
+        'blocks' => [
+            sec('Who we are',
+                'Acadlytic, Inc. (“Acadlytic”, “we”) operates acadlytic.com and is building the Acadlytic platform for educational institutions. You can contact us at info@acadlytic.com.'),
+            table('What this website collects', ['Data', 'When', 'Why'], [
+                ['Name, email, phone, institution, role, message', 'When you submit a demo, contact or access request', 'To respond to your request'],
+                ['Account email', 'When you request a password reset', 'To verify and help with account access'],
+                ['A session cookie', 'Only on pages with forms or sign-in', 'Security (CSRF protection) and keeping you signed in'],
+                ['Hashed network identifiers', 'When forms are submitted', 'To prevent spam and abuse; raw IP addresses are not stored with enquiries'],
+                ['Standard server logs', 'When pages are requested', 'Security and troubleshooting, kept for a limited period'],
+            ], 'This website does not use advertising trackers or third-party analytics scripts.'),
+            sec('Data in the Acadlytic platform',
+                'When an institution uses the Acadlytic platform, the institution decides what personal data about its applicants, students, parents and staff is processed, and Acadlytic processes it on the institution’s behalf under a written agreement. Questions about a specific institution’s use of your data should go to that institution first; we will assist them in responding.'),
+            cards('Our principles', [
+                'Purpose limitation' => 'We use personal data only for the purposes it was collected for.',
+                'Minimisation' => 'We collect only what we need.',
+                'Security' => 'We protect data with technical and organisational measures. See the [Security Center](/core/security/).',
+                'Retention' => 'We keep data only as long as necessary and then delete or anonymise it.',
+                'No sale of data' => 'We do not sell personal data.',
+                'AI' => 'Our design principle is that institutional data will not be used to train public AI models.',
+            ]),
+            checks('Your rights', [
+                'Access the personal data we hold about you',
+                'Correct inaccurate or incomplete data',
+                'Request erasure of data we no longer need',
+                'Withdraw consent where processing is based on consent',
+                'Nominate another person to exercise your rights where applicable law allows',
+                'Raise a grievance and, if unresolved, escalate to the relevant authority',
+            ], 'Which of these rights apply depends on the law that applies to you.'),
+            sec('Data Protection Officer',
+                'Our Data Protection Officer is **Mr. A.K Sinha**. To exercise your rights or ask about our data practices, email [dpo@acadlytic.com](mailto:dpo@acadlytic.com). See the [Data Protection Officer page](/trust/data-protection-officer/) for what to include. For complaints, contact our [Grievance Redressal Officer](/trust/grievance-redressal-officer/).'),
+            faq([
+                'Does acadlytic.com use tracking cookies?' => 'No. The site sets a session cookie only on pages with forms or sign-in, for security.',
+                'How do I ask what data Acadlytic holds about me?' => 'Email our Data Protection Officer at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) and describe the information you are asking about.',
+            ]),
+        ],
+        'related' => ['/trust/grievance-redressal/', '/core/security/', '/ai/responsible-ai/', '/trust/terms/'],
+    ],
+
+    '/trust/terms/' => [
+        'title' => 'Website Terms of Use',
+        'desc'  => 'Terms of use for acadlytic.com: acceptable use, intellectual property, accuracy of information, links, limitation of liability and how to contact us.',
+        'h1'    => 'Website terms of use',
+        'nav_label' => 'Terms',
+        'lead'  => 'These terms govern your use of acadlytic.com. Use of the Acadlytic platform by institutions is governed by separate agreements.',
+        'hide_cta' => true,
+        'blocks' => [
+            sec('Using this website',
+                'You may browse and use this website for lawful purposes, including learning about Acadlytic and contacting us. You must not attempt to disrupt the website, access areas you are not authorised to access, submit false information or use automated tools to overload our forms.'),
+            sec('Information on this website',
+                'We aim to keep information accurate and current. Product descriptions explain capabilities in general terms; the specific scope of any service is defined in a written agreement with your institution. Nothing on this website is a binding offer.'),
+            sec('Intellectual property',
+                'The Acadlytic name, logo, website design and content belong to Acadlytic, Inc. or its licensors. You may share links to our pages and quote short extracts with attribution. Please see [Press & Media](/company/press/) for brand guidance.'),
+            sec('Links to other websites',
+                'Our pages link to third-party sites, including our official social media profiles. We are not responsible for the content or practices of those sites.'),
+            sec('Liability',
+                'To the extent permitted by law, Acadlytic is not liable for losses arising from reliance on general information on this website. Nothing in these terms limits liability that cannot be limited by law.'),
+            sec('Contact',
+                'Questions about these terms can be sent to info@acadlytic.com. Complaints are handled under our [grievance redressal process](/trust/grievance-redressal/).'),
+            faq([
+                'Do these terms cover the Acadlytic platform?' => 'No. They cover this website. Platform use is governed by each institution’s written agreement.',
+                'Can I quote content from this website?' => 'Yes, short extracts with attribution and a link to the original page.',
+            ]),
+        ],
+        'related' => ['/trust/privacy/', '/trust/accessibility/', '/trust/'],
+    ],
+
+    '/trust/accessibility/' => [
+        'title' => 'Accessibility Statement',
+        'desc'  => 'Acadlytic’s accessibility statement: our WCAG 2.2 AA target, measures taken on this website and platform, known limitations and how to request help.',
+        'h1'    => 'Accessibility statement',
+        'nav_label' => 'Accessibility',
+        'lead'  => 'Education should be accessible to everyone. We design acadlytic.com and the Acadlytic platform to be usable by people with a wide range of abilities, devices and connections.',
+        'hide_cta' => true,
+        'blocks' => [
+            sec('Our target',
+                'We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. We have not yet completed an independent accessibility audit; when we do, we will publish the results and date here.'),
+            checks('Measures on this website', [
+                'Semantic headings and landmarks, with one main heading per page',
+                'Keyboard access to all navigation, menus and forms, with visible focus',
+                'A skip link to the main content',
+                'Text and interface colours chosen for sufficient contrast',
+                'Form fields with labels, error messages linked to fields and an error summary',
+                'Reduced motion respected when set in your device preferences',
+                'Pages that reflow on small screens without horizontal scrolling',
+            ]),
+            sec('Known limitations',
+                'Some decorative dashboard previews on this website are illustrations and are hidden from assistive technology; their meaning is described in the surrounding text. If you find content that is difficult to use, please tell us.'),
+            sec('Feedback and assistance',
+                'Email info@acadlytic.com with the subject “Accessibility”, use the call option in the Talk to Acadlytic panel, or the [contact form](/core/contact/?topic=accessibility). Tell us the page, what you were trying to do and any assistive technology you use. We will respond and, where we cannot fix an issue quickly, provide the information another way.'),
+            faq([
+                'Which accessibility standard does Acadlytic follow?' => 'We aim for WCAG 2.2 level AA.',
+                'Can I get information in another format?' => 'Yes. Contact us with your needs and we will provide the information in an accessible alternative.',
+            ]),
+        ],
+        'related' => ['/trust/', '/solutions/for-students/', '/core/contact/'],
+    ],
+
+    '/trust/grievance-redressal/' => [
+        'title' => 'Grievance Redressal',
+        'desc'  => 'How to raise a grievance with Acadlytic, how it is acknowledged, investigated and resolved, and how to escalate if you are not satisfied.',
+        'h1'    => 'Grievance redressal',
+        'lead'  => 'If you are unhappy with our service or with how your personal data has been handled, tell us. This page explains how your grievance will be handled.',
+        'nav_label' => 'Grievance Redressal Process',
+        'hide_cta' => true,
+        'blocks' => [
+            sec('Grievance Redressal Officer',
+                'Grievances are handled by our Grievance Redressal Officer, **Mrs. Anjali Sharma**. Send your grievance to [gro@acadlytic.com](mailto:gro@acadlytic.com), or use the [contact form](/core/contact/?topic=grievance) and choose “Grievance redressal”. Details are on the [Grievance Redressal Officer page](/trust/grievance-redressal-officer/).'),
+            checks('Please include', [
+                'Your name and contact details',
+                'Your institution, if the grievance relates to an institution’s use of Acadlytic',
+                'A clear description of the issue and when it happened',
+                'Any reference numbers, screenshots or correspondence',
+                'What outcome you are seeking',
+            ]),
+            steps('How we handle a grievance', [
+                'Acknowledge' => 'We confirm receipt and give you a reference.',
+                'Review' => 'The Grievance Redressal Officer reviews the issue, involving the relevant team.',
+                'Respond' => 'We explain our findings and any action taken.',
+                'Escalate' => 'If you are not satisfied, you may ask for a senior review, and you retain any right to approach the relevant authority under applicable law.',
+            ]),
+            note('Grievances about an institution’s decisions, such as admissions outcomes, results or fees, should be raised with that institution. Acadlytic will support institutions in responding where our platform is involved.'),
+            faq([
+                'How do I raise a grievance?' => 'Email [gro@acadlytic.com](mailto:gro@acadlytic.com), or choose “Grievance redressal” on the contact form.',
+                'Should grievances about admission decisions come to Acadlytic?' => 'No. Decisions made by an institution should be raised with that institution first.',
+            ]),
+        ],
+        'related' => ['/trust/privacy/', '/core/contact/', '/company/support/'],
+    ],
+];
