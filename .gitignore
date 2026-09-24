@@ -13,3 +13,6 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# Local dev server logs
+*.log
