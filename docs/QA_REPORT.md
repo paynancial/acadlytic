@@ -8,9 +8,9 @@ gate on PHP 8.2, 8.3 and 8.4 for every push.
 
 ## Automated gate: `php bin/qa.php`
 
-**Result: 0 errors, 0 warnings.** 157 registry pages (143 indexable in the
-sitemap; the rest are search, 404, 3 auth pages, noindex placeholders, legal
-drafts, and Team/News until real entries exist) and 69 redirects.
+**Result: 0 errors, 0 warnings.** 157 registry pages (148 indexable in the
+sitemap; the rest are search, 404, 3 auth pages, noindex placeholders, and
+Team/News until real entries exist). Legal pages approved 24/09/2026 and 69 redirects.
 
 Checked on every page: exactly one `<h1>`; `<title>` present and unique;
 meta description present, unique, 70–170 chars; canonical on indexable pages;

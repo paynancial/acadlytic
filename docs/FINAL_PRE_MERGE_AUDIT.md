@@ -7,6 +7,8 @@
 | Environment | PHP 8.4 built-in server via `bin/dev-router.php` (mirrors `.htaccess` routing), Chromium (Playwright), axe-core; CI runs PHP 8.2 / 8.3 / 8.4 |
 | Scope | Technical audit only. Legal text was **not** changed. No merge was performed. |
 
+> **Update 24/09/2026:** the five legal pages were approved as-is by Renuka Devi (Director, Acadlytic, Inc.) and published. See `docs/LEGAL_PUBLICATION_AUDIT.md`. Section E below is kept as the pre-approval record.
+
 **TECHNICAL STATUS: READY FOR LEGAL APPROVAL**
 **LEGAL STATUS: LEGAL REVIEW REQUIRED — NOT FINAL**
 **MERGE STATUS: DO NOT MERGE YET** (explicit owner approval required)

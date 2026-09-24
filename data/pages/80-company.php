@@ -385,7 +385,6 @@ return [
         'nav_label' => 'Data Protection Officer',
         'lead'  => 'Acadlytic, Inc. has designated **Mr. A.K Sinha** as its Data Protection Officer. Contact him at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) about how your personal data is handled.',
         'icon'  => 'lock',
-        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             table('Contact details', ['Role', 'Name', 'Email'], [
@@ -420,7 +419,6 @@ return [
         'nav_label' => 'Grievance Redressal Officer',
         'lead'  => 'Acadlytic, Inc. has designated **Mrs. Anjali Sharma** as its Grievance Redressal Officer. Contact her at [gro@acadlytic.com](mailto:gro@acadlytic.com) if you are unhappy with our service or how your data was handled.',
         'icon'  => 'scale',
-        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             table('Contact details', ['Role', 'Name', 'Email'], [
@@ -449,7 +447,6 @@ return [
         'h1'    => 'Privacy and data protection',
         'nav_label' => 'Privacy & Data Protection',
         'lead'  => 'This page explains how Acadlytic, Inc. handles personal data collected through acadlytic.com, and how data is handled in the Acadlytic platform on behalf of institutions.',
-        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             sec('Who we are',
@@ -478,23 +475,13 @@ return [
                 'Withdraw consent where processing is based on consent',
                 'Nominate another person to exercise your rights where applicable law allows',
                 'Raise a grievance and, if unresolved, escalate to the relevant authority',
-            ], 'Which of these rights apply depends on the law that applies to you. This section is subject to legal review.'),
+            ], 'Which of these rights apply depends on the law that applies to you.'),
             sec('Data Protection Officer',
                 'Our Data Protection Officer is **Mr. A.K Sinha**. To exercise your rights or ask about our data practices, email [dpo@acadlytic.com](mailto:dpo@acadlytic.com). See the [Data Protection Officer page](/trust/data-protection-officer/) for what to include. For complaints, contact our [Grievance Redressal Officer](/trust/grievance-redressal-officer/).'),
             faq([
                 'Does acadlytic.com use tracking cookies?' => 'No. The site sets a session cookie only on pages with forms or sign-in, for security.',
                 'How do I ask what data Acadlytic holds about me?' => 'Email our Data Protection Officer at [dpo@acadlytic.com](mailto:dpo@acadlytic.com) and describe the information you are asking about.',
             ]),
-        ],
-        'counsel_items' => [
-            'Legal entity name, registered office and company registration details',
-            'Applicable data protection law(s) and the legal bases relied on for each purpose',
-            'Retention periods for enquiries, server logs and account data',
-            'Third-party service providers (sub-processors), including hosting and email delivery',
-            'Hosting location, data residency and any international transfers',
-            'Handling of personal data of children and minors',
-            'Cookie and tracking disclosure (currently: one security session cookie on form and sign-in pages; no analytics or advertising trackers)',
-            'Platform data processing terms for institutions (controller/processor roles)',
         ],
         'related' => ['/trust/grievance-redressal/', '/core/security/', '/ai/responsible-ai/', '/trust/terms/'],
     ],
@@ -505,7 +492,6 @@ return [
         'h1'    => 'Website terms of use',
         'nav_label' => 'Terms',
         'lead'  => 'These terms govern your use of acadlytic.com. Use of the Acadlytic platform by institutions is governed by separate agreements.',
-        'legal_draft' => true,
         'hide_cta' => true,
         'blocks' => [
             sec('Using this website',
@@ -524,14 +510,6 @@ return [
                 'Do these terms cover the Acadlytic platform?' => 'No. They cover this website. Platform use is governed by each institution’s written agreement.',
                 'Can I quote content from this website?' => 'Yes, short extracts with attribution and a link to the original page.',
             ]),
-        ],
-        'counsel_items' => [
-            'Legal entity name, registered office and company registration details',
-            'Governing law and jurisdiction',
-            'Limitation of liability and disclaimer wording',
-            'Intellectual property and acceptable-use wording',
-            'Changes-to-terms and notice provisions',
-            'Relationship between these website terms and institution platform agreements',
         ],
         'related' => ['/trust/privacy/', '/trust/accessibility/', '/trust/'],
     ],
@@ -572,7 +550,6 @@ return [
         'desc'  => 'How to raise a grievance with Acadlytic, how it is acknowledged, investigated and resolved, and how to escalate if you are not satisfied.',
         'h1'    => 'Grievance redressal',
         'lead'  => 'If you are unhappy with our service or with how your personal data has been handled, tell us. This page explains how your grievance will be handled.',
-        'legal_draft' => true,
         'nav_label' => 'Grievance Redressal Process',
         'hide_cta' => true,
         'blocks' => [
@@ -596,12 +573,6 @@ return [
                 'How do I raise a grievance?' => 'Email [gro@acadlytic.com](mailto:gro@acadlytic.com), or choose “Grievance redressal” on the contact form.',
                 'Should grievances about admission decisions come to Acadlytic?' => 'No. Decisions made by an institution should be raised with that institution first.',
             ]),
-        ],
-        'counsel_items' => [
-            'Acknowledgement and resolution timelines',
-            'Escalation route and the external authority (if any) complainants may approach',
-            'Applicable law under which the grievance mechanism operates',
-            'Record-keeping and retention of grievance records',
         ],
         'related' => ['/trust/privacy/', '/core/contact/', '/company/support/'],
     ],

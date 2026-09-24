@@ -1,8 +1,16 @@
 # Legal review checklist
 
-**Status: LEGAL REVIEW REQUIRED — NOT FINAL.** None of the legal or governance pages
-has been approved by legal counsel. They are drafts written in plain language
-from the website's actual behaviour, structured for a lawyer to review.
+**Status: APPROVED — 24/09/2026.** All five pages below were approved as written
+by Renuka Devi (Director, Acadlytic, Inc.) on 24/09/2026 and are published
+(indexable, in `sitemap.xml` and `llms.txt`). The approved wording was applied
+unchanged. Only the temporary review scaffolding was removed: the
+*LEGAL REVIEW REQUIRED — NOT FINAL* notice, the *For legal counsel to complete*
+lists, and the sentence “This section is subject to legal review.” on the
+Privacy page.
+
+The approval covered the existing wording **as-is**. The items marked ☐ below
+are therefore still **not stated** on the site and must not be added without a
+new approval.
 
 ## Pages under review
 
@@ -14,7 +22,7 @@ from the website's actual behaviour, structured for a lawyer to review.
 | Grievance Redressal Officer | `/trust/grievance-redressal-officer/` | same |
 | Data Protection Officer | `/trust/data-protection-officer/` | same |
 
-While a page is a draft (`'legal_draft' => true`) it:
+*Mechanism for future drafts:* while a page is a draft (`'legal_draft' => true`) it:
 - shows a visible **LEGAL REVIEW REQUIRED — NOT FINAL** marker, with a “For legal counsel to complete” list;
 - carries an HTML comment marker for developers;
 - is `noindex` and excluded from `sitemap.xml` and `llms.txt`;
@@ -69,6 +77,9 @@ Items marked ☐ are **not stated anywhere on the site** and must not be invente
 
 ## Approval record
 
-| Page | Approved by | Date | Notes |
-|---|---|---|---|
-| — | — | — | Not yet approved |
+Pages: Privacy & Data Protection (`/trust/privacy/`), Terms of Use (`/trust/terms/`), Grievance redressal process (`/trust/grievance-redressal/`), Data Protection Officer (`/trust/data-protection-officer/`), Grievance Redressal Officer (`/trust/grievance-redressal-officer/`)
+
+Approved by: Renuka Devi (Director, Acadlytic, Inc.)
+Approval date: 24/09/2026
+
+Scope: existing wording approved as-is. Any future change to these pages, including adding the ☐ items above, needs a new approval recorded here.

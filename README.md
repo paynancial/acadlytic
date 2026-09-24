@@ -11,7 +11,7 @@ workers are needed in production.
 
 | | |
 |---|---|
-| Public pages | 143 indexable URLs (in `sitemap.xml`), plus search, 404 and noindex placeholders |
+| Public pages | 148 indexable URLs (in `sitemap.xml`), plus search, 404 and noindex placeholders |
 | Redirects | 69 permanent (301) redirects covering duplicate URLs from the 120+ page build, every Phase 2 handoff URL, legacy `.php` URLs and common aliases (`/about-us/`, `/contact-us/`, `/blog/`, `/news/`, `/team/`, `/leadership/`) |
 | Auth pages | `/login.php` (also `/login/`), `/forgot-password.php`, `/request-access.php` — noindex, not in sitemap |
 | Forms | Request a Demo, Contact, Enquiry (floating widget), Request Access, Password help — CSRF, honeypot, timing check, rate limit, server-side validation |
@@ -105,6 +105,7 @@ See **`docs/DEPLOYMENT.md`** for the step-by-step cPanel guide.
 - `docs/PLACEHOLDERS.md` — items Acadlytic must confirm before or after launch
 - `docs/FINAL_PRE_MERGE_AUDIT.md` — final technical pre-merge audit (PASS/FAIL, blockers)
 - `docs/SHOULD_FIX_COMPLETION_REPORT.md` — SHOULD FIX items completed after the audit
+- `docs/LEGAL_PUBLICATION_AUDIT.md` — legal pages approval and publication audit
 - `docs/QA_REPORT.md` — latest verification results
 - `docs/CMS_PHASE3_BLUEPRINT.md` — CMS phase scope
 - `docs/handoff/` — original handoff briefs this build integrates

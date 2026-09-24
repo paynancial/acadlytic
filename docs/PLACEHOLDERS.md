@@ -16,7 +16,7 @@ real content.
 ## Must confirm before launch
 
 - **Product claims:** every product capability is currently **PLANNED** and labelled on the site. See `docs/CLAIMS_REGISTER.md` for the evidence needed to promote each one to LIVE.
-- **Legal pages:** Privacy, Terms, Grievance process and both officer pages are drafts marked **LEGAL REVIEW REQUIRED — NOT FINAL** and noindex. See `docs/LEGAL_REVIEW_CHECKLIST.md`. `php bin/qa.php --launch` fails until they are signed off.
+- **Legal pages:** Privacy, Terms, Grievance process and both officer pages were approved as-is by Renuka Devi (Director, Acadlytic, Inc.) on 24/09/2026 and are published. Items the approved text does not state (entity, registered office, governing law, retention, sub-processors, hosting, grievance timelines) remain unstated. See `docs/LEGAL_REVIEW_CHECKLIST.md`.
 - **Mailboxes:** info@, dpo@ and gro@acadlytic.com exist and are monitored; SPF/DKIM pass on the hosting server.
 
 ## Placeholders (noindex until real content exists)
