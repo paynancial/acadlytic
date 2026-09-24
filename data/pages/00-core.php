@@ -370,7 +370,7 @@ return [
             'Existing customers: choose “Customer support”.',
             'Data Protection Officer: Mr. A.K Sinha, dpo@acadlytic.com.',
             'Grievance Redressal Officer: Mrs. Anjali Sharma, gro@acadlytic.com.',
-            'Office: #203, Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020 (visits by appointment).',
+            'Office: #203, Sharda Mansion, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020 (visits by appointment).',
         ],
         'blocks' => [
             cards('Specialised contact routes', [

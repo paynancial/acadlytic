@@ -28,7 +28,7 @@ before its wording can change. Owner: Acadlytic, Inc. Last reviewed: 2026-09-24.
 | Data Protection Officer | Mr. A.K Sinha, dpo@acadlytic.com | LIVE | Supplied by owner; mailbox must exist | Unchanged |
 | Grievance Redressal Officer | Mrs. Anjali Sharma, gro@acadlytic.com | LIVE | Supplied by owner; mailbox must exist | Unchanged |
 | Leadership | Renuka Devi, Director; Anisha Bharti, Director (`/company/leadership/`, Person schema) | LIVE | Supplied by owner | Unchanged; add bios only with each person’s approval |
-| Office address | “#203, Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020” (`/company/offices/patna/`, footer, Contact, Organization and LocalBusiness schema) | LIVE | Supplied by owner | Call it “office”; say “registered office” only if counsel confirms. Visits “by appointment”. No opening hours or map coordinates published |
+| Office address | “#203, Sharda Mansion, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020” (`/company/offices/patna/`, footer, Contact, Organization and LocalBusiness schema) | LIVE | Supplied by owner | Call it “office”; say “registered office” only if counsel confirms. Visits “by appointment”. No opening hours or map coordinates published |
 | Official social profiles | LinkedIn, X, YouTube, Instagram, Facebook links | LIVE | Supplied by owner | Unchanged |
 | Website privacy facts | “one security session cookie on form and sign-in pages; no analytics or advertising trackers” | LIVE | Verified in code (`includes/security.php`, no third-party scripts) | Unchanged; re-verify if analytics are ever added |
 | Content integrity | “No invented statistics, customers or testimonials, and planned features labelled as planned” | LIVE | This register plus the QA gate | Unchanged |

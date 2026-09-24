@@ -116,7 +116,7 @@ return [
 
     '/company/offices/patna/' => [
         'title'    => 'Acadlytic Office in Patna, Bihar',
-        'desc'     => 'Acadlytic, Inc. office in Patna, Bihar: Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna 800020. Address, map and how to reach the team.',
+        'desc'     => 'Acadlytic, Inc. office in Patna, Bihar: Sharda Mansion, Kailashpuri, Hanuman Nagar, Patna 800020. Address, map and how to reach the team.',
         'h1'       => 'Acadlytic in Patna, Bihar',
         'nav_label' => 'Patna office',
         'lead'     => 'Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for academic management. Our office is in Hanuman Nagar, Patna.',

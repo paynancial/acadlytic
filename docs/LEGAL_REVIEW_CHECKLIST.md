@@ -61,7 +61,7 @@ Items marked ☐ are **not stated anywhere on the site** and must not be invente
 
 ### Contact information
 - [ ] info@acadlytic.com (general, support, enquiries), dpo@acadlytic.com, gro@acadlytic.com and the phone/WhatsApp number held in `config/contact.php` (shown masked on the site): confirm all are monitored.
-- [ ] Postal address for legal notices: the office address supplied by Acadlytic (#203, Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020) is published as an *office*. Confirm whether it is also the registered office and the address for legal notices ☐
+- [ ] Postal address for legal notices: the office address supplied by Acadlytic (#203, Sharda Mansion, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020) is published as an *office*. Confirm whether it is also the registered office and the address for legal notices ☐
 
 ### Other
 - [ ] Accessibility statement (`/trust/accessibility/`): not a legal document, but confirm the WCAG 2.2 AA *target* wording (no audit has been completed).

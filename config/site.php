@@ -34,7 +34,7 @@ return [
     // not describe it as the registered office unless counsel confirms.
     'office' => [
         'label'    => 'Patna office',
-        'street'   => '#203, Sharda Mansions Apartment, Kailashpuri, Hanuman Nagar',
+        'street'   => '#203, Sharda Mansion, Kailashpuri, Hanuman Nagar',
         'locality' => 'Patna',
         'region'   => 'Bihar',
         'postal'   => '800020',
