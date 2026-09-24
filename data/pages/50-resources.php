@@ -8,6 +8,7 @@ $guides = [
     '/resources/institutional-dashboard-guide/', '/resources/crm-implementation-plan/', '/resources/student-data-migration/', '/resources/education-software-rfp/',
     '/resources/education-software-tco/', '/resources/student-retention-strategies/', '/resources/enrollment-funnel-guide/', '/resources/fee-collection-guide/',
     '/resources/attendance-management-guide/', '/resources/accreditation-data-guide/', '/resources/student-data-privacy-guide/',
+    '/resources/exam-management-guide/',
 ];
 $insights = [
     '/resources/digital-transformation-education/', '/resources/data-driven-education/', '/resources/academic-data-strategy/', '/resources/student-engagement-strategies/',
@@ -1168,7 +1169,7 @@ return [
                 'Does Acadlytic manage attendance?' => 'Attendance is part of Acadlytic’s planned [academic operations](/platform/academic-operations/) capabilities, which are in development.',
             ]),
         ],
-        'related' => ['/platform/academic-operations/', '/resources/student-retention-strategies/', '/solutions/for-faculty/', '/glossary/student-retention/'],
+        'related' => ['/platform/academic-operations/', '/resources/student-retention-strategies/', '/resources/exam-management-guide/', '/solutions/for-faculty/', '/glossary/student-retention/'],
     ],
 
     // ---------- SEO Phase 2, batch 3 ----------
@@ -1204,7 +1205,7 @@ return [
                 'Is NIRF the same as accreditation?' => 'No. The National Institutional Ranking Framework (NIRF) is a ranking. Accreditation assesses quality against defined criteria. Some of the underlying data overlaps.',
             ]),
         ],
-        'related' => ['/glossary/outcome-based-education/', '/resources/academic-data-strategy/', '/resources/institutional-dashboard-guide/', '/industries/higher-education-india/'],
+        'related' => ['/glossary/outcome-based-education/', '/resources/exam-management-guide/', '/resources/academic-data-strategy/', '/resources/institutional-dashboard-guide/', '/industries/higher-education-india/'],
     ],
 
     '/resources/student-data-privacy-guide/' => [
@@ -1246,5 +1247,49 @@ return [
             ]),
         ],
         'related' => ['/trust/privacy/', '/core/security/', '/glossary/role-based-access-control/', '/ai/responsible-ai/'],
+    ],
+
+    // ---------- SEO Phase 2, deferred batch ----------
+    '/resources/exam-management-guide/' => [
+        'title' => 'Exam Management in Colleges: A Practical Guide',
+        'desc'  => 'A practical guide to exam management in colleges: scheduling, question paper security, seating, invigilation, evaluation, moderation, results and records.',
+        'h1'    => 'Exam management in colleges: a practical guide',
+        'nav_label' => 'Exam Management Guide',
+        'lead'  => 'Examinations involve many hand-offs between departments, faculty and the examination office. Clear ownership and good records at each stage prevent most errors and disputes.',
+        'icon'  => 'doc',
+        'blocks' => [
+            takeaways(
+                'Publish the examination timetable and rules early, and change them as little as possible',
+                'Control who can see question papers and marks at every stage',
+                'Moderate and verify marks before results are published, not after',
+                'Keep a record of every change to a mark, with who made it and why',
+            ),
+            note('Examination rules differ between universities, boards and institutions, and affiliated colleges often follow their university’s examination process. This guide describes general good practice; always follow the regulations that apply to your institution.', 'Scope'),
+            steps('Stages of the examination cycle', [
+                'Plan the schedule' => 'Fix examination windows in the academic calendar, then build a timetable that avoids clashes for students taking combinations of courses.',
+                'Confirm eligibility' => 'Check each student’s registration, and any attendance or fee conditions your rules set, before admit cards (hall tickets) are issued, with a route for exceptions.',
+                'Prepare papers securely' => 'Limit who can set, review and print question papers, and track each version.',
+                'Arrange seating and invigilation' => 'Allocate rooms and seats, assign invigilators and give them clear instructions for incidents.',
+                'Conduct the examination' => 'Record attendance for each paper and log any incidents as they happen.',
+                'Evaluate and moderate' => 'Mark against agreed schemes, then moderate a sample to check consistency between examiners.',
+                'Verify and publish results' => 'Check marks entry, apply your grading rules, get formal approval and publish results to students.',
+                'Handle requests' => 'Manage requests for re-checking or re-evaluation within published timelines, and record the outcomes.',
+            ]),
+            table('Common problems and how to prevent them', ['Problem', 'Prevention'], [
+                ['Timetable clashes', 'Build the timetable from actual course registrations, not program templates'],
+                ['Question paper leaks', 'Restrict access, log access and keep sealed or encrypted copies until the examination'],
+                ['Marks entry errors', 'Enter marks once, validate ranges as they are entered and reconcile totals before approval'],
+                ['Disputes over changed marks', 'Keep an audit trail of every change with the reason and the approver'],
+                ['Delayed results', 'Set deadlines for each stage and track which courses are outstanding'],
+            ]),
+            sec('Recording marks in a way you can reuse',
+                'If marks are recorded by question or assessment item and linked to course outcomes, the same data can support [outcome-based education](/glossary/outcome-based-education/) attainment and [accreditation evidence](/resources/accreditation-data-guide/) without re-entering anything. Results should flow into the student record so that transcripts, progression decisions and [student retention](/resources/student-retention-strategies/) work all use the same figures.'),
+            faq([
+                'Who should approve examination results?' => 'Whoever your regulations name, typically an examination committee or the controller of examinations. Results should not be published until that approval is recorded.',
+                'How should changes to marks after publication be handled?' => 'Through a defined process, such as re-evaluation, with the reason, the approver and the original and revised marks recorded.',
+                'Does Acadlytic run examinations?' => 'Assessments, marks entry, moderation and results publication are part of Acadlytic’s planned [academic operations](/platform/academic-operations/) capabilities, which are in development. Colleges that must use their university’s examination system would integrate with it rather than replace it.',
+            ]),
+        ],
+        'related' => ['/platform/academic-operations/', '/resources/attendance-management-guide/', '/resources/accreditation-data-guide/', '/glossary/outcome-based-education/'],
     ],
 ];

@@ -53,7 +53,7 @@ No existing page needs merging.
 | DPDP Act standalone guide | **Merged** into the student data privacy guide | Legal accuracy risk. Covered at framework level with a not-legal-advice note. |
 | NEP 2020 / Academic Bank of Credits / APAAR pages | **Deferred** | Needs verified, current policy detail; revisit with a reviewed source list |
 | Glossary: data governance, summer melt | **Rejected** | Covered by the data strategy guide, or not relevant to the core market |
-| Exam management guide | **Deferred** to a later batch | Lower priority than attendance and fees; avoids overlap with `/platform/academic-operations/` |
+| Exam management guide | **Published** in the deferred batch as `/resources/exam-management-guide/` | Covers process and records practice; the product page covers only planned capabilities. No regulatory claims. |
 
 ## 4. Content matrix (Phase 2 new URLs)
 
@@ -126,3 +126,4 @@ Core pages → feature pages (`/platform/`, `/ai/`) → solutions and industries
 - **Claims**: no statistics, customers, testimonials, rankings or superlatives. Product capabilities are described only as planned.
 - **Still deferred** (see section 3): NEP 2020 / ABC / APAAR pages (need a reviewed source list) and the exam management guide.
 - Footer social links now include Facebook (already in `config/site.php` and the Organization `sameAs`).
+| Deferred | `/resources/exam-management-guide/`; added to the guides hub; inbound links from academic operations, the attendance guide and the accreditation guide | `bin/qa.php` and `--launch`: 0 errors, 0 warnings. No orphans. axe: 0 violations. No overflow at 320–1440px. One H1, canonical, OG, Article + FAQPage + BreadcrumbList schema. Sitemap: 173 URLs. See `docs/PHASE2_DEFERRED_SEO_REPORT.md`. |

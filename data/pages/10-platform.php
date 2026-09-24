@@ -269,7 +269,7 @@ return [
                 'Does Acadlytic replace our LMS?' => 'No. The LMS delivers course content. Acadlytic is designed to run academic administration and integrate with the LMS for enrolments and, where configured, grades.',
             ]),
         ],
-        'related' => ['/solutions/for-faculty/', '/glossary/academic-operations/', '/resources/attendance-management-guide/', '/glossary/choice-based-credit-system/', '/glossary/outcome-based-education/', '/platform/task-management/', '/integrations/lms-integration/', '/integrations/calendar-integration/'],
+        'related' => ['/solutions/for-faculty/', '/glossary/academic-operations/', '/resources/attendance-management-guide/', '/resources/exam-management-guide/', '/glossary/choice-based-credit-system/', '/glossary/outcome-based-education/', '/platform/task-management/', '/integrations/lms-integration/', '/integrations/calendar-integration/'],
     ],
 
     '/platform/finance-fees/' => [
