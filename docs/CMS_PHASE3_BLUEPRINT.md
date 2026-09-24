@@ -1,5 +1,7 @@
 # Phase 3 CMS Blueprint — after public-site approval
 
+> **See also:** the full platform architecture in `docs/architecture/README.md`. This blueprint covers only a small CMS for the marketing website. The SaaS application is designed separately (ADR-001).
+
 ## Admin modules
 - Dashboard
 - Page Manager

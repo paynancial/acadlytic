@@ -107,6 +107,7 @@ See **`docs/DEPLOYMENT.md`** for the step-by-step cPanel guide.
 - `docs/SHOULD_FIX_COMPLETION_REPORT.md` — SHOULD FIX items completed after the audit
 - `docs/LEGAL_PUBLICATION_AUDIT.md` — legal pages approval and publication audit
 - `docs/CONTACT_WIDGET_QA.md` — "Talk to Acadlytic" widget and footer CTA QA
+- `docs/architecture/` — Phase 3 platform architecture: capability matrix, IA, RBAC, multi-tenancy, data, API, AI, security/privacy, infrastructure, roadmap, risks, ADRs
 - `docs/QA_REPORT.md` — latest verification results
 - `docs/CMS_PHASE3_BLUEPRINT.md` — CMS phase scope
 - `docs/handoff/` — original handoff briefs this build integrates

@@ -1,5 +1,7 @@
 # Login experience and auth architecture
 
+> **Phase 3 note:** the SaaS platform will have its own identity, MFA, SSO and RBAC in a separate application (`app.acadlytic.com`). See `docs/architecture/` (ADR-001, [08 Security](architecture/08-security-privacy.md), [03 RBAC](architecture/03-rbac.md)). The website sign-in shell described here is not the product's authentication. It will hand off to the application at launch.
+
 ## What ships in this release
 
 | Route | Purpose | Indexing |
