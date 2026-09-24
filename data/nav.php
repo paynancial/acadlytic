@@ -219,8 +219,8 @@ return [
         'partner'     => ['Partner / B2B', 'Access partner services, applications and collaboration.', 'handshake'],
     ],
 
-    // Footer columns (after the brand column). Company links live in the
-    // header menu and on /company/; contact and demo in the footer's CTA strip.
+    // Footer columns (after the brand column); contact and demo live in the
+    // footer's "Talk to Acadlytic" strip.
     'footer' => [
         'Platform' => [
             ['Overview', '/platform/'],
@@ -247,6 +247,14 @@ return [
             ['FAQs', '/resources/faqs/'],
             ['Help Center', '/company/support/'],
         ],
+        'Company' => [
+            ['About Us', '/core/about/'],
+            ['Vision & Mission', '/company/vision-mission/'],
+            ['Leadership', '/company/leadership/'],
+            ['Careers', '/company/careers/'],
+            ['Contact Us', '/core/contact/'],
+            ['Our Office', '/company/offices/patna/'],
+        ],
         'Trust & Governance' => [
             ['Security Center', '/core/security/'],
             ['Privacy & Data Protection', '/trust/privacy/'],
@@ -256,6 +264,14 @@ return [
             ['Grievance Redressal Officer', '/trust/grievance-redressal-officer/'],
             ['Sitemap', '/sitemap/'],
         ],
+    ],
+    // Trust strip at the top of the footer: [title, text, icon, link].
+    'footer_trust' => [
+        ['Data Protection', 'A privacy-first approach to institutional and student data.', 'lock', '/trust/privacy/'],
+        ['Enterprise Security', 'Security designed into architecture, access and operations.', 'shield', '/core/security/'],
+        ['Role-Based Access', 'Designed so people see only what their role requires.', 'key', '/core/security/'],
+        ['Cloud Infrastructure', 'Designed for scalable, resilient cloud delivery.', 'cloud', '/core/cloud-platform/'],
+        ['Responsible Support', 'Named routes for help, privacy and grievances.', 'support', '/trust/grievance-redressal/'],
     ],
     'footer_social' => ['linkedin', 'x', 'youtube', 'instagram'],
     'footer_legal' => [

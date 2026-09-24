@@ -1,7 +1,7 @@
 <?php
 /**
- * Shared footer: "Talk to Acadlytic" contact strip, brand column, four
- * navigation columns (data/nav.php → footer) and the legal bar.
+ * Shared footer: trust strip, "Talk to Acadlytic" contact strip, brand
+ * column, five navigation columns (data/nav.php → footer) and the legal bar.
  * Columns become accordions on phones (app.js); without JS they stay open.
  * The phone number is shown masked and dialled via /go/call/.
  *
@@ -17,6 +17,15 @@ $slug = static fn(string $s): string => trim((string) preg_replace('/[^a-z0-9]+/
 
 <footer class="site-footer">
     <div class="container">
+        <section class="footer-trust" aria-labelledby="footer-trust-h">
+            <h2 class="footer-trust-title" id="footer-trust-h">Secure&nbsp;<span aria-hidden="true">•</span> Scalable&nbsp;<span aria-hidden="true">•</span> AI&#8209;Powered&nbsp;<span aria-hidden="true">•</span> Cloud&#8209;Ready&nbsp;<span aria-hidden="true">•</span> Accessible</h2>
+            <ul class="footer-trust-list">
+                <?php foreach ($nav['footer_trust'] as [$title, $text, $ic, $href]): ?>
+                <li><a class="footer-trust-item" href="<?= e($href) ?>"><span class="footer-trust-icon"><?= icon($ic) ?></span><span><strong><?= e($title) ?></strong><small><?= e($text) ?></small></span></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+
         <section class="footer-cta" aria-labelledby="footer-cta-h">
             <div class="footer-cta-intro">
                 <h2 class="footer-cta-title" id="footer-cta-h">Talk to Acadlytic</h2>

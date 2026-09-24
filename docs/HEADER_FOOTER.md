@@ -54,23 +54,25 @@ Without JS the menu button links to `/sitemap/`.
 
 Deep navy surface (`#071A3A` → `#050F26`) with a soft electric-blue and cyan glow, a thin cyan hairline on top, white headings and muted blue-grey links.
 
+1. **Trust strip** (`footer_trust`): SECURE • SCALABLE • AI-POWERED • CLOUD-READY • ACCESSIBLE, followed by Data Protection, Enterprise Security, Role-Based Access, Cloud Infrastructure and Responsible Support. These are compact items with a cyan icon and thin dividers; each links to its trust page.
 1. **Talk to Acadlytic** strip (glass panel with a short cyan accent): email (`mailto:`), phone shown masked (`CONTACT_PHONE_DISPLAY`, links to `/go/call/`), office *Patna, Bihar, India* (links to `/company/offices/patna/`), and a **Request a Demo →** gradient button.
 2. **Brand column**: light logo (`logo-acadlytic-light.*`, white wordmark with the full-colour mark), *Where Education Meets Intelligence.*, AI | CRM | CLOUD | ACADEMIC MANAGEMENT, a two-line description, and social icons for LinkedIn, X, YouTube and Instagram (`data/nav.php` → `footer_social`).
-3. **Four navigation columns** (`data/nav.php` → `footer`), each a `<nav>` labelled by its heading:
+3. **Five navigation columns** (`data/nav.php` → `footer`), each a `<nav>` labelled by its heading:
    - **Platform**: Overview, Academic Management, Admissions & CRM, Student Management, Analytics & AI, Integrations, Pricing.
    - **Solutions**: For Institutions, For Administrators, For Faculty, For Students, For Parents, AI for Education.
    - **Resources**: Resources, Blog, Case Studies, Whitepapers, FAQs, Help Center.
+   - **Company**: About Us, Vision & Mission, Leadership, Careers, Contact Us, Our Office.
    - **Trust & Governance**: Security Center, Privacy & Data Protection, Terms, Accessibility, Data Protection Officer, Grievance Redressal Officer, Sitemap. Officer names are not shown in the footer; they appear on the approved officer pages.
 4. **Bottom bar**: © year Acadlytic, Inc. All rights reserved · Privacy Policy | Terms | Security | Sitemap (`footer_legal`).
 
 Responsive:
-- ≤1180px: the contact items move below the strip heading, and the brand column spans the full width above four columns.
-- ≤860px: two columns.
+- ≤1180px: the contact items move below the strip heading, the brand column spans the full width above the five columns, and the trust items form 3 + 2.
+- ≤1024px: three columns. ≤860px: the trust items form a 2 × 3 grid.
 - ≤640px: one column, and each navigation column becomes an accordion. `app.js` inserts a button with `aria-expanded`/`aria-controls`; without JS every list stays open.
 
 Keyboard focus shows a cyan outline. The only motion is short colour transitions.
 
-Company pages (About, Leadership, Careers, Contact, Offices, and others) are linked from the header's Company menu and the `/company/` hub. Social profile URLs live in `config/site.php`; all five, including Facebook, still feed the Organization `sameAs` structured data.
+Social profile URLs live in `config/site.php`; all five, including Facebook, still feed the Organization `sameAs` structured data.
 
 ## Floating enquiry widget (`components/enquiry-widget.php`)
 
