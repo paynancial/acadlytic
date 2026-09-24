@@ -222,6 +222,7 @@ function acad_schema(array $page): array
                 '@type'    => 'Person',
                 'name'     => $person['name'],
                 'jobTitle' => $person['role'],
+                'image'    => !empty($person['photo']) ? acad_url($person['photo']) : null,
                 'worksFor' => $org,
                 'sameAs'   => !empty($person['linkedin']) ? [$person['linkedin']] : null,
             ]);

@@ -14,8 +14,8 @@ declare(strict_types=1);
 return [
     'leadership' => [
         // ['name' => 'Full Name', 'role' => 'Chief Executive Officer', 'bio' => 'One or two factual sentences.', 'linkedin' => 'https://www.linkedin.com/in/...'],
-        ['name' => 'Renuka Devi', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolrenukadevi'],
-        ['name' => 'Anisha Bharti', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolanishabharti'],
+        ['name' => 'Renuka Devi', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolrenukadevi', 'photo' => '/assets/img/people/renuka-devi.webp'],
+        ['name' => 'Anisha Bharti', 'role' => 'Director', 'linkedin' => 'https://www.linkedin.com/in/coolanishabharti', 'photo' => '/assets/img/people/anisha-bharti.webp'],
     ],
     'team' => [
         // ['name' => 'Full Name', 'role' => 'Product Designer', 'bio' => '...'],

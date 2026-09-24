@@ -671,6 +671,7 @@ td { color: #2A3852; }
 .people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
 .person-card { border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; padding: 24px; display: grid; gap: 6px; align-content: start; }
 .person-photo, .person-initials { width: 72px; height: 72px; border-radius: 20px; object-fit: cover; margin-bottom: 8px; }
+.person-photo { width: 120px; height: 120px; border-radius: 24px; background: var(--soft); box-shadow: 0 0 0 1px var(--line); }
 .person-initials { display: grid; place-items: center; background: var(--grad-brand); color: #fff; font: 800 22px/1 var(--display); }
 .person-name { font-size: 18px; margin: 0; }
 .person-role { margin: 0; color: var(--blue); font-weight: 600; font-size: 14.5px; }

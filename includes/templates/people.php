@@ -25,7 +25,7 @@ $people = (require ACAD_ROOT . '/data/people.php')[$page['people_group']] ?? [];
         <?php foreach ($people as $person): ?>
         <li class="person-card">
             <?php if (!empty($person['photo'])): ?>
-            <img class="person-photo" src="<?= e(asset($person['photo'])) ?>" width="96" height="96" alt="<?= e($person['name']) ?>" loading="lazy" decoding="async">
+            <img class="person-photo" src="<?= e(asset($person['photo'])) ?>" width="120" height="120" alt="Photo of <?= e($person['name']) ?>, <?= e($person['role']) ?>" loading="lazy" decoding="async">
             <?php else: ?>
             <span class="person-initials" aria-hidden="true"><?= e(implode('', array_map(static fn($w) => mb_substr($w, 0, 1), array_slice(preg_split('/\s+/', $person['name']) ?: [], 0, 2)))) ?></span>
             <?php endif; ?>

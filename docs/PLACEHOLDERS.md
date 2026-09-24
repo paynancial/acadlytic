@@ -6,7 +6,7 @@ real content.
 ## Confirmed by Acadlytic
 
 - Support, account help and form notifications: `info@acadlytic.com`.
-- Leadership: Renuka Devi (Director) and Anisha Bharti (Director), on `/company/leadership/`. LinkedIn profiles added for both. Short bios and photos can be added in `data/people.php`.
+- Leadership: Renuka Devi (Director) and Anisha Bharti (Director), on `/company/leadership/`. LinkedIn profiles and photos (`assets/img/people/`, 240px WebP) added for both. Short bios can be added in `data/people.php`.
 - Office: #203, Sharda Mansion, Kailashpuri, Hanuman Nagar, Patna, Bihar 800020 (`config/site.php` → `office`). Used on `/company/offices/patna/` (LocalBusiness schema), the Contact page, the footer and the Organization schema. It is presented as an **office**, not the registered office.
 - Phone / WhatsApp number: stored only in `config/contact.php`, shown masked on the site.
 - Data Protection Officer: Mr. A.K Sinha, `dpo@acadlytic.com` (`/trust/data-protection-officer/`).
