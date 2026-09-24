@@ -72,7 +72,7 @@ the phone number (any formatting) does not appear in any page, `llms.txt`,
 
 - Every page at **360px and 1440px**, and a sample at 390, 768 and 1024px: **no horizontal overflow**, main CSS applied, **no console errors**, no failed requests.
 - Mega menu: hover opens and closes; ArrowDown opens and focuses the first link; Up/Down move inside; Left/Right move between menus; Escape closes and restores focus; the blurred backdrop sits below the header.
-- **JavaScript disabled:** mega panels still open on hover/focus; the mobile menu button falls back to `/sitemap/`; the Enquire now button is a plain link to `/core/contact/`.
+- **JavaScript disabled:** mega panels still open on hover/focus; the mobile menu button falls back to `/sitemap/`; the Talk to Acadlytic button is a plain link to `/core/contact/`.
 - Login popover: opens on click, closes on Escape and outside click.
 - Mobile drawer: built from the mega-menu markup on first open (DOM per page reduced from ~1,880 to ~1,630 elements); opens, accordion expands, focus is trapped, Escape closes.
 - Enquiry widget at 1440, 1024, 768, 390 and 360px: button and panel inside the viewport and not overlapping; panel opens by click and keyboard; Escape and outside click close it and return focus; modal empty submit shows 3 inline errors; valid submit shows “Enquiry received successfully.”; analytics events fire; no overflow; no console errors.

@@ -28,15 +28,19 @@ $slug = static fn(string $s): string => trim((string) preg_replace('/[^a-z0-9]+/
 
         <section class="footer-cta" aria-labelledby="footer-cta-h">
             <div class="footer-cta-intro">
-                <h2 class="footer-cta-title" id="footer-cta-h">Talk to Acadlytic</h2>
-                <p class="footer-cta-text">Questions about the platform, a demo or a partnership: our team will route your message to the right people.</p>
+                <p class="footer-cta-kicker">Talk to Acadlytic</p>
+                <h2 class="footer-cta-title" id="footer-cta-h">Let’s build a smarter academic future together.</h2>
+                <p class="footer-cta-text">Talk to the Acadlytic team about our AI-powered EdTech CRM and academic management platform.</p>
+            </div>
+            <div class="footer-cta-actions">
+                <a class="btn footer-cta-btn" href="/company/request-demo/">Request a Demo <?= icon('arrow', 'icon icon-sm') ?></a>
+                <a class="btn footer-cta-btn-alt" href="/core/contact/" data-acw-open>Talk to Acadlytic <?= icon('arrow', 'icon icon-sm') ?></a>
             </div>
             <ul class="footer-cta-contacts">
                 <li><a href="<?= e(acad_mailto((string) acad_config('email'))) ?>"><span class="footer-cta-icon"><?= icon('mail', 'icon icon-sm') ?></span><span><small>Email</small><?= e(acad_config('email')) ?></span></a></li>
                 <li><a href="<?= e(acad_config('phone_href')) ?>"><span class="footer-cta-icon"><?= icon('phone', 'icon icon-sm') ?></span><span><small>Phone</small><?= e(acad_config('phone')) ?></span></a></li>
                 <li><a href="<?= e(acad_config('office.page')) ?>"><span class="footer-cta-icon"><?= icon('pin', 'icon icon-sm') ?></span><span><small>Office</small><?= e(acad_config('office.locality') . ', ' . acad_config('office.region') . ', ' . acad_config('office.country_name')) ?></span></a></li>
             </ul>
-            <a class="btn footer-cta-btn" href="/company/request-demo/">Request a Demo <?= icon('arrow', 'icon icon-sm') ?></a>
         </section>
 
         <div class="footer-main">
@@ -77,6 +81,6 @@ $slug = static fn(string $s): string => trim((string) preg_replace('/[^a-z0-9]+/
         </div>
     </div>
 </footer>
-<?php require ACAD_ROOT . '/components/enquiry-widget.php'; ?>
+<?php require ACAD_ROOT . '/components/contact-widget.php'; ?>
 </body>
 </html>

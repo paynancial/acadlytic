@@ -1,7 +1,9 @@
 <?php
 /**
- * Floating "Enquire Now" widget: button, three-action panel and the enquiry
- * modal. Included once, from includes/footer.php, on every public page.
+ * Floating "Talk to Acadlytic" contact widget: button, three-action panel
+ * and the enquiry modal. Included once, from includes/footer.php, on every
+ * public page. Any element with [data-acw-open] (e.g. the footer CTA) opens
+ * the same panel, so there is only ever one contact system on the page.
  *
  * - Without JavaScript the button is a plain link to the contact page.
  * - The phone number is never rendered: call and WhatsApp use the
@@ -13,12 +15,12 @@ declare(strict_types=1);
 
 $c = (array) acad_config('contact');
 ?>
-<link rel="stylesheet" href="<?= e(asset('/assets/css/enquiry-widget.css')) ?>">
+<link rel="stylesheet" href="<?= e(asset('/assets/css/contact-widget.css')) ?>">
 <aside class="acw" data-acw aria-label="Contact Acadlytic">
-    <a class="acw-fab" href="/core/contact/" aria-controls="acw-panel" aria-expanded="false" aria-haspopup="dialog" data-acw-toggle>
-        <span class="acw-fab-icon"><?= icon('message') ?></span>
-        <span class="acw-fab-label">Enquire now</span>
-        <span class="acw-tip" aria-hidden="true">Talk to Acadlytic</span>
+    <a class="acw-fab" href="/core/contact/" aria-label="Talk to Acadlytic" aria-controls="acw-panel" aria-expanded="false" aria-haspopup="dialog" data-acw-toggle>
+        <span class="acw-fab-icon" aria-hidden="true"><?= icon('message') ?></span>
+        <span class="acw-fab-label" aria-hidden="true">Talk to Acadlytic</span>
+        <span class="acw-tip" aria-hidden="true">Enquiry form · Email · WhatsApp</span>
     </a>
 
     <section class="acw-panel" id="acw-panel" role="dialog" aria-modal="false" aria-labelledby="acw-title" aria-describedby="acw-desc" hidden data-acw-panel>
@@ -27,7 +29,7 @@ $c = (array) acad_config('contact');
                 <h2 class="acw-title" id="acw-title">Let’s Connect</h2>
                 <p class="acw-sub">How can we help you?</p>
             </div>
-            <button type="button" class="acw-close" aria-label="Close enquiry options" data-acw-close><?= icon('close') ?></button>
+            <button type="button" class="acw-close" aria-label="Close contact options" data-acw-close><?= icon('close') ?></button>
         </div>
         <p class="acw-desc" id="acw-desc">Talk to the Acadlytic team about our AI-powered academic management platform.</p>
         <ul class="acw-actions">
@@ -59,6 +61,6 @@ $c = (array) acad_config('contact');
         </p>
     </section>
 
-    <template data-acw-modal-tpl><?php require ACAD_ROOT . '/components/enquiry-modal.php'; ?></template>
+    <template data-acw-modal-tpl><?php require ACAD_ROOT . '/components/contact-modal.php'; ?></template>
 </aside>
-<script src="<?= e(asset('/assets/js/enquiry-widget.js')) ?>" defer></script>
+<script src="<?= e(asset('/assets/js/contact-widget.js')) ?>" defer></script>

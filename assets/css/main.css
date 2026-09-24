@@ -470,15 +470,20 @@ td { color: #2A3852; }
 
 /* Talk to Acadlytic strip */
 .footer-cta {
-  position: relative; display: grid; grid-template-columns: minmax(220px, 1fr) auto auto; gap: 24px 32px; align-items: center;
-  margin-top: 44px; padding: 28px 32px; border-radius: 22px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; align-items: center;
+  margin-top: 44px; padding: 32px 36px 24px; border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02));
   border: 1px solid rgba(255, 255, 255, .1); box-shadow: 0 24px 60px -30px rgba(0, 0, 0, .6);
 }
 .footer-cta::before { content: ""; position: absolute; left: 32px; top: -1px; width: 72px; height: 2px; border-radius: 2px; background: var(--grad-brand); }
-.footer-cta-title { margin: 0 0 6px; font: 700 12px/1.3 var(--font); letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); }
-.footer-cta-text { margin: 0; color: #C9D6EC; font-size: 14.5px; line-height: 1.55; max-width: 36ch; text-align: justify; hyphens: auto; }
-.footer-cta-contacts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, auto); gap: 8px; }
+.footer-cta-kicker { margin: 0 0 10px; font: 700 12px/1.3 var(--font); letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); }
+.footer-cta-title { margin: 0 0 10px; font: 800 clamp(22px, 2.4vw, 30px)/1.2 var(--display); letter-spacing: -.02em; color: #fff; }
+.footer-cta-text { margin: 0; color: #C9D6EC; font-size: 15px; line-height: 1.6; max-width: 58ch; text-align: justify; hyphens: auto; }
+.footer-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.site-footer .footer-cta-btn-alt { white-space: nowrap; color: #fff; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .22); }
+.site-footer .footer-cta-btn-alt:hover { color: #fff; border-color: rgba(20, 207, 232, .6); background: rgba(20, 207, 232, .1); }
+.footer-cta-contacts { grid-column: 1 / -1; list-style: none; margin: 4px 0 0; padding: 14px 0 0; border-top: 1px solid var(--f-line); display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.footer-cta-contacts li:first-child a { padding-left: 0; }
 .footer-cta-contacts a { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; border-radius: 14px; text-decoration: none; color: #fff; font-weight: 600; font-size: 14px; border: 1px solid transparent; transition: background var(--dur), border-color var(--dur); }
 .footer-cta-contacts a:hover { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .1); color: #fff; }
 .footer-cta-contacts small { display: block; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--f-muted); margin-bottom: 2px; }
@@ -708,8 +713,6 @@ td { color: #2A3852; }
 
 /* Footer: tablet and phone */
 @media (max-width: 1180px) {
-  .footer-cta { grid-template-columns: minmax(0, 1fr) auto; }
-  .footer-cta-contacts { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .footer-main { grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.3fr); }
   .footer-trust-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 20px; }
   .footer-trust-list li:nth-child(3n+1) { border-left: 0; }
@@ -727,8 +730,11 @@ td { color: #2A3852; }
   .footer-trust-list li { border-left: 0 !important; }
   .footer-trust-list .footer-trust-item { padding-left: 0; }
   .footer-brand { display: block; }
-  .footer-cta-contacts { grid-template-columns: 1fr; }
+  .footer-cta { grid-template-columns: 1fr; }
+  .footer-cta-actions { justify-content: flex-start; }
+  .footer-cta-contacts { flex-direction: column; }
   .footer-cta-contacts span:last-child { white-space: normal; }
+
 }
 @media (max-width: 640px) {
   .footer-trust { padding-top: 40px; }
@@ -737,9 +743,11 @@ td { color: #2A3852; }
   .footer-trust-list { grid-template-columns: 1fr; row-gap: 14px; }
   .footer-cta { grid-template-columns: 1fr; margin-top: 32px; padding: 22px 18px; }
   .footer-cta::before { left: 18px; }
-  .footer-cta-contacts { grid-row: auto; }
-  .footer-cta-contacts a { padding-inline: 8px; }
-  .footer-cta-btn { justify-content: center; width: 100%; }
+  .footer-cta-contacts a { padding-inline: 0; }
+  .footer-cta-text { text-align: left; }
+  .footer-cta-actions { flex-direction: column; }
+  .footer-cta-actions .btn { justify-content: center; width: 100%; }
+
   .footer-main { grid-template-columns: 1fr; gap: 0; padding-block: 40px 24px; }
   .footer-brand { padding-bottom: 28px; }
   .footer-col { border-top: 1px solid var(--f-line); }
@@ -752,4 +760,10 @@ td { color: #2A3852; }
   .fcol-toggle[aria-expanded="true"] .icon { transform: rotate(180deg); }
   .footer-col .footer-heading:not(:has(.fcol-toggle)) { padding-block: 16px; }
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Room for the fixed "Talk to Acadlytic" button (bottom-right at <=900px)
+   below the last footer line, including the iOS home-indicator area. */
+@media (max-width: 900px) {
+  .footer-bottom-inner { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 }

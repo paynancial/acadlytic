@@ -1,29 +1,28 @@
-/* Acadlytic — floating enquiry widget (components/enquiry-widget.php).
+/* Acadlytic — floating "Talk to Acadlytic" contact widget (components/contact-widget.php).
    Uses the design tokens from main.css. Loaded at the end of <body> so it
    never blocks first render; everything is position:fixed (no layout shift). */
 
+.acw { position: fixed; z-index: 1000; right: 24px; top: 60%; transform: translateY(-50%); }
 .acw-fab {
-  position: fixed; z-index: 1000; right: 24px; top: 60%; transform: translateY(-50%);
-  display: inline-flex; align-items: center; gap: 10px; min-width: 164px; height: 52px; padding: 0 20px 0 14px;
-  border-radius: 17px; text-decoration: none; color: #fff;
-  font: 700 13.5px/1 var(--font); letter-spacing: .08em; text-transform: uppercase;
+  position: relative; display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px 0 12px;
+  border-radius: 17px; text-decoration: none; color: #fff; white-space: nowrap;
+  font: 700 13px/1 var(--font); letter-spacing: .08em; text-transform: uppercase;
   background: linear-gradient(135deg, var(--blue) 0%, var(--electric) 55%, var(--cyan) 130%);
   box-shadow: 0 12px 28px -10px rgba(11, 99, 246, .65), 0 2px 6px rgba(7, 26, 58, .18), inset 0 1px 0 rgba(255, 255, 255, .22);
   transition: transform 200ms var(--ease), box-shadow 200ms var(--ease), filter 200ms var(--ease);
 }
-.acw-fab:hover { color: #fff; transform: translateY(-50%) translateX(-2px) scale(1.02); box-shadow: 0 16px 34px -10px rgba(11, 99, 246, .75), 0 0 0 6px rgba(20, 207, 232, .14); }
-.acw-fab:active { transform: translateY(-50%) scale(.98); }
+.acw-fab:hover { color: #fff; transform: translateX(-2px); box-shadow: 0 16px 34px -10px rgba(11, 99, 246, .75), 0 0 0 6px rgba(20, 207, 232, .14); }
+.acw-fab:active { transform: scale(.98); }
 .acw-fab:focus-visible { outline: none; box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--blue); }
+/* Compact (icon-only) while the footer is on screen, so the button stays
+   visible and usable without covering the footer's own CTA. */
+.acw.is-compact .acw-fab { width: 52px; padding: 0; justify-content: center; }
+.acw.is-compact .acw-fab-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.acw.is-compact .acw-fab-icon { background: transparent; }
+.acw.is-compact .acw-tip { display: none; }
 .acw-fab-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: rgba(255, 255, 255, .18); }
 .acw-fab-icon .icon { width: 17px; height: 17px; }
 .acw-fab[aria-expanded="true"] { filter: saturate(.9); }
-
-/* Gentle glow, a few times, only until the visitor interacts. */
-.acw-fab.acw-pulse { animation: acw-glow 7s ease-in-out 3; }
-@keyframes acw-glow {
-  0%, 70%, 100% { box-shadow: 0 12px 28px -10px rgba(11, 99, 246, .65), 0 2px 6px rgba(7, 26, 58, .18); }
-  82% { box-shadow: 0 12px 28px -10px rgba(11, 99, 246, .65), 0 0 0 9px rgba(20, 207, 232, .16); }
-}
 
 .acw-tip {
   position: absolute; right: calc(100% + 12px); top: 50%; transform: translate(6px, -50%);
@@ -36,7 +35,7 @@
 
 /* Panel: opens to the LEFT of the button, always inside the viewport. */
 .acw-panel {
-  position: fixed; z-index: 1001; right: 224px; top: 60%; width: 360px;
+  position: absolute; right: calc(100% + 14px); top: 50%; width: 360px;
   max-height: calc(100vh - 32px); overflow-y: auto; overscroll-behavior: contain;
   padding: 20px; border-radius: 22px; color: var(--ink);
   background: rgba(255, 255, 255, .97); border: 1px solid var(--line);
@@ -100,31 +99,31 @@
 .acw-success:focus { outline: none; }
 
 /* Hidden while the full-screen mobile menu is open. */
-body.drawer-open .acw-fab, body.drawer-open .acw-panel { display: none; }
+body.drawer-open .acw { display: none; }
 
-/* Tablet / small laptop */
+/* Tablet / small laptop: bottom-right, panel opens upwards. */
 @media (max-width: 900px) {
-  .acw-panel { right: 24px; top: auto; bottom: 96px; transform: translateY(8px); max-height: calc(100vh - 140px); }
+  .acw { top: auto; bottom: calc(24px + env(safe-area-inset-bottom)); transform: none; }
+  .acw-panel { right: 0; top: auto; bottom: calc(100% + 12px); transform: translateY(8px); max-height: calc(100vh - 140px); }
   .acw-panel.is-open { transform: none; }
-  .acw-fab { top: auto; bottom: calc(24px + env(safe-area-inset-bottom)); transform: none; }
   .acw-fab:hover { transform: translateY(-2px); }
-  .acw-fab:active { transform: scale(.98); }
 }
 
 /* Phones: compact circular button in the bottom-right safe area. */
 @media (max-width: 640px) {
-  .acw-fab { right: calc(14px + env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom)); min-width: 0; width: 54px; height: 54px; padding: 0; justify-content: center; border-radius: 18px; }
+  .acw { right: calc(14px + env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom)); }
+  .acw-fab { width: 54px; height: 54px; padding: 0; justify-content: center; border-radius: 18px; }
   .acw-fab-icon { background: transparent; }
   .acw-fab-icon .icon { width: 22px; height: 22px; }
   .acw-fab-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .acw-tip { display: none; }
-  .acw-panel { left: auto; right: 12px; bottom: calc(80px + env(safe-area-inset-bottom)); width: calc(100vw - 24px); max-width: 380px; max-height: calc(100vh - 110px); padding: 18px; }
+  .acw-panel { width: min(380px, calc(100vw - 24px)); max-height: calc(100vh - 110px); padding: 18px; }
   .acw-modal { width: calc(100vw - 16px); max-height: calc(100vh - 16px); border-radius: 20px; }
   .acw-modal .form-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .acw-fab, .acw-panel, .acw-action, .acw-tip { transition: none; }
-  .acw-fab.acw-pulse, .acw-modal[open] { animation: none; }
+  .acw-modal[open] { animation: none; }
 }
 @media print { .acw { display: none !important; } }

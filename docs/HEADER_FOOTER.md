@@ -6,7 +6,7 @@ All navigation content lives in `data/nav.php`. Templates never hard-code links.
 
 - 36px navy bar, 11–13px type, subtle separators.
 - Left: cyan indicator · **AI-POWERED EDUCATION PLATFORM** · *Where Education Meets Intelligence.*
-- Right: **Support** and **Login ▾** (`includes/login-menu.php`). Phone and email are in the footer's *Talk to Acadlytic* strip, the enquiry widget and the mobile drawer.
+- Right: **Support** and **Login ▾** (`includes/login-menu.php`). Phone and email are in the footer's *Talk to Acadlytic* CTA, the Talk to Acadlytic widget and the mobile drawer.
 - ≤1080px: the tagline hides. ≤760px: the left statement hides, leaving **Support** and **Login**.
 
 ## Login popover (`includes/login-menu.php`)
@@ -74,17 +74,28 @@ Keyboard focus shows a cyan outline. The only motion is short colour transitions
 
 Social profile URLs live in `config/site.php`; all five, including Facebook, still feed the Organization `sameAs` structured data.
 
-## Floating enquiry widget (`components/enquiry-widget.php`)
+## Floating “Talk to Acadlytic” widget (`components/contact-widget.php`)
 
-Included once, from `includes/footer.php`, on every public page (not on the
-auth pages). Desktop: “Enquire now” button fixed 24px from the right at 60% of
-the viewport height; the panel opens to its left. ≤900px: bottom-right.
-≤640px: 54px circular button in the safe area. Hidden while the mobile menu is
-open and when printing.
+This widget is included once, from `includes/footer.php`, on every public page (not on the auth pages). Its files are `components/contact-widget.php`, `components/contact-modal.php`, `assets/css/contact-widget.css` and `assets/js/contact-widget.js`, and the contact values come from `config/contact.php`.
 
-The panel (“Let’s Connect / How can we help you?”) offers exactly three actions:
-**Fill Enquiry Form** (native `<dialog>` modal from `components/enquiry-modal.php`,
-submitted to `/enquiry/` with CSRF token, honeypot, timing check, rate limit and
-server-side validation), **Email Us** (`mailto:` from `CONTACT_EMAIL`) and
-**WhatsApp Us** (`/go/whatsapp/`, pre-filled message). A small masked call
-line links to `/go/call/`. All contact values come from `config/contact.php`.
+**Button placement**
+- Desktop: a **TALK TO ACADLYTIC** button (chat icon, `aria-label="Talk to Acadlytic"`), fixed 24px from the right at 60% of the viewport height. The panel opens to its left.
+- ≤900px: bottom-right, safe-area aware.
+- ≤640px: a 54px icon button.
+- While the footer is on screen, the button stays visible but shrinks to icon-only so it never covers the footer CTA.
+- Hidden while the mobile menu is open and when printing.
+
+**Panel** (“Let’s Connect / How can we help you?”). It offers exactly three actions:
+- **Fill Enquiry Form**: a native `<dialog>` submitted to `/enquiry/` with CSRF token, honeypot, timing check, rate limit and server-side validation.
+- **Email Us**: `mailto:` from `CONTACT_EMAIL`.
+- **WhatsApp Us**: `/go/whatsapp/`, with a pre-filled message.
+
+A small masked call line links to `/go/call/`.
+
+**Opening the panel from elsewhere.** Any `[data-acw-open]` element opens the same panel, for example **Talk to Acadlytic →** in the footer CTA. There is only ever one contact system per page. Without JS these triggers are plain links to `/core/contact/`.
+
+**Keyboard and motion**
+- Enter or Space opens the panel.
+- Escape closes it and returns focus to the control that opened it; clicking outside also closes it.
+- The panel focuses its first action when it opens.
+- Transitions are 200–220ms fade and translate, with no pulsing, and are disabled under `prefers-reduced-motion`.

@@ -16,7 +16,7 @@ workers are needed in production.
 | Auth pages | `/login.php` (also `/login/`), `/forgot-password.php`, `/request-access.php` — noindex, not in sitemap |
 | Forms | Request a Demo, Contact, Enquiry (floating widget), Request Access, Password help — CSRF, honeypot, timing check, rate limit, server-side validation |
 | AEO | FAQs + FAQPage schema on 130 pages, key takeaways on guides and comparisons, `llms.txt`, visible last-updated dates |
-| Enquiry widget | Floating “Enquire now” button on every public page: enquiry form (modal), email, WhatsApp. The phone number is never printed in full; see below |
+| Contact widget | Floating “TALK TO ACADLYTIC” button on every public page (also opened from the footer CTA): enquiry form (modal), email, WhatsApp. The phone number is never printed in full; see below |
 | Assets | Self-hosted Inter + Manrope, one SVG icon sprite, optimised logo (PNG + WebP), no third-party scripts |
 
 ## How it works
@@ -41,8 +41,8 @@ assets/img/                  logo-acadlytic.png/.webp, logo-square.png, icons.sv
 assets/fonts/                Inter + Manrope (SIL OFL)
 config/site.php              brand, contacts, social profiles, feature flags
 config/contact.php           the ONLY place the phone / WhatsApp number is stored
-components/                  enquiry-widget.php, enquiry-modal.php (floating widget)
-assets/css/enquiry-widget.css, assets/js/enquiry-widget.js   widget styles and behaviour
+components/                  contact-widget.php, contact-modal.php ("Talk to Acadlytic" widget)
+assets/css/contact-widget.css, assets/js/contact-widget.js   widget styles and behaviour
 enquiry/, enquiry/token/     JSON endpoints for the widget form (POST, same-origin)
 go/call/, go/whatsapp/       number-free redirects to tel: and wa.me (302, noindex)
 data/people.php, data/news.php  leadership/team and news entries (empty until supplied)
@@ -66,7 +66,7 @@ Internal folders (`includes`, `config`, `components`, `data`, `seo`, `storage`,
 `bin`, `database`, `docs`) are denied over HTTP by the root `.htaccess` and by their
 own `.htaccess` files.
 
-## Contact details and the enquiry widget
+## Contact details and the “Talk to Acadlytic” widget
 
 `config/contact.php` holds `CONTACT_PHONE`, `CONTACT_PHONE_DISPLAY` (masked,
 e.g. `+91 80••••••71`), `CONTACT_EMAIL`, `WHATSAPP_NUMBER` and the WhatsApp
@@ -106,6 +106,7 @@ See **`docs/DEPLOYMENT.md`** for the step-by-step cPanel guide.
 - `docs/FINAL_PRE_MERGE_AUDIT.md` — final technical pre-merge audit (PASS/FAIL, blockers)
 - `docs/SHOULD_FIX_COMPLETION_REPORT.md` — SHOULD FIX items completed after the audit
 - `docs/LEGAL_PUBLICATION_AUDIT.md` — legal pages approval and publication audit
+- `docs/CONTACT_WIDGET_QA.md` — "Talk to Acadlytic" widget and footer CTA QA
 - `docs/QA_REPORT.md` — latest verification results
 - `docs/CMS_PHASE3_BLUEPRINT.md` — CMS phase scope
 - `docs/handoff/` — original handoff briefs this build integrates

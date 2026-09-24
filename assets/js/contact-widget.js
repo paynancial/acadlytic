@@ -1,6 +1,7 @@
-/* Acadlytic — floating enquiry widget (components/enquiry-widget.php).
-   Progressive enhancement: without this script the button is a plain link
-   to the contact page. No third-party code, no inline scripts (CSP-safe).
+/* Acadlytic — floating "Talk to Acadlytic" contact widget
+   (components/contact-widget.php). Progressive enhancement: without this
+   script the button and any [data-acw-open] trigger are plain links to the
+   contact page. No third-party code, no inline scripts (CSP-safe).
 
    Analytics hooks (privacy-conscious, no personal data):
      window 'acadlytic:analytics' CustomEvent { detail: { event } }
@@ -15,11 +16,14 @@
 
   var fab = root.querySelector('[data-acw-toggle]');
   var panel = root.querySelector('[data-acw-panel]');
+  // Other controls that open the same panel (e.g. the footer CTA).
+  var openers = Array.prototype.slice.call(document.querySelectorAll('[data-acw-open]'));
+  var triggers = [fab].concat(openers);
   // The modal lives in a <template> (out of the live DOM) until first use.
   var tpl = root.querySelector('[data-acw-modal-tpl]');
   var modal = null, form = null, alertBox = null, formWrap = null, success = null;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var interacted = false;
+  var lastTrigger = fab;
   var tokenPromise = null;
 
   function track(name) {
@@ -28,38 +32,56 @@
     if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
   }
 
-  function markInteracted() {
-    interacted = true;
-    fab.classList.remove('acw-pulse');
-  }
-
   /* ---------- Panel ---------- */
   function isOpen() { return !panel.hidden; }
 
-  function openPanel() {
-    markInteracted();
+  function setExpanded(open) {
+    triggers.forEach(function (t) { t.setAttribute('aria-expanded', String(open)); });
+  }
+
+  function openPanel(trigger) {
+    lastTrigger = trigger || fab;
+    if (isOpen()) { var f = panel.querySelector('.acw-action'); if (f) f.focus(); return; }
     panel.hidden = false;
     // next frame so the transition runs
     requestAnimationFrame(function () { panel.classList.add('is-open'); });
-    fab.setAttribute('aria-expanded', 'true');
+    setExpanded(true);
     var first = panel.querySelector('.acw-action');
-    if (first) first.focus();
+    if (first) first.focus({ preventScroll: true });
     track('enquiry_widget_open');
   }
 
   function closePanel(returnFocus) {
     if (!isOpen()) return;
     panel.classList.remove('is-open');
-    fab.setAttribute('aria-expanded', 'false');
+    setExpanded(false);
     var done = function () { panel.hidden = true; };
     if (reduce.matches) done(); else setTimeout(done, 200);
-    if (returnFocus) fab.focus();
+    if (returnFocus) lastTrigger.focus({ preventScroll: true });
   }
 
-  fab.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (isOpen()) closePanel(false); else openPanel();
+  // Links that act as buttons once JS is running: role, Space key, toggle.
+  triggers.forEach(function (t) {
+    t.setAttribute('role', 'button');
+    t.setAttribute('aria-controls', 'acw-panel');
+    t.setAttribute('aria-haspopup', 'dialog');
+    t.setAttribute('aria-expanded', 'false');
+    t.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (isOpen() && t === lastTrigger) closePanel(false); else openPanel(t);
+    });
+    t.addEventListener('keydown', function (event) {
+      if (event.key === ' ' || event.key === 'Spacebar') { event.preventDefault(); t.click(); }
+    });
   });
+
+  // Compact button while the footer (which has its own CTA) is in view.
+  var footer = document.querySelector('.site-footer');
+  if (footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      root.classList.toggle('is-compact', entries[0].isIntersecting);
+    }).observe(footer);
+  }
 
   root.querySelectorAll('[data-acw-close]').forEach(function (btn) {
     btn.addEventListener('click', function () { closePanel(true); });
@@ -72,7 +94,7 @@
   });
 
   document.addEventListener('click', function (event) {
-    if (isOpen() && !panel.contains(event.target) && !fab.contains(event.target)) {
+    if (isOpen() && !panel.contains(event.target) && !triggers.some(function (t) { return t.contains(event.target); })) {
       closePanel(false);
     }
   });
@@ -83,13 +105,6 @@
       if (link.getAttribute('data-acw-event') !== 'call_click') closePanel(false);
     });
   });
-
-  /* Subtle attention glow: once, after a pause, only if untouched. */
-  if (!reduce.matches) {
-    setTimeout(function () { if (!interacted) fab.classList.add('acw-pulse'); }, 6000);
-  }
-  fab.addEventListener('pointerenter', markInteracted);
-  fab.addEventListener('focus', markInteracted);
 
   /* ---------- Modal + form ---------- */
   var formBtn = root.querySelector('[data-acw-open-form]');
@@ -114,7 +129,7 @@
     modal.addEventListener('click', function (event) {
       if (event.target === modal) closeModal();
     });
-    modal.addEventListener('close', function () { fab.focus(); });
+    modal.addEventListener('close', function () { lastTrigger.focus({ preventScroll: true }); });
     // Client-side checks must run before our submit handler (it respects
     // event.defaultPrevented), so enhance first.
     if (window.AcadlyticForms) window.AcadlyticForms.enhance(form);

@@ -252,7 +252,7 @@ function acad_notify_enquiry(string $form, array $data): bool
     if (!acad_config('forms.send_mail') || !function_exists('mail')) {
         return false;
     }
-    $labels = ['demo' => 'Demo request', 'contact' => 'Contact enquiry', 'access' => 'Access request', 'reset' => 'Password help request', 'enquiry' => 'Website enquiry (Enquire Now)'];
+    $labels = ['demo' => 'Demo request', 'contact' => 'Contact enquiry', 'access' => 'Access request', 'reset' => 'Password help request', 'enquiry' => 'Website enquiry (Talk to Acadlytic widget)'];
     $clean = static fn(string $v): string => str_replace(["\r", "\n"], ' ', $v);
     $subject = '[Acadlytic website] ' . ($labels[$form] ?? 'Enquiry') . (isset($data['institution']) && $data['institution'] !== '' ? ' — ' . $clean($data['institution']) : '');
     $body = ($labels[$form] ?? 'Enquiry') . " received " . date('Y-m-d H:i T') . "\n\n";

@@ -74,7 +74,7 @@ return [
                 'The principles the company works by, from honest product claims to people staying in control of AI, are set out in our [vision and mission](/company/vision-mission/). To learn more about the company, see [About Acadlytic](/core/about/).'),
             faq([
                 'Who leads Acadlytic, Inc.?' => 'Acadlytic, Inc. is led by its directors, Renuka Devi and Anisha Bharti.',
-                'How can I contact the leadership team?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com) and mark your message for the attention of the directors, or use the **Enquire now** button on any page.',
+                'How can I contact the leadership team?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com) and mark your message for the attention of the directors, or use the **Talk to Acadlytic** button on any page.',
                 'Where is Acadlytic based?' => 'Acadlytic’s office is in Hanuman Nagar, Patna, Bihar. See the [Patna office page](/company/offices/patna/) for the address and how to arrange a visit.',
             ]),
         ],
@@ -129,7 +129,7 @@ return [
             ], 'At a glance'),
             cards('Ways to meet the team', [
                 'Online demo' => 'See the product design and roadmap in a live walkthrough. [Request a demo](/company/request-demo/) and choose a time that suits your team.',
-                'Discovery call' => 'Talk through your admissions, student records or reporting challenges before you evaluate any software. Use the **Enquire now** button or the [contact form](/core/contact/).',
+                'Discovery call' => 'Talk through your admissions, student records or reporting challenges before you evaluate any software. Use the **Talk to Acadlytic** button or the [contact form](/core/contact/).',
                 'Office meeting' => 'Meet us at the [Patna office](/company/offices/patna/) by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) with a few suitable times.',
                 'Partnership conversation' => 'Colleges, training providers and education partners can explore working together through the [partner programme](/company/partners/).',
             ]),
@@ -141,7 +141,7 @@ return [
             faq([
                 'Where is Acadlytic located?' => "Acadlytic, Inc. has its office in Patna, Bihar: {$office}.",
                 'Do I need to visit the office to work with Acadlytic?' => 'No. Demos and conversations can take place online for institutions anywhere. Office visits are optional and by appointment.',
-                'How do I arrange a meeting?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com), use the **Enquire now** button on any page, or [request a demo](/company/request-demo/).',
+                'How do I arrange a meeting?' => 'Email [info@acadlytic.com](mailto:info@acadlytic.com), use the **Talk to Acadlytic** button on any page, or [request a demo](/company/request-demo/).',
             ]),
         ],
         'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/'],
@@ -178,7 +178,7 @@ return [
                 'Where is Acadlytic’s office?' => "Our office is at {$office}.",
                 'Can I visit the Acadlytic office in Patna?' => 'Yes, by appointment. Email [info@acadlytic.com](mailto:info@acadlytic.com) to arrange a time before you visit.',
                 'Does Acadlytic work only with institutions in Bihar?' => 'No. Acadlytic is being built for universities, colleges and other education providers wherever they are. Demos and conversations can take place online.',
-                'How do I contact Acadlytic quickly?' => 'Use the **Enquire now** button on any page to send an enquiry, email us or message us on WhatsApp, or [request a demo](/company/request-demo/).',
+                'How do I contact Acadlytic quickly?' => 'Use the **Talk to Acadlytic** button on any page to send an enquiry, email us or message us on WhatsApp, or [request a demo](/company/request-demo/).',
             ]),
         ],
         'related'  => ['/core/contact/', '/company/request-demo/', '/core/about/', '/company/leadership/'],
@@ -299,7 +299,7 @@ return [
                 'Do not attribute customer counts, rankings or certifications to Acadlytic unless confirmed by us in writing',
             ]),
             sec('Media contact',
-                'For interviews, logo files and fact-checking, email info@acadlytic.com with the subject “Press”, or use the call and WhatsApp options in the Enquire Now panel.'),
+                'For interviews, logo files and fact-checking, email info@acadlytic.com with the subject “Press”, or use the call and WhatsApp options in the Talk to Acadlytic panel.'),
             faq([
                 'Can I use the Acadlytic logo in an article?' => 'Yes, for editorial coverage of Acadlytic, using the official logo files we provide on request, unaltered.',
                 'Can you confirm customer names or figures?' => 'We only confirm customer names, figures or outcomes that have been verified and approved for publication by the institutions involved.',
@@ -536,7 +536,7 @@ return [
             sec('Known limitations',
                 'Some decorative dashboard previews on this website are illustrations and are hidden from assistive technology; their meaning is described in the surrounding text. If you find content that is difficult to use, please tell us.'),
             sec('Feedback and assistance',
-                'Email info@acadlytic.com with the subject “Accessibility”, use the call option in the Enquire Now panel, or the [contact form](/core/contact/?topic=accessibility). Tell us the page, what you were trying to do and any assistive technology you use. We will respond and, where we cannot fix an issue quickly, provide the information another way.'),
+                'Email info@acadlytic.com with the subject “Accessibility”, use the call option in the Talk to Acadlytic panel, or the [contact form](/core/contact/?topic=accessibility). Tell us the page, what you were trying to do and any assistive technology you use. We will respond and, where we cannot fix an issue quickly, provide the information another way.'),
             faq([
                 'Which accessibility standard does Acadlytic follow?' => 'We aim for WCAG 2.2 level AA.',
                 'Can I get information in another format?' => 'Yes. Contact us with your needs and we will provide the information in an accessible alternative.',

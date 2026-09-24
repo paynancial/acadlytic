@@ -138,7 +138,7 @@ Status: the platform is in development. Product, AI, solution and integration pa
 
 - [About](https://acadlytic.com/core/about/): Acadlytic, Inc. is building AI-powered CRM and cloud software for academic management. Learn our mission, what we are building and how we work with institutions.
 - [Security Center](https://acadlytic.com/core/security/): (Planned) How Acadlytic approaches security: encryption, role-based access, audit trails, secure development and responsible disclosure for institutional and student data.
-- [Contact](https://acadlytic.com/core/contact/): Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or use the Enquire Now panel.
+- [Contact](https://acadlytic.com/core/contact/): Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or use the Talk to Acadlytic panel.
 - [Company](https://acadlytic.com/company/): About Acadlytic, Inc.: our mission, careers, partner programme, press resources, support and how to contact the team.
 - [Vision & Mission](https://acadlytic.com/company/vision-mission/): Acadlytic’s vision and mission: why we are building an AI-powered EdTech CRM and cloud platform for academic management, and the values that guide the work.
 - [Leadership](https://acadlytic.com/company/leadership/): The leadership team of Acadlytic, Inc., building an AI-powered EdTech CRM and cloud platform for academic management.

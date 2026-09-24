@@ -15,7 +15,7 @@
     else document.addEventListener('DOMContentLoaded', fn);
   }
 
-  // Shared with enquiry-widget.js (loaded after this file).
+  // Shared with contact-widget.js (loaded after this file).
   window.AcadlyticForms = { enhance: enhanceForm, fieldError: showFieldError };
 
   ready(function () {
