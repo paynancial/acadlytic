@@ -29,10 +29,10 @@ a{color:var(--blue)}
 .mega{position:absolute;left:0;right:0;top:100%;visibility:hidden;opacity:0}
 .nav-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
 .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;color:var(--ink);background:none;border:1px solid transparent;cursor:pointer}
-.nav-login{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:10px 12px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:11px 18px;font:600 15px/1.2 var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer}
 .btn-primary{background:var(--blue);color:#fff}
 .demo-short,.menu-btn,.drawer[hidden]{display:none}
-@media (max-width:1080px){.primary-nav,.nav-login{display:none}.menu-btn{display:inline-flex}.util-hide-sm,.util-tagline,.util-sep{display:none}}
+@media (max-width:1080px){.primary-nav{display:none}.menu-btn{display:inline-flex}.util-tagline,.util-sep{display:none}}
+@media (min-width:1081px) and (max-width:1280px){.nav-wrap{gap:12px}.nav-trigger{padding:10px 10px}}
 @media (max-width:760px){.util-brand{display:none}.util-inner{justify-content:flex-end}}
 @media (max-width:480px){.nav-actions .icon-btn:not(.menu-btn){display:none}.nav-wrap{gap:12px}.demo-long{display:none}.demo-short{display:inline}.brand-logo{height:36px}.nav-demo{padding:9px 12px}}

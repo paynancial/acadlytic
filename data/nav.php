@@ -219,16 +219,17 @@ return [
         'partner'     => ['Partner / B2B', 'Access partner services, applications and collaboration.', 'handshake'],
     ],
 
+    // Footer columns (after the brand column). Company links live in the
+    // header menu and on /company/; contact and demo in the footer's CTA strip.
     'footer' => [
         'Platform' => [
             ['Overview', '/platform/'],
+            ['Academic Management', '/core/academic-management/'],
             ['Admissions & CRM', '/platform/admissions-crm/'],
             ['Student Management', '/platform/student-management/'],
-            ['Academic Operations', '/platform/academic-operations/'],
-            ['Finance & Fees', '/platform/finance-fees/'],
-            ['Communication', '/platform/communication-hub/'],
             ['Analytics & AI', '/platform/reports-insights/'],
-            ['Document Management', '/platform/electronic-document-sharing/'],
+            ['Integrations', '/integrations/'],
+            ['Pricing', '/core/pricing/'],
         ],
         'Solutions' => [
             ['For Institutions', '/industries/'],
@@ -236,39 +237,31 @@ return [
             ['For Faculty', '/solutions/for-faculty/'],
             ['For Students', '/solutions/for-students/'],
             ['For Parents', '/solutions/for-parents/'],
-            ['For Partners', '/company/partners/'],
+            ['AI for Education', '/ai/ai-in-education/'],
         ],
         'Resources' => [
-            ['AI Center', '/ai/'],
+            ['Resources', '/resources/'],
             ['Blog', '/resources/blog/'],
             ['Case Studies', '/company/case-studies/'],
             ['Whitepapers', '/resources/whitepapers/'],
-            ['Guides', '/resources/guides/'],
-            ['Glossary', '/glossary/'],
             ['FAQs', '/resources/faqs/'],
             ['Help Center', '/company/support/'],
         ],
-        'Company' => [
-            ['About Us', '/core/about/'],
-            ['Vision & Mission', '/company/vision-mission/'],
-            ['Leadership', '/company/leadership/'],
-            ['Team', '/company/team/'],
-            ['News', '/company/news/'],
-            ['Careers', '/company/careers/'],
-            ['Partners', '/company/partners/'],
-            ['Contact Us', '/core/contact/'],
-            ['Our Office', '/company/offices/patna/'],
-            ['Request Demo', '/company/request-demo/'],
+        'Trust & Governance' => [
+            ['Security Center', '/core/security/'],
+            ['Privacy & Data Protection', '/trust/privacy/'],
+            ['Terms', '/trust/terms/'],
+            ['Accessibility', '/trust/accessibility/'],
+            ['Data Protection Officer', '/trust/data-protection-officer/'],
+            ['Grievance Redressal Officer', '/trust/grievance-redressal-officer/'],
+            ['Sitemap', '/sitemap/'],
         ],
     ],
-
-    'trust' => [
-        ['Security Center', '/core/security/'],
-        ['Privacy & Data Protection', '/trust/privacy/'],
-        ['Data Protection Officer', '/trust/data-protection-officer/'],
-        ['Grievance Redressal Officer', '/trust/grievance-redressal-officer/'],
-        ['Accessibility', '/trust/accessibility/'],
+    'footer_social' => ['linkedin', 'x', 'youtube', 'instagram'],
+    'footer_legal' => [
+        ['Privacy Policy', '/trust/privacy/'],
         ['Terms', '/trust/terms/'],
+        ['Security', '/core/security/'],
         ['Sitemap', '/sitemap/'],
     ],
 ];

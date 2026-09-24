@@ -6,8 +6,8 @@ All navigation content lives in `data/nav.php`. Templates never hard-code links.
 
 - 36px navy bar, 11–13px type, subtle separators.
 - Left: cyan indicator · **AI-POWERED EDUCATION PLATFORM** · *Where Education Meets Intelligence.*
-- Right: phone, email, Support, Resources, **Login ▾** (`includes/login-menu.php`).
-- ≤1080px: phone, email and Resources hide (they move into the mobile drawer). ≤760px: the left statement hides, leaving **Support** and **Login**.
+- Right: **Support** and **Login ▾** (`includes/login-menu.php`). Phone and email are in the footer's *Talk to Acadlytic* strip, the enquiry widget and the mobile drawer.
+- ≤1080px: the tagline hides. ≤760px: the left statement hides, leaving **Support** and **Login**.
 
 ## Login popover (`includes/login-menu.php`)
 
@@ -23,8 +23,8 @@ clicking outside closes. Without JavaScript it opens on hover/focus.
 ## Main header (`includes/header.php`)
 
 Logo · Platform · AI · Solutions · Integrations · Resources · Company ·
-Search · Login · **Request a Demo** (the only filled button, so Login never
-competes with it).
+Search · **Request a Demo**. Login lives only in the utility bar. Between
+1081px and 1280px the menu spacing tightens so the header never overflows.
 
 ### Mega menu
 
@@ -50,16 +50,27 @@ Without JS the menu button links to `/sitemap/`.
 - Asset URLs are root-relative and versioned by file modification time (`/assets/css/main.css?v=…`), so they cannot break because of a host mismatch (the cause of the earlier raw-button deployment).
 - Critical header CSS (`includes/critical.css`) is inlined in every page and allowed in the CSP by hash, so the header renders correctly even if `main.css` is delayed.
 
-## Trust bar and footer (`includes/footer.php`)
+## Footer (`includes/footer.php`)
 
-1. **Trust bar**: SECURE • SCALABLE • AI-POWERED • CLOUD-READY • ACCESSIBLE, with cards for Data Protection, Enterprise Security, Role-Based Access, Cloud Infrastructure and Responsible Support.
-2. **Five columns**: brand (logo, tagline, AI | CRM | CLOUD | ACADEMIC MANAGEMENT, social icons), Platform, Solutions, Resources, Company.
-3. **Trust & Governance**: Security Center, Privacy & Data Protection, Data Protection Officer, Grievance Redressal Officer, Accessibility, Terms, Sitemap. The DPO and Grievance links open their officer pages, and the note underneath names **Mr. A.K Sinha** (`dpo@acadlytic.com`) and **Mrs. Anjali Sharma** (`gro@acadlytic.com`). Both come from `config/site.php` → `governance`.
-4. **Contact**: `info@acadlytic.com` and **Phone** shown masked (`CONTACT_PHONE_DISPLAY`, labelled Phone, not toll-free); the link goes to `/go/call/`. The full number exists only in `config/contact.php`. An **Office** pill (Patna, Bihar) links to `/company/offices/patna/`.
-5. Legal bar: copyright plus Privacy, Terms, Security, Accessibility, Sitemap.
+Deep navy surface (`#071A3A` → `#050F26`) with a soft electric-blue and cyan glow, a thin cyan hairline on top, white headings and muted blue-grey links.
 
-Social profiles (LinkedIn, X, YouTube, Instagram, Facebook) come from
-`config/site.php` and also feed the Organization `sameAs` structured data.
+1. **Talk to Acadlytic** strip (glass panel with a short cyan accent): email (`mailto:`), phone shown masked (`CONTACT_PHONE_DISPLAY`, links to `/go/call/`), office *Patna, Bihar, India* (links to `/company/offices/patna/`), and a **Request a Demo →** gradient button.
+2. **Brand column**: light logo (`logo-acadlytic-light.*`, white wordmark with the full-colour mark), *Where Education Meets Intelligence.*, AI | CRM | CLOUD | ACADEMIC MANAGEMENT, a two-line description, and social icons for LinkedIn, X, YouTube and Instagram (`data/nav.php` → `footer_social`).
+3. **Four navigation columns** (`data/nav.php` → `footer`), each a `<nav>` labelled by its heading:
+   - **Platform**: Overview, Academic Management, Admissions & CRM, Student Management, Analytics & AI, Integrations, Pricing.
+   - **Solutions**: For Institutions, For Administrators, For Faculty, For Students, For Parents, AI for Education.
+   - **Resources**: Resources, Blog, Case Studies, Whitepapers, FAQs, Help Center.
+   - **Trust & Governance**: Security Center, Privacy & Data Protection, Terms, Accessibility, Data Protection Officer, Grievance Redressal Officer, Sitemap. Officer names are not shown in the footer; they appear on the approved officer pages.
+4. **Bottom bar**: © year Acadlytic, Inc. All rights reserved · Privacy Policy | Terms | Security | Sitemap (`footer_legal`).
+
+Responsive:
+- ≤1180px: the contact items move below the strip heading, and the brand column spans the full width above four columns.
+- ≤860px: two columns.
+- ≤640px: one column, and each navigation column becomes an accordion. `app.js` inserts a button with `aria-expanded`/`aria-controls`; without JS every list stays open.
+
+Keyboard focus shows a cyan outline. The only motion is short colour transitions.
+
+Company pages (About, Leadership, Careers, Contact, Offices, and others) are linked from the header's Company menu and the `/company/` hub. Social profile URLs live in `config/site.php`; all five, including Facebook, still feed the Organization `sameAs` structured data.
 
 ## Floating enquiry widget (`components/enquiry-widget.php`)
 

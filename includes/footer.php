@@ -1,92 +1,70 @@
 <?php
 /**
- * Shared footer: trust bar, five-column navigation, trust & governance row,
- * direct contact and legal bar.
- *
- * Governance officers (DPO, Grievance Redressal Officer) come from
- * config/site.php → governance, as designated by Acadlytic, Inc.
+ * Shared footer: "Talk to Acadlytic" contact strip, brand column, four
+ * navigation columns (data/nav.php → footer) and the legal bar.
+ * Columns become accordions on phones (app.js); without JS they stay open.
+ * The phone number is shown masked and dialled via /go/call/.
  *
  * @var array $page
  * @var array $nav
  */
 declare(strict_types=1);
 
-$trustCards = [
-    ['Data Protection', 'A privacy-first approach to institutional and student data.', 'lock', '/trust/data-protection-officer/'],
-    ['Enterprise Security', 'Security designed into architecture, access and operations.', 'shield', '/core/security/'],
-    ['Role-Based Access', 'Designed so people see only what their role requires.', 'key', '/core/security/'],
-    ['Cloud Infrastructure', 'Designed for scalable, resilient cloud delivery.', 'cloud', '/core/cloud-platform/'],
-    ['Responsible Support', 'Named routes for help, privacy and grievances.', 'support', '/trust/grievance-redressal/'],
-];
+$social = acad_config('social');
+$slug = static fn(string $s): string => trim((string) preg_replace('/[^a-z0-9]+/', '-', strtolower($s)), '-');
 ?>
 </main>
 
-<section class="trust-bar" aria-labelledby="trust-bar-h">
-    <div class="container">
-        <div class="trust-bar-head">
-            <h2 id="trust-bar-h" class="trust-bar-title">Secure <span>•</span> Scalable <span>•</span> AI-Powered <span>•</span> Cloud-Ready <span>•</span> Accessible</h2>
-        </div>
-        <ul class="trust-cards">
-            <?php foreach ($trustCards as [$title, $text, $ic, $href]): ?>
-            <li><a class="trust-card" href="<?= e($href) ?>"><span class="trust-icon"><?= icon($ic) ?></span><span><strong><?= e($title) ?></strong><small><?= e($text) ?></small></span></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-</section>
-
 <footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-brand">
-            <a class="footer-logo" href="/" aria-label="Acadlytic, Inc. home"><?= acad_logo_html('brand-logo', false) ?></a>
-            <p class="footer-tagline"><?= e(acad_config('tagline')) ?></p>
-            <p class="footer-pillars">AI <span>|</span> CRM <span>|</span> Cloud <span>|</span> Academic Management</p>
-            <ul class="social-list" aria-label="Acadlytic on social media">
-                <?php foreach (acad_config('social') as $key => $s): ?>
-                <li><a class="social-link" href="<?= e($s['url']) ?>" rel="noopener me" target="_blank"><?= icon($key) ?><span class="sr-only">Acadlytic on <?= e($s['label']) ?> (opens in a new tab)</span></a></li>
-                <?php endforeach; ?>
+    <div class="container">
+        <section class="footer-cta" aria-labelledby="footer-cta-h">
+            <div class="footer-cta-intro">
+                <h2 class="footer-cta-title" id="footer-cta-h">Talk to Acadlytic</h2>
+                <p class="footer-cta-text">Questions about the platform, a demo or a partnership: our team will route your message to the right people.</p>
+            </div>
+            <ul class="footer-cta-contacts">
+                <li><a href="<?= e(acad_mailto((string) acad_config('email'))) ?>"><span class="footer-cta-icon"><?= icon('mail', 'icon icon-sm') ?></span><span><small>Email</small><?= e(acad_config('email')) ?></span></a></li>
+                <li><a href="<?= e(acad_config('phone_href')) ?>"><span class="footer-cta-icon"><?= icon('phone', 'icon icon-sm') ?></span><span><small>Phone</small><?= e(acad_config('phone')) ?></span></a></li>
+                <li><a href="<?= e(acad_config('office.page')) ?>"><span class="footer-cta-icon"><?= icon('pin', 'icon icon-sm') ?></span><span><small>Office</small><?= e(acad_config('office.locality') . ', ' . acad_config('office.region') . ', ' . acad_config('office.country_name')) ?></span></a></li>
             </ul>
-        </div>
-        <?php foreach ($nav['footer'] as $heading => $links): ?>
-        <nav class="footer-col" aria-label="<?= e($heading) ?>">
-            <h2 class="footer-heading"><?= e($heading) ?></h2>
-            <ul>
-                <?php foreach ($links as [$label, $href]): ?>
-                <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
-        <?php endforeach; ?>
-    </div>
+            <a class="btn footer-cta-btn" href="/company/request-demo/">Request a Demo <?= icon('arrow', 'icon icon-sm') ?></a>
+        </section>
 
-    <div class="container footer-governance">
-        <div class="gov-block">
-            <h2 class="footer-heading">Trust &amp; Governance</h2>
-            <ul class="gov-links">
-                <?php foreach ($nav['trust'] as [$label, $href]): ?>
-                <li><a href="<?= e(acad_nav_href($href)) ?>"><?= e($label) ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-            <?php $dpo = acad_config('governance.dpo'); $gro = acad_config('governance.grievance'); ?>
-            <p class="gov-note">Data Protection Officer: <?= e($dpo['name']) ?>, <a href="<?= e(acad_mailto($dpo['email'], $dpo['subject'])) ?>"><?= e($dpo['email']) ?></a> · Grievance Redressal Officer: <?= e($gro['name']) ?>, <a href="<?= e(acad_mailto($gro['email'], $gro['subject'])) ?>"><?= e($gro['email']) ?></a> · <a href="/trust/grievance-redressal/">Grievance redressal process</a></p>
-        </div>
-        <div class="contact-block">
-            <h2 class="footer-heading">Contact</h2>
-            <a class="contact-pill" href="<?= e(acad_mailto((string) acad_config('email'))) ?>"><?= icon('mail', 'icon icon-sm') ?><span><small>Email</small><?= e(acad_config('email')) ?></span></a>
-            <a class="contact-pill" href="<?= e(acad_config('phone_href')) ?>"><?= icon('phone', 'icon icon-sm') ?><span><small>Phone</small><?= e(acad_config('phone')) ?></span></a>
-            <a class="contact-pill" href="<?= e(acad_config('office.page')) ?>"><?= icon('pin', 'icon icon-sm') ?><span><small>Office</small><?= e(acad_config('office.locality') . ', ' . acad_config('office.region')) ?></span></a>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a class="footer-logo" href="/" aria-label="Acadlytic, Inc. home"><?= acad_logo_light_html() ?></a>
+                <p class="footer-tagline"><?= e(acad_config('tagline')) ?></p>
+                <p class="footer-pillars">AI <span aria-hidden="true">|</span> CRM <span aria-hidden="true">|</span> Cloud <span aria-hidden="true">|</span> Academic Management</p>
+                <p class="footer-about">Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform that connects admissions, students, academics and operations for modern institutions.</p>
+                <ul class="social-list" aria-label="Acadlytic on social media">
+                    <?php foreach ($nav['footer_social'] as $key): if (empty($social[$key])) { continue; } ?>
+                    <li><a class="social-link" href="<?= e($social[$key]['url']) ?>" rel="noopener me" target="_blank"><?= icon($key) ?><span class="sr-only">Acadlytic on <?= e($social[$key]['label']) ?> (opens in a new tab)</span></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php foreach ($nav['footer'] as $heading => $links): $id = 'fcol-' . $slug($heading); ?>
+            <nav class="footer-col" aria-labelledby="<?= e($id) ?>-h" data-fcol>
+                <h2 class="footer-heading" id="<?= e($id) ?>-h"><?= e($heading) ?></h2>
+                <ul class="footer-links" id="<?= e($id) ?>">
+                    <?php foreach ($links as [$label, $href]): ?>
+                    <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
+            <?php endforeach; ?>
         </div>
     </div>
 
     <div class="footer-bottom">
         <div class="container footer-bottom-inner">
             <p>© <?= date('Y') ?> Acadlytic, Inc. All rights reserved.</p>
-            <ul>
-                <li><a href="/trust/privacy/">Privacy</a></li>
-                <li><a href="/trust/terms/">Terms</a></li>
-                <li><a href="/core/security/">Security</a></li>
-                <li><a href="/trust/accessibility/">Accessibility</a></li>
-                <li><a href="/sitemap/">Sitemap</a></li>
-            </ul>
+            <nav aria-label="Legal">
+                <ul>
+                    <?php foreach ($nav['footer_legal'] as [$label, $href]): ?>
+                    <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
         </div>
     </div>
 </footer>

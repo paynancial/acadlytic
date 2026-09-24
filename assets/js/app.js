@@ -23,6 +23,7 @@
     initMegaMenu();
     initPopovers();
     initDrawer();
+    initFooterAccordions();
     initForms();
     initPasswordToggles();
   });
@@ -202,6 +203,44 @@
         }
       });
     });
+  }
+
+  /* ---------- Footer accordions (phones only) ---------- */
+  function initFooterAccordions() {
+    var cols = document.querySelectorAll('[data-fcol]');
+    if (!cols.length) return;
+    var phone = window.matchMedia('(max-width: 640px)');
+    var chevron = document.querySelector('.nav-trigger svg');
+
+    function apply() {
+      Array.prototype.forEach.call(cols, function (col) {
+        var heading = col.querySelector('.footer-heading');
+        var list = col.querySelector('.footer-links');
+        var btn = heading.querySelector('.fcol-toggle');
+        if (phone.matches && !btn) {
+          btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'fcol-toggle';
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-controls', list.id);
+          btn.textContent = heading.textContent.trim();
+          if (chevron) btn.appendChild(chevron.cloneNode(true));
+          btn.addEventListener('click', function () {
+            var open = btn.getAttribute('aria-expanded') !== 'true';
+            btn.setAttribute('aria-expanded', String(open));
+            list.hidden = !open;
+          });
+          heading.textContent = '';
+          heading.appendChild(btn);
+          list.hidden = true;
+        } else if (!phone.matches && btn) {
+          heading.textContent = btn.textContent.trim();
+          list.hidden = false;
+        }
+      });
+    }
+    apply();
+    phone.addEventListener && phone.addEventListener('change', apply);
   }
 
   /* ---------- Mobile drawer ---------- */

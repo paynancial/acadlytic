@@ -91,7 +91,6 @@ $activeTop = match ($page['section']) {
 
         <div class="nav-actions">
             <a class="icon-btn" href="/search/" aria-label="Search the site"><?= icon('search') ?></a>
-            <a class="nav-login" href="/login.php">Login</a>
             <a class="btn btn-primary nav-demo" href="/company/request-demo/"><span class="demo-long">Request a Demo</span><span class="demo-short">Demo</span> <?= icon('arrow', 'icon icon-sm') ?></a>
             <a class="icon-btn menu-btn" href="/sitemap/" aria-controls="mobile-drawer" aria-expanded="false" data-drawer-open><?= icon('menu') ?><span class="sr-only">Open menu</span></a>
         </div>

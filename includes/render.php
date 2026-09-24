@@ -168,6 +168,13 @@ function acad_logo_html(string $class = 'brand-logo', bool $eager = true): strin
         . ' width="207" height="56" alt="Acadlytic, Inc." ' . ($eager ? 'fetchpriority="high"' : 'loading="lazy"') . ' decoding="async"></picture>';
 }
 
+/** Brand logo for dark surfaces (white wordmark, full-colour mark). */
+function acad_logo_light_html(): string
+{
+    return '<picture><source type="image/webp" srcset="' . e(asset('/assets/img/logo-acadlytic-light-56.webp')) . ' 1x, ' . e(asset('/assets/img/logo-acadlytic-light.webp')) . ' 2x">'
+        . '<img class="brand-logo" src="' . e(asset('/assets/img/logo-acadlytic-light.png')) . '" width="207" height="56" alt="Acadlytic, Inc." loading="lazy" decoding="async"></picture>';
+}
+
 /** Shared <head> contents for the site and auth shells (meta, icons, fonts, CSS, JS). */
 function acad_head_common(array $page): string
 {
