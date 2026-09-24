@@ -471,7 +471,7 @@ return [
                 'What data does enrolment management rely on?' => 'Funnel data (enquiries, applications, offers, acceptances), enrolment by program, and retention and progression data. See [enrolment analytics](/platform/enrollment-analytics/).',
             ]),
         ],
-        'related' => ['/glossary/admissions-management/', '/platform/enrollment-analytics/', '/resources/admissions-crm-guide/', '/glossary/student-retention/'],
+        'related' => ['/glossary/admissions-management/', '/platform/enrollment-analytics/', '/resources/enrollment-funnel-guide/', '/resources/admissions-crm-guide/', '/glossary/student-retention/'],
     ],
 
     '/glossary/student-retention/' => [
@@ -495,7 +495,7 @@ return [
                 'What affects student retention?' => 'Academic difficulty, finances, personal circumstances, sense of belonging and the quality of early support are commonly cited factors. Tracking engagement and attendance helps staff notice problems earlier. See [student success](/glossary/student-success/).',
             ]),
         ],
-        'related' => ['/glossary/student-success/', '/ai/ai-for-student-success/', '/resources/student-engagement-strategies/', '/platform/completion-tracking/'],
+        'related' => ['/resources/student-retention-strategies/', '/glossary/student-success/', '/ai/ai-for-student-success/', '/resources/student-engagement-strategies/', '/platform/completion-tracking/'],
     ],
 
     '/glossary/role-based-access-control/' => [
@@ -545,6 +545,6 @@ return [
                 'What is needed before lead scoring is useful?' => 'Consistent enquiry capture, source tracking and a recorded history of interactions and outcomes. See [admissions CRM](/platform/admissions-crm/).',
             ]),
         ],
-        'related' => ['/platform/admissions-crm/', '/ai/ai-for-admissions/', '/resources/admissions-crm-guide/', '/glossary/admissions-crm/'],
+        'related' => ['/platform/admissions-crm/', '/ai/ai-for-admissions/', '/resources/enrollment-funnel-guide/', '/resources/admissions-crm-guide/', '/glossary/admissions-crm/'],
     ],
 ];

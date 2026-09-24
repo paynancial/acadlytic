@@ -94,7 +94,7 @@ return [
                 'Who sees early-warning flags?' => 'Only designated support roles, and flags are designed to show contributing factors rather than a permanent label.',
             ]),
         ],
-        'related' => ['/platform/student-engagement/', '/platform/completion-tracking/', '/solutions/for-advisors/', '/glossary/student-success/', '/ai/responsible-ai/'],
+        'related' => ['/platform/student-engagement/', '/platform/completion-tracking/', '/solutions/for-advisors/', '/glossary/student-success/', '/resources/student-retention-strategies/', '/ai/responsible-ai/'],
     ],
 
     '/ai/ai-for-advising/' => [

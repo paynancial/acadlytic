@@ -78,14 +78,14 @@ Every new page is **indexable**, gets a title, meta description, canonical, OG/X
 
 | URL | Primary keyword / search intent | Page type | Parent | Internal-link targets | Index | Content status |
 |---|---|---|---|---|---|---|
-| `/resources/crm-implementation-plan/` | “CRM implementation plan for colleges” | Guide | `/resources/guides/` | academic CRM guide, data migration guide, `/company/request-demo/` | index | Batch 2 |
-| `/resources/student-data-migration/` | “migrating student data to a new system” | Guide | `/resources/guides/` | `/integrations/data-export/`, `/platform/data-management/`, implementation plan | index | Batch 2 |
-| `/resources/education-software-rfp/` | “RFP template / requirements for student management or CRM software” | Guide (checklist) | `/resources/guides/` | academic management checklist, cloud checklist, TCO guide | index | Batch 2 |
-| `/resources/education-software-tco/` | “cost of student management software / total cost of ownership” | Guide | `/resources/guides/` | `/core/pricing/`, build vs buy, RFP guide | index | Batch 2 |
-| `/resources/student-retention-strategies/` | “student retention strategies higher education” | Guide | `/resources/guides/` | glossary retention, `/ai/ai-for-student-success/`, engagement strategies | index | Batch 2 |
-| `/resources/enrollment-funnel-guide/` | “student enrolment funnel stages and metrics” | Guide | `/resources/guides/` | admissions CRM guide, glossary lead scoring, `/platform/enrollment-analytics/` | index | Batch 2 |
-| `/resources/fee-collection-guide/` | “how to improve fee collection in colleges” | Guide | `/resources/guides/` | `/platform/finance-fees/`, `/integrations/payment-integration/`, `/solutions/for-finance-teams/` | index | Batch 2 |
-| `/resources/attendance-management-guide/` | “student attendance management best practices” | Guide | `/resources/guides/` | `/platform/academic-operations/`, retention strategies, `/solutions/for-faculty/` | index | Batch 2 |
+| `/resources/crm-implementation-plan/` | “CRM implementation plan for colleges” | Guide | `/resources/guides/` | academic CRM guide, data migration guide, `/company/request-demo/` | index | **Published** |
+| `/resources/student-data-migration/` | “migrating student data to a new system” | Guide | `/resources/guides/` | `/integrations/data-export/`, `/platform/data-management/`, implementation plan | index | **Published** |
+| `/resources/education-software-rfp/` | “RFP template / requirements for student management or CRM software” | Guide (checklist) | `/resources/guides/` | academic management checklist, cloud checklist, TCO guide | index | **Published** |
+| `/resources/education-software-tco/` | “cost of student management software / total cost of ownership” | Guide | `/resources/guides/` | `/core/pricing/`, build vs buy, RFP guide | index | **Published** |
+| `/resources/student-retention-strategies/` | “student retention strategies higher education” | Guide | `/resources/guides/` | glossary retention, `/ai/ai-for-student-success/`, engagement strategies | index | **Published** |
+| `/resources/enrollment-funnel-guide/` | “student enrolment funnel stages and metrics” | Guide | `/resources/guides/` | admissions CRM guide, glossary lead scoring, `/platform/enrollment-analytics/` | index | **Published** |
+| `/resources/fee-collection-guide/` | “how to improve fee collection in colleges” | Guide | `/resources/guides/` | `/platform/finance-fees/`, `/integrations/payment-integration/`, `/solutions/for-finance-teams/` | index | **Published** |
+| `/resources/attendance-management-guide/` | “student attendance management best practices” | Guide | `/resources/guides/` | `/platform/academic-operations/`, retention strategies, `/solutions/for-faculty/` | index | **Published** |
 
 ### Batch 3: India context and trust
 
@@ -115,3 +115,4 @@ Core pages → feature pages (`/platform/`, `/ai/`) → solutions and industries
 | Batch | Pages | Result |
 |---|---|---|
 | 1 | 5 comparisons + 5 definitions; glossary hub groups updated; contextual links added from 10 existing pages (LMS integration, ERP integration, SIS/ERP/admissions-management/student-success definitions, security, admissions CRM, EdTech CRM, academic CRM guide) | `bin/qa.php` and `--launch`: 0 errors, 0 warnings. Metadata audit: no orphans, unique titles and descriptions. axe: 0 violations on 12 pages. No horizontal overflow at 320–1440px. Each page has one H1, canonical, OG, Article or DefinedTerm + FAQPage + BreadcrumbList schema, and the contact CTA. Claims scan: no new flags. Sitemap: 158 indexable URLs. |
+| 2 | 8 guides added to `/resources/guides/`; contextual links added from 12 existing pages (academic and admissions CRM guides, finance and fees, academic operations, data management, pricing, academic management checklist, AI for student success, and the batch 1 definitions and build-vs-buy comparison) | `bin/qa.php` and `--launch`: 0 errors, 0 warnings. Metadata audit: no orphans. axe: 0 violations on 10 pages. No overflow at 320–1440px. Each guide has one H1, canonical, OG, Article + FAQPage + BreadcrumbList schema, takeaways and the contact CTA. No superlatives or statistics. Sitemap: 166 indexable URLs. |

@@ -345,7 +345,7 @@ return [
                 'Can we pay annually?' => 'Commercial terms, including billing frequency, are agreed in the proposal.',
             ]),
         ],
-        'related' => ['/company/request-demo/', '/platform/', '/resources/academic-management-checklist/', '/resources/faqs/'],
+        'related' => ['/company/request-demo/', '/platform/', '/resources/academic-management-checklist/', '/resources/education-software-tco/', '/resources/faqs/'],
     ],
 
     '/core/contact/' => [

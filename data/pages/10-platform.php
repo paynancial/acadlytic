@@ -269,7 +269,7 @@ return [
                 'Does Acadlytic replace our LMS?' => 'No. The LMS delivers course content. Acadlytic is designed to run academic administration and integrate with the LMS for enrolments and, where configured, grades.',
             ]),
         ],
-        'related' => ['/solutions/for-faculty/', '/glossary/academic-operations/', '/platform/task-management/', '/integrations/lms-integration/', '/integrations/calendar-integration/'],
+        'related' => ['/solutions/for-faculty/', '/glossary/academic-operations/', '/resources/attendance-management-guide/', '/platform/task-management/', '/integrations/lms-integration/', '/integrations/calendar-integration/'],
     ],
 
     '/platform/finance-fees/' => [
@@ -303,7 +303,7 @@ return [
                 'Does Acadlytic replace our accounting system?' => 'No. It is designed to manage student-facing billing and collections and to post summarised entries to your ERP or accounting system.',
             ]),
         ],
-        'related' => ['/solutions/for-finance-teams/', '/integrations/payment-integration/', '/integrations/erp-integration/', '/solutions/for-parents/'],
+        'related' => ['/solutions/for-finance-teams/', '/integrations/payment-integration/', '/resources/fee-collection-guide/', '/integrations/erp-integration/', '/solutions/for-parents/'],
     ],
 
     '/platform/communication-hub/' => [
@@ -493,7 +493,7 @@ return [
                 'Can we apply retention rules?' => 'Yes, that is the plan. Retention and deletion policies can be applied by record type, and changes are logged.',
             ]),
         ],
-        'related' => ['/resources/academic-data-strategy/', '/integrations/data-export/', '/trust/privacy/', '/solutions/for-it-teams/'],
+        'related' => ['/resources/academic-data-strategy/', '/resources/student-data-migration/', '/integrations/data-export/', '/trust/privacy/', '/solutions/for-it-teams/'],
     ],
 
     '/platform/workflow-automation/' => [

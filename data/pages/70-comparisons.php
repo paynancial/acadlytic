@@ -476,6 +476,6 @@ return [
                 'Can we buy a product and still customise it?' => 'Many products support configuration and integrations through APIs, which allows extensions without changing the core product.',
             ]),
         ],
-        'related' => ['/resources/academic-management-checklist/', '/comparisons/point-solutions-vs-platform/', '/comparisons/cloud-vs-on-premise-education/', '/resources/digital-transformation-education/'],
+        'related' => ['/resources/academic-management-checklist/', '/resources/education-software-tco/', '/comparisons/point-solutions-vs-platform/', '/comparisons/cloud-vs-on-premise-education/', '/resources/digital-transformation-education/'],
     ],
 ];
