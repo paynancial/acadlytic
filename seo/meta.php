@@ -4,7 +4,8 @@
  * Open Graph, X (Twitter) cards and JSON-LD structured data.
  *
  * Structured data is limited to facts supplied by Acadlytic (name, URL,
- * logo, contact details, official profiles). No ratings, customer counts,
+ * logo, email, official profiles). The phone number is deliberately omitted
+ * so it never appears in page source (see config/contact.php). No ratings, customer counts,
  * prices or certifications are emitted. SoftwareApplication is omitted
  * because Google requires offers/ratings that cannot be stated truthfully.
  * FAQPage mirrors visible FAQs; Article (guides, comparisons) and DefinedTerm
@@ -80,13 +81,11 @@ function acad_org_schema(): array
         'slogan'      => $c['tagline'],
         'description' => $c['descriptor'],
         'email'       => $c['email'],
-        'telephone'   => $c['phone'],
         'contactPoint' => [
             [
                 '@type'       => 'ContactPoint',
                 'contactType' => 'sales',
                 'email'       => $c['email'],
-                'telephone'   => $c['phone'],
                 'availableLanguage' => ['English'],
             ],
             [

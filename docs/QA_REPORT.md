@@ -8,8 +8,9 @@ gate on PHP 8.2, 8.3 and 8.4 for every push.
 
 ## Automated gate: `php bin/qa.php`
 
-**Result: 0 errors, 0 warnings.** 149 registry pages (142 indexable + search,
-404, 3 auth pages, 2 noindex placeholders) and 61 redirects.
+**Result: 0 errors, 0 warnings.** 155 registry pages (140 indexable in the
+sitemap; the rest are search, 404, 3 auth pages, noindex placeholders, legal
+drafts, and Leadership/Team/News until real entries exist) and 69 redirects.
 
 Checked on every page: exactly one `<h1>`; `<title>` present and unique;
 meta description present, unique, 70–170 chars; canonical on indexable pages;
@@ -26,13 +27,19 @@ noindex (`--launch` fails while any remain).
 AEO: every FAQ has FAQPage schema; every article page has an FAQ; guides and
 comparisons have key takeaways, Article schema and a visible last-updated line;
 `llms.txt` lists every indexable page.
+Enquiry widget: present exactly once on every public page (not on auth pages);
+the phone number (any formatting) does not appear in any page, `llms.txt`,
+`sitemap.xml` or `robots.txt`.
 
 ## HTTP checks
 
 | Check | Result |
 |---|---|
-| All 145 page URLs | 200 |
-| All 61 redirects | 301 to the correct target |
+| All 155 page URLs | 200 |
+| All 69 redirects | 301 to the correct target |
+| `/go/call/`, `/go/whatsapp/` | 302 (`no-store`, `noindex`) |
+| `/enquiry/token/` | 200 JSON, `no-store`; cross-site requests refused |
+| `/components/*`, `/config/contact.php` | blocked (404 page) |
 | `/favicon.ico` | 200 |
 | `/llms.txt` | 200 (`text/plain`) |
 | `/`, `/login.php`, `/login/`, `/forgot-password.php`, `/request-access.php` | 200 |
@@ -65,15 +72,16 @@ comparisons have key takeaways, Article schema and a visible last-updated line;
 
 - Every page at **360px and 1440px**, and a sample at 390, 768 and 1024px: **no horizontal overflow**, main CSS applied, **no console errors**, no failed requests.
 - Mega menu: hover opens and closes; ArrowDown opens and focuses the first link; Up/Down move inside; Left/Right move between menus; Escape closes and restores focus; the blurred backdrop sits below the header.
-- **JavaScript disabled:** mega panels still open on hover/focus; the mobile menu button falls back to `/sitemap/`; the drawer accordions use native `<details>`.
+- **JavaScript disabled:** mega panels still open on hover/focus; the mobile menu button falls back to `/sitemap/`; the Enquire now button is a plain link to `/core/contact/`.
 - Login popover: opens on click, closes on Escape and outside click.
-- Mobile drawer: opens, accordion expands, focus is trapped, Escape closes.
+- Mobile drawer: built from the mega-menu markup on first open (DOM per page reduced from ~1,880 to ~1,630 elements); opens, accordion expands, focus is trapped, Escape closes.
+- Enquiry widget at 1440, 1024, 768, 390 and 360px: button and panel inside the viewport and not overlapping; panel opens by click and keyboard; Escape and outside click close it and return focus; modal empty submit shows 3 inline errors; valid submit shows “Enquiry received successfully.”; analytics events fire; no overflow; no console errors.
 - Password toggle switches field type and label.
 
 ## Accessibility (axe-core, WCAG 2.0/2.1/2.2 A & AA + best practices)
 
 14 representative pages (home, hubs, article, comparison, glossary, forms,
-auth pages, search, sitemap, privacy) at 1440px and 390px: **no violations**
+auth pages, search, sitemap, privacy), with the enquiry widget panel, at 1440px and 390px: **no violations**
 after fixes (KPI caption contrast, unique landmark names, empty table
 headers). Manual review is still recommended with a screen reader (NVDA/VoiceOver).
 

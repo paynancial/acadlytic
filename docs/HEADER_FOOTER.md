@@ -40,7 +40,8 @@ preview, AI prompt, integration planning, resource or contact).
 ### Mobile
 
 Header shows logo, **Demo** and menu. The menu opens a full-screen drawer with
-search, accordion categories (native `<details>`, which work without JS), Request a
+search, accordion categories (native `<details>`, built by `app.js` from the
+mega-menu markup on first open so each page ships the links once), Request a
 Demo, Login, phone and email. The drawer traps focus and closes with Escape.
 Without JS the menu button links to `/sitemap/`.
 
@@ -54,8 +55,23 @@ Without JS the menu button links to `/sitemap/`.
 1. **Trust bar**: SECURE • SCALABLE • AI-POWERED • CLOUD-READY • ACCESSIBLE, with cards for Data Protection, Enterprise Security, Role-Based Access, Cloud Infrastructure and Responsible Support.
 2. **Five columns**: brand (logo, tagline, AI | CRM | CLOUD | ACADEMIC MANAGEMENT, social icons), Platform, Solutions, Resources, Company.
 3. **Trust & Governance**: Security Center, Privacy & Data Protection, Data Protection Officer, Grievance Redressal Officer, Accessibility, Terms, Sitemap. The DPO and Grievance links open their officer pages, and the note underneath names **Mr. A.K Sinha** (`dpo@acadlytic.com`) and **Mrs. Anjali Sharma** (`gro@acadlytic.com`). Both come from `config/site.php` → `governance`.
-4. **Contact**: `info@acadlytic.com` and **Phone** +91 8010707171 (labelled Phone, not toll-free).
+4. **Contact**: `info@acadlytic.com` and **Phone** shown masked (`CONTACT_PHONE_DISPLAY`, labelled Phone, not toll-free); the link goes to `/go/call/`. The full number exists only in `config/contact.php`.
 5. Legal bar: copyright plus Privacy, Terms, Security, Accessibility, Sitemap.
 
 Social profiles (LinkedIn, X, YouTube, Instagram, Facebook) come from
 `config/site.php` and also feed the Organization `sameAs` structured data.
+
+## Floating enquiry widget (`components/enquiry-widget.php`)
+
+Included once, from `includes/footer.php`, on every public page (not on the
+auth pages). Desktop: “Enquire now” button fixed 24px from the right at 60% of
+the viewport height; the panel opens to its left. ≤900px: bottom-right.
+≤640px: 54px circular button in the safe area. Hidden while the mobile menu is
+open and when printing.
+
+The panel (“Let’s Connect / How can we help you?”) offers exactly three actions:
+**Fill Enquiry Form** (native `<dialog>` modal from `components/enquiry-modal.php`,
+submitted to `/enquiry/` with CSRF token, honeypot, timing check, rate limit and
+server-side validation), **Email Us** (`mailto:` from `CONTACT_EMAIL`) and
+**WhatsApp Us** (`/go/whatsapp/`, pre-filled message). A small masked call
+line links to `/go/call/`. All contact values come from `config/contact.php`.

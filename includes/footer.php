@@ -89,5 +89,6 @@ $trustCards = [
         </div>
     </div>
 </footer>
+<?php require ACAD_ROOT . '/components/enquiry-widget.php'; ?>
 </body>
 </html>

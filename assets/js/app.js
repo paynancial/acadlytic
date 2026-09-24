@@ -190,8 +190,35 @@
         function (el) { return el.offsetParent !== null || el === document.activeElement; }
       );
     }
+    function buildNav() {
+      var target = drawer.querySelector('[data-drawer-nav]');
+      if (!target || target.childElementCount) return;
+      Array.prototype.forEach.call(document.querySelectorAll('.primary-nav [data-mega]'), function (item) {
+        var details = document.createElement('details');
+        details.className = 'drawer-group';
+        var summary = document.createElement('summary');
+        summary.textContent = item.querySelector('[data-mega-trigger]').textContent.trim();
+        var chev = item.querySelector('[data-mega-trigger] svg');
+        if (chev) summary.appendChild(chev.cloneNode(true));
+        details.appendChild(summary);
+        var ul = document.createElement('ul');
+        Array.prototype.forEach.call(item.querySelectorAll('.mega-cta, .mega-link, .mega-more a'), function (a, i) {
+          var li = document.createElement('li');
+          var link = document.createElement('a');
+          link.href = a.getAttribute('href');
+          var strong = a.querySelector('strong');
+          link.textContent = (strong ? strong.textContent : a.textContent).trim();
+          if (i === 0) link.className = 'drawer-hub';
+          li.appendChild(link);
+          ul.appendChild(li);
+        });
+        details.appendChild(ul);
+        target.appendChild(details);
+      });
+    }
     function open(event) {
       if (event) event.preventDefault();
+      buildNav();
       lastFocus = document.activeElement;
       drawer.hidden = false;
       document.body.classList.add('drawer-open');
@@ -229,39 +256,42 @@
     var success = document.querySelector('[data-success-focus]');
     if (success) success.focus();
 
-    Array.prototype.forEach.call(document.querySelectorAll('form[data-enhance]'), function (form) {
-      form.addEventListener('submit', function (event) {
-        var firstInvalid = null;
-        Array.prototype.forEach.call(form.querySelectorAll('[required]'), function (field) {
-          var msg = '';
-          if (field.type === 'checkbox' ? !field.checked : !field.value.trim()) {
-            msg = field.type === 'checkbox' ? 'Please confirm to continue.' : 'This field is required.';
-          } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
-            msg = 'Please enter a valid email address.';
-          }
-          showFieldError(field, msg);
-          if (msg && !firstInvalid) firstInvalid = field;
-        });
-        if (firstInvalid) {
-          event.preventDefault();
-          firstInvalid.focus();
-          return;
+    Array.prototype.forEach.call(document.querySelectorAll('form[data-enhance]'), enhanceForm);
+    window.AcadlyticForms = { enhance: enhanceForm };
+  }
+
+  function enhanceForm(form) {
+    form.addEventListener('submit', function (event) {
+      var firstInvalid = null;
+      Array.prototype.forEach.call(form.querySelectorAll('[required]'), function (field) {
+        var msg = '';
+        if (field.type === 'checkbox' ? !field.checked : !field.value.trim()) {
+          msg = field.getAttribute('data-required-msg') || (field.type === 'checkbox' ? 'Please confirm to continue.' : 'This field is required.');
+        } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+          msg = field.getAttribute('data-invalid-msg') || 'Please enter a valid email address.';
         }
-        var btn = form.querySelector('button[type="submit"]');
-        if (btn) {
-          btn.classList.add('is-loading');
-          btn.setAttribute('aria-disabled', 'true');
-          btn.setAttribute('aria-busy', 'true');
-          var label = btn.getAttribute('data-loading-text');
-          if (label) btn.setAttribute('aria-label', label);
-        }
+        showFieldError(field, msg);
+        if (msg && !firstInvalid) firstInvalid = field;
       });
-      form.addEventListener('input', function (event) {
-        var field = event.target;
-        if (field.getAttribute('aria-invalid') === 'true' && (field.type === 'checkbox' ? field.checked : field.value.trim())) {
-          showFieldError(field, '');
-        }
-      });
+      if (firstInvalid) {
+        event.preventDefault();
+        firstInvalid.focus();
+        return;
+      }
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.classList.add('is-loading');
+        btn.setAttribute('aria-disabled', 'true');
+        btn.setAttribute('aria-busy', 'true');
+        var label = btn.getAttribute('data-loading-text');
+        if (label) btn.setAttribute('aria-label', label);
+      }
+    });
+    form.addEventListener('input', function (event) {
+      var field = event.target;
+      if (field.getAttribute('aria-invalid') === 'true' && (field.type === 'checkbox' ? field.checked : field.value.trim())) {
+        showFieldError(field, '');
+      }
     });
   }
 

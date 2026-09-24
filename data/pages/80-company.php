@@ -2,6 +2,9 @@
 /** Company pages, demo request and trust & governance pages. */
 declare(strict_types=1);
 
+$people = require dirname(__DIR__) . '/people.php';
+$news = require dirname(__DIR__) . '/news.php';
+
 return [
     '/company/' => [
         'title' => 'Company',
@@ -10,10 +13,87 @@ return [
         'nav_label' => 'Company',
         'lead'  => 'We are building AI-powered CRM and cloud software for academic management. Where Education Meets Intelligence.',
         'groups' => [
-            ['title' => 'About us', 'paths' => ['/core/about/', '/company/careers/', '/company/press/']],
+            ['title' => 'About us', 'paths' => ['/core/about/', '/company/vision-mission/', '/company/leadership/', '/company/team/', '/company/news/', '/resources/blog/']],
+            ['title' => 'Join & follow', 'paths' => ['/company/careers/', '/company/press/']],
             ['title' => 'Work with us', 'paths' => ['/company/partners/', '/company/request-demo/', '/core/contact/', '/company/support/']],
             ['title' => 'Trust', 'paths' => ['/trust/', '/core/security/', '/trust/privacy/']],
         ],
+    ],
+
+    '/company/vision-mission/' => [
+        'title' => 'Vision and Mission',
+        'desc'  => 'Acadlytic’s vision and mission: why we are building an AI-powered EdTech CRM and cloud platform for academic management, and the values that guide the work.',
+        'h1'    => 'Our vision and mission',
+        'nav_label' => 'Vision & Mission',
+        'lead'  => 'Where Education Meets Intelligence. This is the future Acadlytic, Inc. is working toward, and the principles we hold ourselves to while building it.',
+        'icon'  => 'compass',
+        'blocks' => [
+            split('Vision', [
+                'We see a future in which every educational institution, large or small, can run on connected information and act on it in time: answering every enquiry promptly, noticing every student who needs support, and making decisions with evidence rather than guesswork.',
+                'In that future, technology takes on the repetitive administrative load, so that admissions teams, faculty, advisors and leaders spend their time on people rather than paperwork.',
+            ], [
+                'Every institution able to act on connected information',
+                'Every learner noticed and supported in time',
+                'Staff time spent on people, not paperwork',
+            ], 'The future we see'),
+            sec('Mission',
+                'Acadlytic’s mission is to build an AI-powered EdTech CRM and cloud platform that brings admissions, student records, academic operations, finance and communication together on one data model, with AI that assists people and leaves consequential decisions to them.',
+                'We are building it for universities, colleges, multi-campus groups and lifelong-learning providers, starting from the workflows their teams actually run and the constraints they actually face.'),
+            cards('The values that guide us', [
+                'Education first' => 'Every feature has to make life better for learners, educators or the people who support them. If it does not, we do not build it.',
+                'Honest by default' => 'We describe what exists as available and what is planned as planned. We publish proof only when institutions have verified it.',
+                'People in control of AI' => 'AI should explain itself, be easy to question and never make high-stakes decisions about a student on its own.',
+                'Privacy by design' => 'Student and institutional data is protected, used only for its purpose and treated as belonging to the institution.',
+                'Accessible to all' => 'Education technology must work for people with different abilities, devices and connections.',
+                'Built with institutions' => 'We design alongside the teams who will use Acadlytic, and change course when they show us something better.',
+            ]),
+            faq([
+                'What does “Where Education Meets Intelligence” mean?' => 'It is our tagline: education institutions combining their own knowledge with connected data and practical AI to serve learners better.',
+                'Is the Acadlytic platform available today?' => 'The platform is in development. Product pages describe planned capabilities; [request a demo](/company/request-demo/) to see the design and roadmap.',
+            ]),
+        ],
+        'related' => ['/core/about/', '/company/leadership/', '/ai/responsible-ai/', '/company/careers/'],
+    ],
+
+    '/company/leadership/' => [
+        'title'    => 'Leadership',
+        'desc'     => 'The leadership team of Acadlytic, Inc., building an AI-powered EdTech CRM and cloud platform for academic management.',
+        'h1'       => 'Leadership',
+        'nav_label' => 'Leadership',
+        'lead'     => 'The people leading Acadlytic, Inc. and accountable for its direction, product and governance.',
+        'template' => 'people',
+        'people_group' => 'leadership',
+        'icon'     => 'users',
+        'noindex'  => $people['leadership'] === [],
+        'empty_text' => 'Leadership profiles are being prepared and will be published here shortly. For governance matters, contact our [Data Protection Officer](/trust/data-protection-officer/) or [Grievance Redressal Officer](/trust/grievance-redressal-officer/).',
+        'related'  => ['/company/team/', '/company/vision-mission/', '/core/about/'],
+    ],
+
+    '/company/team/' => [
+        'title'    => 'Our Team',
+        'desc'     => 'Meet the team at Acadlytic, Inc.: the people designing and building AI-powered CRM and cloud software for academic management.',
+        'h1'       => 'Our team',
+        'nav_label' => 'Team',
+        'lead'     => 'The people designing and building Acadlytic.',
+        'template' => 'people',
+        'people_group' => 'team',
+        'icon'     => 'users',
+        'noindex'  => $people['team'] === [],
+        'empty_text' => 'Team profiles are being prepared. Interested in joining us? See [Careers](/company/careers/).',
+        'related'  => ['/company/leadership/', '/company/careers/', '/core/about/'],
+    ],
+
+    '/company/news/' => [
+        'title'    => 'News & Announcements',
+        'desc'     => 'News and announcements from Acadlytic, Inc.: company updates, product milestones and events.',
+        'h1'       => 'News and announcements',
+        'nav_label' => 'News',
+        'lead'     => 'Company updates, product milestones and events from Acadlytic, Inc. For articles and guides, visit our [blog](/resources/blog/).',
+        'template' => 'news',
+        'icon'     => 'bell',
+        'noindex'  => $news === [],
+        'empty_text' => 'Announcements will be published here as they happen. Follow Acadlytic on LinkedIn, X, YouTube, Instagram or Facebook (links in the footer) for updates.',
+        'related'  => ['/resources/blog/', '/company/press/', '/core/about/'],
     ],
 
     '/company/request-demo/' => [
@@ -131,7 +211,7 @@ return [
                 'Do not attribute customer counts, rankings or certifications to Acadlytic unless confirmed by us in writing',
             ]),
             sec('Media contact',
-                'For interviews, logo files and fact-checking, email info@acadlytic.com with the subject “Press” or call +91 8010707171.'),
+                'For interviews, logo files and fact-checking, email info@acadlytic.com with the subject “Press”, or use the call and WhatsApp options in the Enquire Now panel.'),
             faq([
                 'Can I use the Acadlytic logo in an article?' => 'Yes, for editorial coverage of Acadlytic, using the official logo files we provide on request, unaltered.',
                 'Can you confirm customer names or figures?' => 'We only confirm customer names, figures or outcomes that have been verified and approved for publication by the institutions involved.',
@@ -285,7 +365,7 @@ return [
         'hide_cta' => true,
         'blocks' => [
             sec('Who we are',
-                'Acadlytic, Inc. (“Acadlytic”, “we”) operates acadlytic.com and provides the Acadlytic platform to educational institutions. You can contact us at info@acadlytic.com or +91 8010707171.'),
+                'Acadlytic, Inc. (“Acadlytic”, “we”) operates acadlytic.com and is building the Acadlytic platform for educational institutions. You can contact us at info@acadlytic.com.'),
             table('What this website collects', ['Data', 'When', 'Why'], [
                 ['Name, email, phone, institution, role, message', 'When you submit a demo, contact or access request', 'To respond to your request'],
                 ['Account email', 'When you request a password reset', 'To verify and help with account access'],
@@ -390,7 +470,7 @@ return [
             sec('Known limitations',
                 'Some decorative dashboard previews on this website are illustrations and are hidden from assistive technology; their meaning is described in the surrounding text. If you find content that is difficult to use, please tell us.'),
             sec('Feedback and assistance',
-                'Email info@acadlytic.com with the subject “Accessibility”, call +91 8010707171 or use the [contact form](/core/contact/?topic=accessibility). Tell us the page, what you were trying to do and any assistive technology you use. We will respond and, where we cannot fix an issue quickly, provide the information another way.'),
+                'Email info@acadlytic.com with the subject “Accessibility”, use the call option in the Enquire Now panel, or the [contact form](/core/contact/?topic=accessibility). Tell us the page, what you were trying to do and any assistive technology you use. We will respond and, where we cannot fix an issue quickly, provide the information another way.'),
             faq([
                 'Which accessibility standard does Acadlytic follow?' => 'We aim for WCAG 2.2 level AA.',
                 'Can I get information in another format?' => 'Yes. Contact us with your needs and we will provide the information in an accessible alternative.',

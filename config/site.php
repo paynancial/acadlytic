@@ -8,6 +8,8 @@
  */
 declare(strict_types=1);
 
+$contact = require __DIR__ . '/contact.php';
+
 return [
     'name'        => 'Acadlytic, Inc.',
     'short_name'  => 'Acadlytic',
@@ -20,11 +22,13 @@ return [
     'locale'      => 'en_IN',
     'language'    => 'en-IN',
 
-    'email'         => 'info@acadlytic.com',
+    'contact'       => $contact,
+    'email'         => $contact['CONTACT_EMAIL'],
     // Confirmed by Acadlytic: all support and account help goes to the central mailbox.
     'support_email' => 'info@acadlytic.com',
-    'phone'         => '+91 8010707171',
-    'phone_href'    => 'tel:+918010707171',
+    // Masked for display; calls go through a number-free redirect endpoint.
+    'phone'         => $contact['CONTACT_PHONE_DISPLAY'],
+    'phone_href'    => $contact['CALL_URL'],
 
     // Governance officers, as designated and confirmed by Acadlytic, Inc.
     'governance' => [

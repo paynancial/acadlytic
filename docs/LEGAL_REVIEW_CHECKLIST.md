@@ -60,7 +60,7 @@ Items marked ☐ are **not stated anywhere on the site** and must not be invente
 - [ ] Record-keeping for grievances ☐
 
 ### Contact information
-- [ ] info@acadlytic.com (general, support, enquiries), dpo@acadlytic.com, gro@acadlytic.com and +91 8010707171: confirm all are monitored.
+- [ ] info@acadlytic.com (general, support, enquiries), dpo@acadlytic.com, gro@acadlytic.com and the phone/WhatsApp number held in `config/contact.php` (shown masked on the site): confirm all are monitored.
 - [ ] Postal address for legal notices ☐
 
 ### Other

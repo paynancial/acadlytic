@@ -14,6 +14,7 @@ function acad_form_options(): array
     return [
         'roles' => ['Leadership / Management', 'Admissions', 'Academic Administration', 'Faculty', 'IT / Technology', 'Finance', 'Student Services', 'Partner / Vendor', 'Other'],
         'org_types' => ['University', 'College', 'Higher education group / Multi-campus', 'Professional / Continuing education', 'Online education provider', 'School', 'EdTech / Partner organisation', 'Other'],
+        'enquiry_interests' => ['Academic Management', 'Admissions & CRM', 'Student Management', 'AI & Analytics', 'Cloud Platform', 'Integrations', 'Partnership', 'Other'],
         'interests' => ['Full platform', 'Admissions & CRM', 'Student management', 'Academic operations', 'Finance & fees', 'Communication', 'Analytics & AI', 'Integrations'],
         'topics' => [
             'sales'         => 'Product & sales',
@@ -71,6 +72,16 @@ function acad_form_spec(string $form): array
         'reset' => [
             'email' => ['Work email', 'email', true, 'email', ['max' => 190]],
         ],
+        'enquiry' => [
+            'name'        => ['Full name', 'text', true, 'name', ['max' => 120]],
+            'email'       => ['Work email', 'email', true, 'email', ['max' => 190, 'required_msg' => 'Please enter your work email address.', 'invalid_msg' => 'Please enter a valid work email address.']],
+            'institution' => ['Institution / Organization', 'text', false, 'organization', ['max' => 190]],
+            'designation' => ['Designation', 'text', false, 'organization-title', ['max' => 120]],
+            'phone'       => ['Phone number', 'tel', false, 'tel', ['max' => 30]],
+            'interest'    => ['What are you interested in?', 'select', false, 'off', ['options' => $o['enquiry_interests']]],
+            'message'     => ['Message', 'textarea', false, 'off', ['max' => 3000]],
+            'consent'     => ['I agree to be contacted by Acadlytic regarding my enquiry.', 'checkbox', true, 'off', []],
+        ],
         default => throw new InvalidArgumentException("Unknown form {$form}"),
     };
 }
@@ -97,30 +108,31 @@ function acad_form_ts_check(string $value): string
 }
 
 /**
- * Validate and process a submission. On success this redirects (PRG);
- * on failure it returns render context with errors, old input and status.
+ * Validate and process a submission without producing output.
+ * Returns ['result' => 'ok'|'bot'|'error', 'status' => int, 'errors' => [],
+ * 'form_error' => ?string, 'old' => []]. Shared by page forms (PRG) and the
+ * enquiry widget (JSON).
  */
-function acad_handle_form(string $form, string $returnPath): array
+function acad_process_form(string $form): array
 {
     $spec = acad_form_spec($form);
     $old = [];
     $errors = [];
 
     if (!acad_csrf_valid($_POST['_token'] ?? null)) {
-        return ['status' => 419, 'form_error' => 'Your session expired. Please submit the form again.', 'old' => acad_form_old($spec)];
+        return ['result' => 'error', 'status' => 419, 'form_error' => 'Your session expired. Please submit the form again.', 'old' => acad_form_old($spec)];
     }
     // Honeypot and instant submissions: real people never trigger these.
     $timing = acad_form_ts_check((string) ($_POST['_ts'] ?? ''));
     if (trim((string) ($_POST['website'] ?? '')) !== '' || $timing === 'fast') {
-        acad_flash_set('sent_' . $form, true); // silently accept to avoid teaching bots
-        acad_redirect($returnPath . '?sent=1#form');
+        return ['result' => 'bot', 'status' => 200]; // silently accept to avoid teaching bots
     }
     if ($timing === 'stale') {
-        return ['status' => 422, 'form_error' => 'This form was open for a long time. Please review and submit it again.', 'old' => acad_form_old($spec)];
+        return ['result' => 'error', 'status' => 422, 'form_error' => 'This form was open for a long time. Please review and submit it again.', 'old' => acad_form_old($spec)];
     }
     $limit = acad_config('forms.rate_limit');
     if (!acad_rate_limit('form:' . $form, acad_client_fingerprint(), (int) $limit['max'], (int) $limit['window'])) {
-        return ['status' => 429, 'form_error' => 'Too many submissions from this connection. Please try again later or email ' . acad_config('email') . '.', 'old' => acad_form_old($spec)];
+        return ['result' => 'error', 'status' => 429, 'form_error' => 'Too many submissions from this connection. Please try again later or email ' . acad_config('email') . '.', 'old' => acad_form_old($spec)];
     }
 
     foreach ($spec as $name => [$label, $type, $required, , $extra]) {
@@ -135,7 +147,9 @@ function acad_handle_form(string $form, string $returnPath): array
         $old[$name] = $value;
 
         if ($required && $value === '') {
-            $errors[$name] = $type === 'checkbox' ? 'Please confirm to continue.' : "Please enter your " . strtolower(trim((string) strtok($label, '/('))) . '.';
+            $errors[$name] = $type === 'checkbox'
+                ? 'Please confirm to continue.'
+                : ($extra['required_msg'] ?? 'Please enter your ' . strtolower(trim((string) strtok($label, '/('))) . '.');
             continue;
         }
         if ($value === '') {
@@ -144,7 +158,7 @@ function acad_handle_form(string $form, string $returnPath): array
         if (isset($extra['max']) && mb_strlen($value) > $extra['max']) {
             $errors[$name] = "Please keep this under {$extra['max']} characters.";
         } elseif ($type === 'email' && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
-            $errors[$name] = 'Please enter a valid email address, like name@institution.edu.';
+            $errors[$name] = $extra['invalid_msg'] ?? 'Please enter a valid email address, like name@institution.edu.';
         } elseif ($type === 'tel' && !preg_match('/^\+?[0-9 ()\-]{7,20}$/', $value)) {
             $errors[$name] = 'Please enter a valid phone number, including country code if outside India.';
         } elseif ($type === 'select') {
@@ -157,14 +171,27 @@ function acad_handle_form(string $form, string $returnPath): array
     }
 
     if ($errors) {
-        return ['status' => 422, 'errors' => $errors, 'old' => $old];
+        return ['result' => 'error', 'status' => 422, 'errors' => $errors, 'old' => $old];
     }
 
     $stored = acad_store_enquiry($form, $old);
     $mailed = acad_notify_enquiry($form, $old);
     if (!$stored && !$mailed) {
         error_log('Acadlytic enquiry LOST: storage and mail both failed for form ' . $form);
-        return ['status' => 503, 'form_error' => 'We could not send your request right now. Please try again shortly, or email ' . acad_config('email') . ' or call ' . acad_config('phone') . '.', 'old' => $old];
+        return ['result' => 'error', 'status' => 503, 'form_error' => 'We couldn’t submit your enquiry right now. Please try again, or contact us by email or WhatsApp.', 'old' => $old];
+    }
+    return ['result' => 'ok', 'status' => 200];
+}
+
+/**
+ * Page forms: process, then Post/Redirect/Get with a one-time flash on
+ * success. On failure returns render context (errors, old input, status).
+ */
+function acad_handle_form(string $form, string $returnPath): array
+{
+    $r = acad_process_form($form);
+    if ($r['result'] === 'error') {
+        return $r;
     }
     acad_flash_set('sent_' . $form, true);
     acad_redirect($returnPath . '?sent=1#form');
@@ -185,7 +212,8 @@ function acad_store_enquiry(string $form, array $data): bool
     $record = [
         'type'       => $form,
         'data'       => $data,
-        'page'       => acad_request_path(),
+        // Widget submissions post to /enquiry/; record the page they came from.
+        'page'       => (is_string($_POST['_page'] ?? null) && preg_match('#^/[a-z0-9/._-]{0,200}$#', $_POST['_page'])) ? $_POST['_page'] : acad_request_path(),
         'ip_hash'    => acad_client_fingerprint(),
         'user_agent' => mb_substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 255),
         'created_at' => date('c'),
@@ -224,7 +252,7 @@ function acad_notify_enquiry(string $form, array $data): bool
     if (!acad_config('forms.send_mail') || !function_exists('mail')) {
         return false;
     }
-    $labels = ['demo' => 'Demo request', 'contact' => 'Contact enquiry', 'access' => 'Access request', 'reset' => 'Password help request'];
+    $labels = ['demo' => 'Demo request', 'contact' => 'Contact enquiry', 'access' => 'Access request', 'reset' => 'Password help request', 'enquiry' => 'Website enquiry (Enquire Now)'];
     $clean = static fn(string $v): string => str_replace(["\r", "\n"], ' ', $v);
     $subject = '[Acadlytic website] ' . ($labels[$form] ?? 'Enquiry') . (isset($data['institution']) && $data['institution'] !== '' ? ' — ' . $clean($data['institution']) : '');
     $body = ($labels[$form] ?? 'Enquiry') . " received " . date('Y-m-d H:i T') . "\n\n";
@@ -272,13 +300,15 @@ function acad_flash_take(string $key): mixed
  * Render a form from its spec. Errors are linked to fields with
  * aria-describedby; an error summary receives focus via app.js.
  */
-function acad_render_form(string $form, array $ctx, string $submitLabel, array $prefill = []): string
+function acad_render_form(string $form, array $ctx, string $submitLabel, array $prefill = [], bool $sessionTokens = true): string
 {
     $spec = acad_form_spec($form);
     $old = ($ctx['old'] ?? []) + $prefill;
     $errors = $ctx['errors'] ?? [];
     $html = '<form class="form" method="post" action="" novalidate data-enhance="form">';
-    $html .= acad_csrf_field() . acad_form_ts_field();
+    // Pages that are publicly cached must not embed a session token; the
+    // enquiry widget fetches one from /enquiry/token/ when it opens.
+    $html .= $sessionTokens ? acad_csrf_field() . acad_form_ts_field() : '<input type="hidden" name="_token" value=""><input type="hidden" name="_ts" value="">';
     $html .= '<div class="hp" aria-hidden="true"><label for="' . $form . '-website">Website</label><input type="text" id="' . $form . '-website" name="website" tabindex="-1" autocomplete="off"></div>';
 
     if (!empty($ctx['form_error'])) {
@@ -306,12 +336,21 @@ function acad_render_form(string $form, array $ctx, string $submitLabel, array $
         }
         $aria = ($err ? ' aria-invalid="true"' : '') . ($describedBy ? ' aria-describedby="' . implode(' ', $describedBy) . '"' : '');
         $req = $required ? ' required aria-required="true"' : '';
+        // Same human-friendly wording for client-side and server-side checks.
+        if ($required) {
+            $msg = $type === 'checkbox' ? 'Please confirm to continue.' : ($extra['required_msg'] ?? 'Please enter your ' . strtolower(trim((string) strtok($label, '/('))) . '.');
+            $req .= ' data-required-msg="' . e($msg) . '"';
+        }
+        if ($type === 'email') {
+            $req .= ' data-invalid-msg="' . e($extra['invalid_msg'] ?? 'Please enter a valid email address, like name@institution.edu.') . '"';
+        }
         $wide = in_array($type, ['textarea', 'checkbox'], true) || $form === 'reset' ? ' field-wide' : '';
         $html .= '<div class="field' . $wide . ($err ? ' has-error' : '') . '">';
 
         if ($type === 'checkbox') {
+            $labelHtml = str_replace('Privacy Policy', '<a href="/trust/privacy/">Privacy Policy</a>', e($label));
             $html .= '<label class="check-label" for="' . $id . '"><input type="checkbox" id="' . $id . '" name="' . $name . '" value="yes"' . ($value !== '' ? ' checked' : '') . $req . $aria . '><span>'
-                . e($label) . ' <a href="/trust/privacy/">Privacy Policy</a></span></label>';
+                . $labelHtml . '</span></label>';
         } else {
             $html .= '<label for="' . $id . '">' . e($label) . ($required ? ' <span class="req" aria-hidden="true">*</span>' : ' <span class="optional">(optional)</span>') . '</label>';
             if ($type === 'select') {

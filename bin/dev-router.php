@@ -12,7 +12,7 @@ declare(strict_types=1);
 $root = dirname(__DIR__);
 $path = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 
-if (preg_match('#^/(includes|config|data|seo|storage|bin|database|docs)(/|$)#', $path)
+if (preg_match('#^/(includes|components|config|data|seo|storage|bin|database|docs)(/|$)#', $path)
     || preg_match('#(^|/)\.|\.(md|sql|json|jsonl|log|key)$#', $path)) {
     http_response_code(403);
     require $root . '/404.php';

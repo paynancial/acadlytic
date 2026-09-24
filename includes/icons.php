@@ -58,6 +58,7 @@ function acad_icon_paths(): array
         'sitemap'    => '<rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/>',
         'code'       => '<path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/>',
         'bell'       => '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 20a2 2 0 0 0 4 0"/>',
+        'whatsapp'   => '<path d="M3.6 20.4l1.2-3.9a8.6 8.6 0 1 1 3.2 3.1z"/><path d="M9.2 8.3c.2 2.9 3 5.9 6 6.3l1.1-1.3 2 .9-.3 1.8c-4.6.4-9.5-4.4-9.1-9l1.8-.3.9 2z"/>',
         'filter'     => '<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',
     ];
     static $brand = null;

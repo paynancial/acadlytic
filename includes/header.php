@@ -125,22 +125,8 @@ $activeTop = match ($page['section']) {
         <label class="sr-only" for="drawer-q">Search</label>
         <?= icon('search', 'icon icon-sm') ?><input id="drawer-q" type="search" name="q" placeholder="Search Acadlytic" autocomplete="off">
     </form>
-    <nav class="drawer-nav" aria-label="Mobile">
-        <?php foreach ($nav['mega'] as $key => $menu): ?>
-        <details class="drawer-group">
-            <summary><?= e($menu['label']) ?><?= icon('chevron', 'icon icon-sm chev') ?></summary>
-            <ul>
-                <li><a class="drawer-hub" href="<?= e($menu['hub']) ?>"><?= e($menu['intro']['cta'][0]) ?></a></li>
-                <?php foreach ($menu['groups'] as $group): foreach ($group['links'] as [$label, $href]): ?>
-                <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
-                <?php endforeach; endforeach; ?>
-                <?php foreach ($menu['more'] as [$label, $href]): ?>
-                <li><a href="<?= e($href) ?>"><?= e($label) ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </details>
-        <?php endforeach; ?>
-    </nav>
+    <!-- Built from the mega menu by app.js on first open (the drawer needs JS to open; keeps DOM small). -->
+    <nav class="drawer-nav" aria-label="Mobile" data-drawer-nav></nav>
     <div class="drawer-foot">
         <a class="btn btn-primary btn-block" href="/company/request-demo/">Request a Demo <?= icon('arrow') ?></a>
         <a class="btn btn-outline btn-block" href="/login.php"><?= icon('lock', 'icon icon-sm') ?> Login</a>

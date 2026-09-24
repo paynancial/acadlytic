@@ -350,7 +350,7 @@ return [
 
     '/core/contact/' => [
         'title'    => 'Contact Acadlytic',
-        'desc'     => 'Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or call +91 8010707171.',
+        'desc'     => 'Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or use the Enquire Now panel.',
         'h1'       => 'Talk to the Acadlytic team',
         'nav_label' => 'Contact',
         'lead'     => 'Choose a topic so we can route your message to the right people. For a product walkthrough, you can also [request a demo](/company/request-demo/).',

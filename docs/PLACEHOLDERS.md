@@ -6,6 +6,7 @@ real content.
 ## Confirmed by Acadlytic
 
 - Support, account help and form notifications: `info@acadlytic.com`.
+- Phone / WhatsApp number: stored only in `config/contact.php`, shown masked on the site.
 - Data Protection Officer: Mr. A.K Sinha, `dpo@acadlytic.com` (`/trust/data-protection-officer/`).
 - Grievance Redressal Officer: Mrs. Anjali Sharma, `gro@acadlytic.com` (`/trust/grievance-redressal-officer/`).
   Contact-form enquiries on the Privacy and Grievance topics are also emailed to these officers. Make sure both mailboxes exist and receive mail.
@@ -22,6 +23,11 @@ real content.
 |---|---|
 | `/company/case-studies/` | Placeholder; publish only verified, institution-approved case studies. |
 | `/resources/whitepapers/` | Placeholder. |
+| `/company/leadership/` | Needs names, roles, short bios and (optional) photos in `data/people.php`. Becomes indexable automatically once entries exist. |
+| `/company/team/` | Same as above (`team` group in `data/people.php`). |
+| `/company/news/` | Needs dated, factual announcements in `data/news.php`. |
+
+`/company/vision-mission/` is live and indexable. Its wording was drafted from the existing positioning; leadership should approve it.
 
 ## Optional, when available
 

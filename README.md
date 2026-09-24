@@ -11,11 +11,12 @@ workers are needed in production.
 
 | | |
 |---|---|
-| Public pages | 142 indexable URLs (in `sitemap.xml`), plus search, 404 and noindex placeholders |
-| Redirects | 61 permanent (301) redirects covering duplicate URLs from the 120+ page build, every Phase 2 handoff URL and legacy `.php` URLs |
+| Public pages | 140 indexable URLs (in `sitemap.xml`), plus search, 404 and noindex placeholders |
+| Redirects | 69 permanent (301) redirects covering duplicate URLs from the 120+ page build, every Phase 2 handoff URL, legacy `.php` URLs and common aliases (`/about-us/`, `/contact-us/`, `/blog/`, `/news/`, `/team/`, `/leadership/`) |
 | Auth pages | `/login.php` (also `/login/`), `/forgot-password.php`, `/request-access.php` — noindex, not in sitemap |
-| Forms | Request a Demo, Contact, Request Access, Password help — CSRF, honeypot, timing check, rate limit, server-side validation |
-| AEO | FAQs + FAQPage schema on 127 pages, key takeaways on guides and comparisons, `llms.txt`, visible last-updated dates |
+| Forms | Request a Demo, Contact, Enquiry (floating widget), Request Access, Password help — CSRF, honeypot, timing check, rate limit, server-side validation |
+| AEO | FAQs + FAQPage schema on 130 pages, key takeaways on guides and comparisons, `llms.txt`, visible last-updated dates |
+| Enquiry widget | Floating “Enquire now” button on every public page: enquiry form (modal), email, WhatsApp. The phone number is never printed in full; see below |
 | Assets | Self-hosted Inter + Manrope, one SVG icon sprite, optimised logo (PNG + WebP), no third-party scripts |
 
 ## How it works
@@ -39,6 +40,12 @@ assets/js/app.js             progressive enhancement (menus, drawer, forms)
 assets/img/                  logo-acadlytic.png/.webp, logo-square.png, icons.svg, og-image.png
 assets/fonts/                Inter + Manrope (SIL OFL)
 config/site.php              brand, contacts, social profiles, feature flags
+config/contact.php           the ONLY place the phone / WhatsApp number is stored
+components/                  enquiry-widget.php, enquiry-modal.php (floating widget)
+assets/css/enquiry-widget.css, assets/js/enquiry-widget.js   widget styles and behaviour
+enquiry/, enquiry/token/     JSON endpoints for the widget form (POST, same-origin)
+go/call/, go/whatsapp/       number-free redirects to tel: and wa.me (302, noindex)
+data/people.php, data/news.php  leadership/team and news entries (empty until supplied)
 config/local.example.php     template for secrets (copy to config/local.php)
 data/pages/*.php             all page content (structured blocks)
 data/nav.php                 mega menu, footer, login workspaces
@@ -55,9 +62,21 @@ bin/dev-router.php           local dev server router
 docs/                        deployment, auth architecture, content guide, placeholders
 ```
 
-Internal folders (`includes`, `config`, `data`, `seo`, `storage`, `bin`,
-`database`, `docs`) are denied over HTTP by the root `.htaccess` and by their
+Internal folders (`includes`, `config`, `components`, `data`, `seo`, `storage`,
+`bin`, `database`, `docs`) are denied over HTTP by the root `.htaccess` and by their
 own `.htaccess` files.
+
+## Contact details and the enquiry widget
+
+`config/contact.php` holds `CONTACT_PHONE`, `CONTACT_PHONE_DISPLAY` (masked,
+e.g. `+91 80••••••71`), `CONTACT_EMAIL`, `WHATSAPP_NUMBER` and the WhatsApp
+pre-filled message. Change the number there only. The full number never
+appears in page HTML, `sitemap.xml` or `llms.txt` (`bin/qa.php` checks this):
+Call and WhatsApp links point to `/go/call/` and `/go/whatsapp/`, which
+redirect server-side. Analytics hooks: the widget dispatches a
+`acadlytic:analytics` browser event (and pushes to `window.dataLayer` if one
+exists) for `enquiry_widget_open`, `enquiry_form_open`, `enquiry_form_submit`,
+`email_click` and `whatsapp_click`; no analytics script is bundled.
 
 ## Local development
 

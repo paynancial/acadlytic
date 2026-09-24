@@ -1,0 +1,130 @@
+/* Acadlytic — floating enquiry widget (components/enquiry-widget.php).
+   Uses the design tokens from main.css. Loaded at the end of <body> so it
+   never blocks first render; everything is position:fixed (no layout shift). */
+
+.acw-fab {
+  position: fixed; z-index: 1000; right: 24px; top: 60%; transform: translateY(-50%);
+  display: inline-flex; align-items: center; gap: 10px; min-width: 164px; height: 52px; padding: 0 20px 0 14px;
+  border-radius: 17px; text-decoration: none; color: #fff;
+  font: 700 13.5px/1 var(--font); letter-spacing: .08em; text-transform: uppercase;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--electric) 55%, var(--cyan) 130%);
+  box-shadow: 0 12px 28px -10px rgba(11, 99, 246, .65), 0 2px 6px rgba(7, 26, 58, .18), inset 0 1px 0 rgba(255, 255, 255, .22);
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease), filter 200ms var(--ease);
+}
+.acw-fab:hover { color: #fff; transform: translateY(-50%) translateX(-2px) scale(1.02); box-shadow: 0 16px 34px -10px rgba(11, 99, 246, .75), 0 0 0 6px rgba(20, 207, 232, .14); }
+.acw-fab:active { transform: translateY(-50%) scale(.98); }
+.acw-fab:focus-visible { outline: none; box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--blue); }
+.acw-fab-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: rgba(255, 255, 255, .18); }
+.acw-fab-icon .icon { width: 17px; height: 17px; }
+.acw-fab[aria-expanded="true"] { filter: saturate(.9); }
+
+/* Gentle glow, a few times, only until the visitor interacts. */
+.acw-fab.acw-pulse { animation: acw-glow 7s ease-in-out 3; }
+@keyframes acw-glow {
+  0%, 70%, 100% { box-shadow: 0 12px 28px -10px rgba(11, 99, 246, .65), 0 2px 6px rgba(7, 26, 58, .18); }
+  82% { box-shadow: 0 12px 28px -10px rgba(11, 99, 246, .65), 0 0 0 9px rgba(20, 207, 232, .16); }
+}
+
+.acw-tip {
+  position: absolute; right: calc(100% + 12px); top: 50%; transform: translate(6px, -50%);
+  padding: 7px 11px; border-radius: 10px; background: var(--navy); color: #fff; white-space: nowrap;
+  font: 600 12.5px/1 var(--font); letter-spacing: 0; text-transform: none;
+  opacity: 0; pointer-events: none; transition: opacity 180ms var(--ease), transform 180ms var(--ease);
+}
+.acw-fab:hover .acw-tip, .acw-fab:focus-visible .acw-tip { opacity: 1; transform: translate(0, -50%); }
+.acw-fab[aria-expanded="true"] .acw-tip { opacity: 0; }
+
+/* Panel: opens to the LEFT of the button, always inside the viewport. */
+.acw-panel {
+  position: fixed; z-index: 1001; right: 224px; top: 60%; width: 360px;
+  max-height: calc(100vh - 32px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 20px; border-radius: 22px; color: var(--ink);
+  background: rgba(255, 255, 255, .97); border: 1px solid var(--line);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 30px 70px -24px rgba(7, 26, 58, .38), 0 8px 20px -10px rgba(7, 26, 58, .14);
+  transform: translate(8px, -50%); opacity: 0;
+  transition: opacity 220ms var(--ease), transform 220ms var(--ease);
+}
+.acw-panel.is-open { opacity: 1; transform: translate(0, -50%); }
+.acw-panel[hidden] { display: none; }
+.acw-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.acw-title { margin: 0; font: 800 21px/1.2 var(--display); letter-spacing: -.02em; }
+.acw-sub { margin: 4px 0 0; font-weight: 600; color: var(--blue); font-size: 14.5px; }
+.acw-desc { margin: 10px 0 16px; color: var(--slate-2); font-size: 14px; line-height: 1.55; }
+.acw-close { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 11px; border: 1px solid var(--line); background: #fff; color: var(--slate-2); cursor: pointer; transition: background 160ms, color 160ms; }
+.acw-close:hover { background: var(--soft-2); color: var(--ink); }
+.acw-close:focus-visible { outline: none; box-shadow: var(--ring); }
+.acw-actions { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.acw-action {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 13px 14px; border-radius: 16px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink); text-decoration: none; text-align: left;
+  font: inherit; cursor: pointer; transition: border-color 160ms, box-shadow 160ms, transform 160ms;
+}
+.acw-action:hover { border-color: #BCD4F8; box-shadow: var(--shadow-md); transform: translateY(-1px); color: var(--ink); }
+.acw-action:active { transform: translateY(0); }
+.acw-action:focus-visible { outline: none; box-shadow: var(--ring); border-color: var(--blue); }
+.acw-action-icon { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 12px; }
+.acw-i-form { background: var(--soft); color: var(--blue); }
+.acw-i-mail { background: #EAF9FC; color: #0A8FA3; }
+.acw-i-wa { background: #E7F7EF; color: #0F8A5F; }
+.acw-action-body { display: grid; gap: 2px; flex: 1; }
+.acw-action-body strong { font-size: 14.5px; }
+.acw-action-body small { color: var(--slate); font-size: 12.5px; }
+.acw-action-arrow { color: var(--line-2); transition: color 160ms, transform 160ms; }
+.acw-action:hover .acw-action-arrow { color: var(--blue); transform: translateX(2px); }
+.acw-call { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--slate); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.acw-call a { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; text-decoration: none; color: var(--ink); padding: 6px 10px; border-radius: 10px; background: var(--mist); }
+.acw-call a:hover { color: var(--blue); }
+
+/* Modal */
+.acw-modal {
+  width: min(580px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0; border: 0;
+  border-radius: 24px; color: var(--ink); background: #fff; overflow: auto;
+  box-shadow: 0 40px 90px -30px rgba(7, 26, 58, .5);
+}
+.acw-modal[open] { animation: acw-in 220ms var(--ease); }
+.acw-modal::backdrop { background: rgba(7, 26, 58, .45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+@keyframes acw-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.acw-modal-inner { padding: clamp(20px, 4vw, 32px); }
+.acw-modal-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.acw-kicker { margin: 0 0 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+.acw-modal-title { margin: 0; font: 800 24px/1.2 var(--display); letter-spacing: -.02em; }
+.acw-modal-sub { margin: 6px 0 0; color: var(--slate); font-size: 13.5px; }
+.acw-modal .form-grid { grid-template-columns: 1fr 1fr; }
+.acw-modal .form-actions { margin-top: 18px; }
+.acw-modal .form-actions .btn { width: 100%; }
+.acw-privacy { margin: 12px 0 0; font-size: 12.5px; color: var(--slate); text-align: center; }
+.acw-success { text-align: center; padding: 12px 4px 4px; }
+.acw-success h3 { font-size: 21px; margin: 0 0 8px; }
+.acw-success p { color: var(--slate-2); margin: 0 0 20px; }
+.acw-success:focus { outline: none; }
+
+/* Hidden while the full-screen mobile menu is open. */
+body.drawer-open .acw-fab, body.drawer-open .acw-panel { display: none; }
+
+/* Tablet / small laptop */
+@media (max-width: 900px) {
+  .acw-panel { right: 24px; top: auto; bottom: 96px; transform: translateY(8px); max-height: calc(100vh - 140px); }
+  .acw-panel.is-open { transform: none; }
+  .acw-fab { top: auto; bottom: calc(24px + env(safe-area-inset-bottom)); transform: none; }
+  .acw-fab:hover { transform: translateY(-2px); }
+  .acw-fab:active { transform: scale(.98); }
+}
+
+/* Phones: compact circular button in the bottom-right safe area. */
+@media (max-width: 640px) {
+  .acw-fab { right: calc(14px + env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom)); min-width: 0; width: 54px; height: 54px; padding: 0; justify-content: center; border-radius: 18px; }
+  .acw-fab-icon { background: transparent; }
+  .acw-fab-icon .icon { width: 22px; height: 22px; }
+  .acw-fab-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .acw-tip { display: none; }
+  .acw-panel { left: auto; right: 12px; bottom: calc(80px + env(safe-area-inset-bottom)); width: calc(100vw - 24px); max-width: 380px; max-height: calc(100vh - 110px); padding: 18px; }
+  .acw-modal { width: calc(100vw - 16px); max-height: calc(100vh - 16px); border-radius: 20px; }
+  .acw-modal .form-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acw-fab, .acw-panel, .acw-action, .acw-tip { transition: none; }
+  .acw-fab.acw-pulse, .acw-modal[open] { animation: none; }
+}
+@media print { .acw { display: none !important; } }

@@ -131,6 +131,25 @@ function acad_link_card(array $target, string $class = 'link-card'): string
         . '<span class="link-card-arrow">' . icon('arrow') . '</span></a>';
 }
 
+/**
+ * Number-free contact redirects (/go/call/, /go/whatsapp/). The full number
+ * lives only in config/contact.php and is sent only in a Location header.
+ */
+function acad_contact_redirect(string $channel): never
+{
+    $c = (array) acad_config('contact');
+    $target = match ($channel) {
+        'call'     => 'tel:' . $c['CONTACT_PHONE'],
+        'whatsapp' => 'https://wa.me/' . rawurlencode((string) $c['WHATSAPP_NUMBER']) . '?text=' . rawurlencode((string) $c['WHATSAPP_MESSAGE']),
+        default    => '/core/contact/',
+    };
+    header('Cache-Control: no-store');
+    header('X-Robots-Tag: noindex, nofollow');
+    header('Referrer-Policy: no-referrer');
+    header('Location: ' . $target, true, 302);
+    exit;
+}
+
 /** Resolve footer/nav href shorthands (e.g. governance:dpo). */
 function acad_nav_href(string $href): string
 {

@@ -24,7 +24,7 @@ before its wording can change. Owner: Acadlytic, Inc. Last reviewed: 2026-09-24.
 | EdTech CRM positioning | “An EdTech CRM designed for the whole student relationship” | LIVE (positioning) | None | Unchanged; capabilities on the page remain PLANNED |
 | Cloud platform positioning | “Acadlytic is being built as a cloud platform for academic management” | LIVE (positioning) | None | Unchanged |
 | Academic management positioning | “Academic management software, rebuilt around connected data” | LIVE (positioning) | None | Unchanged |
-| Contact details | info@acadlytic.com, +91 8010707171 (labelled “Phone”) | LIVE | Supplied by owner | Do not label the number “toll-free” unless the provider confirms |
+| Contact details | info@acadlytic.com; phone shown masked (“+91 80••••••71”), reachable via Call and WhatsApp buttons (`/go/call/`, `/go/whatsapp/`); the full number lives only in `config/contact.php` | LIVE | Supplied by owner | Do not label the number “toll-free” unless the provider confirms; never print it in full in the UI |
 | Data Protection Officer | Mr. A.K Sinha, dpo@acadlytic.com | LIVE | Supplied by owner; mailbox must exist | Unchanged |
 | Grievance Redressal Officer | Mrs. Anjali Sharma, gro@acadlytic.com | LIVE | Supplied by owner; mailbox must exist | Unchanged |
 | Official social profiles | LinkedIn, X, YouTube, Instagram, Facebook links | LIVE | Supplied by owner | Unchanged |

@@ -74,6 +74,14 @@ return [
     '/pricing/'          => '/core/pricing/',
     '/support/'          => '/company/support/',
     '/demo/'             => '/company/request-demo/',
+    '/about-us/'         => '/core/about/',
+    '/contact-us/'       => '/core/contact/',
+    '/blog/'             => '/resources/blog/',
+    '/news/'             => '/company/news/',
+    '/leadership/'       => '/company/leadership/',
+    '/team/'             => '/company/team/',
+    '/vision-and-mission/' => '/company/vision-mission/',
+    '/vision-mission/'   => '/company/vision-mission/',
 
     // Legacy starter-package .php URLs
     '/about.php'     => '/core/about/',

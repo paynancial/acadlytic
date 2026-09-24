@@ -7,7 +7,7 @@ Acadlytic, Inc. is building an AI-powered EdTech CRM and cloud platform for acad
 Status: the platform is in development. Product, AI, solution and integration pages describe planned capabilities that are not yet generally available. Acadlytic publishes no customer counts, testimonials or certifications.
 
 - Website: https://acadlytic.com/
-- Contact: info@acadlytic.com · +91 8010707171
+- Contact: info@acadlytic.com
 - Request a demo: https://acadlytic.com/company/request-demo/
 - Official profiles: https://www.linkedin.com/company/acadlytic, https://x.com/acadlytic, https://www.youtube.com/@acadlytic, https://www.instagram.com/acadlytic/, https://www.facebook.com/acadlytic/
 
@@ -138,8 +138,9 @@ Status: the platform is in development. Product, AI, solution and integration pa
 
 - [About](https://acadlytic.com/core/about/): Acadlytic, Inc. is building AI-powered CRM and cloud software for academic management. Learn our mission, what we are building and how we work with institutions.
 - [Security Center](https://acadlytic.com/core/security/): (Planned) How Acadlytic approaches security: encryption, role-based access, audit trails, secure development and responsible disclosure for institutional and student data.
-- [Contact](https://acadlytic.com/core/contact/): Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or call +91 8010707171.
+- [Contact](https://acadlytic.com/core/contact/): Contact Acadlytic for product questions, demos, partnerships, support, privacy or grievance requests. Email info@acadlytic.com or use the Enquire Now panel.
 - [Company](https://acadlytic.com/company/): About Acadlytic, Inc.: our mission, careers, partner programme, press resources, support and how to contact the team.
+- [Vision & Mission](https://acadlytic.com/company/vision-mission/): Acadlytic’s vision and mission: why we are building an AI-powered EdTech CRM and cloud platform for academic management, and the values that guide the work.
 - [Request a Demo](https://acadlytic.com/company/request-demo/): Request a personalised Acadlytic demo: a walkthrough of the platform design and roadmap, focused on the workflows that matter to your institution.
 - [Careers](https://acadlytic.com/company/careers/): Build the future of intelligent education with Acadlytic. Learn how we work, the skills we value and how to express interest in joining the team.
 - [Partners](https://acadlytic.com/company/partners/): Partner with Acadlytic as an implementation, technology, referral or education partner. Learn about partnership types and how to start a conversation.

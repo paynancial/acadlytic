@@ -9,6 +9,8 @@ Disallow: /partner/
 Disallow: /student/
 Disallow: /faculty/
 Disallow: /search/
+Disallow: /go/
+Disallow: /enquiry/
 
 # Sign-in pages stay crawlable so search engines can read their noindex tag.
 

@@ -47,7 +47,7 @@ $resolves = static function (string $href) use ($pages, $redirects): bool {
     if (isset($redirects[$path])) {
         return true;
     }
-    if (in_array($path, ['/login.php', '/forgot-password.php', '/request-access.php', '/login/', '/sitemap.xml', '/robots.txt', '/llms.txt'], true)) {
+    if (in_array($path, ['/login.php', '/forgot-password.php', '/request-access.php', '/login/', '/sitemap.xml', '/robots.txt', '/llms.txt', '/go/call/', '/go/whatsapp/'], true)) {
         return true;
     }
     return is_file(ACAD_ROOT . $path);
@@ -126,6 +126,14 @@ foreach ($pages as $path => $page) {
     }
     if (acad_is_editorial($page) && !str_contains($html, 'class="page-meta"')) {
         $errors[] = "{$where}: editorial page missing visible last-updated line";
+    }
+    // Contact number must never appear in public HTML (see config/contact.php).
+    $digits = preg_replace('/\D/', '', (string) acad_config('contact.CONTACT_PHONE'));
+    if ($digits !== '' && str_contains(preg_replace('/\D/', '', $html) ?? '', substr($digits, -10))) {
+        $errors[] = "{$where}: full contact number found in page output";
+    }
+    if (!in_array($path, ['/login.php', '/forgot-password.php', '/request-access.php'], true) && substr_count($html, ' data-acw ') !== 1) {
+        $errors[] = "{$where}: enquiry widget must appear exactly once";
     }
     // Claims policy.
     $visible = strip_tags(preg_replace('#<(script|style)\b.*?</\1>#s', '', $html) ?? '');
@@ -236,7 +244,13 @@ foreach ($expected as $p => $pg) {
         $errors[] = "llms.txt missing {$p} (run php bin/build.php)";
     }
 }
-foreach (['/llms.txt', '/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
+foreach (['/llms.txt', '/sitemap.xml', '/robots.txt'] as $pub) {
+    $digits = substr(preg_replace('/\D/', '', (string) acad_config('contact.CONTACT_PHONE')), -10);
+    if ($digits !== '' && str_contains(preg_replace('/\D/', '', (string) @file_get_contents(ACAD_ROOT . $pub)) ?? '', $digits)) {
+        $errors[] = "{$pub}: contains the full contact number";
+    }
+}
+foreach (['/assets/css/enquiry-widget.css', '/assets/js/enquiry-widget.js', '/components/enquiry-widget.php', '/components/enquiry-modal.php', '/config/contact.php', '/llms.txt', '/assets/css/main.css', '/assets/js/app.js', '/assets/img/logo-acadlytic.png', '/assets/img/logo-acadlytic.webp', '/assets/img/icons.svg', '/assets/img/og-image.png', '/assets/fonts/inter-var-latin.woff2', '/assets/fonts/manrope-var-latin.woff2', '/robots.txt', '/.htaccess'] as $a) {
     if (!is_file(ACAD_ROOT . $a)) {
         $errors[] = "Missing asset {$a}";
     }
