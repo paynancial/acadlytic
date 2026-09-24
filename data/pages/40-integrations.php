@@ -88,7 +88,7 @@ return [
                 'Will faculty have to enter grades twice?' => 'Not once grade sync is available and configured: grades entered in the LMS are planned to flow to Acadlytic for consolidation and moderation.',
             ]),
         ],
-        'related' => ['/solutions/for-faculty/', '/platform/academic-operations/', '/glossary/learning-analytics/', '/industries/online-education/'],
+        'related' => ['/solutions/for-faculty/', '/platform/academic-operations/', '/glossary/learning-management-system/', '/comparisons/sis-vs-lms/', '/glossary/learning-analytics/', '/industries/online-education/'],
     ],
 
     '/integrations/erp-integration/' => [
@@ -119,7 +119,7 @@ return [
                 'Who maintains account code mappings?' => 'Your finance team maintains mappings through the administration screens, with every change recorded.',
             ]),
         ],
-        'related' => ['/platform/finance-fees/', '/solutions/for-finance-teams/', '/comparisons/academic-crm-vs-erp/', '/glossary/academic-erp/'],
+        'related' => ['/platform/finance-fees/', '/solutions/for-finance-teams/', '/comparisons/academic-crm-vs-erp/', '/comparisons/erp-vs-sis/', '/glossary/academic-erp/'],
     ],
 
     '/integrations/crm-integration/' => [

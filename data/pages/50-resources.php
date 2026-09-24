@@ -151,7 +151,7 @@ return [
                 'Do small institutions need an academic CRM?' => 'If enquiries arrive from several channels and follow-up depends on individual memory, even a small team benefits from one queue and timeline.',
             ]),
         ],
-        'related' => ['/glossary/academic-crm/', '/core/edtech-crm/', '/comparisons/academic-crm-vs-sis/', '/resources/admissions-crm-guide/'],
+        'related' => ['/glossary/academic-crm/', '/core/edtech-crm/', '/comparisons/academic-crm-vs-sis/', '/comparisons/general-crm-vs-education-crm/', '/resources/admissions-crm-guide/'],
     ],
 
     '/resources/admissions-crm-guide/' => [

@@ -68,7 +68,7 @@ return [
                 'How does the admissions CRM prevent duplicate records?' => 'New enquiries are matched on email, phone and name, so a person who enquires twice keeps one record and one timeline.',
             ]),
         ],
-        'related' => ['/ai/ai-for-admissions/', '/platform/application-management/', '/solutions/for-admissions-teams/', '/resources/admissions-crm-guide/', '/comparisons/manual-vs-automated-admissions/'],
+        'related' => ['/ai/ai-for-admissions/', '/platform/application-management/', '/solutions/for-admissions-teams/', '/resources/admissions-crm-guide/', '/glossary/lead-scoring/', '/comparisons/manual-vs-automated-admissions/'],
     ],
 
     '/platform/student-management/' => [

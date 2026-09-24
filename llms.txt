@@ -133,6 +133,11 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Spreadsheets vs Platform](https://acadlytic.com/comparisons/spreadsheets-vs-academic-platform/): Spreadsheets vs an academic platform or CRM: compare data integrity, collaboration, security, automation and reporting, and know when it is time to move.
 - [Point Solutions vs Platform](https://acadlytic.com/comparisons/point-solutions-vs-platform/): Compare best-of-breed point solutions with a unified academic platform on integration effort, data consistency, user experience, cost and flexibility.
 - [AI vs Manual Reporting](https://acadlytic.com/comparisons/ai-reporting-vs-manual-reporting/): Compare AI-assisted reporting with manual reporting on speed, consistency, depth, accuracy risks and effort, and see how to combine them safely.
+- [SIS vs LMS](https://acadlytic.com/comparisons/sis-vs-lms/): SIS vs LMS explained: what a student information system and a learning management system each do, the data they own, who uses them and how they should connect.
+- [ERP vs SIS](https://acadlytic.com/comparisons/erp-vs-sis/): ERP vs SIS for education institutions: how an enterprise resource planning system differs from a student information system, where they overlap and how to decide.
+- [CRM vs LMS](https://acadlytic.com/comparisons/crm-vs-lms/): CRM vs LMS in education: how a CRM that manages enquiries and engagement differs from a learning management system for teaching, and how the two can work together.
+- [Education CRM vs general CRM](https://acadlytic.com/comparisons/general-crm-vs-education-crm/): Should a college use a general-purpose sales CRM or an education-specific CRM? A factual comparison of data models, workflows, consent, integration and total effort.
+- [Build vs buy](https://acadlytic.com/comparisons/build-vs-buy-education-software/): Should an institution build its own student management or CRM software, or buy a product? The costs, risks and conditions that favour each option, without the hype.
 
 ## Company and trust
 
@@ -177,3 +182,8 @@ Status: the platform is in development. Product, AI, solution and integration pa
 - [Education API](https://acadlytic.com/glossary/education-api/): Education API definition: an application programming interface that lets education systems exchange data securely, such as student, course or payment information.
 - [Single Sign-On](https://acadlytic.com/glossary/single-sign-on/): Single sign-on definition: an authentication method that lets users access multiple systems with one set of institutional credentials, managed centrally.
 - [Electronic Document Management](https://acadlytic.com/glossary/electronic-document-management/): Electronic document management definition: capturing, storing, organising, securing and sharing documents digitally with version control and access rules.
+- [Learning Management System](https://acadlytic.com/glossary/learning-management-system/): Learning management system (LMS) definition: software for delivering course content, assignments, quizzes and discussion, and how an LMS differs from an SIS or CRM.
+- [Enrolment Management](https://acadlytic.com/glossary/enrollment-management/): Enrolment management definition: the coordinated planning of recruitment, admissions, financial aid and retention so an institution meets its enrolment goals.
+- [Student Retention](https://acadlytic.com/glossary/student-retention/): Student retention definition: the share of students who continue into the next period of study, how the rate is calculated and how it differs from persistence.
+- [Role-Based Access Control](https://acadlytic.com/glossary/role-based-access-control/): Role-based access control (RBAC) definition: granting permissions through roles rather than to individuals, and why it matters for student data in education software.
+- [Lead Scoring](https://acadlytic.com/glossary/lead-scoring/): Lead scoring definition for admissions: ranking enquiries by fit and engagement so counsellors know whom to contact first, with the risks to watch.

@@ -10,9 +10,9 @@ return [
         'nav_label' => 'Glossary',
         'lead'  => 'Clear, jargon-free definitions of the terms used across academic technology, CRM, analytics, cloud and AI.',
         'groups' => [
-            ['title' => 'Systems', 'paths' => ['/glossary/academic-crm/', '/glossary/admissions-crm/', '/glossary/student-information-system/', '/glossary/academic-erp/', '/glossary/electronic-document-management/', '/glossary/education-cloud/']],
-            ['title' => 'Processes', 'paths' => ['/glossary/admissions-management/', '/glossary/student-lifecycle-management/', '/glossary/academic-operations/', '/glossary/workflow-automation/', '/glossary/student-engagement/', '/glossary/student-success/']],
-            ['title' => 'Data & integration', 'paths' => ['/glossary/education-analytics/', '/glossary/learning-analytics/', '/glossary/institutional-analytics/', '/glossary/education-api/', '/glossary/single-sign-on/']],
+            ['title' => 'Systems', 'paths' => ['/glossary/academic-crm/', '/glossary/admissions-crm/', '/glossary/student-information-system/', '/glossary/academic-erp/', '/glossary/electronic-document-management/', '/glossary/education-cloud/', '/glossary/learning-management-system/']],
+            ['title' => 'Processes', 'paths' => ['/glossary/admissions-management/', '/glossary/student-lifecycle-management/', '/glossary/academic-operations/', '/glossary/workflow-automation/', '/glossary/student-engagement/', '/glossary/student-success/', '/glossary/enrollment-management/', '/glossary/student-retention/', '/glossary/lead-scoring/']],
+            ['title' => 'Data & integration', 'paths' => ['/glossary/education-analytics/', '/glossary/learning-analytics/', '/glossary/institutional-analytics/', '/glossary/education-api/', '/glossary/single-sign-on/', '/glossary/role-based-access-control/']],
         ],
     ],
 
@@ -89,7 +89,7 @@ return [
                 'Who owns the SIS in an institution?' => 'Usually the registrar’s office, with IT responsible for operating the system.',
             ]),
         ],
-        'related' => ['/platform/student-management/', '/integrations/sis-integration/', '/comparisons/academic-crm-vs-sis/', '/resources/student-management-guide/'],
+        'related' => ['/platform/student-management/', '/integrations/sis-integration/', '/comparisons/academic-crm-vs-sis/', '/comparisons/sis-vs-lms/', '/comparisons/erp-vs-sis/', '/resources/student-management-guide/'],
     ],
 
     '/glossary/academic-erp/' => [
@@ -114,7 +114,7 @@ return [
                 'Is academic ERP the same as school ERP?' => 'The concepts are similar. “School ERP” usually refers to K-12 administration suites; “academic ERP” is broader.',
             ]),
         ],
-        'related' => ['/comparisons/academic-crm-vs-erp/', '/integrations/erp-integration/', '/glossary/academic-crm/'],
+        'related' => ['/comparisons/academic-crm-vs-erp/', '/comparisons/erp-vs-sis/', '/integrations/erp-integration/', '/glossary/academic-crm/'],
     ],
 
     '/glossary/student-lifecycle-management/' => [
@@ -257,7 +257,7 @@ return [
                 'Can admissions management be automated?' => 'Routine steps such as acknowledgements and reminders can be; selection decisions should stay with people.',
             ]),
         ],
-        'related' => ['/glossary/admissions-crm/', '/resources/admissions-workflow/', '/platform/application-management/'],
+        'related' => ['/glossary/admissions-crm/', '/glossary/enrollment-management/', '/resources/admissions-workflow/', '/platform/application-management/'],
     ],
 
     '/glossary/student-success/' => [
@@ -281,7 +281,7 @@ return [
                 'Is student success only about grades?' => 'No. It also covers progression, completion, wellbeing and reaching the goals students set for themselves.',
             ]),
         ],
-        'related' => ['/ai/ai-for-student-success/', '/platform/completion-tracking/', '/glossary/student-engagement/'],
+        'related' => ['/ai/ai-for-student-success/', '/platform/completion-tracking/', '/glossary/student-engagement/', '/glossary/student-retention/'],
     ],
 
     '/glossary/student-engagement/' => [
@@ -417,5 +417,134 @@ return [
             ]),
         ],
         'related' => ['/platform/electronic-document-sharing/', '/ai/ai-document-intelligence/'],
+    ],
+
+    // ---------- SEO Phase 2, batch 1 ----------
+    '/glossary/learning-management-system/' => [
+        'title' => 'What Is a Learning Management System (LMS)?',
+        'desc'  => 'Learning management system (LMS) definition: software for delivering course content, assignments, quizzes and discussion, and how an LMS differs from an SIS or CRM.',
+        'h1'    => 'What is a learning management system (LMS)?',
+        'nav_label' => 'Learning Management System',
+        'lead'  => 'A plain definition of an LMS, what it typically does and where it sits alongside other institutional systems.',
+        'blocks' => [
+            def('A learning management system (LMS) is software that institutions use to deliver and manage teaching and learning online: publishing course materials, setting and collecting assignments, running quizzes, hosting discussions and recording coursework marks within a course.'),
+            checks('What an LMS typically handles', [
+                'Course pages, materials and learning resources',
+                'Assignment submission and feedback',
+                'Quizzes and online assessments',
+                'Discussion forums and announcements to a class',
+                'A course gradebook for coursework marks',
+                'Activity data such as logins and submissions',
+            ]),
+            sec('What an LMS usually does not do',
+                'An LMS is organised around courses. It is not normally the official record of who is enrolled, which qualifications a student holds or what fees they owe; that belongs to a student information system. It also does not manage prospective students before they enrol, which is the role of an admissions or academic CRM. See [SIS vs LMS](/comparisons/sis-vs-lms/) and [CRM vs LMS](/comparisons/crm-vs-lms/).'),
+            faq([
+                'Is an LMS the same as a virtual learning environment (VLE)?' => 'The terms are largely interchangeable. “VLE” is more common in the UK; “LMS” is more common in the US and India.',
+                'Should LMS data be connected to other systems?' => 'Usually, yes. Enrolments typically flow from the SIS into the LMS, and final marks or engagement signals may flow back. See [LMS integration](/integrations/lms-integration/).',
+            ]),
+        ],
+        'related' => ['/comparisons/sis-vs-lms/', '/integrations/lms-integration/', '/glossary/student-information-system/', '/glossary/learning-analytics/'],
+    ],
+
+    '/glossary/enrollment-management/' => [
+        'title' => 'What Is Enrolment Management? Definition',
+        'desc'  => 'Enrolment management definition: the coordinated planning of recruitment, admissions, financial aid and retention so an institution meets its enrolment goals.',
+        'h1'    => 'What is enrolment management?',
+        'nav_label' => 'Enrolment Management',
+        'lead'  => 'Enrolment management and strategic enrolment management, defined in plain terms.',
+        'blocks' => [
+            def('Enrolment management is the coordinated set of strategies and processes an institution uses to attract, admit, enrol and retain the students it plans for, aligning marketing, admissions, scholarships and fees, and student success work around shared enrolment goals.'),
+            checks('Areas it usually brings together', [
+                'Recruitment and marketing to prospective students',
+                'Admissions processing and decisions',
+                'Scholarships, fee concessions and financial aid',
+                'Onboarding from offer to first day',
+                'Retention and progression of enrolled students',
+                'Enrolment forecasting and reporting',
+            ]),
+            sec('Strategic enrolment management',
+                '“Strategic enrolment management” (SEM) describes the same idea at institutional level: setting enrolment targets by program and student profile, then planning capacity, budgets and academic offerings to meet them. It depends on reliable data about each funnel stage, from enquiry to graduation.'),
+            sec('How it relates to admissions management',
+                '[Admissions management](/glossary/admissions-management/) is one part of enrolment management: the process of handling applications and decisions. Enrolment management is broader, because it also covers what happens before an application and after a student enrols.'),
+            faq([
+                'Who owns enrolment management in an institution?' => 'It varies. Some institutions have a dedicated enrolment office; in others, admissions, finance and academic leadership share the responsibility.',
+                'What data does enrolment management rely on?' => 'Funnel data (enquiries, applications, offers, acceptances), enrolment by program, and retention and progression data. See [enrolment analytics](/platform/enrollment-analytics/).',
+            ]),
+        ],
+        'related' => ['/glossary/admissions-management/', '/platform/enrollment-analytics/', '/resources/admissions-crm-guide/', '/glossary/student-retention/'],
+    ],
+
+    '/glossary/student-retention/' => [
+        'title' => 'What Is Student Retention? Definition and Rate',
+        'desc'  => 'Student retention definition: the share of students who continue into the next period of study, how the rate is calculated and how it differs from persistence.',
+        'h1'    => 'What is student retention?',
+        'nav_label' => 'Student Retention',
+        'lead'  => 'What student retention means, how the rate is usually calculated and the terms it is often confused with.',
+        'blocks' => [
+            def('Student retention is the extent to which students who begin a program continue their studies at the same institution into the next term or year, rather than withdrawing or transferring out. It is usually expressed as a retention rate for a defined cohort.'),
+            sec('How a retention rate is usually calculated',
+                'A common approach is to take a starting cohort, for example all first-year students enrolled at the start of the academic year, and divide the number still enrolled at the same point the following year by the size of the starting cohort. Definitions vary between institutions and reporting bodies, so the cohort, the census dates and the treatment of transfers should always be stated alongside the figure.'),
+            table('Related terms', ['Term', 'Meaning'], [
+                ['Retention', 'The student continues at the same institution'],
+                ['Persistence', 'The student continues in higher education, at any institution'],
+                ['Attrition', 'The student leaves before completing; the opposite of retention'],
+                ['Completion', 'The student finishes the program and qualifies'],
+            ]),
+            faq([
+                'Why does student retention matter?' => 'Each student who leaves early represents unfinished learning for the student, lost fee income for the institution and, often, a signal that support arrived too late.',
+                'What affects student retention?' => 'Academic difficulty, finances, personal circumstances, sense of belonging and the quality of early support are commonly cited factors. Tracking engagement and attendance helps staff notice problems earlier. See [student success](/glossary/student-success/).',
+            ]),
+        ],
+        'related' => ['/glossary/student-success/', '/ai/ai-for-student-success/', '/resources/student-engagement-strategies/', '/platform/completion-tracking/'],
+    ],
+
+    '/glossary/role-based-access-control/' => [
+        'title' => 'What Is Role-Based Access Control (RBAC)?',
+        'desc'  => 'Role-based access control (RBAC) definition: granting permissions through roles rather than to individuals, and why it matters for student data in education software.',
+        'h1'    => 'What is role-based access control (RBAC)?',
+        'nav_label' => 'Role-Based Access Control',
+        'lead'  => 'RBAC explained for institutions evaluating education software that holds student records.',
+        'blocks' => [
+            def('Role-based access control (RBAC) is a security model in which permissions are attached to roles, such as admissions officer, faculty member or finance officer, and people receive access by being assigned a role, rather than having permissions granted to them one by one.'),
+            checks('What good RBAC looks like in education software', [
+                'Roles that match real jobs, from a defined catalogue of permissions',
+                'Scope limits, so a faculty member sees only their own sections or programs',
+                'Least privilege by default, with sensitive fields restricted further',
+                'Separate permissions for viewing, editing and exporting data',
+                'Access removed promptly when someone changes role or leaves',
+                'An audit trail of role changes and sensitive-data access',
+            ]),
+            sec('Why it matters for student data',
+                'Institutions hold personal, academic, financial and sometimes health information about students and guardians. RBAC makes it practical to give each member of staff the access their work needs and no more, and to review that access regularly. It works best combined with [single sign-on](/glossary/single-sign-on/) and multi-factor authentication.'),
+            faq([
+                'What is the difference between RBAC and attribute-based access control?' => 'RBAC decides access by role. Attribute-based access control (ABAC) evaluates attributes of the user, the record and the context. Many systems combine them, for example a role plus a scope such as a program or department.',
+                'How often should access be reviewed?' => 'Institutions commonly review privileged access at least once per term or year, and whenever staff change roles. The right frequency depends on the institution’s policies.',
+            ]),
+        ],
+        'related' => ['/core/security/', '/glossary/single-sign-on/', '/solutions/for-it-teams/', '/trust/'],
+    ],
+
+    '/glossary/lead-scoring/' => [
+        'title' => 'What Is Lead Scoring in Admissions? Definition',
+        'desc'  => 'Lead scoring definition for admissions: ranking enquiries by fit and engagement so counsellors know whom to contact first, with the risks to watch.',
+        'h1'    => 'What is lead scoring in admissions?',
+        'nav_label' => 'Lead Scoring',
+        'lead'  => 'How lead scoring works in student recruitment, and how to use it without treating a score as a decision.',
+        'blocks' => [
+            def('Lead scoring is a method of ranking prospective students, or “leads”, by assigning points for characteristics and behaviour that suggest they are a good fit and likely to apply, so that admissions teams can prioritise follow-up.'),
+            table('Typical inputs', ['Type', 'Examples'], [
+                ['Fit', 'Program of interest, eligibility, location, intake'],
+                ['Engagement', 'Replies to messages, event attendance, application started'],
+                ['Recency', 'How recently the enquirer interacted'],
+                ['Source', 'Referral, event, website enquiry, partner'],
+            ]),
+            sec('Rule-based and predictive scoring',
+                'Rule-based scoring uses points that the admissions team defines and can explain. Predictive scoring uses a model trained on past outcomes. Either way, a score should guide the order of outreach, not decide who is contacted or admitted, and the inputs should be reviewed for fairness so that no group of applicants is systematically deprioritised.'),
+            faq([
+                'Does lead scoring decide who gets admitted?' => 'No. It helps prioritise outreach to enquirers. Admissions decisions should follow the institution’s published criteria and human review.',
+                'What is needed before lead scoring is useful?' => 'Consistent enquiry capture, source tracking and a recorded history of interactions and outcomes. See [admissions CRM](/platform/admissions-crm/).',
+            ]),
+        ],
+        'related' => ['/platform/admissions-crm/', '/ai/ai-for-admissions/', '/resources/admissions-crm-guide/', '/glossary/admissions-crm/'],
     ],
 ];
